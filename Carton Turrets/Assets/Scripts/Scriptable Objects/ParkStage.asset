@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9be32562731524faee5213050304bd, type: 3}
+  m_Name: ParkStage
+  m_EditorClassIdentifier: 
+  name: The Park
+  Desc: The First Level
+  GridSpacing: 5
+  GridObjects:
+  - SpawnableGO: {fileID: 6074885723609033330, guid: ed4db2a9cd21da1498eb8159e9081754, type: 3}
+    AmountToPool: 20
+  ScoreMulti: 1
