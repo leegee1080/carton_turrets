@@ -18,6 +18,8 @@ public class StagePackageScriptableObject : ScriptableObject
     public new string name;
     public string Desc;
     [Header("Map Vars")]
+    public int MapMaxX;
+    public int MapMaxY;
     public int GridSpacing;
     public StagePackageGridObject[] GridObjects;
     [Header("Reward Vars")]

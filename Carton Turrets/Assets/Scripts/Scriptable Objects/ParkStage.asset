@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: The Park
   Desc: The First Level
+  MapMaxX: 100
+  MapMaxY: 100
   GridSpacing: 5
   GridObjects:
   - SpawnableGO: {fileID: 6074885723609033330, guid: ed4db2a9cd21da1498eb8159e9081754, type: 3}
