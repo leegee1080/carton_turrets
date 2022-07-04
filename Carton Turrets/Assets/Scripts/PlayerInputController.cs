@@ -37,7 +37,7 @@ public static class Input_Control_Events
 
 public class PlayerInputController : MonoBehaviour
 {
-    public static PlayerInputController PlayerinputControllerSingleton;
+    public static PlayerInputController singleton;
 
     public MainControls PlayerInputActions;
 
@@ -61,9 +61,9 @@ public class PlayerInputController : MonoBehaviour
 
     private void Awake()
     {
-        if (PlayerinputControllerSingleton == null)
+        if (singleton == null)
         {
-            PlayerinputControllerSingleton = this;
+            singleton = this;
             PlayerInputActions = new MainControls();
         }
         else
@@ -71,7 +71,7 @@ public class PlayerInputController : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
-        DontDestroyOnLoad(this);
+        // DontDestroyOnLoad(this);
     }
 
     private void Start()
