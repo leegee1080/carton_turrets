@@ -9,15 +9,15 @@ public class StageActor : MonoBehaviour
     public ScriptableObject Prescription;
 
 
-    protected virtual void Setup()
+    public virtual void Setup()
     {
 
     }
-    protected virtual void Activate()
+    public virtual void Activate()
     {
 
     }
-    protected virtual void Die()
+    public virtual void Die()
     {
 
     }

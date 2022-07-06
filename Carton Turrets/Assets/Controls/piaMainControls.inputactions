@@ -6,36 +6,27 @@
             "id": "ef0b6ca8-6e20-4b0e-a517-6f4ca56a391c",
             "actions": [
                 {
-                    "name": "MoveUp",
+                    "name": "PlayerMovement",
+                    "type": "Value",
+                    "id": "63a39e3a-13df-4b6f-a4c1-944a68652f9b",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PlaceTurret",
                     "type": "Button",
-                    "id": "6cb0eccb-fed1-4866-b85a-20f56c30a15d",
+                    "id": "e7236be6-9ee8-4130-a09d-07dcefe9094c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MoveRight",
+                    "name": "Pause",
                     "type": "Button",
-                    "id": "d22bc6c9-102f-4760-8b1e-216bd340b3b8",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "MoveDown",
-                    "type": "Button",
-                    "id": "135c2e07-da9c-4b45-ae01-673cc3412cde",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "MoveLeft",
-                    "type": "Button",
-                    "id": "714822b7-b70d-4606-947e-8f31361c2454",
+                    "id": "3ca870f8-e0f5-447e-94fc-e0bb54df27a1",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -44,51 +35,90 @@
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "d4953028-292a-487a-b405-bccd6a5217df",
+                    "name": "2D Vector",
+                    "id": "0226f31b-b4ef-4268-9bc1-b7623b5162c2",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayerMovement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "a92da148-58fb-4103-b72e-7f611b801945",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "MoveUp",
+                    "groups": "KeyboardDefault",
+                    "action": "PlayerMovement",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "6e3fd488-ed71-4584-b4c8-5b572ea5d65b",
+                    "name": "down",
+                    "id": "bac2fecc-bfe8-485e-b539-a0a6763f9a65",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "MoveDown",
+                    "groups": "KeyboardDefault",
+                    "action": "PlayerMovement",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "1382a902-e2e2-4cc8-ad9a-b1c1e7e1a66c",
+                    "name": "left",
+                    "id": "5df65820-505c-4746-b7c4-84a00250126d",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "MoveLeft",
+                    "groups": "KeyboardDefault",
+                    "action": "PlayerMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "1e50ec46-8c7b-4111-a712-1f323c8bb898",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardDefault",
+                    "action": "PlayerMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "27fc52c8-61b0-4900-a50d-fa87f280b2a8",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardDefault",
+                    "action": "PlaceTurret",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "bf9cb2d5-34e5-4801-a0f4-d70ca9be0ab2",
-                    "path": "<Keyboard>/d",
+                    "id": "a22c1f5b-3671-4d9d-9b54-2139dc57c985",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "MoveRight",
+                    "groups": "KeyboardDefault",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "KeyboardDefault",
+            "bindingGroup": "KeyboardDefault",
+            "devices": []
+        }
+    ]
 }
