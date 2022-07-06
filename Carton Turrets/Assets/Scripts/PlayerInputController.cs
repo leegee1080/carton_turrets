@@ -2,44 +2,44 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public static class Input_Control_Events
-{
-    public static event System.Action MoveUpEvent;
-    public static void Invoke_Move_Up_Event(InputAction.CallbackContext context)
-    {
-        MoveUpEvent?.Invoke();
-    }
+// public static class Input_Control_Events
+// {
+//     public static event System.Action MoveUpEvent;
+//     public static void Invoke_Move_Up_Event(InputAction.CallbackContext context)
+//     {
+//         MoveUpEvent?.Invoke();
+//     }
 
-    public static event System.Action MoveDownEvent;
-    public static void Invoke_Move_Down_Event(InputAction.CallbackContext context)
-    {
-        MoveDownEvent?.Invoke();
-    }
+//     public static event System.Action MoveDownEvent;
+//     public static void Invoke_Move_Down_Event(InputAction.CallbackContext context)
+//     {
+//         MoveDownEvent?.Invoke();
+//     }
 
-    public static event System.Action MoveRightEvent;
-    public static void Invoke_Move_Right_Event(InputAction.CallbackContext context)
-    {
-        MoveRightEvent?.Invoke();
-    }
+//     public static event System.Action MoveRightEvent;
+//     public static void Invoke_Move_Right_Event(InputAction.CallbackContext context)
+//     {
+//         MoveRightEvent?.Invoke();
+//     }
 
-    public static event System.Action MoveLeftEvent;
-    public static void Invoke_Move_Left_Event(InputAction.CallbackContext context)
-    {
-        MoveLeftEvent?.Invoke();
-    }
+//     public static event System.Action MoveLeftEvent;
+//     public static void Invoke_Move_Left_Event(InputAction.CallbackContext context)
+//     {
+//         MoveLeftEvent?.Invoke();
+//     }
 
-    // public static event System.Action<Vector3> CameraViewEvent;
-    // public static void Invoke_cameraViewEvent(Vector3 cameraLoc)
-    // {
-    //     CameraViewEvent?.Invoke(cameraLoc);
-    // }
-}
+//     // public static event System.Action<Vector3> CameraViewEvent;
+//     // public static void Invoke_cameraViewEvent(Vector3 cameraLoc)
+//     // {
+//     //     CameraViewEvent?.Invoke(cameraLoc);
+//     // }
+// }
 
 public class PlayerInputController : MonoBehaviour
 {
-    public static PlayerInputController singleton;
+    // public static PlayerInputController singleton;
 
-    public MainControls PlayerInputActions;
+    // public MainControls PlayerInputActions;
 
     // private bool _cameraControlsAllowed;
     // private bool _cameraFollowAllowed;
@@ -61,17 +61,17 @@ public class PlayerInputController : MonoBehaviour
 
     private void Awake()
     {
-        if (singleton == null)
-        {
-            singleton = this;
-            PlayerInputActions = new MainControls();
-        }
-        else
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-        // DontDestroyOnLoad(this);
+        // if (singleton == null)
+        // {
+        //     singleton = this;
+        //     PlayerInputActions = new MainControls();
+        // }
+        // else
+        // {
+        //     Destroy(this.gameObject);
+        //     return;
+        // }
+        // // DontDestroyOnLoad(this);
     }
 
     private void Start()
@@ -80,10 +80,10 @@ public class PlayerInputController : MonoBehaviour
         // PlayerInputActions.MainMap.TapUp.canceled += context => Tap_Up(context);
         // player_input_actions.PlayerControls.TapDrag.performed += context => Tap_Drag_Started(context);
         // player_input_actions.PlayerControls.TapDrag.canceled += context => Tap_Drag_Ended(context);
-        PlayerInputActions.MainMap.MoveUp.performed += context => Input_Control_Events.Invoke_Move_Up_Event(context);
-        PlayerInputActions.MainMap.MoveDown.performed += context => Input_Control_Events.Invoke_Move_Down_Event(context);
-        PlayerInputActions.MainMap.MoveRight.performed += context => Input_Control_Events.Invoke_Move_Right_Event(context);
-        PlayerInputActions.MainMap.MoveLeft.performed += context => Input_Control_Events.Invoke_Move_Left_Event(context);
+        // PlayerInputActions.MainMap.MoveUp.performed += context => Input_Control_Events.Invoke_Move_Up_Event(context);
+        // PlayerInputActions.MainMap.MoveDown.performed += context => Input_Control_Events.Invoke_Move_Down_Event(context);
+        // PlayerInputActions.MainMap.MoveRight.performed += context => Input_Control_Events.Invoke_Move_Right_Event(context);
+        // PlayerInputActions.MainMap.MoveLeft.performed += context => Input_Control_Events.Invoke_Move_Left_Event(context);
     }
 
 //     private void Update() //player controlled camera
