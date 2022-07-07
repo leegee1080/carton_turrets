@@ -7,6 +7,12 @@ public class PlayerActor : StageActor
 {
     private PiaMainControls PlayerInputActions;
     private InputAction move, placeturret;
+
+    [Header("TurretVars")]
+    private float ReloadTimerMax;
+    public TurretScriptableObject StartingTurret;
+    public TurretUpgradeScriptableObject[] CurrentTurretUpgrades;
+    public Turret CurrentTurret;
     
 
     private void Awake()
