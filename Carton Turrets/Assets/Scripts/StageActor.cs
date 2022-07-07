@@ -6,7 +6,7 @@ public class StageActor : MonoBehaviour
 {
     [SerializeField]protected BoxCollider _collider;
     [SerializeField]protected float _health;
-    public ScriptableObject Prescription;
+    public ScriptableObject ActorData;
 
 
     public virtual void Setup()
