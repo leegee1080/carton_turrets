@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerActor : StageActor
 {
     private PiaMainControls PlayerInputActions;
-    private InputAction move, placeturret;
+    public InputAction move, placeturret;
 
     [Header("TurretVars")]
     private float ReloadTimerMax;
@@ -18,6 +18,8 @@ public class PlayerActor : StageActor
     private void Awake()
     {
         PlayerInputActions = new PiaMainControls();
+
+        ChangeState(new PlayerState_Normal());
     }
     private void OnEnable()
     {
@@ -39,12 +41,6 @@ public class PlayerActor : StageActor
 
     }
 
-    private void FixedUpdate()
-    {
-        Vector2 v = move.ReadValue<Vector2>();
-        Debug.Log(v);
-    }
-
 
     public override void Setup()
     {
@@ -58,4 +54,66 @@ public class PlayerActor : StageActor
     {
         base.Die();
     }
+}
+
+public class PlayerState_Frozen: ActorStatesAbstractClass
+{
+    public override void OnEnterState(StageActor _cont)
+    {
+        
+    }   
+    public override void OnExitState(StageActor _cont)
+    {
+        
+    }   
+    public override void OnUpdateState(StageActor _cont)
+    {
+
+    }   
+}
+public class PlayerState_Normal: ActorStatesAbstractClass
+{
+    public override void OnEnterState(StageActor _cont)
+    {
+        
+    }   
+    public override void OnExitState(StageActor _cont)
+    {
+
+    }   
+    public override void OnUpdateState(StageActor _cont)
+    {
+        PlayerActor pa = (PlayerActor)_cont;
+        Vector2 v = pa.move.ReadValue<Vector2>();
+    }   
+}
+public class PlayerState_Dead: ActorStatesAbstractClass
+{
+    public override void OnEnterState(StageActor _cont)
+    {
+        
+    }   
+    public override void OnExitState(StageActor _cont)
+    {
+        
+    }   
+    public override void OnUpdateState(StageActor _cont)
+    {
+
+    }   
+}
+public class PlayerState_Pause: ActorStatesAbstractClass
+{
+    public override void OnEnterState(StageActor _cont)
+    {
+        
+    }   
+    public override void OnExitState(StageActor _cont)
+    {
+        
+    }   
+    public override void OnUpdateState(StageActor _cont)
+    {
+
+    }   
 }
