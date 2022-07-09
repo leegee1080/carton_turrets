@@ -19,10 +19,11 @@ public class PlayerActor : StageActor
     {
         PlayerInputActions = new PiaMainControls();
 
-        ChangeState(new PlayerState_Normal());
+        Activate();
     }
-    private void OnEnable()
+    public override void OnEnable()
     {
+        base.OnEnable();
         move = PlayerInputActions.MainMap.PlayerMovement;
         placeturret = PlayerInputActions.MainMap.PlaceTurret;
         move.Enable();
@@ -49,6 +50,7 @@ public class PlayerActor : StageActor
     public override void Activate()
     {
         base.Activate();
+        ChangeState(new PlayerState_Normal());
     }
     public override void Die()
     {
@@ -85,6 +87,7 @@ public class PlayerState_Normal: ActorStatesAbstractClass
     {
         PlayerActor pa = (PlayerActor)_cont;
         Vector2 v = pa.move.ReadValue<Vector2>();
+        pa.gameObject.transform.position += new Vector3(v.x,0,v.y) * (pa.CurrentSpeed/100);
     }   
 }
 public class PlayerState_Dead: ActorStatesAbstractClass
