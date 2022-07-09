@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerActor : StageActor
 {
     private PiaMainControls PlayerInputActions;
-    private InputAction move, placeturret;
+    public InputAction move, placeturret;
 
     [Header("TurretVars")]
     private float ReloadTimerMax;
@@ -18,9 +18,12 @@ public class PlayerActor : StageActor
     private void Awake()
     {
         PlayerInputActions = new PiaMainControls();
+
+        Activate();
     }
-    private void OnEnable()
+    public override void OnEnable()
     {
+        base.OnEnable();
         move = PlayerInputActions.MainMap.PlayerMovement;
         placeturret = PlayerInputActions.MainMap.PlaceTurret;
         move.Enable();
@@ -39,12 +42,6 @@ public class PlayerActor : StageActor
 
     }
 
-    private void FixedUpdate()
-    {
-        Vector2 v = move.ReadValue<Vector2>();
-        Debug.Log(v);
-    }
-
 
     public override void Setup()
     {
@@ -53,9 +50,73 @@ public class PlayerActor : StageActor
     public override void Activate()
     {
         base.Activate();
+        ChangeState(new PlayerState_Normal());
     }
     public override void Die()
     {
         base.Die();
     }
+}
+
+public class PlayerState_Frozen: ActorStatesAbstractClass
+{
+    public override void OnEnterState(StageActor _cont)
+    {
+        
+    }   
+    public override void OnExitState(StageActor _cont)
+    {
+        
+    }   
+    public override void OnUpdateState(StageActor _cont)
+    {
+
+    }   
+}
+public class PlayerState_Normal: ActorStatesAbstractClass
+{
+    public override void OnEnterState(StageActor _cont)
+    {
+        
+    }   
+    public override void OnExitState(StageActor _cont)
+    {
+
+    }   
+    public override void OnUpdateState(StageActor _cont)
+    {
+        PlayerActor pa = (PlayerActor)_cont;
+        Vector2 v = pa.move.ReadValue<Vector2>();
+        pa.gameObject.transform.position += new Vector3(v.x,0,v.y) * (pa.CurrentSpeed/100);
+    }   
+}
+public class PlayerState_Dead: ActorStatesAbstractClass
+{
+    public override void OnEnterState(StageActor _cont)
+    {
+        
+    }   
+    public override void OnExitState(StageActor _cont)
+    {
+        
+    }   
+    public override void OnUpdateState(StageActor _cont)
+    {
+
+    }   
+}
+public class PlayerState_Pause: ActorStatesAbstractClass
+{
+    public override void OnEnterState(StageActor _cont)
+    {
+        
+    }   
+    public override void OnExitState(StageActor _cont)
+    {
+        
+    }   
+    public override void OnUpdateState(StageActor _cont)
+    {
+
+    }   
 }
