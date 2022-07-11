@@ -6,6 +6,7 @@ public class StageActor : MonoBehaviour
 {
     [SerializeField]protected BoxCollider _collider;
     public ActorDataScriptableObject ActorData;
+    public GameObject ActorArtContainer;
 
     public ActorStatesAbstractClass CurrentStateClass;
 
@@ -37,7 +38,7 @@ public class StageActor : MonoBehaviour
     }
     public virtual void Activate()
     {
-
+        ActorArtContainer.SetActive(true);
     }
     public virtual void Die()
     {

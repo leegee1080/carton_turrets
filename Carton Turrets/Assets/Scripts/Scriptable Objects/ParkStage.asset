@@ -16,8 +16,15 @@ MonoBehaviour:
   Desc: The First Level
   MapMaxX: 100
   MapMaxY: 100
+  StartingLocation:
+    Object: {fileID: 6074885723609033330, guid: cb60e67dad8bf5444807244b6f58d94d, type: 3}
+    LocationX: 50
+    LocationY: 50
+  ImportantLocations: []
   GridSpacing: 5
   GridObjects:
   - SpawnableGO: {fileID: 6074885723609033330, guid: ed4db2a9cd21da1498eb8159e9081754, type: 3}
-    AmountToPool: 20
+    AmountToPool: 16
+  - SpawnableGO: {fileID: 6074885723609033330, guid: 39d30dbc726511140bb6048709fab95f, type: 3}
+    AmountToPool: 4
   ScoreMulti: 1
