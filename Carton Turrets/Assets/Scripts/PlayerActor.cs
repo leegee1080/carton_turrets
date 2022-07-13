@@ -18,6 +18,8 @@ public class PlayerActor : StageActor
     [Header("View Vars")]
     public float ViewDistance;
     
+    [Header("Phys Vars")]
+    public Rigidbody rb;
 
     private void Awake()
     {
@@ -67,8 +69,22 @@ public class PlayerActor : StageActor
         
         foreach (GridData item in query)
         {
-            item.GridObj = StageController.singlton.TilesObjectPooler.ActivateNextObject();
-            TileData SelectedTile = item.GridObj.GetComponent<TileData>();
+            TileData SelectedTile = null;
+
+            if(item.TileType != "")
+            {
+                item.GridObj = StageController.singlton.TilePoolsDict[item.TileType].ActivateNextObject();
+                SelectedTile = item.GridObj.GetComponent<TileData>();
+            }
+            else
+            {
+                int randIndex = Random.Range(0, StageController.singlton.TileProbabilityList.Count);
+                item.GridObj = StageController.singlton.TilePoolsDict[StageController.singlton.TileProbabilityList[randIndex]].ActivateNextObject();
+                // item.GridObj = StageController.singlton.TilesObjectPooler.ActivateNextObject();
+                SelectedTile = item.GridObj.GetComponent<TileData>();
+                item.TileType = SelectedTile.TileTypeTag;
+            }
+
             StageController.singlton.GridArray[SelectedTile.CurrentX,SelectedTile.CurrentY].GridObj = null;
             SelectedTile.CurrentX = item.X;
             SelectedTile.CurrentY = item.Y;
@@ -105,8 +121,10 @@ public class PlayerState_Normal: ActorStatesAbstractClass
     public override void OnUpdateState(StageActor _cont)
     {
         PlayerActor pa = (PlayerActor)_cont;
-        Vector2 v = pa.move.ReadValue<Vector2>();
-        pa.gameObject.transform.position += new Vector3(v.x,0,v.y) * (pa.CurrentSpeed/100);
+        Vector2 v = pa.move.ReadValue<Vector2>() * pa.CurrentSpeed;
+        // pa.rb.MovePosition(pa.rb.position + (new Vector3(v.x, 0, v.y) * (pa.CurrentSpeed) * Time.fixedDeltaTime));
+        pa.rb.velocity = new Vector3(v.x, 0, v.y);
+        // pa.gameObject.transform.position += new Vector3(v.x,0,v.y) * (pa.CurrentSpeed/100);
         pa.CheckMapTiles();
     }   
 }

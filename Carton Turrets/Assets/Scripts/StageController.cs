@@ -17,12 +17,12 @@ public class GridData
     public int X;
     public int Y;
     public GameObject GridObj;
-    public string TileType;
+    public string TileType = "";
     public bool Locked;
     public float ActualX;
     public float ActualY;
 
-    public override string ToString() => $"({X}, {Y}) GameObject: {GridObj} ({ActualX}, {ActualY})";
+    public override string ToString() => $"({X}, {Y}) | GameObject: {GridObj} | TileType {TileType} | ({ActualX}, {ActualY})";
 }
 
 public class StageController : MonoBehaviour
@@ -35,6 +35,9 @@ public class StageController : MonoBehaviour
 
     [SerializeField]private GameObject PoolTilesContainer;
     public ObjectPooler TilesObjectPooler;
+    public List<string> TileProbabilityList = new List<string>();
+    public Dictionary<string, ObjectPooler> TilePoolsDict = new Dictionary<string, ObjectPooler>();
+
 
     private void Awake() => singlton = this;
 
@@ -59,6 +62,20 @@ public class StageController : MonoBehaviour
     //     }
     // }
 
+    void OnGUI()
+    {
+        if (GUI.Button(new Rect(10, 10, 300, 200), "Print Grid"))
+        {
+            for (int x = 0; x < GridArray.GetLength(0); x++)
+            {
+                for (int y = 0; y < GridArray.GetLength(1); y++)
+                {
+                    print(GridArray[x,y]);
+                }
+            }
+        }
+    }
+
     private void GridSetup()
     {
         GridArray = new GridData[CurrentStage.MapMaxX, CurrentStage.MapMaxY];
@@ -75,7 +92,11 @@ public class StageController : MonoBehaviour
                     {
                         if(item.LocationX == x && item.LocationY == y)
                         {
-                            GridArray[x,y].GridObj = item.Object;
+                            GameObject NewTile = Instantiate(item.Object, new Vector3(GridArray[x,y].ActualX, 0, GridArray[x,y].ActualY), Quaternion.identity, this.transform);
+                            GridArray[x,y].GridObj = NewTile;
+                            GridArray[x,y].TileType = NewTile.GetComponent<TileData>().TileTypeTag;
+                            NewTile.GetComponent<TileData>().CurrentX = x;
+                            NewTile.GetComponent<TileData>().CurrentY = y;
                         }
                     }
                 }
@@ -84,17 +105,18 @@ public class StageController : MonoBehaviour
     }
     private void StageObjectPoolsSetup()
     {
-        if(CurrentStage.GridObjects.Length > 1)
+        // TilesObjectPooler = new ObjectPooler(CurrentStage.GridObjects[0].SpawnableGO,CurrentStage.GridObjects[0].AmountToPool, PoolTilesContainer, true);
+        for (int i = 0; i < CurrentStage.GridObjects.Length; i++)
         {
-            TilesObjectPooler = new ObjectPooler(CurrentStage.GridObjects[0].SpawnableGO,CurrentStage.GridObjects[0].AmountToPool, PoolTilesContainer, true);
-            for (int i = 1; i < CurrentStage.GridObjects.Length; i++)
+            for (int l = 0; l < CurrentStage.GridObjects[i].AmountToPool; l++)
             {
-                TilesObjectPooler.PoolMoreOjects(CurrentStage.GridObjects[i].SpawnableGO, CurrentStage.GridObjects[i].AmountToPool);
+                TileProbabilityList.Add(CurrentStage.GridObjects[i].SpawnableGO.GetComponent<TileData>().TileTypeTag);
             }
-        }
-        else
-        {
-            TilesObjectPooler = new ObjectPooler(CurrentStage.GridObjects[0].SpawnableGO,CurrentStage.GridObjects[0].AmountToPool, PoolTilesContainer, false);
+            
+            // TilesObjectPooler.PoolMoreOjects(CurrentStage.GridObjects[i].SpawnableGO, CurrentStage.GridObjects[i].AmountToPool);
+
+            TilePoolsDict[CurrentStage.GridObjects[i].SpawnableGO.GetComponent<TileData>().TileTypeTag] 
+                = new ObjectPooler(CurrentStage.GridObjects[i].SpawnableGO,CurrentStage.GridObjects[i].AmountToPool, PoolTilesContainer, false);
         }
     }
     private void PlayerSetup()
