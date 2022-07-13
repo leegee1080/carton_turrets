@@ -62,19 +62,19 @@ public class StageController : MonoBehaviour
     //     }
     // }
 
-    void OnGUI()
-    {
-        if (GUI.Button(new Rect(10, 10, 300, 200), "Print Grid"))
-        {
-            for (int x = 0; x < GridArray.GetLength(0); x++)
-            {
-                for (int y = 0; y < GridArray.GetLength(1); y++)
-                {
-                    print(GridArray[x,y]);
-                }
-            }
-        }
-    }
+    // void OnGUI()
+    // {
+    //     if (GUI.Button(new Rect(10, 10, 300, 200), "Print Grid"))
+    //     {
+    //         for (int x = 0; x < GridArray.GetLength(0); x++)
+    //         {
+    //             for (int y = 0; y < GridArray.GetLength(1); y++)
+    //             {
+    //                 print(GridArray[x,y]);
+    //             }
+    //         }
+    //     }
+    // }
 
     private void GridSetup()
     {
