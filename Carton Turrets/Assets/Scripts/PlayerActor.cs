@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Linq;
 
 public class PlayerActor : StageActor
 {
@@ -13,13 +14,16 @@ public class PlayerActor : StageActor
     public TurretScriptableObject StartingTurret;
     public TurretUpgradeScriptableObject[] CurrentTurretUpgrades;
     public Turret CurrentTurret;
+
+    [Header("View Vars")]
+    public float ViewDistance;
     
+    [Header("Phys Vars")]
+    public Rigidbody rb;
 
     private void Awake()
     {
         PlayerInputActions = new PiaMainControls();
-
-        Activate();
     }
     public override void OnEnable()
     {
@@ -56,6 +60,37 @@ public class PlayerActor : StageActor
     {
         base.Die();
     }
+
+    public void CheckMapTiles()
+    {
+        IEnumerable query = from GridData gd in StageController.singlton.GridArray  
+            where Vector3.Distance(new Vector3(gd.ActualX, 0, gd.ActualY), this.gameObject.transform.position) < ViewDistance && gd.Locked == false && gd.GridObj == null
+            select gd;
+        
+        foreach (GridData item in query)
+        {
+            TileData SelectedTile = null;
+
+            if(item.TileType != "")
+            {
+                item.GridObj = StageController.singlton.TilePoolsDict[item.TileType].ActivateNextObject();
+                SelectedTile = item.GridObj.GetComponent<TileData>();
+            }
+            else
+            {
+                int randIndex = Random.Range(0, StageController.singlton.TileProbabilityList.Count);
+                item.GridObj = StageController.singlton.TilePoolsDict[StageController.singlton.TileProbabilityList[randIndex]].ActivateNextObject();
+                // item.GridObj = StageController.singlton.TilesObjectPooler.ActivateNextObject();
+                SelectedTile = item.GridObj.GetComponent<TileData>();
+                item.TileType = SelectedTile.TileTypeTag;
+            }
+
+            StageController.singlton.GridArray[SelectedTile.CurrentX,SelectedTile.CurrentY].GridObj = null;
+            SelectedTile.CurrentX = item.X;
+            SelectedTile.CurrentY = item.Y;
+            item.GridObj.transform.position = new Vector3(item.ActualX, 0, item.ActualY);
+        }
+    }
 }
 
 public class PlayerState_Frozen: ActorStatesAbstractClass
@@ -86,8 +121,11 @@ public class PlayerState_Normal: ActorStatesAbstractClass
     public override void OnUpdateState(StageActor _cont)
     {
         PlayerActor pa = (PlayerActor)_cont;
-        Vector2 v = pa.move.ReadValue<Vector2>();
-        pa.gameObject.transform.position += new Vector3(v.x,0,v.y) * (pa.CurrentSpeed/100);
+        Vector2 v = pa.move.ReadValue<Vector2>() * pa.CurrentSpeed;
+        // pa.rb.MovePosition(pa.rb.position + (new Vector3(v.x, 0, v.y) * (pa.CurrentSpeed) * Time.fixedDeltaTime));
+        pa.rb.velocity = new Vector3(v.x, 0, v.y);
+        // pa.gameObject.transform.position += new Vector3(v.x,0,v.y) * (pa.CurrentSpeed/100);
+        pa.CheckMapTiles();
     }   
 }
 public class PlayerState_Dead: ActorStatesAbstractClass

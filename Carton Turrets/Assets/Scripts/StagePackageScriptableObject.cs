@@ -11,6 +11,14 @@ public class StagePackageGridObject //these are meant to be 5x5 tile sections
     public int AmountToPool;
 }
 
+[Serializable]
+public class StagePOI
+{
+    public GameObject Object;
+    public int LocationX;
+    public int LocationY;
+}
+
 [CreateAssetMenu(fileName = "New Stage", menuName = "Scriptable Objects/New Stage")]
 public class StagePackageScriptableObject : ScriptableObject
 {
@@ -20,6 +28,9 @@ public class StagePackageScriptableObject : ScriptableObject
     [Header("Map Vars")]
     public int MapMaxX;
     public int MapMaxY;
+
+    public StagePOI StartingLocation;
+    public StagePOI[] ImportantLocations;
     public int GridSpacing;
     public StagePackageGridObject[] GridObjects;
     [Header("Reward Vars")]
