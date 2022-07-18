@@ -17,6 +17,9 @@ public class PlayerActor : StageActor
 
     [Header("View Vars")]
     public float ViewDistance;
+    public Vector3 LastViewInput;
+
+    public Vector3 LastPos;
     
     [Header("Phys Vars")]
     public Rigidbody rb;
@@ -122,10 +125,16 @@ public class PlayerState_Normal: ActorStatesAbstractClass
     {
         PlayerActor pa = (PlayerActor)_cont;
         Vector2 v = pa.move.ReadValue<Vector2>() * pa.CurrentSpeed;
-        // pa.rb.MovePosition(pa.rb.position + (new Vector3(v.x, 0, v.y) * (pa.CurrentSpeed) * Time.fixedDeltaTime));
+
         pa.rb.velocity = new Vector3(v.x, 0, v.y);
-        // pa.gameObject.transform.position += new Vector3(v.x,0,v.y) * (pa.CurrentSpeed/100);
-        pa.CheckMapTiles();
+
+        if(pa.transform.position != pa.LastPos)
+        {
+            pa.LastViewInput = Vector3.Normalize(pa.transform.position - pa.LastPos);
+            pa.CheckMapTiles();
+            pa.LastPos = pa.transform.position;
+        }
+
     }   
 }
 public class PlayerState_Dead: ActorStatesAbstractClass

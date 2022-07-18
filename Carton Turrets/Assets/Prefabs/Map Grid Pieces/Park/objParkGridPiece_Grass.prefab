@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TileTypeTag: plain
+  SpawnBreakables: 1
   CurrentX: 0
   CurrentY: 0
 --- !u!1001 &15394901715206388

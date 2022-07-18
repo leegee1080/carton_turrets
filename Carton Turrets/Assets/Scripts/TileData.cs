@@ -5,5 +5,7 @@ using UnityEngine;
 public class TileData : MonoBehaviour
 {
     public string TileTypeTag;
+
+    public bool SpawnBreakables;
     public int CurrentX,CurrentY;
 }
