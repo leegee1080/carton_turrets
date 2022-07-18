@@ -124,6 +124,8 @@ MonoBehaviour:
   - {fileID: 2763947975207344515}
   - {fileID: 4627381178836284080}
   - {fileID: 5141198468916096127}
+  _useInputArray: 1
+  _hideOnAwake: 0
 --- !u!1001 &15394901715206388
 PrefabInstance:
   m_ObjectHideFlags: 0
