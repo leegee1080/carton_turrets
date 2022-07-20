@@ -169,8 +169,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentStage: {fileID: 11400000, guid: 189577f8d4b4a314b8ec357b991a41f0, type: 2}
   Player: {fileID: 1555916284}
-  PoolTilesContainer: {fileID: 104405512}
   TileProbabilityList: []
+  TurretRequester: {fileID: 0}
+  _poolTilesContainer: {fileID: 104405512}
+  _poolTurretContainer: {fileID: 1271456188}
+  _genericTurret: {fileID: 8903252950405436271, guid: 2ab11beef16bf3a43b78bc9aa3544b85, type: 3}
 --- !u!1 &104405512
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,8 +677,8 @@ MonoBehaviour:
   CurrentHealth: 0
   move:
     m_Name: Move
-    m_Type: 0
-    m_ExpectedControlType: 
+    m_Type: 1
+    m_ExpectedControlType: Button
     m_Id: bfd32a66-4574-411b-bffc-5512ba31678a
     m_Processors: 
     m_Interactions: 
@@ -690,9 +693,9 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  turretPlaceOffset: 0.5
   StartingTurret: {fileID: 0}
   CurrentTurretUpgrades: []
-  CurrentTurret: {fileID: 0}
   ViewDistance: 8
   LastViewInput: {x: 0, y: 0, z: 0}
   LastPos: {x: 0, y: 0, z: 0}

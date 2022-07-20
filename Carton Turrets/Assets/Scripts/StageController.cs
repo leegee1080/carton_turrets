@@ -33,10 +33,20 @@ public class StageController : MonoBehaviour
     public GridData[,] GridArray;
     public PlayerActor Player;
 
-    [SerializeField]private GameObject PoolTilesContainer;
-    public ObjectPooler TilesObjectPooler;
+    
+    
     public List<string> TileProbabilityList = new List<string>();
+    [Header("Turret Vars")]
+    public PlayerActor TurretRequester;
+
+    [Header("ObjectPools")]
+    [SerializeField]private GameObject _poolTilesContainer;
+    public ObjectPooler TilesObjectPooler;
     public Dictionary<string, ObjectPooler> TilePoolsDict = new Dictionary<string, ObjectPooler>();
+    [SerializeField]private GameObject _poolTurretContainer;
+    public ObjectPooler TurretsObjectPooler;
+    [SerializeField] private GameObject _genericTurret;
+
 
 
     private void Awake() => singlton = this;
@@ -48,6 +58,15 @@ public class StageController : MonoBehaviour
         GridSetup();
         StageObjectPoolsSetup();
         PlayerSetup();
+    }
+
+    public void PlaceTurret(PlayerActor reqester, Vector3 loc, Vector3 dir)
+    {
+        TurretRequester = reqester;
+
+        GameObject tTurret = TurretsObjectPooler.ActivateNextObject();
+        tTurret.transform.position = loc;
+        tTurret.transform.rotation = Quaternion.LookRotation(dir);
     }
 
     // void OnDrawGizmosSelected()
@@ -105,6 +124,7 @@ public class StageController : MonoBehaviour
     }
     private void StageObjectPoolsSetup()
     {
+        //tile objects
         // TilesObjectPooler = new ObjectPooler(CurrentStage.GridObjects[0].SpawnableGO,CurrentStage.GridObjects[0].AmountToPool, PoolTilesContainer, true);
         for (int i = 0; i < CurrentStage.GridObjects.Length; i++)
         {
@@ -116,8 +136,11 @@ public class StageController : MonoBehaviour
             // TilesObjectPooler.PoolMoreOjects(CurrentStage.GridObjects[i].SpawnableGO, CurrentStage.GridObjects[i].AmountToPool);
 
             TilePoolsDict[CurrentStage.GridObjects[i].SpawnableGO.GetComponent<TileData>().TileTypeTag] 
-                = new ObjectPooler(CurrentStage.GridObjects[i].SpawnableGO,CurrentStage.GridObjects[i].AmountToPool, PoolTilesContainer, false);
+                = new ObjectPooler(CurrentStage.GridObjects[i].SpawnableGO,CurrentStage.GridObjects[i].AmountToPool + 10, _poolTilesContainer, false);
         }
+
+        //turret objects
+        TurretsObjectPooler = new ObjectPooler(_genericTurret, 30, _poolTurretContainer, false);
     }
     private void PlayerSetup()
     {
@@ -132,8 +155,9 @@ public class StageController : MonoBehaviour
         StartingGrid.TileType = StartingTile.GetComponent<TileData>().TileTypeTag;
         StartingTile.GetComponent<TileData>().CurrentX = StartingGrid.X;
         StartingTile.GetComponent<TileData>().CurrentY = StartingGrid.Y;
-
-        Player.Activate();
+        
+        Player.Setup();
+        Player.Activate();//this is just to test the player
     }
 
 
