@@ -10,10 +10,13 @@ public class PlayerActor : StageActor
     public InputAction move, placeturret;
 
     [Header("TurretVars")]
-    private float ReloadTimerMax;
+    [SerializeField]private float turretPlaceOffset;
+    private float _reloadTimerMax;
+    private float _reloadTime = 0;
+
     public TurretScriptableObject StartingTurret;
     public TurretUpgradeScriptableObject[] CurrentTurretUpgrades;
-    public Turret CurrentTurret;
+    // public Turret CurrentTurret;
 
     [Header("View Vars")]
     public float ViewDistance;
@@ -32,27 +35,33 @@ public class PlayerActor : StageActor
     {
         base.OnEnable();
         move = PlayerInputActions.MainMap.PlayerMovement;
-        placeturret = PlayerInputActions.MainMap.PlaceTurret;
         move.Enable();
-
+        placeturret = PlayerInputActions.MainMap.PlaceTurret;
+        placeturret.Enable();
         placeturret.performed += context => PlaceTurret(context);
     }
     private void OnDisable()
     {
         placeturret.performed -= context => PlaceTurret(context);
         move.Disable();
+        placeturret.Disable();
     }
 
 
     private void PlaceTurret(InputAction.CallbackContext context)
     {
-
+        if(_reloadTime > 0){return;}
+        Debug.Log("Turret Placed");
+        StageController.singlton.PlaceTurret(this, gameObject.transform.position + (LastViewInput * turretPlaceOffset), LastViewInput*90);
     }
 
 
     public override void Setup()
     {
         base.Setup();
+        PlayerScriptableObject startingData = (PlayerScriptableObject)ActorData;
+        StartingTurret = startingData.TurretTemplate;
+        CurrentTurretUpgrades = startingData.StartingTurretUpgrades;
     }
     public override void Activate()
     {
