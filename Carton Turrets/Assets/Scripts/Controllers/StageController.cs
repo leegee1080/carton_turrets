@@ -36,17 +36,21 @@ public class StageController : MonoBehaviour
     
     
     public List<string> TileProbabilityList = new List<string>();
-    [Header("Turret Vars")]
-    public PlayerActor TurretRequester;
 
-    [Header("ObjectPools")]
+
+    [Header("TilePools")]
     [SerializeField]private GameObject _poolTilesContainer;
     public ObjectPooler TilesObjectPooler;
     public Dictionary<string, ObjectPooler> TilePoolsDict = new Dictionary<string, ObjectPooler>();
+
+    [Header("TurretPools")]
     [SerializeField]private GameObject _poolTurretContainer;
     public ObjectPooler TurretsObjectPooler;
     [SerializeField] private GameObject _genericTurret;
 
+    [Header("BulletPools")]
+    [SerializeField]private GameObject _poolBulletContainer;
+    public ObjectPooler TurretsBulletPooler;
 
 
     private void Awake() => singlton = this;
@@ -58,15 +62,6 @@ public class StageController : MonoBehaviour
         GridSetup();
         StageObjectPoolsSetup();
         PlayerSetup();
-    }
-
-    public void PlaceTurret(PlayerActor reqester, Vector3 loc, Vector3 dir)
-    {
-        TurretRequester = reqester;
-
-        GameObject tTurret = TurretsObjectPooler.ActivateNextObject();
-        tTurret.transform.position = loc;
-        tTurret.transform.rotation = Quaternion.LookRotation(dir);
     }
 
     // void OnDrawGizmosSelected()
@@ -94,6 +89,10 @@ public class StageController : MonoBehaviour
     //         }
     //     }
     // }
+    public void PoolBullets()
+    {
+        
+    }
 
     private void GridSetup()
     {
