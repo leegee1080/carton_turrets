@@ -12,7 +12,7 @@ public class PlayerActor : StageActor
     [Header("TurretVars")]
     [SerializeField]private float turretPlaceOffset;
     private float _reloadTimerMax;
-    private float _reloadTime = 0;
+    private bool _turretReloaded = true;
 
     public TurretScriptableObject StartingTurret;
     public TurretUpgradeScriptableObject[] CurrentTurretUpgrades;
@@ -50,9 +50,19 @@ public class PlayerActor : StageActor
 
     private void PlaceTurret(InputAction.CallbackContext context)
     {
-        if(_reloadTime > 0){return;}
-        Debug.Log("Turret Placed");
-        StageController.singlton.PlaceTurret(this, gameObject.transform.position + (LastViewInput * turretPlaceOffset), LastViewInput*90);
+        if(!_turretReloaded){return;}
+
+        GameObject tTurret =  StageController.singlton.TurretsObjectPooler.ActivateNextObject(this);
+        tTurret.transform.position = gameObject.transform.position + (LastViewInput * turretPlaceOffset);
+        tTurret.transform.rotation = Quaternion.LookRotation(LastViewInput*90);
+        // StageController.singlton.PlaceTurret(this, gameObject.transform.position + (LastViewInput * turretPlaceOffset), LastViewInput*90);
+        _turretReloaded = false;
+        IEnumerator Reload()
+        {
+            yield return new WaitForSeconds(_reloadTimerMax);
+            _turretReloaded = true;
+        }
+        StartCoroutine(Reload());
     }
 
 
@@ -62,6 +72,7 @@ public class PlayerActor : StageActor
         PlayerScriptableObject startingData = (PlayerScriptableObject)ActorData;
         StartingTurret = startingData.TurretTemplate;
         CurrentTurretUpgrades = startingData.StartingTurretUpgrades;
+        _reloadTimerMax = startingData.MaxTurretReloadTime;
     }
     public override void Activate()
     {
@@ -85,13 +96,13 @@ public class PlayerActor : StageActor
 
             if(item.TileType != "")
             {
-                item.GridObj = StageController.singlton.TilePoolsDict[item.TileType].ActivateNextObject();
+                item.GridObj = StageController.singlton.TilePoolsDict[item.TileType].ActivateNextObject(this);
                 SelectedTile = item.GridObj.GetComponent<TileData>();
             }
             else
             {
                 int randIndex = Random.Range(0, StageController.singlton.TileProbabilityList.Count);
-                item.GridObj = StageController.singlton.TilePoolsDict[StageController.singlton.TileProbabilityList[randIndex]].ActivateNextObject();
+                item.GridObj = StageController.singlton.TilePoolsDict[StageController.singlton.TileProbabilityList[randIndex]].ActivateNextObject(this);
                 // item.GridObj = StageController.singlton.TilesObjectPooler.ActivateNextObject();
                 SelectedTile = item.GridObj.GetComponent<TileData>();
                 item.TileType = SelectedTile.TileTypeTag;

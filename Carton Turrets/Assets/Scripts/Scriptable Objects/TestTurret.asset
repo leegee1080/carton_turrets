@@ -16,6 +16,10 @@ MonoBehaviour:
   Desc: Turret for testing.
   MaxHealth: 0
   MaxSpeed: 0
+  StartingLifeTime: 5
+  StartingReloadTime: 1
+  StartingAmmo: 10
+  StartingDamage: 1
   Icon: {fileID: 21300000, guid: b382c41f6a534374390fe6d5e6e82ca8, type: 3}
   TurretModel: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   TurretMaterial: {fileID: -4011462587947032733, guid: 4ec88f6bce1a8204fa0066189c69c948, type: 3}

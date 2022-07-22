@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [Serializable]
- public class ActivatePooledObject : UnityEvent{}
+ public class ActivatePooledObject : UnityEvent<MonoBehaviour>{}
 
 [Serializable]
 public class PoolableObject : MonoBehaviour

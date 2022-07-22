@@ -28,18 +28,18 @@ public class ObjectPooler
         Container = parent;
     }
 
-    public GameObject ActivateNextObject()
+    public GameObject ActivateNextObject(MonoBehaviour ObjectCaller)
     {
         GameObject pickedGO = Pool[index];
         index +=1;
         if(index >= Pool.Length){index =0;}
-        pickedGO.GetComponent<PoolableObject>().ActivateObjectFunc.Invoke();
+        pickedGO.GetComponent<PoolableObject>().ActivateObjectFunc.Invoke(ObjectCaller);
         return pickedGO;
     }
-    public GameObject PickNextObject(int index)
+    public GameObject PickNextObject(int index, MonoBehaviour ObjectCaller = default)
     {
         if(index >= Pool.Length || index < 0){Debug.LogWarning("index parameter is not correct: " + index + ". Setting index to 0."); return Pool[0];}
-        Pool[index].GetComponent<PoolableObject>().ActivateObjectFunc.Invoke();
+        Pool[index].GetComponent<PoolableObject>().ActivateObjectFunc.Invoke(ObjectCaller);
         return Pool[index];
     }
     public void PoolMoreOjects(GameObject obj, int amount)

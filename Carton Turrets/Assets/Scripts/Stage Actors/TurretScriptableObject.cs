@@ -6,6 +6,12 @@ using UnityEngine;
 public class TurretScriptableObject : ActorDataScriptableObject
 {
 
+    [Header("Turret Starting Stats")]
+    public float StartingLifeTime;
+    public float StartingReloadTime;
+    public int StartingAmmo;
+    public float StartingDamage;
+
     [Header("Turret Art")]
     public Sprite Icon;
     public Mesh TurretModel;
