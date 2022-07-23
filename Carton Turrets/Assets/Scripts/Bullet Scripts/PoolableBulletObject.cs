@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PoolableBulletObject : MonoBehaviour
 {
+    [SerializeField] Rigidbody _rb;
+
     public float LifeTime;
     public float Damage;
     public float Speed;
@@ -12,12 +14,17 @@ public class PoolableBulletObject : MonoBehaviour
 
     public void Fire(MonoBehaviour Turret)
     {
-        Fired = true;
         Turret tu = (Turret)Turret;
+
+        Fired = true;
     }
 
     private void FixedUpdate()
     {
         if(!Fired){return;}
+        if(LifeTime <=0){Fired = false; this.gameObject.SetActive(false);}
+
+        _rb.velocity = new Vector3(0, 0, Speed);
+        LifeTime -= Time.fixedDeltaTime;
     }
 }

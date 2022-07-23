@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 8903252950405436256}
   - component: {fileID: 8903252950405436257}
   m_Layer: 0
-  m_Name: Turret
+  m_Name: BulletTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,21 +238,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 8903252950350368671}
-  ActorData: {fileID: 11400000, guid: 58604f3b459dd8c46bc9395e05bcbed1, type: 2}
   ActorArtContainer: {fileID: 8903252950350368669}
   CurrentSpeed: 0
   CurrentHealth: 0
-  LifeTime: 0
-  ReloadTime: 0
+  TurretData: {fileID: 11400000, guid: 60a671292fc0f98488533a657416f678, type: 2}
+  TLifeTime: 5
+  ReloadTime: 10
   ReloadCountdown: 0
-  Ammo: 0
-  Damage: 0
+  Ammo: 5
+  Damage: 1
+  ControllingActor: {fileID: 0}
   _turretArtObject: {fileID: 8903252950350368669}
-  _turretPackage:
-    TurretTemplate: {fileID: 0}
-    TurretUpgrades: []
-  _mR: {fileID: 8903252950350368670}
-  _mF: {fileID: 8903252950350368657}
 --- !u!114 &8903252950405436257
 MonoBehaviour:
   m_ObjectHideFlags: 0

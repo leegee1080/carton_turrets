@@ -17,5 +17,4 @@ MonoBehaviour:
   MaxHealth: 3
   MaxSpeed: 3
   MaxTurretReloadTime: 1
-  TurretTemplate: {fileID: 11400000, guid: 58604f3b459dd8c46bc9395e05bcbed1, type: 2}
-  StartingTurretUpgrades: []
+  StartingTurret: {fileID: 11400000, guid: 60a671292fc0f98488533a657416f678, type: 2}

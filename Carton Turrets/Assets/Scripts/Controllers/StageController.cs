@@ -43,10 +43,10 @@ public class StageController : MonoBehaviour
     public ObjectPooler TilesObjectPooler;
     public Dictionary<string, ObjectPooler> TilePoolsDict = new Dictionary<string, ObjectPooler>();
 
-    [Header("TurretPools")]
-    [SerializeField]private GameObject _poolTurretContainer;
-    public ObjectPooler TurretsObjectPooler;
-    [SerializeField] private GameObject _genericTurret;
+    // [Header("TurretPools")]
+    // [SerializeField]private GameObject _poolTurretContainer;
+    // public ObjectPooler TurretsObjectPooler;
+    // [SerializeField] private GameObject _genericTurret;
 
     [Header("BulletPools")]
     [SerializeField]private GameObject _poolBulletContainer;
@@ -89,10 +89,6 @@ public class StageController : MonoBehaviour
     //         }
     //     }
     // }
-    public void PoolBullets()
-    {
-        
-    }
 
     private void GridSetup()
     {
@@ -139,7 +135,7 @@ public class StageController : MonoBehaviour
         }
 
         //turret objects
-        TurretsObjectPooler = new ObjectPooler(_genericTurret, 30, _poolTurretContainer, false);
+        // TurretsObjectPooler = new ObjectPooler(_genericTurret, 30, _poolTurretContainer, false);
     }
     private void PlayerSetup()
     {
