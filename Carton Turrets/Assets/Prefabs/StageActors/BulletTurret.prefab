@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1387306995291514803}
   - component: {fileID: 7244059722559761576}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,12 +242,15 @@ MonoBehaviour:
   CurrentSpeed: 0
   CurrentHealth: 0
   TurretData: {fileID: 11400000, guid: 60a671292fc0f98488533a657416f678, type: 2}
-  TLifeTime: 5
-  ReloadTime: 10
+  _barrel: {fileID: 3074358141296015960}
+  ControllingActor: {fileID: 0}
+  LifeTime: 0
+  ReloadTime: 1
   ReloadCountdown: 0
   Ammo: 5
-  Damage: 1
-  ControllingActor: {fileID: 0}
+  BLifeTime: 0
+  BDamage: 0
+  BSpeed: 0
   _turretArtObject: {fileID: 8903252950350368669}
 --- !u!114 &8903252950405436257
 MonoBehaviour:

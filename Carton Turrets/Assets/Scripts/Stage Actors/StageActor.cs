@@ -23,7 +23,7 @@ public class StageActor : MonoBehaviour
 
     public virtual void OnEnable()
     {
-        Setup();
+        // Setup();
     }
 
     private void FixedUpdate()

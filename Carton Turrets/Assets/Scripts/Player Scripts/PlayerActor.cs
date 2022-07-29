@@ -12,16 +12,17 @@ public class PlayerActor : StageActor
 
     [Header("TurretVars")]
     public string[] CurrentTurretArray = new string[3]{"", "", ""};
+    public Dictionary<string, TurretScriptableObject> TurretsEquipped = new Dictionary<string, TurretScriptableObject>();
     public int CurrentTurretIndex;
     [SerializeField]private GameObject _turretContainer;
     [SerializeField]private float turretPlaceOffset;
     private float _reloadTimerMax;
     private bool _turretReloaded = true;
-    public Dictionary<string, ObjectPooler> Turrets = new Dictionary<string, ObjectPooler>();
+    public Dictionary<string, ObjectPooler> TurretObjectPools = new Dictionary<string, ObjectPooler>();
 
     [Header("Bullet Vars")]
     [SerializeField]private GameObject _bulletContainer;
-    public Dictionary<string, ObjectPooler> Bullets = new Dictionary<string, ObjectPooler>();
+    public Dictionary<string, ObjectPooler> BulletObjectPools = new Dictionary<string, ObjectPooler>();
 
     [Header("View Vars")]
     public float ViewDistance;
@@ -56,11 +57,10 @@ public class PlayerActor : StageActor
     {
         if(!_turretReloaded){return;}
 
-        GameObject tTurret =  Turrets[CurrentTurretArray[CurrentTurretIndex]].ActivateNextObject(this);
+        GameObject tTurret =  TurretObjectPools[CurrentTurretArray[CurrentTurretIndex]].ActivateNextObject(this);
         tTurret.transform.position = gameObject.transform.position + (LastViewInput * turretPlaceOffset);
         tTurret.transform.rotation = Quaternion.LookRotation(LastViewInput*90);
-        tTurret.GetComponent<Turret>().ControllingActor = this;
-        tTurret.GetComponent<Turret>().name = CurrentTurretArray[CurrentTurretIndex];
+
 
         CurrentTurretIndex+=1;
         if(CurrentTurretIndex > 2 || CurrentTurretArray[CurrentTurretIndex] == ""){CurrentTurretIndex = 0;}
@@ -74,18 +74,30 @@ public class PlayerActor : StageActor
         StartCoroutine(Reload());
     }
 
+    public bool EquipTurret(TurretScriptableObject newTurret, int slot)
+    {
+        if(CurrentTurretArray[slot] != ""){return false;}
+        CurrentTurretArray[slot] = newTurret.name;
+
+        TurretsEquipped[CurrentTurretArray[slot]] = newTurret;
+
+        TurretObjectPools[CurrentTurretArray[slot]] = new ObjectPooler(TurretsEquipped[CurrentTurretArray[slot]].TurretGameObject, TurretsEquipped[CurrentTurretArray[slot]].TurretAmountToPool, _turretContainer, false);
+        BulletObjectPools[CurrentTurretArray[slot]] = new ObjectPooler(TurretsEquipped[CurrentTurretArray[slot]].BulletGameObject, TurretsEquipped[CurrentTurretArray[slot]].BulletAmountToPool, _bulletContainer, false);
+
+
+        return true;    
+    }
+
 
     public override void Setup()
     {
         base.Setup();
         CurrentHealth = PlayerData.MaxHealth;
         CurrentSpeed = PlayerData.MaxSpeed;
-        Turrets[PlayerData.StartingTurret.name] = new ObjectPooler(PlayerData.StartingTurret.TurretGameObject, PlayerData.StartingTurret.TurretAmountToPool, _turretContainer, false);
-        Bullets[PlayerData.StartingTurret.name] = new ObjectPooler(PlayerData.StartingTurret.BulletGameObject, PlayerData.StartingTurret.BulletAmountToPool, _bulletContainer, false);
+        EquipTurret(PlayerData.StartingTurret, 0);
 
         _reloadTimerMax = PlayerData.MaxTurretReloadTime;
-        
-        CurrentTurretArray[0] = PlayerData.StartingTurret.name;
+
         CurrentTurretIndex = 0;
     }
     public override void Activate()

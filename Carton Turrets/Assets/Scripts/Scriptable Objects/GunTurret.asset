@@ -16,6 +16,13 @@ MonoBehaviour:
   Desc: Simple turret shoots forward.
   MaxHealth: 1
   MaxSpeed: 1
+  TLifeTime: 10
+  TReloadTime: 0.2
+  TAmmo: 10
+  ExploSize: 1
+  BLifeTime: 5
+  BDamage: 1
+  BSpeed: 10
   TurretAmountToPool: 10
   BulletAmountToPool: 30
   TurretGameObject: {fileID: 8903252950405436271, guid: 2ab11beef16bf3a43b78bc9aa3544b85, type: 3}

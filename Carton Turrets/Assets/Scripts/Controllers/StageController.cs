@@ -43,14 +43,6 @@ public class StageController : MonoBehaviour
     public ObjectPooler TilesObjectPooler;
     public Dictionary<string, ObjectPooler> TilePoolsDict = new Dictionary<string, ObjectPooler>();
 
-    // [Header("TurretPools")]
-    // [SerializeField]private GameObject _poolTurretContainer;
-    // public ObjectPooler TurretsObjectPooler;
-    // [SerializeField] private GameObject _genericTurret;
-
-    [Header("BulletPools")]
-    [SerializeField]private GameObject _poolBulletContainer;
-    public ObjectPooler TurretsBulletPooler;
 
 
     private void Awake() => singlton = this;

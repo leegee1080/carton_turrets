@@ -12,10 +12,17 @@ public class PoolableBulletObject : MonoBehaviour
 
     public bool Fired = false;
 
+    private void GrabInfoFromTurret(Turret t)
+    {
+        LifeTime = t.BLifeTime;
+        Damage = t.BDamage;
+        Speed = t.BSpeed;
+    }
+
     public void Fire(MonoBehaviour Turret)
     {
-        Turret tu = (Turret)Turret;
-
+        GrabInfoFromTurret((Turret)Turret);
+        _rb.gameObject.transform.localPosition = Vector3.zero;
         Fired = true;
     }
 
@@ -24,7 +31,7 @@ public class PoolableBulletObject : MonoBehaviour
         if(!Fired){return;}
         if(LifeTime <=0){Fired = false; this.gameObject.SetActive(false);}
 
-        _rb.velocity = new Vector3(0, 0, Speed);
+        _rb.velocity = transform.forward * Speed;
         LifeTime -= Time.fixedDeltaTime;
     }
 }
