@@ -8,20 +8,25 @@ public class TurretScriptableObject : ActorDataScriptableObject
     public float TLifeTime;
     public float TReloadTime;
     public int TAmmo;
-    public float ExploSize;
 
     [Header("Bullet Stats")]
     public float BLifeTime;
     public float BDamage;
     public float BSpeed;
 
+    [Header("Explo Stats")]
+    public float ELifeTime;
+    public float EDamage;
+    public float ESpeed;
+    public float ESize;
 
     [Header("Turret Vars")]
-
     public int TurretAmountToPool;
     public int BulletAmountToPool;
+    public int ExplosionAmountToPool;
     public GameObject TurretGameObject;
     public GameObject BulletGameObject;
+    public GameObject ExplosionGameObject;
 
     // [Header("Turret Art")]
     // public Sprite Icon;

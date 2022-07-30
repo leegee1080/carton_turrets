@@ -24,6 +24,10 @@ public class PlayerActor : StageActor
     [SerializeField]private GameObject _bulletContainer;
     public Dictionary<string, ObjectPooler> BulletObjectPools = new Dictionary<string, ObjectPooler>();
 
+    [Header("Explosion Vars")]
+    [SerializeField]private GameObject _explosionContainer;
+    public Dictionary<string, ObjectPooler> ExplosionObjectPools = new Dictionary<string, ObjectPooler>();
+
     [Header("View Vars")]
     public float ViewDistance;
     public Vector3 LastViewInput;
@@ -83,6 +87,7 @@ public class PlayerActor : StageActor
 
         TurretObjectPools[CurrentTurretArray[slot]] = new ObjectPooler(TurretsEquipped[CurrentTurretArray[slot]].TurretGameObject, TurretsEquipped[CurrentTurretArray[slot]].TurretAmountToPool, _turretContainer, false);
         BulletObjectPools[CurrentTurretArray[slot]] = new ObjectPooler(TurretsEquipped[CurrentTurretArray[slot]].BulletGameObject, TurretsEquipped[CurrentTurretArray[slot]].BulletAmountToPool, _bulletContainer, false);
+        ExplosionObjectPools[CurrentTurretArray[slot]] = new ObjectPooler(TurretsEquipped[CurrentTurretArray[slot]].ExplosionGameObject, TurretsEquipped[CurrentTurretArray[slot]].ExplosionAmountToPool, _explosionContainer, false);
 
 
         return true;    

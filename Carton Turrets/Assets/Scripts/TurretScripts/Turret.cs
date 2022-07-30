@@ -19,6 +19,12 @@ public class Turret : StageActor
     public float BDamage;
     public float BSpeed;
 
+    [Header("Explosion Stats")]
+    public float ELifeTime;
+    public float EDamage;
+    public float ESpeed;
+    public float ESize;
+
 
     [Header("Turret Art")]
     [SerializeField]GameObject _turretArtObject;
@@ -63,6 +69,14 @@ public class Turret : StageActor
         BLifeTime = ControllingActor.TurretsEquipped[TurretData.name].BLifeTime; 
         BDamage = ControllingActor.TurretsEquipped[TurretData.name].BDamage; 
         BSpeed = ControllingActor.TurretsEquipped[TurretData.name].BSpeed; 
+
+
+        ELifeTime = ControllingActor.TurretsEquipped[TurretData.name].ELifeTime; 
+        EDamage = ControllingActor.TurretsEquipped[TurretData.name].EDamage; 
+        ESpeed = ControllingActor.TurretsEquipped[TurretData.name].ESpeed; 
+        ESize = ControllingActor.TurretsEquipped[TurretData.name].ESize; 
+
+
         Setup();
     }
 
@@ -79,6 +93,9 @@ public class Turret : StageActor
     public override void Die()
     {
         base.Die();
+        GameObject explo = ControllingActor.ExplosionObjectPools[TurretData.name].ActivateNextObject(this);
+        explo.transform.position = _barrel.transform.position;
+        explo.transform.rotation = this.gameObject.transform.rotation;
         _turretArtObject.SetActive(false);
     }
 }
