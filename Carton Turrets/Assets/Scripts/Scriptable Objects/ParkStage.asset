@@ -14,6 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: The Park
   Desc: The First Level
+  Waves:
+  - SecondsThreshold: 5
+    Amount: 10
+    Spawned: 0
+  - SecondsThreshold: 10
+    Amount: 10
+    Spawned: 0
   MapMaxX: 100
   MapMaxY: 100
   StartingLocation:

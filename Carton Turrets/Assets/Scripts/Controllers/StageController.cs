@@ -27,6 +27,9 @@ public class GridData
 
 public class StageController : MonoBehaviour
 {
+    public StageState CurrentState = new StageState_Setup();
+    public float GameTime = 0;
+
     public static StageController singlton;
     public StagePackageScriptableObject CurrentStage;
 
@@ -43,6 +46,12 @@ public class StageController : MonoBehaviour
     public ObjectPooler TilesObjectPooler;
     public Dictionary<string, ObjectPooler> TilePoolsDict = new Dictionary<string, ObjectPooler>();
 
+    [Header("EnemyPools")]
+    public EnemySpawnWave[] WaveArray;
+    [SerializeField]private GameObject _genericEnemyGameObject;
+    [SerializeField]private GameObject _poolEnemyContainer;
+    [SerializeField]private int _enemiesToPool;
+    public ObjectPooler EnemyObjectPooler;
 
 
     private void Awake() => singlton = this;
@@ -50,10 +59,28 @@ public class StageController : MonoBehaviour
 
     private void Start()
     {
-        
         GridSetup();
         StageObjectPoolsSetup();
         PlayerSetup();
+
+        ChangeState(new StageState_Running());
+    }
+
+    public void ChangeState(StageState newState)
+    {
+        if(newState.name == CurrentState.name){Debug.Log("Attempt was made to change state to same current state"); return;}
+
+        CurrentState.OnExitState(this);
+
+        CurrentState = newState;
+
+        CurrentState.OnEnterState(this);
+
+    }
+
+    private void FixedUpdate()
+    {
+        CurrentState.OnUpdateState(this);
     }
 
     // void OnDrawGizmosSelected()
@@ -112,22 +139,20 @@ public class StageController : MonoBehaviour
     private void StageObjectPoolsSetup()
     {
         //tile objects
-        // TilesObjectPooler = new ObjectPooler(CurrentStage.GridObjects[0].SpawnableGO,CurrentStage.GridObjects[0].AmountToPool, PoolTilesContainer, true);
         for (int i = 0; i < CurrentStage.GridObjects.Length; i++)
         {
             for (int l = 0; l < CurrentStage.GridObjects[i].AmountToPool; l++)
             {
                 TileProbabilityList.Add(CurrentStage.GridObjects[i].SpawnableGO.GetComponent<TileData>().TileTypeTag);
             }
-            
-            // TilesObjectPooler.PoolMoreOjects(CurrentStage.GridObjects[i].SpawnableGO, CurrentStage.GridObjects[i].AmountToPool);
 
             TilePoolsDict[CurrentStage.GridObjects[i].SpawnableGO.GetComponent<TileData>().TileTypeTag] 
                 = new ObjectPooler(CurrentStage.GridObjects[i].SpawnableGO,CurrentStage.GridObjects[i].AmountToPool + 10, _poolTilesContainer, false);
         }
 
-        //turret objects
-        // TurretsObjectPooler = new ObjectPooler(_genericTurret, 30, _poolTurretContainer, false);
+        //enemy objects
+        WaveArray = (EnemySpawnWave[])CurrentStage.Waves.Clone();
+        EnemyObjectPooler = new ObjectPooler(_genericEnemyGameObject, _enemiesToPool, _poolEnemyContainer, false);
     }
     private void PlayerSetup()
     {
@@ -147,5 +172,67 @@ public class StageController : MonoBehaviour
         Player.Activate();//this is just to test the player
     }
 
+    public void CheckEnemySpawnWave()
+    {
 
+    }
+
+}
+
+public abstract class StageState
+{
+    public abstract string name{get;}
+    public virtual void OnEnterState(StageController _cont){}
+    public virtual void OnExitState(StageController _cont){}
+    public virtual void OnUpdateState(StageController _cont){}
+}
+
+public class StageState_Running: StageState
+{
+    public override string name {get {return "run";}}
+    public override void OnEnterState(StageController _cont)
+    {
+        
+    }   
+    public override void OnExitState(StageController _cont)
+    {
+        
+    }   
+    public override void OnUpdateState(StageController _cont)
+    {
+        _cont.GameTime += Time.fixedDeltaTime;
+        _cont.CheckEnemySpawnWave();
+    }   
+}
+public class StageState_Pause: StageState
+{
+    public override string name {get {return "pause";}}
+    public override void OnEnterState(StageController _cont)
+    {
+        
+    }   
+    public override void OnExitState(StageController _cont)
+    {
+        
+    }   
+    public override void OnUpdateState(StageController _cont)
+    {
+
+    }   
+}
+public class StageState_Setup: StageState
+{
+    public override string name {get {return "setup";}}
+    public override void OnEnterState(StageController _cont)
+    {
+        
+    }   
+    public override void OnExitState(StageController _cont)
+    {
+        
+    }   
+    public override void OnUpdateState(StageController _cont)
+    {
+
+    }   
 }
