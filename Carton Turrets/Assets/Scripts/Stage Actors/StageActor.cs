@@ -5,7 +5,7 @@ using UnityEngine;
 public class StageActor : MonoBehaviour
 {
     [SerializeField]protected BoxCollider _collider;
-    public ActorDataScriptableObject ActorData;
+    // public ActorDataScriptableObject ActorData;
     public GameObject ActorArtContainer;
 
     public ActorStatesAbstractClass CurrentStateClass;
@@ -23,7 +23,7 @@ public class StageActor : MonoBehaviour
 
     public virtual void OnEnable()
     {
-        Setup();
+        // Setup();
     }
 
     private void FixedUpdate()
@@ -33,8 +33,7 @@ public class StageActor : MonoBehaviour
 
     public virtual void Setup()
     {
-        CurrentHealth = ActorData.MaxHealth;
-        CurrentSpeed = ActorData.MaxSpeed;
+
     }
     public virtual void Activate()
     {

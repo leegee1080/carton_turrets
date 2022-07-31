@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b8ea5a4eda5b94c81a5b96cd80fbc2, type: 3}
+  m_Name: GunTurret
+  m_EditorClassIdentifier: 
+  name: GunTurret
+  Desc: Simple turret shoots forward.
+  MaxHealth: 1
+  MaxSpeed: 1
+  TLifeTime: 10
+  TReloadTime: 0.1
+  TAmmo: 30
+  BLifeTime: 1
+  BDamage: 1
+  BSpeed: 0.2
+  ELifeTime: 0.2
+  EDamage: 1
+  ESpeed: 1
+  ESize: 0.5
+  TurretAmountToPool: 10
+  BulletAmountToPool: 60
+  ExplosionAmountToPool: 10
+  TurretGameObject: {fileID: 8903252950405436271, guid: 2ab11beef16bf3a43b78bc9aa3544b85, type: 3}
+  BulletGameObject: {fileID: 741848558832750205, guid: 09ad2b3bca4baf0459660c3d383288ee, type: 3}
+  ExplosionGameObject: {fileID: 5925393004181974638, guid: 2c70c7a2558cc124c860571375f7c31f, type: 3}

@@ -8,8 +8,7 @@ public class PlayerScriptableObject : ActorDataScriptableObject
     [Header("Character Vars")]
     public float MaxTurretReloadTime;
 
-    public TurretScriptableObject TurretTemplate;
-    public TurretUpgradeScriptableObject[] StartingTurretUpgrades;
+    public TurretScriptableObject StartingTurret;
 
     // [Header("Character Art")]
     // public Sprite Icon;

@@ -9,7 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f656f96e451e1c0488833cef488591b2, type: 3}
-  m_Name: TestBullet
+  m_Script: {fileID: 11500000, guid: fd9b80f38c6d15e4f98dd17bbc500314, type: 3}
+  m_Name: TestEnemy
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 741848558832750205, guid: 09ad2b3bca4baf0459660c3d383288ee, type: 3}
+  name: Test Baddie
+  Desc: Test Baddie
+  MaxHealth: 10
+  MaxSpeed: 1
+  Sprite: {fileID: 21300000, guid: c9ce7cfcbaae312449366199f36d92b1, type: 3}
+  MaxDamage: 1

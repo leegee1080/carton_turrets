@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 9140685105884498302}
   - component: {fileID: 6567062585664913446}
   - component: {fileID: 1387306995291514803}
-  - component: {fileID: 7244059722559761576}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3074358141296015960}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0.366, z: 0.82000005}
+  m_LocalPosition: {x: 0, y: 0.366, z: 1.01}
   m_LocalScale: {x: 0.2627, y: 0.65674996, z: 0.65674996}
   m_Children: []
   m_Father: {fileID: 8903252950350368668}
@@ -82,20 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7244059722559761576
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3074358141296015960}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &8903252950350368669
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +189,7 @@ GameObject:
   - component: {fileID: 8903252950405436256}
   - component: {fileID: 8903252950405436257}
   m_Layer: 0
-  m_Name: Turret
+  m_Name: BulletTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -238,21 +223,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 8903252950350368671}
-  ActorData: {fileID: 11400000, guid: 58604f3b459dd8c46bc9395e05bcbed1, type: 2}
   ActorArtContainer: {fileID: 8903252950350368669}
   CurrentSpeed: 0
   CurrentHealth: 0
+  TurretData: {fileID: 11400000, guid: 60a671292fc0f98488533a657416f678, type: 2}
+  _barrel: {fileID: 3074358141296015960}
+  ControllingActor: {fileID: 0}
   LifeTime: 0
-  ReloadTime: 0
+  ReloadTime: 1
   ReloadCountdown: 0
-  Ammo: 0
-  Damage: 0
+  Ammo: 5
+  BLifeTime: 0
+  BDamage: 0
+  BSpeed: 0
   _turretArtObject: {fileID: 8903252950350368669}
-  _turretPackage:
-    TurretTemplate: {fileID: 0}
-    TurretUpgrades: []
-  _mR: {fileID: 8903252950350368670}
-  _mF: {fileID: 8903252950350368657}
 --- !u!114 &8903252950405436257
 MonoBehaviour:
   m_ObjectHideFlags: 0

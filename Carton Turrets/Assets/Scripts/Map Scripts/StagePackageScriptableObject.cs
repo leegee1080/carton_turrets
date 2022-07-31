@@ -19,20 +19,32 @@ public class StagePOI
     public int LocationY;
 }
 
+[Serializable]
+public struct EnemySpawnWave
+{
+    public float SecondsThreshold;
+    public int Amount;
+    public bool Spawned;
+}
+
 [CreateAssetMenu(fileName = "New Stage", menuName = "Scriptable Objects/New Stage")]
 public class StagePackageScriptableObject : ScriptableObject
 {
     [Header("Stage Text")]
     public new string name;
     public string Desc;
+
+    [Header("Enemy Vars")]
+    public EnemySpawnWave[] Waves;
+
     [Header("Map Vars")]
     public int MapMaxX;
     public int MapMaxY;
-
     public StagePOI StartingLocation;
     public StagePOI[] ImportantLocations;
     public int GridSpacing;
     public StagePackageGridObject[] GridObjects;
+
     [Header("Reward Vars")]
     public int ScoreMulti;
 }

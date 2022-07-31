@@ -2,38 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class TurretSetupPackage
-{
-    public TurretScriptableObject TurretTemplate;
-    public TurretUpgradeScriptableObject[] TurretUpgrades;
-
-    public TurretSetupPackage(TurretScriptableObject tt, TurretUpgradeScriptableObject[] tuArray)
-    {
-        TurretTemplate = tt;
-        TurretUpgrades = tuArray;
-    }
-}
-
 public class Turret : StageActor
 {
+    [SerializeField] private TurretScriptableObject TurretData;
+    [SerializeField] private GameObject _barrel;
+    public PlayerActor ControllingActor;
 
     [Header("Turret Stats")]
     public float LifeTime;
     public float ReloadTime;
     public float ReloadCountdown;
     public int Ammo;
-    public float Damage;
+
+    [Header("Bullet Stats")]
+    public float BLifeTime;
+    public float BDamage;
+    public float BSpeed;
+
+    [Header("Explosion Stats")]
+    public float ELifeTime;
+    public float EDamage;
+    public float ESpeed;
+    public float ESize;
+
 
     [Header("Turret Art")]
     [SerializeField]GameObject _turretArtObject;
-    [SerializeField] TurretSetupPackage _turretPackage;
-    [SerializeField] MeshRenderer _mR;
-    [SerializeField] MeshFilter _mF;
 
     public void Awake()
     {
         _turretArtObject.SetActive(false);
+        
+
     }
 
     public override void OnEnable()
@@ -49,14 +49,34 @@ public class Turret : StageActor
     public void Fire()
     {
         Ammo -= 1;
-        //shoot
+
+        GameObject bullet = ControllingActor.BulletObjectPools[TurretData.name].ActivateNextObject(this);
+        bullet.transform.position = _barrel.transform.position;
+        bullet.transform.rotation = this.gameObject.transform.rotation;
         if(Ammo <= 0){ChangeState(new TurretState_Dead());}
     }
 
     public void BuildTurret(MonoBehaviour Player)
     {
-        PlayerActor player = (PlayerActor)Player;
-        _turretPackage = new TurretSetupPackage(player.StartingTurret, player.CurrentTurretUpgrades);
+        ControllingActor = (PlayerActor)Player;
+
+        LifeTime = ControllingActor.TurretsEquipped[TurretData.name].TLifeTime;     
+        ReloadTime = ControllingActor.TurretsEquipped[TurretData.name].TReloadTime;     
+        ReloadCountdown = ControllingActor.TurretsEquipped[TurretData.name].TReloadTime;     
+        Ammo = ControllingActor.TurretsEquipped[TurretData.name].TAmmo;    
+
+
+        BLifeTime = ControllingActor.TurretsEquipped[TurretData.name].BLifeTime; 
+        BDamage = ControllingActor.TurretsEquipped[TurretData.name].BDamage; 
+        BSpeed = ControllingActor.TurretsEquipped[TurretData.name].BSpeed; 
+
+
+        ELifeTime = ControllingActor.TurretsEquipped[TurretData.name].ELifeTime; 
+        EDamage = ControllingActor.TurretsEquipped[TurretData.name].EDamage; 
+        ESpeed = ControllingActor.TurretsEquipped[TurretData.name].ESpeed; 
+        ESize = ControllingActor.TurretsEquipped[TurretData.name].ESize; 
+
+
         Setup();
     }
 
@@ -65,13 +85,6 @@ public class Turret : StageActor
         base.Setup();
 
         _turretArtObject.SetActive(true);
-        _mF.mesh = _turretPackage.TurretTemplate.TurretModel;
-        _mR.material = _turretPackage.TurretTemplate.TurretMaterial;
-
-        LifeTime = _turretPackage.TurretTemplate.StartingLifeTime;
-        ReloadTime = _turretPackage.TurretTemplate.StartingReloadTime;
-        Ammo = _turretPackage.TurretTemplate.StartingAmmo;
-        Damage = _turretPackage.TurretTemplate.StartingDamage;
 
         ChangeState(new TurretState_Normal());
     }
@@ -80,6 +93,9 @@ public class Turret : StageActor
     public override void Die()
     {
         base.Die();
+        GameObject explo = ControllingActor.ExplosionObjectPools[TurretData.name].ActivateNextObject(this);
+        explo.transform.position = _barrel.transform.position;
+        explo.transform.rotation = this.gameObject.transform.rotation;
         _turretArtObject.SetActive(false);
     }
 }
@@ -115,7 +131,7 @@ public class TurretState_Normal: ActorStatesAbstractClass
 
         if(tu.ReloadCountdown >0){tu.ReloadCountdown -= Time.fixedDeltaTime;}else{tu.ReloadCountdown = tu.ReloadTime; tu.Fire();}
         
-        if(tu.LifeTime > 0){tu.LifeTime -= Time.fixedDeltaTime;}else{tu.Die();}
+        if(tu.LifeTime > 0){tu.LifeTime -= Time.fixedDeltaTime;}else{tu.ChangeState(new TurretState_Dead());}
 
     }   
 }
