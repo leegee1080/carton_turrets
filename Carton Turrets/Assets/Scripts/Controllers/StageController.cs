@@ -174,7 +174,18 @@ public class StageController : MonoBehaviour
 
     public void CheckEnemySpawnWave()
     {
+        for (int i = 0; i < WaveArray.Length; i++)
+        {
+            if(!WaveArray[i].Spawned && WaveArray[i].SecondsThreshold <= GameTime)
+            {
+                WaveArray[i].Spawned = true;
+                for (int s = 0; s < WaveArray[i].Amount; s++)
+                {
+                    EnemyObjectPooler.ActivateNextObject(this);
+                }
 
+            }
+        }
     }
 
 }

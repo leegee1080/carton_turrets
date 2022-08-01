@@ -18,7 +18,9 @@ public class EnemyActor : StageActor
 
     public void Respawn()//if player gets too far
     {
+        Vector3 nearPos = Target.transform.position + (StageController.singlton.Player.LastViewInput * ViewDistance);
 
+        this.gameObject.transform.position = new Vector3(nearPos.x,this.gameObject.transform.position.y,nearPos.z);
     }
 
 
@@ -28,7 +30,7 @@ public class EnemyActor : StageActor
     {
         base.Setup();
         //gather enemydata from stage controller
-
+        Target = StageController.singlton.Player.gameObject;
         CurrentHealth = EnemyData.MaxHealth;
         CurrentSpeed = EnemyData.MaxSpeed;
         CurrentDamage = EnemyData.MaxDamage;
@@ -37,7 +39,7 @@ public class EnemyActor : StageActor
     {
         base.Activate();
         Setup();
-        ChangeState(new PlayerState_Normal());
+        ChangeState(new EnemyState_Normal());
     }
     public override void Die()
     {
@@ -78,7 +80,7 @@ public class EnemyState_Normal: ActorStatesAbstractClass
 
         if(Vector3.Distance(ea.gameObject.transform.position, ea.Target.transform.position) > ea.ViewDistance){ea.Respawn(); return;}
 
-        Vector3 v = (ea.gameObject.transform.position - ea.Target.transform.position) * ea.CurrentSpeed;
+        Vector3 v = Vector3.Normalize((ea.gameObject.transform.position - ea.Target.transform.position)) * -ea.CurrentSpeed;
 
         ea.rb.velocity = new Vector3(v.x, 0, v.z);
 
