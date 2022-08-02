@@ -8,7 +8,6 @@ public class EnemyActor : StageActor
     public EnemyScriptableObject EnemyData;
     public float CurrentDamage;
 
-
     [Header("Target Vars")]
     public GameObject Target;
     public float ViewDistance;
@@ -20,9 +19,19 @@ public class EnemyActor : StageActor
     {
         Vector3 nearPos = Target.transform.position + (StageController.singlton.Player.LastViewInput * ViewDistance);
 
-        this.gameObject.transform.position = new Vector3(nearPos.x,this.gameObject.transform.position.y,nearPos.z);
+        ActorArtContainer.transform.position = new Vector3(nearPos.x, ActorArtContainer.transform.position.y,nearPos.z);
     }
+    
 
+    public void TakeDamage(float amt)
+    {
+        CurrentHealth -= amt;
+
+        if(CurrentHealth >=0 )
+        {
+            ChangeState(new EnemyState_Dead());
+        }
+    }
 
 
 
@@ -44,6 +53,7 @@ public class EnemyActor : StageActor
     public override void Die()
     {
         base.Die();
+        ActorArtContainer.SetActive(false);
     }
 
 }
@@ -78,9 +88,9 @@ public class EnemyState_Normal: ActorStatesAbstractClass
         EnemyActor ea = (EnemyActor)_cont;
         if(ea.Target == null){return;}
 
-        if(Vector3.Distance(ea.gameObject.transform.position, ea.Target.transform.position) > ea.ViewDistance){ea.Respawn(); return;}
+        if(Vector3.Distance(ea.ActorArtContainer.transform.position, ea.Target.transform.position) > ea.ViewDistance){ea.Respawn(); return;}
 
-        Vector3 v = Vector3.Normalize((ea.gameObject.transform.position - ea.Target.transform.position)) * -ea.CurrentSpeed;
+        Vector3 v = Vector3.Normalize((ea.ActorArtContainer.transform.position - ea.Target.transform.position)) * -ea.CurrentSpeed;
 
         ea.rb.velocity = new Vector3(v.x, 0, v.z);
 
@@ -91,7 +101,7 @@ public class EnemyState_Dead: ActorStatesAbstractClass
 {
     public override void OnEnterState(StageActor _cont)
     {
-        
+        _cont.Die();
     }   
     public override void OnExitState(StageActor _cont)
     {
