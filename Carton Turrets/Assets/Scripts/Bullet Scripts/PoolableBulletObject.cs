@@ -33,4 +33,12 @@ public class PoolableBulletObject : MonoBehaviour
         gameObject.transform.position += transform.forward * _speed;
         _lifeTime -= Time.fixedDeltaTime;
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.tag == "Enemy")
+        {
+            other.gameObject.GetComponentInParent<EnemyActor>().TakeDamage(_damage);
+        }
+    }
 }

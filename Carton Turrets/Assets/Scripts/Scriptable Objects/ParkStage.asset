@@ -16,10 +16,10 @@ MonoBehaviour:
   Desc: The First Level
   Waves:
   - SecondsThreshold: 5
-    Amount: 10
+    Amount: 5
     Spawned: 0
   - SecondsThreshold: 10
-    Amount: 10
+    Amount: 5
     Spawned: 0
   MapMaxX: 100
   MapMaxY: 100
