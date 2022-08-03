@@ -38,4 +38,12 @@ public class PoolableExplosionObject : MonoBehaviour
 
         _lifeTime -= Time.fixedDeltaTime;
     }
+    private void OnCollisionEnter(Collision other)
+    {
+
+        if(other.gameObject.tag == "Enemy")
+        {
+            other.gameObject.GetComponentInParent<EnemyActor>().TakeDamage(_damage);
+        }
+    }
 }
