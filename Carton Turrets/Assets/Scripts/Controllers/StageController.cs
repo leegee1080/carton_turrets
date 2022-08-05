@@ -181,7 +181,9 @@ public class StageController : MonoBehaviour
                 WaveArray[i].Spawned = true;
                 for (int s = 0; s < WaveArray[i].Amount; s++)
                 {
-                    EnemyObjectPooler.ActivateNextObject(this);
+                    EnemyInfo ei = new EnemyInfo();
+                    ei.info = WaveArray[i].Enemy;
+                    EnemyObjectPooler.ActivateNextObject(ei);
                 }
 
             }

@@ -1,6 +1,11 @@
 using System.Linq;
 using UnityEngine;
 
+public interface IPassableObject
+{
+    
+}
+
 public class ObjectPooler
 {
 
@@ -28,7 +33,7 @@ public class ObjectPooler
         Container = parent;
     }
 
-    public GameObject ActivateNextObject(MonoBehaviour ObjectCaller)
+    public GameObject ActivateNextObject(IPassableObject ObjectCaller)
     {
         GameObject pickedGO = Pool[index];
         index +=1;
@@ -36,7 +41,7 @@ public class ObjectPooler
         pickedGO.GetComponent<PoolableObject>().ActivateObjectFunc.Invoke(ObjectCaller);
         return pickedGO;
     }
-    public GameObject PickNextObject(int index, MonoBehaviour ObjectCaller = default)
+    public GameObject PickNextObject(int index, IPassableObject ObjectCaller = default)
     {
         if(index >= Pool.Length || index < 0){Debug.LogWarning("index parameter is not correct: " + index + ". Setting index to 0."); return Pool[0];}
         Pool[index].GetComponent<PoolableObject>().ActivateObjectFunc.Invoke(ObjectCaller);

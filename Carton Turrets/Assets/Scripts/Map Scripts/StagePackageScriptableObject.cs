@@ -25,6 +25,7 @@ public struct EnemySpawnWave
     public float SecondsThreshold;
     public int Amount;
     public bool Spawned;
+    public EnemyScriptableObject Enemy;
 }
 
 [CreateAssetMenu(fileName = "New Stage", menuName = "Scriptable Objects/New Stage")]

@@ -18,7 +18,7 @@ public class PoolableBulletObject : MonoBehaviour
         _speed = t.BSpeed;
     }
 
-    public void Fire(MonoBehaviour Turret)
+    public void Fire(IPassableObject Turret)
     {
         GrabInfoFromTurret((Turret)Turret);
         gameObject.transform.localPosition = Vector3.zero;

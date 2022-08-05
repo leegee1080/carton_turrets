@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 8903252950350368668}
   - component: {fileID: 8903252950350368657}
   - component: {fileID: 8903252950350368670}
-  - component: {fileID: 8903252950350368671}
+  - component: {fileID: 8700603430958536111}
   m_Layer: 0
   m_Name: TurretArt
   m_TagString: Untagged
@@ -164,18 +164,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8903252950350368671
-BoxCollider:
+--- !u!135 &8700603430958536111
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8903252950350368669}
-  m_Material: {fileID: 13400000, guid: b12e1a76899b34040881463dd2cec727, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8903252950405436271
 GameObject:
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b495a67cd4b8c354da27cd9477f9659f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collider: {fileID: 8903252950350368671}
+  _collider: {fileID: 8700603430958536111}
   ActorArtContainer: {fileID: 8903252950350368669}
   CurrentSpeed: 0
   CurrentHealth: 0

@@ -167,10 +167,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 464946af38147a24c9e0157aaa55a462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameTime: 0
   CurrentStage: {fileID: 11400000, guid: 189577f8d4b4a314b8ec357b991a41f0, type: 2}
   Player: {fileID: 1555916284}
   TileProbabilityList: []
   _poolTilesContainer: {fileID: 104405512}
+  WaveArray: []
   _genericEnemyGameObject: {fileID: 9184136763064923520, guid: ab26bb0011d96424cb9a6d2d932764d2, type: 3}
   _poolEnemyContainer: {fileID: 1741954581}
   _enemiesToPool: 20
@@ -377,18 +379,18 @@ Transform:
   m_Father: {fileID: 1555916285}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1116513452
-BoxCollider:
+--- !u!135 &1116513452
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116513450}
-  m_Material: {fileID: 13400000, guid: b12e1a76899b34040881463dd2cec727, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1116513453
 MeshRenderer:

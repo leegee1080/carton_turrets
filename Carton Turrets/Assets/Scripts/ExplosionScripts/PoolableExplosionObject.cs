@@ -22,7 +22,7 @@ public class PoolableExplosionObject : MonoBehaviour
         _speed = t.ESpeed;
     }
 
-    public void Fire(MonoBehaviour Turret)
+    public void Fire(IPassableObject Turret)
     {
         GrabInfoFromTurret((Turret)Turret);
         gameObject.transform.localPosition = Vector3.zero;

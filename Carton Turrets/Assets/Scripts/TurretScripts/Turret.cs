@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Turret : StageActor
+public class Turret : StageActor, IPassableObject
 {
     [SerializeField] private TurretScriptableObject TurretData;
     [SerializeField] private GameObject _barrel;
@@ -56,7 +56,7 @@ public class Turret : StageActor
         if(Ammo <= 0){ChangeState(new TurretState_Dead());}
     }
 
-    public void BuildTurret(MonoBehaviour Player)
+    public void BuildTurret(IPassableObject Player)
     {
         ControllingActor = (PlayerActor)Player;
 

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Linq;
 
-public class PlayerActor : StageActor
+public class PlayerActor : StageActor, IPassableObject
 {
     private PiaMainControls PlayerInputActions;
     public InputAction move, placeturret;

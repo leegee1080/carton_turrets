@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public class EnemyInfo: IPassableObject
+{
+    public EnemyScriptableObject info;
+}
+
 public class EnemyActor : StageActor
 {
     [Header("Enemy Stats")]
@@ -11,6 +16,9 @@ public class EnemyActor : StageActor
     [Header("Target Vars")]
     public GameObject Target;
     public float ViewDistance;
+
+    [Header("Art Vars")]
+    [SerializeField]private SpriteRenderer _sR;
 
     [Header("Phys Vars")]
     public Rigidbody rb;
@@ -33,6 +41,12 @@ public class EnemyActor : StageActor
         }
     }
 
+    public void ActivateEnemy(IPassableObject info)
+    {
+        EnemyInfo ei = (EnemyInfo)info;
+        EnemyData = ei.info;
+        Activate();
+    }
 
 
     public override void Setup()
@@ -43,6 +57,7 @@ public class EnemyActor : StageActor
         CurrentHealth = EnemyData.MaxHealth;
         CurrentSpeed = EnemyData.MaxSpeed;
         CurrentDamage = EnemyData.MaxDamage;
+        _sR.sprite = EnemyData.Sprite;
     }
     public override void Activate()
     {
