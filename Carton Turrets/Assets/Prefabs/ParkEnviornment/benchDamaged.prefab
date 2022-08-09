@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4933000528739779941}
   - component: {fileID: 7141921842068099824}
   - component: {fileID: 2982057911189758046}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: benchBroken %8angles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,9 +92,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6013349339270758378}
   - component: {fileID: 8967101111711561327}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: benchDamaged
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

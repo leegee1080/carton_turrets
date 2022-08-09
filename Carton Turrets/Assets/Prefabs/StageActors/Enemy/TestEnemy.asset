@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Test Baddie
   Desc: Test Baddie
-  MaxHealth: 10
+  MaxHealth: 1
   MaxSpeed: 1
   Sprite: {fileID: 21300000, guid: c9ce7cfcbaae312449366199f36d92b1, type: 3}
   MaxDamage: 1

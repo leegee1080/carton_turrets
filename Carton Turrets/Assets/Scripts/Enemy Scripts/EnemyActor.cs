@@ -7,7 +7,7 @@ public class EnemyInfo: IPassableObject
     public EnemyScriptableObject info;
 }
 
-public class EnemyActor : StageActor
+public class EnemyActor : StageActor, IColliderMessageable
 {
     [Header("Enemy Stats")]
     public EnemyScriptableObject EnemyData;
@@ -29,13 +29,23 @@ public class EnemyActor : StageActor
 
         ActorArtContainer.transform.position = new Vector3(nearPos.x, ActorArtContainer.transform.position.y,nearPos.z);
     }
+
+    public void RecMessageEnter(GameObject obj)
+    {
+
+    }
+
+    public void RecMessageStay(GameObject obj)
+    {
+        obj.GetComponentInParent<PlayerActor>().TakeDamage(CurrentDamage);
+    }
     
 
     public void TakeDamage(float amt)
     {
         CurrentHealth -= amt;
 
-        if(CurrentHealth >=0 )
+        if(CurrentHealth <=0 )
         {
             ChangeState(new EnemyState_Dead());
         }

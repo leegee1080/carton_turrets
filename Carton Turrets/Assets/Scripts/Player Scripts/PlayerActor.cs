@@ -56,6 +56,15 @@ public class PlayerActor : StageActor, IPassableObject
         placeturret.Disable();
     }
 
+    public void TakeDamage(float amt)
+    {
+        CurrentHealth -= amt;
+
+        if(CurrentHealth <=0 )
+        {
+            ChangeState(new PlayerState_Dead());
+        }
+    }
 
     private void PlaceTurret(InputAction.CallbackContext context)
     {
@@ -113,6 +122,8 @@ public class PlayerActor : StageActor, IPassableObject
     public override void Die()
     {
         base.Die();
+        move.Disable();
+        placeturret.Disable();
     }
 
     public void CheckMapTiles()
@@ -192,7 +203,8 @@ public class PlayerState_Dead: ActorStatesAbstractClass
 {
     public override void OnEnterState(StageActor _cont)
     {
-        
+        PlayerActor pa = (PlayerActor)_cont;
+        pa.Die();
     }   
     public override void OnExitState(StageActor _cont)
     {

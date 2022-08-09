@@ -23,7 +23,7 @@ MonoBehaviour:
   BDamage: 1
   BSpeed: 0.2
   ELifeTime: 0.2
-  EDamage: 1
+  EDamage: 10
   ESpeed: 1
   ESize: 0.5
   TurretAmountToPool: 10

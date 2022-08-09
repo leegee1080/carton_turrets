@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4706476570583916807}
   - component: {fileID: 5998753581627141947}
   - component: {fileID: 6485983355169560353}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BTbullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 5487349967050415414}
   - component: {fileID: 5487349967068735684}
   - component: {fileID: 5487349967070431236}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SparkTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4843,7 +4843,7 @@ GameObject:
   - component: {fileID: 5487349967050505244}
   - component: {fileID: 5487349967068771310}
   - component: {fileID: 5487349967070500398}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9589,7 +9589,7 @@ GameObject:
   - component: {fileID: 5487349967068743210}
   - component: {fileID: 5487349967070431420}
   - component: {fileID: 1577768553287258500}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BulletSmallFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}

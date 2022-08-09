@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9194454172701642745}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: treeMaple
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 711598570530011771}
   - component: {fileID: 7394445984101197171}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: treeA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3868412040645623129}
   - component: {fileID: 7979292352126836991}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: treeA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
