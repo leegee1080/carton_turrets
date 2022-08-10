@@ -128,7 +128,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 89650127b1ccaaf42b9ac3f864d80152, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -266,6 +266,8 @@ MonoBehaviour:
   ActorArtContainer: {fileID: 9184136761266824986}
   CurrentSpeed: 0
   CurrentHealth: 0
+  DamageColor: {r: 1, g: 0, b: 0, a: 0}
+  MainSprite: {fileID: 5914418368182736709}
   EnemyData: {fileID: 11400000, guid: 8edeb15b61e7ce24c8acfef33f350afc, type: 2}
   CurrentDamage: 0
   Target: {fileID: 0}

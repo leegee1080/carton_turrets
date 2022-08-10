@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Tester
   Desc: Testy Test Testerson
   MaxHealth: 100
-  MaxSpeed: 3
+  MaxSpeed: 1
   MaxTurretReloadTime: 0.5
   StartingTurret: {fileID: 11400000, guid: 60a671292fc0f98488533a657416f678, type: 2}

@@ -44,7 +44,7 @@ public class EnemyActor : StageActor, IColliderMessageable
     public void TakeDamage(float amt)
     {
         CurrentHealth -= amt;
-
+        BlinkSprite();
         if(CurrentHealth <=0 )
         {
             ChangeState(new EnemyState_Dead());
@@ -57,7 +57,6 @@ public class EnemyActor : StageActor, IColliderMessageable
         EnemyData = ei.info;
         Activate();
     }
-
 
     public override void Setup()
     {
@@ -119,7 +118,7 @@ public class EnemyState_Normal: ActorStatesAbstractClass
 
         ea.rb.velocity = new Vector3(v.x, 0, v.z);
 
-
+        ea.FlipSpriteCheck(v.x);
     }   
 }
 public class EnemyState_Dead: ActorStatesAbstractClass

@@ -59,7 +59,7 @@ public class PlayerActor : StageActor, IPassableObject
     public void TakeDamage(float amt)
     {
         CurrentHealth -= amt;
-
+        BlinkSprite();
         if(CurrentHealth <=0 )
         {
             ChangeState(new PlayerState_Dead());
@@ -189,6 +189,7 @@ public class PlayerState_Normal: ActorStatesAbstractClass
         Vector2 v = pa.move.ReadValue<Vector2>() * pa.CurrentSpeed;
 
         pa.rb.velocity = new Vector3(v.x, 0, v.y);
+        pa.FlipSpriteCheck(v.x);
 
         if(pa.transform.position != pa.LastPos)
         {
