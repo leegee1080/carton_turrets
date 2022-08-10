@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StageActor : MonoBehaviour
 {
-    [SerializeField]protected BoxCollider _collider;
+    [SerializeField]protected SphereCollider _collider;
     // public ActorDataScriptableObject ActorData;
     public GameObject ActorArtContainer;
 

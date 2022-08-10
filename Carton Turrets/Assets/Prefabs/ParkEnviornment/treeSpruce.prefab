@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2191943730760101519}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: treeSpruce
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5157382624306166794}
   - component: {fileID: 6308467748682026379}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: treeB (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3153180191680511160}
   - component: {fileID: 7684849490234472040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: treeB
   m_TagString: Untagged
   m_Icon: {fileID: 0}

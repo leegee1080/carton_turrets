@@ -2,7 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyActor : StageActor
+public class EnemyInfo: IPassableObject
+{
+    public EnemyScriptableObject info;
+}
+
+public class EnemyActor : StageActor, IColliderMessageable
 {
     [Header("Enemy Stats")]
     public EnemyScriptableObject EnemyData;
@@ -11,6 +16,9 @@ public class EnemyActor : StageActor
     [Header("Target Vars")]
     public GameObject Target;
     public float ViewDistance;
+
+    [Header("Art Vars")]
+    [SerializeField]private SpriteRenderer _sR;
 
     [Header("Phys Vars")]
     public Rigidbody rb;
@@ -21,18 +29,34 @@ public class EnemyActor : StageActor
 
         ActorArtContainer.transform.position = new Vector3(nearPos.x, ActorArtContainer.transform.position.y,nearPos.z);
     }
+
+    public void RecMessageEnter(GameObject obj)
+    {
+
+    }
+
+    public void RecMessageStay(GameObject obj)
+    {
+        obj.GetComponentInParent<PlayerActor>().TakeDamage(CurrentDamage);
+    }
     
 
     public void TakeDamage(float amt)
     {
         CurrentHealth -= amt;
 
-        if(CurrentHealth >=0 )
+        if(CurrentHealth <=0 )
         {
             ChangeState(new EnemyState_Dead());
         }
     }
 
+    public void ActivateEnemy(IPassableObject info)
+    {
+        EnemyInfo ei = (EnemyInfo)info;
+        EnemyData = ei.info;
+        Activate();
+    }
 
 
     public override void Setup()
@@ -43,6 +67,7 @@ public class EnemyActor : StageActor
         CurrentHealth = EnemyData.MaxHealth;
         CurrentSpeed = EnemyData.MaxSpeed;
         CurrentDamage = EnemyData.MaxDamage;
+        _sR.sprite = EnemyData.Sprite;
     }
     public override void Activate()
     {

@@ -22,7 +22,7 @@ public class PoolableExplosionObject : MonoBehaviour
         _speed = t.ESpeed;
     }
 
-    public void Fire(MonoBehaviour Turret)
+    public void Fire(IPassableObject Turret)
     {
         GrabInfoFromTurret((Turret)Turret);
         gameObject.transform.localPosition = Vector3.zero;
@@ -37,5 +37,13 @@ public class PoolableExplosionObject : MonoBehaviour
         if(_lifeTime <=0){_fired = false; this.gameObject.SetActive(false);}
 
         _lifeTime -= Time.fixedDeltaTime;
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+
+        if(other.gameObject.tag == "Enemy")
+        {
+            other.gameObject.GetComponentInParent<EnemyActor>().TakeDamage(_damage);
+        }
     }
 }

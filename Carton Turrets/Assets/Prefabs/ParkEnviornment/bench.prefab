@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2125075653641243170}
   - component: {fileID: 4222474594563325672}
   - component: {fileID: 660151647881769933}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bench
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
