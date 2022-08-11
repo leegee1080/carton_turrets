@@ -102,6 +102,7 @@ public class Turret : StageActor, IPassableObject
 
 public class TurretState_Frozen: ActorStatesAbstractClass
 {
+    public override string name {get {return "frozen";}}
     public override void OnEnterState(StageActor _cont)
     {
         
@@ -117,6 +118,7 @@ public class TurretState_Frozen: ActorStatesAbstractClass
 }
 public class TurretState_Normal: ActorStatesAbstractClass
 {
+    public override string name {get {return "normal";}}
     public override void OnEnterState(StageActor _cont)
     {
         
@@ -137,6 +139,7 @@ public class TurretState_Normal: ActorStatesAbstractClass
 }
 public class TurretState_Dead: ActorStatesAbstractClass
 {
+    public override string name {get {return "dead";}}
     public override void OnEnterState(StageActor _cont)
     {
         Turret tu = (Turret)_cont;
@@ -153,6 +156,7 @@ public class TurretState_Dead: ActorStatesAbstractClass
 }
 public class TurretState_Pause: ActorStatesAbstractClass
 {
+    public override string name {get {return "pause";}}
     public override void OnEnterState(StageActor _cont)
     {
         

@@ -81,6 +81,7 @@ public class StageActor : MonoBehaviour
 
 public abstract class ActorStatesAbstractClass
 {
+    public abstract string name{get;}
     public abstract void OnEnterState(StageActor _cont);
     public abstract void OnExitState(StageActor _cont);
     public abstract void OnUpdateState(StageActor _cont);

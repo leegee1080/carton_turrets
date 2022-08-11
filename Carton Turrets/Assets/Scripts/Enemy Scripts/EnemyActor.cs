@@ -43,6 +43,7 @@ public class EnemyActor : StageActor, IColliderMessageable
 
     public void TakeDamage(float amt)
     {
+        if(CurrentStateClass.name != "normal"){return;}
         CurrentHealth -= amt;
         BlinkSprite();
         if(CurrentHealth <=0 )
@@ -77,6 +78,9 @@ public class EnemyActor : StageActor, IColliderMessageable
     public override void Die()
     {
         base.Die();
+
+        GameObject part = StageController.singlton.DeathParticlePooler.ActivateNextObject(null);
+        part.transform.position = ActorArtContainer.transform.position;
         ActorArtContainer.SetActive(false);
     }
 
@@ -84,6 +88,7 @@ public class EnemyActor : StageActor, IColliderMessageable
 
 public class EnemyState_Frozen: ActorStatesAbstractClass
 {
+    public override string name {get {return "frozen";}}
     public override void OnEnterState(StageActor _cont)
     {
         
@@ -99,6 +104,7 @@ public class EnemyState_Frozen: ActorStatesAbstractClass
 }
 public class EnemyState_Normal: ActorStatesAbstractClass
 {
+    public override string name {get {return "normal";}}
     public override void OnEnterState(StageActor _cont)
     {
         
@@ -123,6 +129,7 @@ public class EnemyState_Normal: ActorStatesAbstractClass
 }
 public class EnemyState_Dead: ActorStatesAbstractClass
 {
+    public override string name {get {return "dead";}}
     public override void OnEnterState(StageActor _cont)
     {
         _cont.Die();
@@ -138,6 +145,7 @@ public class EnemyState_Dead: ActorStatesAbstractClass
 }
 public class EnemyState_Pause: ActorStatesAbstractClass
 {
+    public override string name {get {return "pause";}}
     public override void OnEnterState(StageActor _cont)
     {
         

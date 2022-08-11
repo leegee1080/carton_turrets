@@ -53,6 +53,11 @@ public class StageController : MonoBehaviour
     [SerializeField]private int _enemiesToPool;
     public ObjectPooler EnemyObjectPooler;
 
+    [Header("Death Particle Pool")]
+    [SerializeField]private GameObject _genericDeathParticleContainer;
+    [SerializeField]private GameObject _genericDeathParticleObject;
+    public ObjectPooler DeathParticlePooler;
+
 
     private void Awake() => singlton = this;
 
@@ -153,6 +158,9 @@ public class StageController : MonoBehaviour
         //enemy objects
         WaveArray = (EnemySpawnWave[])CurrentStage.Waves.Clone();
         EnemyObjectPooler = new ObjectPooler(_genericEnemyGameObject, _enemiesToPool, _poolEnemyContainer, false);
+
+        //death particles
+        DeathParticlePooler = new ObjectPooler(_genericDeathParticleObject, _enemiesToPool, _genericDeathParticleContainer, false);
     }
     private void PlayerSetup()
     {
