@@ -17,11 +17,12 @@ MonoBehaviour:
   MaxHealth: 1
   MaxSpeed: 1
   TLifeTime: 10
-  TReloadTime: 0.1
+  TReloadTime: 0.5
   TAmmo: 30
+  TColliderSize: 0.04
   BLifeTime: 1
   BDamage: 1
-  BSpeed: 0.2
+  BSpeed: 0.1
   ELifeTime: 0.2
   EDamage: 10
   ESpeed: 1
@@ -32,3 +33,4 @@ MonoBehaviour:
   TurretGameObject: {fileID: 8903252950405436271, guid: 2ab11beef16bf3a43b78bc9aa3544b85, type: 3}
   BulletGameObject: {fileID: 741848558832750205, guid: 09ad2b3bca4baf0459660c3d383288ee, type: 3}
   ExplosionGameObject: {fileID: 5925393004181974638, guid: 2c70c7a2558cc124c860571375f7c31f, type: 3}
+  Mesh: {fileID: 4300182, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}

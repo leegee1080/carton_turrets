@@ -80,7 +80,7 @@ public class EnemyActor : StageActor, IColliderMessageable
         base.Die();
 
         GameObject part = StageController.singlton.DeathParticlePooler.ActivateNextObject(null);
-        part.transform.position = ActorArtContainer.transform.position;
+        part.transform.position = new Vector3(ActorArtContainer.transform.position.x, 0.1f, ActorArtContainer.transform.position.z);
         ActorArtContainer.SetActive(false);
     }
 

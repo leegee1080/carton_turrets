@@ -13,7 +13,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Particles
   - Water
   - UI
   - Player
@@ -21,7 +21,7 @@ TagManager:
   - Wall
   - Bullet
   - PlayerDamage
-  - 
+  - Floor
   - 
   - 
   - 
