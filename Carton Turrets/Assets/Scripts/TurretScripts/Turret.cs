@@ -28,6 +28,7 @@ public class Turret : StageActor, IPassableObject
 
     [Header("Turret Art")]
     [SerializeField]GameObject _turretArtObject;
+    [SerializeField]MeshFilter _turretMesh;
 
     public void Awake()
     {
@@ -63,7 +64,8 @@ public class Turret : StageActor, IPassableObject
         LifeTime = ControllingActor.TurretsEquipped[TurretData.name].TLifeTime;     
         ReloadTime = ControllingActor.TurretsEquipped[TurretData.name].TReloadTime;     
         ReloadCountdown = ControllingActor.TurretsEquipped[TurretData.name].TReloadTime;     
-        Ammo = ControllingActor.TurretsEquipped[TurretData.name].TAmmo;    
+        Ammo = ControllingActor.TurretsEquipped[TurretData.name].TAmmo;
+        _collider.radius = ControllingActor.TurretsEquipped[TurretData.name].TColliderSize;
 
 
         BLifeTime = ControllingActor.TurretsEquipped[TurretData.name].BLifeTime; 
@@ -76,7 +78,7 @@ public class Turret : StageActor, IPassableObject
         ESpeed = ControllingActor.TurretsEquipped[TurretData.name].ESpeed; 
         ESize = ControllingActor.TurretsEquipped[TurretData.name].ESize; 
 
-
+        _turretMesh.mesh = ControllingActor.TurretsEquipped[TurretData.name].Mesh;
         Setup();
     }
 

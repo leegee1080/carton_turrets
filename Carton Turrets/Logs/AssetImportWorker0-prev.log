@@ -1,0 +1,1433 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.25f1 (9b9180224418) revision 10195328'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19043) 64bit Core' Language: 'en' Physical Memory: 16326 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+F:\UnityInstalls\2020.3.25f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+56531
+Successfully changed project path to: C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets
+C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 69.73 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.25f1 (9b9180224418)
+[Subsystems] Discovering subsystems at path F:/UnityInstalls/2020.3.25f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2080 (ID=0x1e82)
+    Vendor:   
+    VRAM:     8011 MB
+    Driver:   31.0.15.1640
+Initialize mono
+Mono path[0] = 'F:/UnityInstalls/2020.3.25f1/Editor/Data/Managed'
+Mono path[1] = 'F:/UnityInstalls/2020.3.25f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'F:/UnityInstalls/2020.3.25f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56664
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: F:/UnityInstalls/2020.3.25f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: F:/UnityInstalls/2020.3.25f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: F:/UnityInstalls/2020.3.25f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: F:/UnityInstalls/2020.3.25f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Registered in 0.001370 seconds.
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 73.40 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.508 seconds
+Domain Reload Profiling:
+	ReloadAssembly (509ms)
+		BeginReloadAssembly (50ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (407ms)
+			LoadAssemblies (50ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (120ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (182ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (73ms)
+				BeforeProcessingInitializeOnLoad (11ms)
+				ProcessInitializeOnLoadAttributes (69ms)
+				ProcessInitializeOnLoadMethodAttributes (22ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006581 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 66.20 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.018 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1019ms)
+		BeginReloadAssembly (120ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (15ms)
+		EndReloadAssembly (855ms)
+			LoadAssemblies (85ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (270ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (43ms)
+			SetupLoadedEditorAssemblies (362ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (66ms)
+				BeforeProcessingInitializeOnLoad (75ms)
+				ProcessInitializeOnLoadAttributes (207ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.70 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3379 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 223.6 MB.
+System memory in use after: 223.8 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 3817.
+Total: 2.843900 ms (FindLiveObjects: 0.234700 ms CreateObjectMapping: 0.112400 ms MarkObjects: 2.473600 ms  DeleteObjects: 0.022500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Prefabs/Turrets/BulletTurret/BulletTurret.prefab
+  artifactKey: Guid(2ab11beef16bf3a43b78bc9aa3544b85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Turrets/BulletTurret/BulletTurret.prefab using Guid(2ab11beef16bf3a43b78bc9aa3544b85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e613dc91afb27e5186d0933ae881098') in 0.191696 seconds 
+  Import took 0.196388 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006505 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.932 seconds
+Domain Reload Profiling:
+	ReloadAssembly (932ms)
+		BeginReloadAssembly (123ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (766ms)
+			LoadAssemblies (84ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (260ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (280ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (79ms)
+				ProcessInitializeOnLoadAttributes (185ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.71 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3251 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 219.6 MB.
+System memory in use after: 219.9 MB.
+
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 3866.
+Total: 2.671100 ms (FindLiveObjects: 0.205200 ms CreateObjectMapping: 0.112400 ms MarkObjects: 2.339800 ms  DeleteObjects: 0.013100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006993 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.944 seconds
+Domain Reload Profiling:
+	ReloadAssembly (944ms)
+		BeginReloadAssembly (115ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (785ms)
+			LoadAssemblies (88ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (268ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (283ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (82ms)
+				ProcessInitializeOnLoadAttributes (186ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (14ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3251 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 219.7 MB.
+System memory in use after: 219.9 MB.
+
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 3868.
+Total: 2.775100 ms (FindLiveObjects: 0.220600 ms CreateObjectMapping: 0.131000 ms MarkObjects: 2.405200 ms  DeleteObjects: 0.017500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1215.496546 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield01_beige.prefab
+  artifactKey: Guid(f9429f18fc7c8474099abc1ed0ebb458) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield01_beige.prefab using Guid(f9429f18fc7c8474099abc1ed0ebb458) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64911bd9d7f0cbffa407718a23cfc201') in 0.153514 seconds 
+  Import took 0.158204 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield07_blue.prefab
+  artifactKey: Guid(3b9831ecf83132b468239cb0976e4cf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield07_blue.prefab using Guid(3b9831ecf83132b468239cb0976e4cf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f23fe08ad3d21346623c54664a7f098') in 0.009729 seconds 
+  Import took 0.013855 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000163 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield02_red.prefab
+  artifactKey: Guid(e8901ad48f1fb2d458b20fbe3acb5d6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield02_red.prefab using Guid(e8901ad48f1fb2d458b20fbe3acb5d6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa5a684069beba861bcddd3b2eeba4c7') in 0.010102 seconds 
+  Import took 0.014315 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield06_blue.prefab
+  artifactKey: Guid(92d779e7954307f45a28611505742a4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield06_blue.prefab using Guid(92d779e7954307f45a28611505742a4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bb8f1b500d5b521889d34c5d536c692') in 0.010033 seconds 
+  Import took 0.013910 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield02_blue.prefab
+  artifactKey: Guid(5265f5185eb21c14788930556d8b621a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield02_blue.prefab using Guid(5265f5185eb21c14788930556d8b621a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2725ebc4bafcf640ae530eaac139528') in 0.009891 seconds 
+  Import took 0.013853 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield05_beige.prefab
+  artifactKey: Guid(892df6da57953364d8cc9dfaf9455d82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield05_beige.prefab using Guid(892df6da57953364d8cc9dfaf9455d82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '576a406d70fcc2910301795bd54dcfa3') in 0.010667 seconds 
+  Import took 0.014526 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield06_red.prefab
+  artifactKey: Guid(dcc9c2715c36de54f8d0469af32ddfc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield06_red.prefab using Guid(dcc9c2715c36de54f8d0469af32ddfc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0679b57bd3176152165c52ea89e2697') in 0.008665 seconds 
+  Import took 0.012539 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield01_yellow.prefab
+  artifactKey: Guid(18c91416c8e12e84fbba1ed21a5adca9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield01_yellow.prefab using Guid(18c91416c8e12e84fbba1ed21a5adca9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c5ffc8a94ba99f22fa49eaa97fdc061') in 0.009136 seconds 
+  Import took 0.012962 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield03_blue.prefab
+  artifactKey: Guid(5dd3e5ffe92fdcb4891e2ce80ce0e8ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield03_blue.prefab using Guid(5dd3e5ffe92fdcb4891e2ce80ce0e8ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33b28921d0761460a72d5cb6573aa91d') in 0.008940 seconds 
+  Import took 0.012915 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield01_green.prefab
+  artifactKey: Guid(cc35583e9a4b20b4a8f98106e05d6a8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield01_green.prefab using Guid(cc35583e9a4b20b4a8f98106e05d6a8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3e2a3030d98304bdf2c5d6180a1a88a') in 0.009293 seconds 
+  Import took 0.013333 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield07_grey.prefab
+  artifactKey: Guid(84cc7896a0e0ea049a89b73241cfc917) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield07_grey.prefab using Guid(84cc7896a0e0ea049a89b73241cfc917) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b71f69891a7b5068afa25324f6eb213c') in 0.008631 seconds 
+  Import took 0.012689 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield04_blue.prefab
+  artifactKey: Guid(20c9aa88ae21a794ead6825f5c6ba8b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield04_blue.prefab using Guid(20c9aa88ae21a794ead6825f5c6ba8b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5ba77f4b081528bdbb3eb6264cee927') in 0.009145 seconds 
+  Import took 0.013428 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield04_orange.prefab
+  artifactKey: Guid(fb6738b0437bd5f49a7bb1035f5ef10b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield04_orange.prefab using Guid(fb6738b0437bd5f49a7bb1035f5ef10b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca0d123e2d0086648973b3edb403d3d9') in 0.009884 seconds 
+  Import took 0.014203 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield05_green.prefab
+  artifactKey: Guid(183e1a6c4dce1bf45814e83c7077f11e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield05_green.prefab using Guid(183e1a6c4dce1bf45814e83c7077f11e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48b254058ed30e6f9dd22cd634d333ca') in 0.009296 seconds 
+  Import took 0.013689 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield06_grey.prefab
+  artifactKey: Guid(767a17ea99c6f744eaca5188c2200949) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield06_grey.prefab using Guid(767a17ea99c6f744eaca5188c2200949) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed4ea27aef7caf52f6f8309518358076') in 0.009702 seconds 
+  Import took 0.013939 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield01_brown.prefab
+  artifactKey: Guid(43527db0a95497f48b0b381094b54c3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield01_brown.prefab using Guid(43527db0a95497f48b0b381094b54c3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94178fa8c62cd044536077460e7865b2') in 0.008781 seconds 
+  Import took 0.012913 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield02_grey.prefab
+  artifactKey: Guid(465114028ead1e448af19d83b5c06ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield02_grey.prefab using Guid(465114028ead1e448af19d83b5c06ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc999a0ec234f32ddb01f48f5b2d1161') in 0.009389 seconds 
+  Import took 0.013778 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield01_grey.prefab
+  artifactKey: Guid(0c766047f918dde42a37f2bee3bb2f74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield01_grey.prefab using Guid(0c766047f918dde42a37f2bee3bb2f74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18244eb9cd0d457312d985001dc6b6c0') in 0.008606 seconds 
+  Import took 0.012899 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield02_green.prefab
+  artifactKey: Guid(964bbc1b62fc0c0419341462f15947db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield02_green.prefab using Guid(964bbc1b62fc0c0419341462f15947db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bce9c4c6481077431f72570097c614c') in 0.009456 seconds 
+  Import took 0.013731 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000289 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield03_grey.prefab
+  artifactKey: Guid(762d9a14234540a4285bab62e2962c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield03_grey.prefab using Guid(762d9a14234540a4285bab62e2962c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d2d5e6981e0732e670939aba44ffe4e') in 0.008528 seconds 
+  Import took 0.012957 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield04_yellow.prefab
+  artifactKey: Guid(67d73703d2a7ffc4fa29f5c2ee31701f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield04_yellow.prefab using Guid(67d73703d2a7ffc4fa29f5c2ee31701f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d487541da68dca72b61c9da31a3804a') in 0.009236 seconds 
+  Import took 0.013198 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield03_yellow.prefab
+  artifactKey: Guid(b0c673e2ab75cad4ba0ad7c0a111d779) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield03_yellow.prefab using Guid(b0c673e2ab75cad4ba0ad7c0a111d779) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b82dfbec95f8b23b820bf04ea1e36ecc') in 0.009942 seconds 
+  Import took 0.014055 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield04_grey.prefab
+  artifactKey: Guid(ef072e948f44b4142b4a1b0ca23756c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield04_grey.prefab using Guid(ef072e948f44b4142b4a1b0ca23756c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b77a88ecb9822f36f352186c50f12a4') in 0.009248 seconds 
+  Import took 0.013177 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield04_red.prefab
+  artifactKey: Guid(afe32dab6b0137b478c9b4f9308f9858) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield04_red.prefab using Guid(afe32dab6b0137b478c9b4f9308f9858) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07faf4212cfe075c9667f6e93b201d62') in 0.010078 seconds 
+  Import took 0.014054 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000141 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield03_green.prefab
+  artifactKey: Guid(db71c1c57cbd53044be36978e2b6bf56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield03_green.prefab using Guid(db71c1c57cbd53044be36978e2b6bf56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36f5955ede9f25223169ccfeff52fd42') in 0.008466 seconds 
+  Import took 0.012632 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield05_brown.prefab
+  artifactKey: Guid(ab88a411b42e5e943839d87a106489e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield05_brown.prefab using Guid(ab88a411b42e5e943839d87a106489e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc8dcfea26b4fb0b43bef02a7d4c986d') in 0.009528 seconds 
+  Import took 0.013418 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000130 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield05_grey.prefab
+  artifactKey: Guid(1e84a95331448764098107b9c2dde9da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield05_grey.prefab using Guid(1e84a95331448764098107b9c2dde9da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dac71c5bbb8294f48493c5b2f87fb591') in 0.009643 seconds 
+  Import took 0.013778 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield05_yellow.prefab
+  artifactKey: Guid(31c0d8ce26c53144fadbbee30a5cfba2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield05_yellow.prefab using Guid(31c0d8ce26c53144fadbbee30a5cfba2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aabe86052391d629e038f4c97a88c3cb') in 0.008730 seconds 
+  Import took 0.012761 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield02_yellow.prefab
+  artifactKey: Guid(1a2f283dc2c871a4abd05fb5a85e71e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield02_yellow.prefab using Guid(1a2f283dc2c871a4abd05fb5a85e71e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80705ca4a6b8bf625418be9ee589c713') in 0.008741 seconds 
+  Import took 0.012791 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield06_yellow.prefab
+  artifactKey: Guid(c0eca5b8f3667a44a902033aa2a2a28b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield06_yellow.prefab using Guid(c0eca5b8f3667a44a902033aa2a2a28b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b209d35a6fc2207df2995df27fddb176') in 0.008700 seconds 
+  Import took 0.012897 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield07_red.prefab
+  artifactKey: Guid(7cd487499ce8cec4cb9ba3fa0ec62a11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield07_red.prefab using Guid(7cd487499ce8cec4cb9ba3fa0ec62a11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02e5bc9414a7495667236075534949c4') in 0.009705 seconds 
+  Import took 0.013902 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield06_beige.prefab
+  artifactKey: Guid(b5ca0c521b9008d49854fe8b1ccda887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield06_beige.prefab using Guid(b5ca0c521b9008d49854fe8b1ccda887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1dad8b47bb9b89cca7f4fc94672ff808') in 0.009296 seconds 
+  Import took 0.013378 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield03_pink.prefab
+  artifactKey: Guid(2288a1e3139f3204c8d113747d1c1b6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield03_pink.prefab using Guid(2288a1e3139f3204c8d113747d1c1b6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbd4b4ce65826da6b6cf3d249e8d2f5a') in 0.009701 seconds 
+  Import took 0.013920 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/3D Items - Mega Pack/Prefabs/Shields/shield07_green.prefab
+  artifactKey: Guid(75e8bcda9a193444ba48cb1814899594) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Prefabs/Shields/shield07_green.prefab using Guid(75e8bcda9a193444ba48cb1814899594) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '693fc68768d8585d5cd6aa018537dfca') in 0.008534 seconds 
+  Import took 0.012560 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.692184 seconds.
+  path: Assets/3D Items - Mega Pack/Textures/texture01.PSD
+  artifactKey: Guid(9a6ce7643d0a9a445bde1a44b884bcc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Textures/texture01.PSD using Guid(9a6ce7643d0a9a445bde1a44b884bcc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a8373d9d8dc947343b924600ffd4499') in 0.015302 seconds 
+  Import took 0.019821 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.214776 seconds.
+  path: Assets/Textures/circle.png
+  artifactKey: Guid(155f67fd8750f8e4e83c8efb1731f3a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/circle.png using Guid(155f67fd8750f8e4e83c8efb1731f3a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80dcf6f494ed54eac63f022534d92957') in 0.012635 seconds 
+  Import took 0.017002 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Textures/wave3.png
+  artifactKey: Guid(909a245172e987b429ea32e22c65512e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/wave3.png using Guid(909a245172e987b429ea32e22c65512e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13f3feee34beb681f9bee462051e289d') in 0.008901 seconds 
+  Import took 0.012922 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Textures/cloud_2x2_hardshadow.png
+  artifactKey: Guid(c191bbcd4d376b54b9d57e6a123f8bcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/cloud_2x2_hardshadow.png using Guid(c191bbcd4d376b54b9d57e6a123f8bcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a23f272d2dc58190525a057608d6ac8') in 0.009134 seconds 
+  Import took 0.013055 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000223 seconds.
+  path: Assets/Textures/glow1.png
+  artifactKey: Guid(75c822b01a637d547abc69e6f1f590b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/glow1.png using Guid(75c822b01a637d547abc69e6f1f590b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e98d985eb6841d929b59b2fbc0793a85') in 0.008328 seconds 
+  Import took 0.012272 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Textures/explosion_round_3x3.png
+  artifactKey: Guid(d7c03274686d81342b51ce0f21ac8215) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/explosion_round_3x3.png using Guid(d7c03274686d81342b51ce0f21ac8215) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87d5c0ebfb45777ca6789c1d4198bc3e') in 0.009017 seconds 
+  Import took 0.013303 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/Textures/splat03_flat_3x3.png
+  artifactKey: Guid(9a3b5f0adc592ef45a01eea87e6823ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/splat03_flat_3x3.png using Guid(9a3b5f0adc592ef45a01eea87e6823ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37785b9803b851aaf8ae1ebc68d0f539') in 0.015799 seconds 
+  Import took 0.020062 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.175453 seconds.
+  path: Assets/Textures/TurretTextures.PSD
+  artifactKey: Guid(9a6ce7643d0a9a445bde1a44b884bcc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/TurretTextures.PSD using Guid(9a6ce7643d0a9a445bde1a44b884bcc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd18d61bb222e00cdac50a559dee2931c') in 0.008687 seconds 
+  Import took 0.013126 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.786811 seconds.
+  path: Assets/Textures/grass.png
+  artifactKey: Guid(4f627f2874598464083c245663eaf60b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/grass.png using Guid(4f627f2874598464083c245663eaf60b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38db1066368e972664960481d9a16298') in 0.008453 seconds 
+  Import took 0.013156 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.554004 seconds.
+  path: Assets/Textures/TurretTextures.PSD
+  artifactKey: Guid(9a6ce7643d0a9a445bde1a44b884bcc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/TurretTextures.PSD using Guid(9a6ce7643d0a9a445bde1a44b884bcc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75f2eccdfdaf4368285cc298b522544c') in 0.009517 seconds 
+  Import took 0.014001 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.405892 seconds.
+  path: Assets/Prefabs/TurretArt/shield07_yellow.prefab
+  artifactKey: Guid(1e4b3b8e718d5574bba0239727983fe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield07_yellow.prefab using Guid(1e4b3b8e718d5574bba0239727983fe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd24be72884a4701b51a35046e0d9cbc1') in 0.024485 seconds 
+  Import took 0.029041 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/Prefabs/TurretArt/shield08_green.prefab
+  artifactKey: Guid(4b889fbf28964894cbef6a9a72f99b94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield08_green.prefab using Guid(4b889fbf28964894cbef6a9a72f99b94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd3fea25cb78ca16e4fff5bbc0c08b32') in 0.010031 seconds 
+  Import took 0.013870 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Prefabs/TurretArt/shield09_grey.prefab
+  artifactKey: Guid(48bd2ecc568c5a849abbdd0259e9f1b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield09_grey.prefab using Guid(48bd2ecc568c5a849abbdd0259e9f1b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb418d213bcde9e1d61f55954dcd792c') in 0.009153 seconds 
+  Import took 0.013221 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000147 seconds.
+  path: Assets/Prefabs/TurretArt/shield08_beige.prefab
+  artifactKey: Guid(952ca8a7f27c53a4198c6543be13c4a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield08_beige.prefab using Guid(952ca8a7f27c53a4198c6543be13c4a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b435b2f3f8873f99c3e527e7305e2076') in 0.010069 seconds 
+  Import took 0.014189 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/Prefabs/TurretArt/shield09_purple.prefab
+  artifactKey: Guid(2aece38cc7eb405459aee937b64d4aee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield09_purple.prefab using Guid(2aece38cc7eb405459aee937b64d4aee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb641cbdfa64a0efc97bba6384906111') in 0.009074 seconds 
+  Import took 0.013038 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Prefabs/TurretArt/shield09_brown.prefab
+  artifactKey: Guid(5930ede36f4426d4ebe0b83a3de62f8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield09_brown.prefab using Guid(5930ede36f4426d4ebe0b83a3de62f8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1836c93fbc0b5ac463ed6f39fd873c1') in 0.009292 seconds 
+  Import took 0.013343 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/Prefabs/TurretArt/shield09_blue.prefab
+  artifactKey: Guid(c1e9936658c05a14aa0421ad1e54065c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield09_blue.prefab using Guid(c1e9936658c05a14aa0421ad1e54065c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e19e7f63d8c27f8c7022af8b34141fbf') in 0.009427 seconds 
+  Import took 0.013332 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/Prefabs/TurretArt/shield08_brown.prefab
+  artifactKey: Guid(cda9434443b067248acb3c67899b55cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield08_brown.prefab using Guid(cda9434443b067248acb3c67899b55cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b95f0c9ef955cd38c593eb5a795fe83') in 0.009444 seconds 
+  Import took 0.013519 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Prefabs/TurretArt/shield08_blue.prefab
+  artifactKey: Guid(eac9aa6155eb9fa449bd34f18854f3ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield08_blue.prefab using Guid(eac9aa6155eb9fa449bd34f18854f3ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac4bbf681af4e0c4c7300a28303d3056') in 0.009431 seconds 
+  Import took 0.013431 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Prefabs/TurretArt/shield09_yellow.prefab
+  artifactKey: Guid(b5e685bf0984a224f9fd050822fef937) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield09_yellow.prefab using Guid(b5e685bf0984a224f9fd050822fef937) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4babf501b568ac874320e9b338099f00') in 0.010129 seconds 
+  Import took 0.014083 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/Prefabs/TurretArt/shield08_grey.prefab
+  artifactKey: Guid(3825daedef2b7c54b9785bebbdfcba5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield08_grey.prefab using Guid(3825daedef2b7c54b9785bebbdfcba5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '120a341f16828a75d888809f564795a0') in 0.008878 seconds 
+  Import took 0.013435 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.445237 seconds.
+  path: Assets/3D Items - Mega Pack/Models/Shields01.FBX
+  artifactKey: Guid(308d7ea7e8b451342813f016cfe08ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Models/Shields01.FBX using Guid(308d7ea7e8b451342813f016cfe08ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1602549eadd4b66c11ac12a70ec18767') in 0.773951 seconds 
+  Import took 0.779134 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.998420 seconds.
+  path: Assets/3D Items - Mega Pack/Materials/MegaPack01.mat
+  artifactKey: Guid(cc919ede1bcfa504286f7782aecad3ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Items - Mega Pack/Materials/MegaPack01.mat using Guid(cc919ede1bcfa504286f7782aecad3ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53c7ad92a3e61cdcfe12793993b6856c') in 0.020928 seconds 
+  Import took 0.025564 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006607 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.917 seconds
+Domain Reload Profiling:
+	ReloadAssembly (918ms)
+		BeginReloadAssembly (103ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (769ms)
+			LoadAssemblies (84ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (260ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (281ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (81ms)
+				ProcessInitializeOnLoadAttributes (185ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.76 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3251 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 220.7 MB.
+System memory in use after: 220.9 MB.
+
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 3946.
+Total: 2.947400 ms (FindLiveObjects: 0.239500 ms CreateObjectMapping: 0.125200 ms MarkObjects: 2.567800 ms  DeleteObjects: 0.014200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 19.169230 seconds.
+  path: Assets/Materials/TurretMaterials.mat
+  artifactKey: Guid(cc919ede1bcfa504286f7782aecad3ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/TurretMaterials.mat using Guid(cc919ede1bcfa504286f7782aecad3ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2c4c41a8402faa38ebdf9e6c71ab06f') in 0.138615 seconds 
+  Import took 0.143279 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 85.659973 seconds.
+  path: Assets/Prefabs/TurretArt/shield10_green.prefab
+  artifactKey: Guid(5bca02f92c58d0e48ab3405a242e99c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield10_green.prefab using Guid(5bca02f92c58d0e48ab3405a242e99c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34d1057fcecdcab736005444765c54bd') in 0.016965 seconds 
+  Import took 0.022244 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/Prefabs/TurretArt/shield12_black.prefab
+  artifactKey: Guid(8c5a10b219fe8cb468485c8aa8cd3771) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield12_black.prefab using Guid(8c5a10b219fe8cb468485c8aa8cd3771) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef6fa18a6dbe7b2909ac120427db6e0e') in 0.010316 seconds 
+  Import took 0.014442 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Prefabs/TurretArt/shield11_beige.prefab
+  artifactKey: Guid(ac6cd14505ed91642a974b6e18c353fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield11_beige.prefab using Guid(ac6cd14505ed91642a974b6e18c353fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10f4a2955d5b2aaa69e3e396270d170c') in 0.010176 seconds 
+  Import took 0.014236 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/Prefabs/TurretArt/shield11_green.prefab
+  artifactKey: Guid(09e37dad383abd040bac3e32b3d902f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield11_green.prefab using Guid(09e37dad383abd040bac3e32b3d902f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bb7f02e4626d5e72a3f9dd7de8840dc') in 0.010097 seconds 
+  Import took 0.014084 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/Prefabs/TurretArt/shield10_grey.prefab
+  artifactKey: Guid(5324db48133ca1b47bfb386a4a37f202) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield10_grey.prefab using Guid(5324db48133ca1b47bfb386a4a37f202) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c2aa0e8213b943eb72bc6f61965544d') in 0.009995 seconds 
+  Import took 0.014476 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/Prefabs/TurretArt/shield10_white.prefab
+  artifactKey: Guid(59ab0411abb2e8543a7e6c7cbbbaa06c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield10_white.prefab using Guid(59ab0411abb2e8543a7e6c7cbbbaa06c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24496a564f486f46def7ebb0f9cbe48b') in 0.009689 seconds 
+  Import took 0.013900 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Prefabs/TurretArt/shield10_yellow.prefab
+  artifactKey: Guid(78475f3cc4b2243409875f215032838d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield10_yellow.prefab using Guid(78475f3cc4b2243409875f215032838d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecdffac2698970cb3b21a1021e648096') in 0.009063 seconds 
+  Import took 0.013544 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000134 seconds.
+  path: Assets/Prefabs/TurretArt/shield13_grey.prefab
+  artifactKey: Guid(0f81d402b84434e4caece98a9b3c7b08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield13_grey.prefab using Guid(0f81d402b84434e4caece98a9b3c7b08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e54d1c8fa9bf98ef7427af5fa33a96db') in 0.009684 seconds 
+  Import took 0.014005 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Prefabs/TurretArt/shield12_yellow.prefab
+  artifactKey: Guid(7a15fc6f8be07f549a91c9e716867386) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield12_yellow.prefab using Guid(7a15fc6f8be07f549a91c9e716867386) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4387ffe5745af1b5c7710cea5abfaf41') in 0.010179 seconds 
+  Import took 0.014757 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Prefabs/TurretArt/shield14_green.prefab
+  artifactKey: Guid(92dd62b35245bed4aa84ef6423680943) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield14_green.prefab using Guid(92dd62b35245bed4aa84ef6423680943) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07fd5d7b91bfb422ccda165444c710c5') in 0.009717 seconds 
+  Import took 0.014315 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/Prefabs/TurretArt/shield12_grey.prefab
+  artifactKey: Guid(bbb873e4f93d2e34b8500068fcd16703) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield12_grey.prefab using Guid(bbb873e4f93d2e34b8500068fcd16703) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a79a3e73ae79dcc03027ac5eaff7b938') in 0.010059 seconds 
+  Import took 0.014204 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/Prefabs/TurretArt/shield13_brown.prefab
+  artifactKey: Guid(fbc40854956dfb44eab023747b6da64e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield13_brown.prefab using Guid(fbc40854956dfb44eab023747b6da64e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0add9870d2b02cbf09a01f79d513f3ad') in 0.009945 seconds 
+  Import took 0.013852 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000149 seconds.
+  path: Assets/Prefabs/TurretArt/shield13_green.prefab
+  artifactKey: Guid(65af5206f8f16e1438be083d9acee6d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield13_green.prefab using Guid(65af5206f8f16e1438be083d9acee6d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fa38a516ed1c452bd0afcf74340d48d') in 0.010156 seconds 
+  Import took 0.014159 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000148 seconds.
+  path: Assets/Prefabs/TurretArt/shield14_yellow.prefab
+  artifactKey: Guid(0143909c2101dea4f86af0cfc9712c60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield14_yellow.prefab using Guid(0143909c2101dea4f86af0cfc9712c60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3677a3168d05fb6d3e1b9cf79a576558') in 0.009211 seconds 
+  Import took 0.013502 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Prefabs/TurretArt/shield15_green.prefab
+  artifactKey: Guid(ad676cdafc6495b4da69cd3781f0b0e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield15_green.prefab using Guid(ad676cdafc6495b4da69cd3781f0b0e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '024e0a1d0bec2e9466cf35bfe7c04123') in 0.009782 seconds 
+  Import took 0.013731 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Prefabs/TurretArt/shield15_grey.prefab
+  artifactKey: Guid(64b182c3702337e40ad95a3c92af6f21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield15_grey.prefab using Guid(64b182c3702337e40ad95a3c92af6f21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1e538ec7b7bbbf281041ff2529a8f3b') in 0.009638 seconds 
+  Import took 0.013775 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/Prefabs/TurretArt/shield16_brown.prefab
+  artifactKey: Guid(079c5cd0d39726245a8fa669f620de3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield16_brown.prefab using Guid(079c5cd0d39726245a8fa669f620de3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52c4ce1ab932f32407afc5f3dd4baa57') in 0.009064 seconds 
+  Import took 0.013291 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000149 seconds.
+  path: Assets/Prefabs/TurretArt/shield14_purple.prefab
+  artifactKey: Guid(fe25b9fd6f00f4c4eb91a9bb9cb044aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield14_purple.prefab using Guid(fe25b9fd6f00f4c4eb91a9bb9cb044aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84677574a8c976c18ccce4396643c7eb') in 0.009235 seconds 
+  Import took 0.013638 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000144 seconds.
+  path: Assets/Prefabs/TurretArt/shield13_yellow.prefab
+  artifactKey: Guid(0cd39333adf76914ca69c1da3c653310) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield13_yellow.prefab using Guid(0cd39333adf76914ca69c1da3c653310) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f3465b6752c0e7faaf4feb035bc7a09') in 0.009007 seconds 
+  Import took 0.013205 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Prefabs/TurretArt/shield14_grey.prefab
+  artifactKey: Guid(466244c3c6df84844829196ae8cfad94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield14_grey.prefab using Guid(466244c3c6df84844829196ae8cfad94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40014c82883b0b471d15efeb31bf7e22') in 0.009845 seconds 
+  Import took 0.014326 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/Prefabs/TurretArt/shield12_brown.prefab
+  artifactKey: Guid(1221f179e7bdd9e4c9f21e5182a6d669) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield12_brown.prefab using Guid(1221f179e7bdd9e4c9f21e5182a6d669) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6f683c89c8912f25c7fbc16b2dd395d') in 0.009361 seconds 
+  Import took 0.013636 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Prefabs/TurretArt/shield16_blue.prefab
+  artifactKey: Guid(9541dc5d7bafceb4980a10375d2e5cf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield16_blue.prefab using Guid(9541dc5d7bafceb4980a10375d2e5cf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e9e9bce6a4ceba1bfecff717155cee6') in 0.009030 seconds 
+  Import took 0.013155 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Prefabs/TurretArt/shield15_red.prefab
+  artifactKey: Guid(c928e224ba2579741b6c0a55c90823a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield15_red.prefab using Guid(c928e224ba2579741b6c0a55c90823a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90469a322d65be1daec89f15d87e82c2') in 0.010083 seconds 
+  Import took 0.014269 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Prefabs/TurretArt/shield15_yellow.prefab
+  artifactKey: Guid(442c5fb15ba0f934780c2dd6a0feb12e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield15_yellow.prefab using Guid(442c5fb15ba0f934780c2dd6a0feb12e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '839b4c8be727f4ece23b677eb90d9417') in 0.008965 seconds 
+  Import took 0.013221 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Prefabs/TurretArt/shield14_blue.prefab
+  artifactKey: Guid(2d59e434382e28541a9016317f8af96b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield14_blue.prefab using Guid(2d59e434382e28541a9016317f8af96b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4f8e9ce525a14609375b75dd82677b7') in 0.009074 seconds 
+  Import took 0.013507 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000118 seconds.
+  path: Assets/Prefabs/TurretArt/shield16_grey.prefab
+  artifactKey: Guid(857e4cb9926e19340bef45f2776eb936) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield16_grey.prefab using Guid(857e4cb9926e19340bef45f2776eb936) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41f90a82dc3d2f6e9948e67a588ed9c0') in 0.010035 seconds 
+  Import took 0.014448 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Prefabs/TurretArt/shield15_blue.prefab
+  artifactKey: Guid(8e357017efe077d4da0019d830eb9bff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield15_blue.prefab using Guid(8e357017efe077d4da0019d830eb9bff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a75708163e31a5ae7eed8ed803c3cac3') in 0.009805 seconds 
+  Import took 0.014161 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Prefabs/TurretArt/shield10_red.prefab
+  artifactKey: Guid(e543d156129e82f4c85428dc0ac2527f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield10_red.prefab using Guid(e543d156129e82f4c85428dc0ac2527f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '788c8bf50200c06eeea15ccc9ab1705e') in 0.009827 seconds 
+  Import took 0.014288 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/Prefabs/TurretArt/shield11_blue.prefab
+  artifactKey: Guid(a35c1003af6165546b4df6fa1d99a831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield11_blue.prefab using Guid(a35c1003af6165546b4df6fa1d99a831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bccac17da55c487b8f53506f8ad4745c') in 0.009610 seconds 
+  Import took 0.013957 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000140 seconds.
+  path: Assets/Prefabs/TurretArt/shield12_blue.prefab
+  artifactKey: Guid(dbac7b4a964bda849b73d0a999e605e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield12_blue.prefab using Guid(dbac7b4a964bda849b73d0a999e605e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad5b78c3fa7f78e0dc19214d59107e4a') in 0.010401 seconds 
+  Import took 0.014551 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/Prefabs/TurretArt/shield13_red.prefab
+  artifactKey: Guid(6d4c175275316a943936cbdd840fd737) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield13_red.prefab using Guid(6d4c175275316a943936cbdd840fd737) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '208c20702425b4126407f7c62aa7b883') in 0.009706 seconds 
+  Import took 0.013805 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000146 seconds.
+  path: Assets/Prefabs/TurretArt/shield11_grey.prefab
+  artifactKey: Guid(6d6b6952860bf8a45b2dce2cbc317574) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield11_grey.prefab using Guid(6d6b6952860bf8a45b2dce2cbc317574) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fe44ebdf83e3869298e11b54dded351') in 0.008634 seconds 
+  Import took 0.012809 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Prefabs/TurretArt/shield11_red.prefab
+  artifactKey: Guid(0d2cfa1b4475cdd40936650241e0ebdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield11_red.prefab using Guid(0d2cfa1b4475cdd40936650241e0ebdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '442057f32eef2e5d6dc6ea9319b79fb7') in 0.010228 seconds 
+  Import took 0.014553 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.411317 seconds.
+  path: Assets/Prefabs/TurretArt/shield16_pink.prefab
+  artifactKey: Guid(cbd6d6416a12f564e9c2eb47543fef99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield16_pink.prefab using Guid(cbd6d6416a12f564e9c2eb47543fef99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cfe250e1c6b2c915eae771e30161b65') in 0.009203 seconds 
+  Import took 0.013525 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Prefabs/TurretArt/shield16_yellow.prefab
+  artifactKey: Guid(fdfed52924e94a74bb8eb6f1a324f2a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield16_yellow.prefab using Guid(fdfed52924e94a74bb8eb6f1a324f2a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de462ee2a6ac3ee87d023750f5bffade') in 0.009343 seconds 
+  Import took 0.013271 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000144 seconds.
+  path: Assets/Prefabs/TurretArt/shield18_black.prefab
+  artifactKey: Guid(a4044d5470388e646a5698d62d567906) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield18_black.prefab using Guid(a4044d5470388e646a5698d62d567906) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7889b6e46183553a9f186e34ddcf8104') in 0.010559 seconds 
+  Import took 0.014666 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/Prefabs/TurretArt/shield17_brown.prefab
+  artifactKey: Guid(78a50c527c175f647bfed1be8b45f288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield17_brown.prefab using Guid(78a50c527c175f647bfed1be8b45f288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c51c18673fb9369042674c64f82d6cc2') in 0.010231 seconds 
+  Import took 0.014369 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/Prefabs/TurretArt/shield18_green.prefab
+  artifactKey: Guid(111f406dc07c9284f9d3f8e54a2aa368) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield18_green.prefab using Guid(111f406dc07c9284f9d3f8e54a2aa368) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bf8540cf87686dfbffa419016bef4e5') in 0.016097 seconds 
+  Import took 0.020090 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/Prefabs/TurretArt/shield17_grey.prefab
+  artifactKey: Guid(924dc39f5a4b23d4ea7495a0174a9212) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield17_grey.prefab using Guid(924dc39f5a4b23d4ea7495a0174a9212) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d6e46b755611c49649a35097c90a29e') in 0.009998 seconds 
+  Import took 0.014286 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Prefabs/TurretArt/shield17_blue.prefab
+  artifactKey: Guid(af3880f3e4d19f04b8a827cb9c62b8e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield17_blue.prefab using Guid(af3880f3e4d19f04b8a827cb9c62b8e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '170a64d0e61b500b0c2f5a73aeab53aa') in 0.010379 seconds 
+  Import took 0.014356 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000161 seconds.
+  path: Assets/Prefabs/TurretArt/shield18_grey.prefab
+  artifactKey: Guid(613d4ce519008fa4eac5d0416bab7336) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield18_grey.prefab using Guid(613d4ce519008fa4eac5d0416bab7336) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '547a521956f7946a73f94f56663d170b') in 0.009975 seconds 
+  Import took 0.014459 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Prefabs/TurretArt/shield17_white.prefab
+  artifactKey: Guid(6554dbbbc667a624dad2ae62a4351655) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield17_white.prefab using Guid(6554dbbbc667a624dad2ae62a4351655) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cfd617c946ee52e945c735ce8917d6e') in 0.010267 seconds 
+  Import took 0.014651 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000154 seconds.
+  path: Assets/Prefabs/TurretArt/shield19_red.prefab
+  artifactKey: Guid(1179eee2f0e0fcf4fbe8e411f0b9c0d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield19_red.prefab using Guid(1179eee2f0e0fcf4fbe8e411f0b9c0d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59e3137e5138cea78e0e8aefb3cf1dad') in 0.011425 seconds 
+  Import took 0.015743 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Prefabs/TurretArt/shield18_red.prefab
+  artifactKey: Guid(1fe3de10742903a4fb19f08af0738d0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield18_red.prefab using Guid(1fe3de10742903a4fb19f08af0738d0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a144d5d758116126000571e8fad0f8de') in 0.009078 seconds 
+  Import took 0.013214 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Prefabs/TurretArt/shield20_grey.prefab
+  artifactKey: Guid(2949a495d96168e41b0bd7881a7f44b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield20_grey.prefab using Guid(2949a495d96168e41b0bd7881a7f44b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66f8b0178a9333c6e2d75cd8daa288e7') in 0.009934 seconds 
+  Import took 0.013945 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Prefabs/TurretArt/shield20_orange.prefab
+  artifactKey: Guid(f767fe431cb5ba64898d0aa1a836e20e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield20_orange.prefab using Guid(f767fe431cb5ba64898d0aa1a836e20e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e8e6d73611a2d35cf5584cb9c496c4a') in 0.009848 seconds 
+  Import took 0.014005 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/Prefabs/TurretArt/shield20_green.prefab
+  artifactKey: Guid(39e412c11c7e00d49afc5bb6635fb159) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield20_green.prefab using Guid(39e412c11c7e00d49afc5bb6635fb159) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd022839dfa788fc8c2466ad6e6f7e5f5') in 0.010215 seconds 
+  Import took 0.014237 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Assets/Prefabs/TurretArt/shield20_yellow.prefab
+  artifactKey: Guid(f7aac1425f26f5148b7a868819664fc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield20_yellow.prefab using Guid(f7aac1425f26f5148b7a868819664fc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '949e84bcb03b9b4e1cd8ee217563ab67') in 0.010132 seconds 
+  Import took 0.014135 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000284 seconds.
+  path: Assets/Prefabs/TurretArt/shield19_yellow.prefab
+  artifactKey: Guid(25ccdaf1fc2ef5947b83d87ccda76438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield19_yellow.prefab using Guid(25ccdaf1fc2ef5947b83d87ccda76438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '430db8edf0800dbf4afad754d40e03d9') in 0.009331 seconds 
+  Import took 0.013404 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Prefabs/TurretArt/shield19_orange.prefab
+  artifactKey: Guid(1a21d6b3a7071e34089856e772871ad5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield19_orange.prefab using Guid(1a21d6b3a7071e34089856e772871ad5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d5b50a04978d1b4c80f8f8f449944a9') in 0.010230 seconds 
+  Import took 0.014346 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Prefabs/TurretArt/shield18_brown.prefab
+  artifactKey: Guid(13c6bc6f65c422a4dbef26c10b593278) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield18_brown.prefab using Guid(13c6bc6f65c422a4dbef26c10b593278) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6cbf0b2bdc8fb38cb0a6018c941e298') in 0.008955 seconds 
+  Import took 0.012928 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Prefabs/TurretArt/shield19_grey.prefab
+  artifactKey: Guid(a53e9e9801d25c74990837cdd65042e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield19_grey.prefab using Guid(a53e9e9801d25c74990837cdd65042e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13b79f9451ed0bd0007402f79e9385b0') in 0.009288 seconds 
+  Import took 0.013345 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000150 seconds.
+  path: Assets/Prefabs/TurretArt/shield17_yellow.prefab
+  artifactKey: Guid(4e70a6c9fe6157c4582eac9b63eb8cf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield17_yellow.prefab using Guid(4e70a6c9fe6157c4582eac9b63eb8cf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e49e9c46cce73c498b17640771a3c57c') in 0.009854 seconds 
+  Import took 0.013919 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/Prefabs/TurretArt/shield19_green.prefab
+  artifactKey: Guid(cbfe2a2015c8ec14b999f7f1691eeb38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield19_green.prefab using Guid(cbfe2a2015c8ec14b999f7f1691eeb38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ef006de96b65ec89e1ceffd9355231c') in 0.010195 seconds 
+  Import took 0.014222 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Prefabs/TurretArt/shield20_red.prefab
+  artifactKey: Guid(895196fa031b54c4aabfa3119dee5df2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield20_red.prefab using Guid(895196fa031b54c4aabfa3119dee5df2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b6a1095fdb09421494a1ae02283a64c') in 0.009099 seconds 
+  Import took 0.013110 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.092668 seconds.
+  path: Assets/Prefabs/TurretArt/shield21_blue.prefab
+  artifactKey: Guid(e6cbc53cc7c599649b96897229ee9b29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield21_blue.prefab using Guid(e6cbc53cc7c599649b96897229ee9b29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '192826fd20442c5ca1f850a09a00a88f') in 0.010261 seconds 
+  Import took 0.014771 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/Prefabs/TurretArt/shield21_grey.prefab
+  artifactKey: Guid(1dfd79e5fc0326845a7799edf89d63a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield21_grey.prefab using Guid(1dfd79e5fc0326845a7799edf89d63a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dce6e8d625f291efde30f897cf99a582') in 0.009725 seconds 
+  Import took 0.013735 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000143 seconds.
+  path: Assets/Prefabs/TurretArt/shield21_red.prefab
+  artifactKey: Guid(a49df73e63b0c07408cb7e65b20bdcd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield21_red.prefab using Guid(a49df73e63b0c07408cb7e65b20bdcd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc0907c441d7398ff5cfed30d7026c46') in 0.009653 seconds 
+  Import took 0.013696 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Prefabs/TurretArt/shield22_grey.prefab
+  artifactKey: Guid(19d04cd80701d53458f51802ea6f0a32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield22_grey.prefab using Guid(19d04cd80701d53458f51802ea6f0a32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48dc2ee2bc5778eceda45e78c73cbbe0') in 0.011696 seconds 
+  Import took 0.015833 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Prefabs/TurretArt/shield23_blue.prefab
+  artifactKey: Guid(307a4e17c4f5d954d87e11883b3bf443) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield23_blue.prefab using Guid(307a4e17c4f5d954d87e11883b3bf443) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '426bd0cc12010d138278eddeb31e04c3') in 0.010392 seconds 
+  Import took 0.014882 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/Prefabs/TurretArt/shield22_yellow.prefab
+  artifactKey: Guid(f7dcc9ac2a0ccd54daa2bb4d0ad00ce1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield22_yellow.prefab using Guid(f7dcc9ac2a0ccd54daa2bb4d0ad00ce1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '462def28d973d65b343e60b1a81b8124') in 0.010406 seconds 
+  Import took 0.014958 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Prefabs/TurretArt/shield21_yellow.prefab
+  artifactKey: Guid(cba0459e47f324941bb5a699bdb973e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield21_yellow.prefab using Guid(cba0459e47f324941bb5a699bdb973e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e25b2deb0dab7803c7423597777f82f') in 0.010360 seconds 
+  Import took 0.014938 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Prefabs/TurretArt/shield25_blue.prefab
+  artifactKey: Guid(36f9d629f4ddb0a4c8aad431bdbd3b46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield25_blue.prefab using Guid(36f9d629f4ddb0a4c8aad431bdbd3b46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd630055d922b0e97876e0cd76ba5e978') in 0.010128 seconds 
+  Import took 0.014413 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Prefabs/TurretArt/shield23_tellow.prefab
+  artifactKey: Guid(082f5559c47409847a33bf2632f1aa0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield23_tellow.prefab using Guid(082f5559c47409847a33bf2632f1aa0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60547256e8ee2e8a1dd462148f275395') in 0.010593 seconds 
+  Import took 0.014664 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Prefabs/TurretArt/shield23_red.prefab
+  artifactKey: Guid(8682c244e33f9044ca0f815b31c93194) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield23_red.prefab using Guid(8682c244e33f9044ca0f815b31c93194) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dadb5f74a5e0984ae3c38607ea5a5f01') in 0.009431 seconds 
+  Import took 0.013561 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/Prefabs/TurretArt/shield24_black.prefab
+  artifactKey: Guid(872aa9623b859bb4c8f586a1e68d3cca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield24_black.prefab using Guid(872aa9623b859bb4c8f586a1e68d3cca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc530eb4b687cdbccfb1c97106dcbcd5') in 0.010658 seconds 
+  Import took 0.014788 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/Prefabs/TurretArt/shield23_green.prefab
+  artifactKey: Guid(0a0b7cb14f8a0e8469fa1005d39c9741) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield23_green.prefab using Guid(0a0b7cb14f8a0e8469fa1005d39c9741) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9311171315f0f718f96bbeed37393626') in 0.009602 seconds 
+  Import took 0.013632 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/Prefabs/TurretArt/shield22_green.prefab
+  artifactKey: Guid(cb94f53e8fa8d664db6c26ea6bd73d99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield22_green.prefab using Guid(cb94f53e8fa8d664db6c26ea6bd73d99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4da46aa865685dea942c83ef2ca7ce32') in 0.010371 seconds 
+  Import took 0.014359 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000167 seconds.
+  path: Assets/Prefabs/TurretArt/shield25_green.prefab
+  artifactKey: Guid(64fd4cefa14f0e342b181ddb4f759ad1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield25_green.prefab using Guid(64fd4cefa14f0e342b181ddb4f759ad1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb2df9b6c90db3d56fac6551d91fddb5') in 0.011450 seconds 
+  Import took 0.015856 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/Prefabs/TurretArt/shield25_grey.prefab
+  artifactKey: Guid(fffc0af3d57c5d0448649089d580ca73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield25_grey.prefab using Guid(fffc0af3d57c5d0448649089d580ca73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37251e8d2c95c95333be18472f9ab364') in 0.010396 seconds 
+  Import took 0.014771 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/Prefabs/TurretArt/shield24_yellow.prefab
+  artifactKey: Guid(7ef0af15c6d940d4494aa6ce7218a99c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield24_yellow.prefab using Guid(7ef0af15c6d940d4494aa6ce7218a99c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7611bff5e03931481bbfd5ae04b13635') in 0.010448 seconds 
+  Import took 0.014837 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Prefabs/TurretArt/shield21_green.prefab
+  artifactKey: Guid(485b4f7c5827d9b4b80ff611f04585f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield21_green.prefab using Guid(485b4f7c5827d9b4b80ff611f04585f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd08036cdfc13272badb000e5170d18a4') in 0.009335 seconds 
+  Import took 0.013625 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Prefabs/TurretArt/shield22_black.prefab
+  artifactKey: Guid(5420ab61a794b684fb2634363e465cfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield22_black.prefab using Guid(5420ab61a794b684fb2634363e465cfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2aeaa8954730747612103cf60cd2d008') in 0.010338 seconds 
+  Import took 0.014405 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Prefabs/TurretArt/shield25_brown.prefab
+  artifactKey: Guid(56a98973aa05db842a71b4b12b7f8369) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield25_brown.prefab using Guid(56a98973aa05db842a71b4b12b7f8369) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4259b7e15883e84f7d1ffb252259479c') in 0.009496 seconds 
+  Import took 0.013640 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/Prefabs/TurretArt/shield24_grey.prefab
+  artifactKey: Guid(52635520ffcf94e448643d2aa58a2401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield24_grey.prefab using Guid(52635520ffcf94e448643d2aa58a2401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8eb9eea147e1be819f9a2739af9a5fd') in 0.010282 seconds 
+  Import took 0.014441 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/Prefabs/TurretArt/shield23_grey.prefab
+  artifactKey: Guid(f7a7efb311a52e44095290c0f80bf2fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield23_grey.prefab using Guid(f7a7efb311a52e44095290c0f80bf2fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1518dc1cb35149b241a412bd1dc55ef5') in 0.011531 seconds 
+  Import took 0.015715 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/Prefabs/TurretArt/shield24_green.prefab
+  artifactKey: Guid(c28655012ffba7744a461a805e954d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield24_green.prefab using Guid(c28655012ffba7744a461a805e954d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efc3d785a28ecc97d0dc3d8827f13b43') in 0.010805 seconds 
+  Import took 0.015361 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/Prefabs/TurretArt/shield22_red.prefab
+  artifactKey: Guid(cf737f552e4c55843b5ea2f11d9b7935) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield22_red.prefab using Guid(cf737f552e4c55843b5ea2f11d9b7935) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdf20c203c5ca4d0f10129f54d974601') in 0.009477 seconds 
+  Import took 0.013948 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Prefabs/TurretArt/shield25_yellow.prefab
+  artifactKey: Guid(3d8bcdb6836464e4a91c311e6c0efd3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield25_yellow.prefab using Guid(3d8bcdb6836464e4a91c311e6c0efd3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd775d633a03bacb6a483baed0ce33738') in 0.010112 seconds 
+  Import took 0.014488 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/Prefabs/TurretArt/shield24_blue.prefab
+  artifactKey: Guid(ad90c046ed3129f408eabc6fc56fc1ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TurretArt/shield24_blue.prefab using Guid(ad90c046ed3129f408eabc6fc56fc1ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bbe551fc3ffbb3de2f7e125db541200') in 0.009276 seconds 
+  Import took 0.013740 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

@@ -125,7 +125,7 @@ public class PlayerActor : StageActor, IPassableObject
         move.Disable();
         placeturret.Disable();
         GameObject part = StageController.singlton.DeathParticlePooler.ActivateNextObject(null);
-        part.transform.position = ActorArtContainer.transform.position;
+        part.transform.position = new Vector3(ActorArtContainer.transform.position.x, 0.1f, ActorArtContainer.transform.position.z);
         ActorArtContainer.SetActive(false);
     }
 
