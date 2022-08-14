@@ -44,7 +44,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.16
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.06, z: 0.06}
 --- !u!114 &2705614267978695320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,8 +171,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.09
-  m_Center: {x: 0, y: -0.06, z: 0}
+  m_Radius: 0.15
+  m_Center: {x: 0, y: -0.06, z: 0.06}
 --- !u!1 &9184136763064923520
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,10 +264,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collider: {fileID: 1189094093611846471}
   ActorArtContainer: {fileID: 9184136761266824986}
+  MainSprite: {fileID: 5914418368182736709}
   CurrentSpeed: 0
   CurrentHealth: 0
   DamageColor: {r: 1, g: 0, b: 0, a: 0}
-  MainSprite: {fileID: 5914418368182736709}
   EnemyData: {fileID: 11400000, guid: 8edeb15b61e7ce24c8acfef33f350afc, type: 2}
   CurrentDamage: 0
   Target: {fileID: 0}

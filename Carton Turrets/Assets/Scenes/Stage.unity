@@ -653,7 +653,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.12
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.06, z: 0.06}
 --- !u!212 &1116513453
 SpriteRenderer:
   m_ObjectHideFlags: 0
