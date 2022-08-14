@@ -58,8 +58,9 @@ public class PlayerActor : StageActor, IPassableObject
 
     public void TakeDamage(float amt)
     {
+        if(CurrentStateClass.name != "normal"){return;}
         CurrentHealth -= amt;
-
+        BlinkSprite();
         if(CurrentHealth <=0 )
         {
             ChangeState(new PlayerState_Dead());
@@ -98,7 +99,6 @@ public class PlayerActor : StageActor, IPassableObject
         BulletObjectPools[CurrentTurretArray[slot]] = new ObjectPooler(TurretsEquipped[CurrentTurretArray[slot]].BulletGameObject, TurretsEquipped[CurrentTurretArray[slot]].BulletAmountToPool, _bulletContainer, false);
         ExplosionObjectPools[CurrentTurretArray[slot]] = new ObjectPooler(TurretsEquipped[CurrentTurretArray[slot]].ExplosionGameObject, TurretsEquipped[CurrentTurretArray[slot]].ExplosionAmountToPool, _explosionContainer, false);
 
-
         return true;    
     }
 
@@ -124,6 +124,9 @@ public class PlayerActor : StageActor, IPassableObject
         base.Die();
         move.Disable();
         placeturret.Disable();
+        GameObject part = StageController.singlton.DeathParticlePooler.ActivateNextObject(null);
+        part.transform.position = ActorArtContainer.transform.position;
+        ActorArtContainer.SetActive(false);
     }
 
     public void CheckMapTiles()
@@ -160,6 +163,7 @@ public class PlayerActor : StageActor, IPassableObject
 
 public class PlayerState_Frozen: ActorStatesAbstractClass
 {
+    public override string name {get {return "frozen";}}
     public override void OnEnterState(StageActor _cont)
     {
         
@@ -175,6 +179,7 @@ public class PlayerState_Frozen: ActorStatesAbstractClass
 }
 public class PlayerState_Normal: ActorStatesAbstractClass
 {
+    public override string name {get {return "normal";}}
     public override void OnEnterState(StageActor _cont)
     {
         
@@ -189,6 +194,7 @@ public class PlayerState_Normal: ActorStatesAbstractClass
         Vector2 v = pa.move.ReadValue<Vector2>() * pa.CurrentSpeed;
 
         pa.rb.velocity = new Vector3(v.x, 0, v.y);
+        pa.FlipSpriteCheck(v.x);
 
         if(pa.transform.position != pa.LastPos)
         {
@@ -201,6 +207,7 @@ public class PlayerState_Normal: ActorStatesAbstractClass
 }
 public class PlayerState_Dead: ActorStatesAbstractClass
 {
+    public override string name {get {return "dead";}}
     public override void OnEnterState(StageActor _cont)
     {
         PlayerActor pa = (PlayerActor)_cont;
@@ -217,6 +224,7 @@ public class PlayerState_Dead: ActorStatesAbstractClass
 }
 public class PlayerState_Pause: ActorStatesAbstractClass
 {
+    public override string name {get {return "pause";}}
     public override void OnEnterState(StageActor _cont)
     {
         

@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Test Baddie 2
   Desc: Test Baddie 2
   MaxHealth: 10
-  MaxSpeed: 1
+  MaxSpeed: 0.5
   Sprite: {fileID: 21300000, guid: 3c813d1002927e644bd0cd171ac371d1, type: 3}
   MaxDamage: 1
