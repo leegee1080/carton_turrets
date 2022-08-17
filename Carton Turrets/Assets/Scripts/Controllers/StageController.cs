@@ -58,6 +58,11 @@ public class StageController : MonoBehaviour
     [SerializeField]private GameObject _genericDeathParticleObject;
     public ObjectPooler DeathParticlePooler;
 
+    [Header("Pickups Pool")]
+    [SerializeField]private GameObject _pickupContainer;
+    [SerializeField]private GameObject _pickupObject;
+    public ObjectPooler PickupPooler;
+
 
     private void Awake() => singlton = this;
 
@@ -86,6 +91,12 @@ public class StageController : MonoBehaviour
     private void FixedUpdate()
     {
         CurrentState.OnUpdateState(this);
+    }
+
+    public void DropExp(Vector3 location)
+    {
+        GameObject p = PickupPooler.ActivateNextObject(null);
+        p.transform.position = location;
     }
 
     // void OnDrawGizmosSelected()
@@ -161,6 +172,9 @@ public class StageController : MonoBehaviour
 
         //death particles
         DeathParticlePooler = new ObjectPooler(_genericDeathParticleObject, _enemiesToPool, _genericDeathParticleContainer, false);
+
+        //pickup particles
+        PickupPooler = new ObjectPooler(_pickupObject, _enemiesToPool, _pickupContainer, false);
     }
     private void PlayerSetup()
     {

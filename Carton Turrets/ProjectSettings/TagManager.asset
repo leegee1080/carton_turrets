@@ -9,6 +9,7 @@ TagManager:
   - Turret
   - Bullet
   - TurretExplo
+  - Pickup
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Bullet
   - PlayerDamage
   - Floor
-  - 
+  - PickUps
   - 
   - 
   - 

@@ -102,6 +102,11 @@ public class PlayerActor : StageActor, IPassableObject
         return true;    
     }
 
+    public void PickupItem(PickUps item)
+    {
+        print("picked up");
+    }
+
 
     public override void Setup()
     {
