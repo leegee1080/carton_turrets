@@ -10,6 +10,11 @@ public class PlayerActor : StageActor, IPassableObject
     public InputAction move, placeturret;
     public PlayerScriptableObject PlayerData;
 
+    [Header("Progression Vars")]
+    public int CurrentExpAmount;
+    public float LevelUpThreshold;
+    public float LevelUpThresholdMultiplier;
+
     [Header("TurretVars")]
     public string[] CurrentTurretArray = new string[3]{"", "", ""};
     public Dictionary<string, TurretScriptableObject> TurretsEquipped = new Dictionary<string, TurretScriptableObject>();
@@ -104,7 +109,28 @@ public class PlayerActor : StageActor, IPassableObject
 
     public void PickupItem(PickUps item)
     {
-        print("picked up");
+        switch (item.PickUpId)
+        {
+            case "Exp":
+                ExpPickup t = (ExpPickup)item;
+                ApplyExp(t.ExpAmount);
+                return;
+            
+            default:
+                Debug.Log("Pickup ID not found");
+                return;
+        }
+    }
+
+    public void ApplyExp(int xp)
+    {
+        CurrentExpAmount += xp;
+        if(CurrentExpAmount >= LevelUpThreshold)
+        {
+            print("level up!");
+            LevelUpThreshold *= LevelUpThresholdMultiplier;
+        }
+
     }
 
 
@@ -113,6 +139,7 @@ public class PlayerActor : StageActor, IPassableObject
         base.Setup();
         CurrentHealth = PlayerData.MaxHealth;
         CurrentSpeed = PlayerData.MaxSpeed;
+        LevelUpThresholdMultiplier = PlayerData.LevelUpThresholdMultiplier;
         EquipTurret(PlayerData.StartingTurret, 0);
 
         _reloadTimerMax = PlayerData.MaxTurretReloadTime;

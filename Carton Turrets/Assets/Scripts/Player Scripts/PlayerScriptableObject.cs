@@ -10,6 +10,8 @@ public class PlayerScriptableObject : ActorDataScriptableObject
 
     public TurretScriptableObject StartingTurret;
 
+    public float LevelUpThresholdMultiplier;
+
     // [Header("Character Art")]
     // public Sprite Icon;
 }

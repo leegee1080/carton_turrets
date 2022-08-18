@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PickUps : MonoBehaviour
 {
+    public string PickUpId;
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
