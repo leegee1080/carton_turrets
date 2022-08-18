@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ExpPickup : PickUps
 {
-    [SerializeField]Sprite[] _sprites;
-    [SerializeField]float _expAmount;
+    public Sprite[] Sprites;
+    public int ExpAmount;
 
     public override void Activate(IPassableObject obj)
     {

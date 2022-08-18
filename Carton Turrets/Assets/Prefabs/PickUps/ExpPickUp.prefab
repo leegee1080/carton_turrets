@@ -133,11 +133,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5344adc8d289d4390d7a343d1e1305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sprites:
-  - {fileID: 6081932450767728218, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
-  - {fileID: -4099167761840212890, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
-  - {fileID: -8632875329370889712, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
-  _expAmount: 1
+  PickUpId: Exp
+  Sprites:
+  - {fileID: -4262069159997971855, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  - {fileID: 1310950020064727805, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  - {fileID: 3934249035535238144, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  ExpAmount: 1
 --- !u!212 &5519878323658863705
 SpriteRenderer:
   m_ObjectHideFlags: 0

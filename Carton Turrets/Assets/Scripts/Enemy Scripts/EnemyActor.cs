@@ -83,6 +83,7 @@ public class EnemyActor : StageActor, IColliderMessageable
         part.transform.position = new Vector3(ActorArtContainer.transform.position.x, 0.1f, ActorArtContainer.transform.position.z);
 
         StageController.singlton.DropExp(ActorArtContainer.transform.position);
+        ActorArtContainer.transform.position = new Vector3(0, ActorArtContainer.transform.position.y, 0);
 
         ActorArtContainer.SetActive(false);
     }
