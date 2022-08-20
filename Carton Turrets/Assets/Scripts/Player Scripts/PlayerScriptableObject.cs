@@ -12,6 +12,6 @@ public class PlayerScriptableObject : ActorDataScriptableObject
 
     public float LevelUpThresholdMultiplier;
 
-    // [Header("Character Art")]
-    // public Sprite Icon;
+    [Header("Character Art")]
+    public Sprite InGameSprite;
 }

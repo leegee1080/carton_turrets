@@ -53,7 +53,7 @@ public class StageActor : MonoBehaviour
     {
         SpriteRenderer sr = (SpriteRenderer)MainSprite;
         if(xValue > 0){sr.flipX = true; return;}
-        sr.flipX = false;
+        if(xValue < 0){sr.flipX = false; return;}
     }
 
     public virtual void BlinkSprite()

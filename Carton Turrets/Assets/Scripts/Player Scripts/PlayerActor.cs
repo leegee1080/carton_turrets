@@ -140,6 +140,8 @@ public class PlayerActor : StageActor, IPassableObject
         CurrentHealth = PlayerData.MaxHealth;
         CurrentSpeed = PlayerData.MaxSpeed;
         LevelUpThresholdMultiplier = PlayerData.LevelUpThresholdMultiplier;
+        SpriteRenderer s = (SpriteRenderer)MainSprite;
+        s.sprite = PlayerData.InGameSprite;
         EquipTurret(PlayerData.StartingTurret, 0);
 
         _reloadTimerMax = PlayerData.MaxTurretReloadTime;
@@ -180,7 +182,6 @@ public class PlayerActor : StageActor, IPassableObject
             {
                 int randIndex = Random.Range(0, StageController.singlton.TileProbabilityList.Count);
                 item.GridObj = StageController.singlton.TilePoolsDict[StageController.singlton.TileProbabilityList[randIndex]].ActivateNextObject(this);
-                // item.GridObj = StageController.singlton.TilesObjectPooler.ActivateNextObject();
                 SelectedTile = item.GridObj.GetComponent<TileData>();
                 item.TileType = SelectedTile.TileTypeTag;
             }
@@ -226,15 +227,19 @@ public class PlayerState_Normal: ActorStatesAbstractClass
         Vector2 v = pa.move.ReadValue<Vector2>() * pa.CurrentSpeed;
 
         pa.rb.velocity = new Vector3(v.x, 0, v.y);
-        pa.FlipSpriteCheck(v.x);
+        
 
         if(pa.transform.position != pa.LastPos)
         {
             pa.LastViewInput = Vector3.Normalize(pa.transform.position - pa.LastPos);
             pa.CheckMapTiles();
             pa.LastPos = pa.transform.position;
+            pa.FlipSpriteCheck(v.x);
+            pa.MainSprite.material.SetFloat("_ShakeUvSpeed", 7f);
+            return;
         }
-
+        
+        pa.MainSprite.material.SetFloat("_ShakeUvSpeed", 0f);
     }   
 }
 public class PlayerState_Dead: ActorStatesAbstractClass
