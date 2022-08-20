@@ -16,19 +16,19 @@ MonoBehaviour:
   Desc: The First Level
   Waves:
   - SecondsThreshold: 1
-    Amount: 5
+    Amount: 20
     Spawned: 0
     Enemy: {fileID: 11400000, guid: 8edeb15b61e7ce24c8acfef33f350afc, type: 2}
   - SecondsThreshold: 5
-    Amount: 5
+    Amount: 20
     Spawned: 0
     Enemy: {fileID: 11400000, guid: 8edeb15b61e7ce24c8acfef33f350afc, type: 2}
   - SecondsThreshold: 10
-    Amount: 5
+    Amount: 20
     Spawned: 0
     Enemy: {fileID: 11400000, guid: 8edeb15b61e7ce24c8acfef33f350afc, type: 2}
   - SecondsThreshold: 15
-    Amount: 10
+    Amount: 20
     Spawned: 0
     Enemy: {fileID: 11400000, guid: af60334ab56d3984491abc9848ac00b2, type: 2}
   - SecondsThreshold: 30

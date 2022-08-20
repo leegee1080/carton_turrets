@@ -175,7 +175,7 @@ MonoBehaviour:
   WaveArray: []
   _genericEnemyGameObject: {fileID: 9184136763064923520, guid: ab26bb0011d96424cb9a6d2d932764d2, type: 3}
   _poolEnemyContainer: {fileID: 1741954581}
-  _enemiesToPool: 40
+  _enemiesToPool: 100
   _genericDeathParticleContainer: {fileID: 95278915}
   _genericDeathParticleObject: {fileID: 8933188411812420761, guid: 2b4d88d0c0794434da673d2a5b6c8e62, type: 3}
   _pickupContainer: {fileID: 1243884443}
