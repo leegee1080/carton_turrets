@@ -2,7 +2,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "New Turret", menuName = "Scriptable Objects/New Turret")]
-public class TurretScriptableObject : ActorDataScriptableObject
+public class TurretScriptableObject : ActorDataScriptableObject, IUpgradeable
 {
     [Header("Turret Stats")]
     public float TLifeTime;
@@ -31,4 +31,12 @@ public class TurretScriptableObject : ActorDataScriptableObject
 
     [Header("Turret Art")]
     public Mesh Mesh;
+    [field: SerializeField]public Sprite Icon {get; set;}
+    [field: SerializeField]public string UpgradeName {get; set;}
+
+
+    public void Upgrade()
+    {
+
+    }
 }
