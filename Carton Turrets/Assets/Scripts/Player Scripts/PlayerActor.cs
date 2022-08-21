@@ -129,6 +129,7 @@ public class PlayerActor : StageActor, IPassableObject
         {
             print("level up!");
             LevelUpThreshold *= LevelUpThresholdMultiplier;
+            LevelUpPopup.singlton.Show();
         }
 
     }
