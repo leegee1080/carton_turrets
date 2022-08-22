@@ -589,6 +589,8 @@ MonoBehaviour:
   - {fileID: 1067636086}
   PotentialUpgradeArray:
   - {fileID: 11400000, guid: 60a671292fc0f98488533a657416f678, type: 2}
+  - {fileID: 11400000, guid: 2f56855a24b830746a40323f6789bd4a, type: 2}
+  - {fileID: 11400000, guid: 0f6138b1610cf924f9ca722223425f9d, type: 2}
 --- !u!1 &559413341 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8765379060142134297, guid: 95611a4ae71f8491cb11d410875147bd, type: 3}
@@ -2399,9 +2401,11 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   PlayerData: {fileID: 11400000, guid: 9ffeab990231817458959966cf54332c, type: 2}
+  ExpMultiplier: 0
   CurrentExpAmount: 0
   LevelUpThreshold: 10
   LevelUpThresholdMultiplier: 0
+  ExpPickupGameObject: {fileID: 367131954}
   CurrentTurretArray:
   - 
   - 
@@ -2409,6 +2413,10 @@ MonoBehaviour:
   CurrentTurretIndex: 0
   _turretContainer: {fileID: 1271456188}
   turretPlaceOffset: 0.3
+  CurrentReloadTimerMax: 0
+  CurrentTurretBonusShootSpeed: 0
+  CurrentTurretBonusLifeTime: 0
+  CurrentTurretBonusAmmo: 0
   _bulletContainer: {fileID: 1743308406}
   _explosionContainer: {fileID: 1035283625}
   ViewDistance: 8

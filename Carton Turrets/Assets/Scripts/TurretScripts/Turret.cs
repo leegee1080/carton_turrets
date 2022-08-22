@@ -61,10 +61,10 @@ public class Turret : StageActor, IPassableObject
     {
         ControllingActor = (PlayerActor)Player;
 
-        LifeTime = ControllingActor.TurretsEquipped[TurretData.name].TLifeTime;     
-        ReloadTime = ControllingActor.TurretsEquipped[TurretData.name].TReloadTime;     
+        LifeTime = ControllingActor.TurretsEquipped[TurretData.name].TLifeTime * ControllingActor.CurrentTurretBonusLifeTime;     
+        ReloadTime = ControllingActor.TurretsEquipped[TurretData.name].TReloadTime * ControllingActor.CurrentTurretBonusShootSpeed;     
         ReloadCountdown = ControllingActor.TurretsEquipped[TurretData.name].TReloadTime;     
-        Ammo = ControllingActor.TurretsEquipped[TurretData.name].TAmmo;
+        Ammo = (int)(ControllingActor.TurretsEquipped[TurretData.name].TAmmo * ControllingActor.CurrentTurretBonusAmmo);
         _collider.radius = ControllingActor.TurretsEquipped[TurretData.name].TColliderSize;
 
 
