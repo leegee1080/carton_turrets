@@ -35,7 +35,7 @@ public class TurretScriptableObject : ActorDataScriptableObject, IUpgradeable
     [field: SerializeField]public string UpgradeName {get; set;}
 
 
-    public void Upgrade()
+    public void ApplyUpgrade()
     {
 
     }

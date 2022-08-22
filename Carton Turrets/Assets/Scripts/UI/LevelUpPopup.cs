@@ -83,7 +83,7 @@ public class LevelUpPopup : MonoBehaviour
 
     public void UpgradeChosen(int index)
     {
-        AvailableUpgradeArray[index].Upgrade();
+        AvailableUpgradeArray[index].ApplyUpgrade();
         Hide();
     }
 

@@ -11,9 +11,11 @@ public class PlayerActor : StageActor, IPassableObject
     public PlayerScriptableObject PlayerData;
 
     [Header("Progression Vars")]
+    public float ExpMultiplier;
     public int CurrentExpAmount;
     public float LevelUpThreshold;
     public float LevelUpThresholdMultiplier;
+    public GameObject ExpPickupGameObject;
 
     [Header("TurretVars")]
     public string[] CurrentTurretArray = new string[3]{"", "", ""};
@@ -22,8 +24,13 @@ public class PlayerActor : StageActor, IPassableObject
     [SerializeField]private GameObject _turretContainer;
     [SerializeField]private float turretPlaceOffset;
     private float _reloadTimerMax;
+    public float CurrentReloadTimerMax;
     private bool _turretReloaded = true;
     public Dictionary<string, ObjectPooler> TurretObjectPools = new Dictionary<string, ObjectPooler>();
+    public float CurrentTurretBonusShootSpeed;
+    public float CurrentTurretBonusLifeTime;
+    public float CurrentTurretBonusAmmo;
+
 
     [Header("Bullet Vars")]
     [SerializeField]private GameObject _bulletContainer;
@@ -87,7 +94,7 @@ public class PlayerActor : StageActor, IPassableObject
         _turretReloaded = false;
         IEnumerator Reload()
         {
-            yield return new WaitForSeconds(_reloadTimerMax);
+            yield return new WaitForSeconds(CurrentReloadTimerMax);
             _turretReloaded = true;
         }
         StartCoroutine(Reload());
@@ -124,7 +131,7 @@ public class PlayerActor : StageActor, IPassableObject
 
     public void ApplyExp(int xp)
     {
-        CurrentExpAmount += xp;
+        CurrentExpAmount += (int)(xp * ExpMultiplier);
         if(CurrentExpAmount >= LevelUpThreshold)
         {
             print("level up!");
@@ -140,6 +147,21 @@ public class PlayerActor : StageActor, IPassableObject
         base.Setup();
         CurrentHealth = PlayerData.MaxHealth;
         CurrentSpeed = PlayerData.MaxSpeed;
+        ExpMultiplier = 1;
+        Debug.Log("Make Sure to connect expMultiplier to playerdata");
+        CurrentReloadTimerMax = _reloadTimerMax;
+        Debug.Log("Make Sure to connect _reloadTimerMax to playerdata");
+        CurrentTurretBonusShootSpeed = 1;
+        CurrentTurretBonusLifeTime = 1;
+        CurrentTurretBonusAmmo = 1;
+        //CurrentBulletDamageBonus
+        //CurrentBulletRangeBonus
+        //CurrentBulletSpeedBonus
+        //CurrentExploDamageBonus
+        //CurrentExploSpeedBonus
+        //CurrentExploSizeBonus
+        //CurrentExploDamageRangeBonus
+        Debug.Log("Make Sure to connect currentturretbonuses to playerdata");
         LevelUpThresholdMultiplier = PlayerData.LevelUpThresholdMultiplier;
         SpriteRenderer s = (SpriteRenderer)MainSprite;
         s.sprite = PlayerData.InGameSprite;
@@ -162,6 +184,7 @@ public class PlayerActor : StageActor, IPassableObject
         GameObject part = StageController.singlton.DeathParticlePooler.ActivateNextObject(null);
         part.transform.position = new Vector3(ActorArtContainer.transform.position.x, 0.1f, ActorArtContainer.transform.position.z);
         ActorArtContainer.SetActive(false);
+        ExpPickupGameObject.SetActive(false);
     }
 
     public void CheckMapTiles()
