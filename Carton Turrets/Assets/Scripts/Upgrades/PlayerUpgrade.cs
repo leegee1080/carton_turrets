@@ -60,7 +60,7 @@ public class PlayerUpgrade : ScriptableObject, IUpgradeable
     }
     private static void UpgradeIncreasePlayerTurretRecharge(float value)
     {
-        StageController.singlton.Player.CurrentReloadTimerMax += value;
+        StageController.singlton.Player.CurrentReloadTimerMax -= value;
     }
     private static void UpgradeIncreasePlayerTurretShootSpeed(float value)
     {

@@ -34,5 +34,5 @@ MonoBehaviour:
   BulletGameObject: {fileID: 741848558832750205, guid: 09ad2b3bca4baf0459660c3d383288ee, type: 3}
   ExplosionGameObject: {fileID: 5925393004181974638, guid: 2c70c7a2558cc124c860571375f7c31f, type: 3}
   Mesh: {fileID: 4300182, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}
-  <Icon>k__BackingField: {fileID: -6046517823186517550, guid: ef4c524eef2443e4d9083e17f28a144a, type: 3}
+  <Icon>k__BackingField: {fileID: -1140342232090195849, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Gun Turret
