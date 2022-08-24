@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: 3061872641144933912, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Move Speed
-  _upgradeType: 0
-  _amount: 0.5
+  _tiers:
+  - func: 0
+    amt: 0.5

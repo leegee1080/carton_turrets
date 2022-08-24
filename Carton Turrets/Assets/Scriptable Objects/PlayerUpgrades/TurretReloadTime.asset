@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e8342e2ef5b99c4aa6c7d79118ef7e3, type: 3}
-  m_Name: BonusExp
+  m_Name: TurretReloadTime
   m_EditorClassIdentifier: 
-  <Icon>k__BackingField: {fileID: 5758965880726059572, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
-  <UpgradeName>k__BackingField: Bonus XP
+  <Icon>k__BackingField: {fileID: -4528079395343913193, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  <UpgradeName>k__BackingField: Reload Speed
   _tiers:
-  - func: 3
-    amt: 1
+  - func: 5
+    amt: 0.5
