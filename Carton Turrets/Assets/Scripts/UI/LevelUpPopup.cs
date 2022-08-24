@@ -26,7 +26,7 @@ public class LevelUpPopup : MonoBehaviour
         
         if(PotentialUpgradeArray[0] is IUpgradeable)
         {
-            Debug.Log("LevelUpPopup is gathering potential upgrades...");
+            Debug.Log("LevelUpPopup is gathering potential upgrades...(When the objects are selected: detect what the player has already)");
             //gather this list from a central global location
         }
         else
@@ -83,7 +83,9 @@ public class LevelUpPopup : MonoBehaviour
 
     public void UpgradeChosen(int index)
     {
-        AvailableUpgradeArray[index].ApplyUpgrade();
+        Debug.Log("tier is one above the tier the player already has");
+        //upgrade tier is 0 just for now
+        AvailableUpgradeArray[index].ApplyUpgrade(0);
         Hide();
     }
 

@@ -25,6 +25,29 @@ public class Turret : StageActor, IPassableObject
     public float ESpeed;
     public float ESize;
 
+    // [Header("Tier Vars")]
+    //which teir is it
+    //each tier has a state just like the state machine
+    //startup action
+    //fire action
+    //death action
+    
+//     public class TurretTier_0: TurretTiersAbstractClass
+// {
+//     public override string name {get {return "0";}}
+//     public override void OnSetup(Turret _cont)
+//     {
+        
+//     }   
+//     public override void OnLifetimeEnd(Turret _cont)
+//     {
+        
+//     }   
+//     public override void OnFire(Turret _cont)
+//     {
+
+//     }   
+
 
     [Header("Turret Art")]
     [SerializeField]GameObject _turretArtObject;
@@ -62,7 +85,7 @@ public class Turret : StageActor, IPassableObject
         ControllingActor = (PlayerActor)Player;
 
         LifeTime = ControllingActor.TurretsEquipped[TurretData.name].TLifeTime * ControllingActor.CurrentTurretBonusLifeTime;     
-        ReloadTime = ControllingActor.TurretsEquipped[TurretData.name].TReloadTime * ControllingActor.CurrentTurretBonusShootSpeed;     
+        ReloadTime = ControllingActor.TurretsEquipped[TurretData.name].TReloadTime / ControllingActor.CurrentTurretBonusShootSpeed;     
         ReloadCountdown = ControllingActor.TurretsEquipped[TurretData.name].TReloadTime;     
         Ammo = (int)(ControllingActor.TurretsEquipped[TurretData.name].TAmmo * ControllingActor.CurrentTurretBonusAmmo);
         _collider.radius = ControllingActor.TurretsEquipped[TurretData.name].TColliderSize;
@@ -77,6 +100,17 @@ public class Turret : StageActor, IPassableObject
         EDamage = ControllingActor.TurretsEquipped[TurretData.name].EDamage; 
         ESpeed = ControllingActor.TurretsEquipped[TurretData.name].ESpeed; 
         ESize = ControllingActor.TurretsEquipped[TurretData.name].ESize; 
+
+
+        // CurrentBulletDamageBonus = PlayerData.StartingBulletDamageBonus;
+        // CurrentBulletRangeBonus= PlayerData.StartingBulletRangeBonus;
+        // CurrentBulletSpeedBonus= PlayerData.StartingBulletSpeedBonus;
+
+        // CurrentExploDamageBonus= PlayerData.StartingExploDamageBonus;
+        // CurrentExploSpeedBonus= PlayerData.StartingExploSpeedBonus;
+        // CurrentExploSizeBonus= PlayerData.StartingExploSizeBonus;
+        // CurrentExploDamageRangeBonus= PlayerData.StartingExploDamageRangeBonus;
+
 
         _turretMesh.mesh = ControllingActor.TurretsEquipped[TurretData.name].Mesh;
         Setup();
