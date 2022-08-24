@@ -5,12 +5,27 @@ using UnityEngine;
 public class PlayerScriptableObject : ActorDataScriptableObject
 {
 
-    [Header("Character Vars")]
+    [Header("Character Stat Vars")]
     public float MaxTurretReloadTime;
-
-    public TurretScriptableObject StartingTurret;
-
+    public float StartingPlayerExpBonus;
     public float LevelUpThresholdMultiplier;
+
+
+    [Header("Character Turret Vars")]
+    public TurretScriptableObject StartingTurret;
+    public float StartingTurretBonusShootSpeed;
+    public float StartingTurretBonusLifeTime;
+    public float StartingTurretBonusAmmo;
+
+    public float StartingBulletDamageBonus;
+    public float StartingBulletRangeBonus;
+    public float StartingBulletSpeedBonus;
+    
+    public float StartingExploDamageBonus;
+    public float StartingExploSpeedBonus;
+    public float StartingExploSizeBonus;
+    public float StartingExploDamageRangeBonus;
+
 
     [Header("Character Art")]
     public Sprite InGameSprite;

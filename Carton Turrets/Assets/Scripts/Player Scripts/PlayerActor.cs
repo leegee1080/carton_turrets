@@ -30,6 +30,13 @@ public class PlayerActor : StageActor, IPassableObject
     public float CurrentTurretBonusShootSpeed;
     public float CurrentTurretBonusLifeTime;
     public float CurrentTurretBonusAmmo;
+    public float CurrentBulletDamageBonus;
+    public float CurrentBulletRangeBonus;
+    public float CurrentBulletSpeedBonus;
+    public float CurrentExploDamageBonus;
+    public float CurrentExploSpeedBonus;
+    public float CurrentExploSizeBonus;
+    public float CurrentExploDamageRangeBonus;
 
 
     [Header("Bullet Vars")]
@@ -134,7 +141,6 @@ public class PlayerActor : StageActor, IPassableObject
         CurrentExpAmount += (int)(xp * ExpMultiplier);
         if(CurrentExpAmount >= LevelUpThreshold)
         {
-            print("level up!");
             LevelUpThreshold *= LevelUpThresholdMultiplier;
             LevelUpPopup.singlton.Show();
         }
@@ -145,29 +151,32 @@ public class PlayerActor : StageActor, IPassableObject
     public override void Setup()
     {
         base.Setup();
+
         CurrentHealth = PlayerData.MaxHealth;
         CurrentSpeed = PlayerData.MaxSpeed;
-        ExpMultiplier = 1;
-        Debug.Log("Make Sure to connect expMultiplier to playerdata");
-        CurrentReloadTimerMax = _reloadTimerMax;
-        Debug.Log("Make Sure to connect _reloadTimerMax to playerdata");
-        CurrentTurretBonusShootSpeed = 1;
-        CurrentTurretBonusLifeTime = 1;
-        CurrentTurretBonusAmmo = 1;
-        //CurrentBulletDamageBonus
-        //CurrentBulletRangeBonus
-        //CurrentBulletSpeedBonus
-        //CurrentExploDamageBonus
-        //CurrentExploSpeedBonus
-        //CurrentExploSizeBonus
-        //CurrentExploDamageRangeBonus
-        Debug.Log("Make Sure to connect currentturretbonuses to playerdata");
+        ExpMultiplier = PlayerData.StartingPlayerExpBonus;
         LevelUpThresholdMultiplier = PlayerData.LevelUpThresholdMultiplier;
+
+        CurrentReloadTimerMax = PlayerData.MaxTurretReloadTime;
+        CurrentTurretBonusShootSpeed = PlayerData.StartingTurretBonusShootSpeed;
+        CurrentTurretBonusLifeTime = PlayerData.StartingTurretBonusShootSpeed;
+        CurrentTurretBonusAmmo = PlayerData.StartingTurretBonusShootSpeed;
+
+        CurrentBulletDamageBonus = PlayerData.StartingBulletDamageBonus;
+        CurrentBulletRangeBonus= PlayerData.StartingBulletRangeBonus;
+        CurrentBulletSpeedBonus= PlayerData.StartingBulletSpeedBonus;
+
+        CurrentExploDamageBonus= PlayerData.StartingExploDamageBonus;
+        CurrentExploSpeedBonus= PlayerData.StartingExploSpeedBonus;
+        CurrentExploSizeBonus= PlayerData.StartingExploSizeBonus;
+        CurrentExploDamageRangeBonus= PlayerData.StartingExploDamageRangeBonus;
+
+
         SpriteRenderer s = (SpriteRenderer)MainSprite;
         s.sprite = PlayerData.InGameSprite;
         EquipTurret(PlayerData.StartingTurret, 0);
 
-        _reloadTimerMax = PlayerData.MaxTurretReloadTime;
+        _reloadTimerMax = CurrentReloadTimerMax;
 
         CurrentTurretIndex = 0;
     }
