@@ -153,7 +153,7 @@ Transform:
   - {fileID: 1492068329}
   - {fileID: 367214634}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &82651375
 GameObject:
@@ -240,7 +240,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &104405512
 GameObject:
@@ -963,7 +963,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &763847952
 GameObject:
@@ -994,7 +994,7 @@ Transform:
   m_Children:
   - {fileID: 2057693776}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &789911776 stripped
 GameObject:
@@ -1137,7 +1137,7 @@ Transform:
   m_Children:
   - {fileID: 1426675217}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1035283625
 GameObject:
@@ -1166,8 +1166,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1624056096}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1067636082
 PrefabInstance:
@@ -1758,7 +1758,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1271456188
 GameObject:
@@ -1787,8 +1787,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1624056096}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1356278097
 PrefabInstance:
@@ -2394,27 +2394,39 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  placeturret:
-    m_Name: Placeturret
+  activate:
+    m_Name: Activate
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 64f04c67-5296-4efd-921f-a32feffc1572
+    m_Id: 6322ea93-4e1c-4f50-a1a6-a03f20c0a63f
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
   PlayerData: {fileID: 11400000, guid: 9ffeab990231817458959966cf54332c, type: 2}
+  CurrentUpgradesArray:
+  - name: 
+    Tier: 0
+    MaxAllowedTier: 0
+  - name: 
+    Tier: 0
+    MaxAllowedTier: 0
+  - name: 
+    Tier: 0
+    MaxAllowedTier: 0
+  - name: 
+    Tier: 0
+    MaxAllowedTier: 0
+  - name: 
+    Tier: 0
+    MaxAllowedTier: 0
   ExpMultiplier: 0
   CurrentExpAmount: 0
   LevelUpThreshold: 10
   LevelUpThresholdMultiplier: 0
   ExpPickupGameObject: {fileID: 367131954}
-  CurrentTurretArray:
-  - 
-  - 
-  - 
   CurrentTurretIndex: 0
-  _turretContainer: {fileID: 1271456188}
+  TurretContainer: {fileID: 1271456188}
   turretPlaceOffset: 0.3
   CurrentReloadTimerMax: 0
   CurrentTurretBonusShootSpeed: 0
@@ -2427,8 +2439,8 @@ MonoBehaviour:
   CurrentExploSpeedBonus: 0
   CurrentExploSizeBonus: 0
   CurrentExploDamageRangeBonus: 0
-  _bulletContainer: {fileID: 1743308406}
-  _explosionContainer: {fileID: 1035283625}
+  BulletContainer: {fileID: 1743308406}
+  ExplosionContainer: {fileID: 1035283625}
   ViewDistance: 8
   LastViewInput: {x: 0, y: 0, z: 0}
   LastPos: {x: 0, y: 0, z: 0}
@@ -2494,11 +2506,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1555916285}
-  - {fileID: 1271456189}
-  - {fileID: 1743308407}
-  - {fileID: 1035283626}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1675313563
 GameObject:
@@ -2529,7 +2538,7 @@ Transform:
   m_Children:
   - {fileID: 82651376}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1715801065 stripped
 GameObject:
@@ -2564,7 +2573,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1743308406
 GameObject:
@@ -2593,8 +2602,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1624056096}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1807678577
 PrefabInstance:
