@@ -3,14 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Linq;
+using System;
+
+[Serializable]
+public struct UpgradeSlot
+{
+    public string name;
+    public IUpgradeable SO;
+    public int Tier;
+    public int MaxAllowedTier;
+}
 
 public class PlayerActor : StageActor, IPassableObject
 {
     private PiaMainControls PlayerInputActions;
-    public InputAction move, placeturret;
+
+    public InputAction move, activate;
+    // public InputAction move, placeturret;
     public PlayerScriptableObject PlayerData;
 
     [Header("Progression Vars")]
+    public UpgradeSlot[] CurrentUpgradesArray = new UpgradeSlot[4];
     public float ExpMultiplier;
     public int CurrentExpAmount;
     public float LevelUpThreshold;
@@ -18,14 +31,9 @@ public class PlayerActor : StageActor, IPassableObject
     public GameObject ExpPickupGameObject;
 
     [Header("TurretVars")]
-    public string[] CurrentTurretArray = new string[3]{"", "", ""};
-    public Dictionary<string, TurretScriptableObject> TurretsEquipped = new Dictionary<string, TurretScriptableObject>();
-    public int CurrentTurretIndex;
-    [SerializeField]private GameObject _turretContainer;
+    public GameObject TurretContainer;
     [SerializeField]private float turretPlaceOffset;
-    private float _reloadTimerMax;
     public float CurrentReloadTimerMax;
-    private bool _turretReloaded = true;
     public Dictionary<string, ObjectPooler> TurretObjectPools = new Dictionary<string, ObjectPooler>();
     public float CurrentTurretBonusShootSpeed;
     public float CurrentTurretBonusLifeTime;
@@ -40,11 +48,11 @@ public class PlayerActor : StageActor, IPassableObject
 
 
     [Header("Bullet Vars")]
-    [SerializeField]private GameObject _bulletContainer;
+    public GameObject BulletContainer;
     public Dictionary<string, ObjectPooler> BulletObjectPools = new Dictionary<string, ObjectPooler>();
 
     [Header("Explosion Vars")]
-    [SerializeField]private GameObject _explosionContainer;
+    public GameObject ExplosionContainer;
     public Dictionary<string, ObjectPooler> ExplosionObjectPools = new Dictionary<string, ObjectPooler>();
 
     [Header("View Vars")]
@@ -64,15 +72,15 @@ public class PlayerActor : StageActor, IPassableObject
         base.OnEnable();
         move = PlayerInputActions.MainMap.PlayerMovement;
         move.Enable();
-        placeturret = PlayerInputActions.MainMap.PlaceTurret;
-        placeturret.Enable();
-        placeturret.performed += context => PlaceTurret(context);
+        activate = PlayerInputActions.MainMap.PlaceTurret;
+        activate.Enable();
+        // activate.performed += context => PlaceTurret(context);
     }
     private void OnDisable()
     {
-        placeturret.performed -= context => PlaceTurret(context);
+        // placeturret.performed -= context => PlaceTurret(context);
         move.Disable();
-        placeturret.Disable();
+        activate.Disable();
     }
 
     public void TakeDamage(float amt)
@@ -86,40 +94,13 @@ public class PlayerActor : StageActor, IPassableObject
         }
     }
 
-    private void PlaceTurret(InputAction.CallbackContext context)
+    public void ActivateUpgradeSlot(int i)
     {
-        if(!_turretReloaded){return;}
+        if(CurrentUpgradesArray[i].name == ""){Debug.LogWarning("Slot chosen is empty!"); return;}
 
-        GameObject tTurret =  TurretObjectPools[CurrentTurretArray[CurrentTurretIndex]].ActivateNextObject(this);
-        tTurret.transform.position = gameObject.transform.position + (LastViewInput * turretPlaceOffset);
-        tTurret.transform.rotation = Quaternion.LookRotation(LastViewInput*90);
-
-
-        CurrentTurretIndex+=1;
-        if(CurrentTurretIndex > 2 || CurrentTurretArray[CurrentTurretIndex] == ""){CurrentTurretIndex = 0;}
-
-        _turretReloaded = false;
-        IEnumerator Reload()
-        {
-            yield return new WaitForSeconds(CurrentReloadTimerMax);
-            _turretReloaded = true;
-        }
-        StartCoroutine(Reload());
+        CurrentUpgradesArray[i].SO.Activate(CurrentUpgradesArray[i].Tier);
     }
 
-    public bool EquipTurret(TurretScriptableObject newTurret, int slot)
-    {
-        if(CurrentTurretArray[slot] != ""){return false;}
-        CurrentTurretArray[slot] = newTurret.name;
-
-        TurretsEquipped[CurrentTurretArray[slot]] = newTurret;
-
-        TurretObjectPools[CurrentTurretArray[slot]] = new ObjectPooler(TurretsEquipped[CurrentTurretArray[slot]].TurretGameObject, TurretsEquipped[CurrentTurretArray[slot]].TurretAmountToPool, _turretContainer, false);
-        BulletObjectPools[CurrentTurretArray[slot]] = new ObjectPooler(TurretsEquipped[CurrentTurretArray[slot]].BulletGameObject, TurretsEquipped[CurrentTurretArray[slot]].BulletAmountToPool, _bulletContainer, false);
-        ExplosionObjectPools[CurrentTurretArray[slot]] = new ObjectPooler(TurretsEquipped[CurrentTurretArray[slot]].ExplosionGameObject, TurretsEquipped[CurrentTurretArray[slot]].ExplosionAmountToPool, _explosionContainer, false);
-
-        return true;    
-    }
 
     public void PickupItem(PickUps item)
     {
@@ -157,7 +138,7 @@ public class PlayerActor : StageActor, IPassableObject
         ExpMultiplier = PlayerData.StartingPlayerExpBonus;
         LevelUpThresholdMultiplier = PlayerData.LevelUpThresholdMultiplier;
 
-        CurrentReloadTimerMax = PlayerData.MaxTurretReloadTime;
+        // CurrentReloadTimerMax = PlayerData.MaxTurretReloadTime;
         CurrentTurretBonusShootSpeed = PlayerData.StartingTurretBonusShootSpeed;
         CurrentTurretBonusLifeTime = PlayerData.StartingTurretBonusShootSpeed;
         CurrentTurretBonusAmmo = PlayerData.StartingTurretBonusShootSpeed;
@@ -174,11 +155,8 @@ public class PlayerActor : StageActor, IPassableObject
 
         SpriteRenderer s = (SpriteRenderer)MainSprite;
         s.sprite = PlayerData.InGameSprite;
-        EquipTurret(PlayerData.StartingTurret, 0);
 
-        _reloadTimerMax = CurrentReloadTimerMax;
-
-        CurrentTurretIndex = 0;
+        PlayerData.StartingTurret.ApplyUpgrade(0);
     }
     public override void Activate()
     {
@@ -189,7 +167,7 @@ public class PlayerActor : StageActor, IPassableObject
     {
         base.Die();
         move.Disable();
-        placeturret.Disable();
+        activate.Disable();
         GameObject part = StageController.singlton.DeathParticlePooler.ActivateNextObject(null);
         part.transform.position = new Vector3(ActorArtContainer.transform.position.x, 0.1f, ActorArtContainer.transform.position.z);
         ActorArtContainer.SetActive(false);
@@ -213,7 +191,7 @@ public class PlayerActor : StageActor, IPassableObject
             }
             else
             {
-                int randIndex = Random.Range(0, StageController.singlton.TileProbabilityList.Count);
+                int randIndex = UnityEngine.Random.Range(0, StageController.singlton.TileProbabilityList.Count);
                 item.GridObj = StageController.singlton.TilePoolsDict[StageController.singlton.TileProbabilityList[randIndex]].ActivateNextObject(this);
                 SelectedTile = item.GridObj.GetComponent<TileData>();
                 item.TileType = SelectedTile.TileTypeTag;
@@ -258,9 +236,26 @@ public class PlayerState_Normal: ActorStatesAbstractClass
     {
         PlayerActor pa = (PlayerActor)_cont;
         Vector2 v = pa.move.ReadValue<Vector2>() * pa.CurrentSpeed;
+        Vector2 vAct = pa.activate.ReadValue<Vector2>().normalized;
 
         pa.rb.velocity = new Vector3(v.x, 0, v.y);
         
+        if(vAct == Vector2.up)
+        {
+            pa.ActivateUpgradeSlot(0);
+        }
+        else if(vAct == Vector2.right)
+        {
+            pa.ActivateUpgradeSlot(1);
+        }
+        else if(vAct == Vector2.down)
+        {
+            pa.ActivateUpgradeSlot(2);
+        }
+        else if(vAct == Vector2.left)
+        {
+            pa.ActivateUpgradeSlot(3);
+        }
 
         if(pa.transform.position != pa.LastPos)
         {

@@ -12,7 +12,16 @@ public enum PlayerUpgradeTypes
     TurretRecharge,
     TurretShootSpeed,
     TurretLifetime,
-    TurretAmmo
+    TurretAmmo,
+    PlayerSpeedBoost
+
+}
+
+[Serializable]
+public struct UpgradeTier
+{
+    public PlayerUpgradeTypes func;
+    public float amt;
 
 }
 
@@ -27,7 +36,8 @@ public class PublicUpgradeClasses
         {PlayerUpgradeTypes.TurretRecharge, UpgradeIncreasePlayerTurretRecharge},
         {PlayerUpgradeTypes.TurretShootSpeed, UpgradeIncreasePlayerTurretShootSpeed},
         {PlayerUpgradeTypes.TurretLifetime, UpgradeIncreasePlayerTurretLifetime},
-        {PlayerUpgradeTypes.TurretAmmo, UpgradeIncreasePlayerTurretAmmo}
+        {PlayerUpgradeTypes.TurretAmmo, UpgradeIncreasePlayerTurretAmmo},
+        {PlayerUpgradeTypes.PlayerSpeedBoost, ActivateSpeedBoost}
     };
 
     public static void UpgradeIncreasePlayerSpeed(float value)
@@ -61,5 +71,9 @@ public class PublicUpgradeClasses
     public static void UpgradeIncreasePlayerTurretAmmo(float value)
     {
         StageController.singlton.Player.CurrentTurretBonusAmmo += value;
+    }
+    public static void ActivateSpeedBoost(float value)
+    {
+        //start speedboost coroutine
     }
 }

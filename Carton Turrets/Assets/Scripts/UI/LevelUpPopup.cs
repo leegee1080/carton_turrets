@@ -84,6 +84,12 @@ public class LevelUpPopup : MonoBehaviour
     public void UpgradeChosen(int index)
     {
         Debug.Log("tier is one above the tier the player already has");
+        UpgradeSlot us = new UpgradeSlot();
+        us.name = AvailableUpgradeArray[index].UpgradeName;
+        us.SO = AvailableUpgradeArray[index];
+        us.Tier = 0;
+        us.Tier = us.SO.MaxUpgradeTier;
+        StageController.singlton.Player.CurrentUpgradesArray[0] = us;
         //upgrade tier is 0 just for now
         AvailableUpgradeArray[index].ApplyUpgrade(0);
         Hide();
