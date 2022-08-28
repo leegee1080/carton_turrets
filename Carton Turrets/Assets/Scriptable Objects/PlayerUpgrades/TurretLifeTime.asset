@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: -3897761439659027702, guid: 93c2a04a6f3a95f4cbdf7379934291d5, type: 3}
   <UpgradeName>k__BackingField: Turret Lifetime
-  <MaxUpgradeTier>k__BackingField: 0
   <Tiers>k__BackingField:
   - EquipFunc: 10
     ActivateFunc: 0

@@ -13,12 +13,25 @@ public class PlayerUpgrade : ScriptableObject, IUpgradeable
 
     public void ApplyUpgrade(int chosenTier)
     {
-        PublicUpgradeClasses.PlayerUpgradeEquipFuncDict[Tiers[chosenTier].EquipFunc](Tiers[chosenTier].amt, this);
+        Action<float, IUpgradeable> chosenUpgradeFunc = PublicUpgradeClasses.PlayerUpgradeEquipFuncDict[Tiers[chosenTier].EquipFunc];
+        float upgradeAmount = Tiers[chosenTier].amt;
+
+        chosenUpgradeFunc(upgradeAmount, this);
+
+        // PublicUpgradeClasses.PlayerUpgradeEquipFuncDict[
+        //     Tiers[chosenTier].EquipFunc](
+        //         Tiers[chosenTier].amt, this);
     }
 
     public void Activate(int chosenTier, int slot)
     {
-        PublicUpgradeClasses.PlayerUpgradeActivateFuncDict[Tiers[chosenTier].ActivateFunc](slot, this);
+        Action<int, IUpgradeable> chosenActivateFunc = PublicUpgradeClasses.PlayerUpgradeActivateFuncDict[Tiers[chosenTier].ActivateFunc];
+
+        chosenActivateFunc(slot, this);
+
+        // PublicUpgradeClasses.PlayerUpgradeActivateFuncDict[
+        //     Tiers[chosenTier].ActivateFunc](
+        //         slot, this);
     }
 }
 
