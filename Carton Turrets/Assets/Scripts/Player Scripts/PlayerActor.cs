@@ -256,28 +256,44 @@ public class PlayerState_Normal: ActorStatesAbstractClass
     }   
     public override void OnUpdateState(StageActor _cont)
     {
+        int GetActivatedSlot(Vector2 v)
+        {
+            if (v[0] > 0) return 1;
+            if (v[0] < 0) return 3;
+            if (v[1] > 0) return 0;
+            if (v[1] < 0) return 2;
+            return -1;
+        }
+
         PlayerActor pa = (PlayerActor)_cont;
 
         pa.DecUpgradeSlotTimers(Time.fixedDeltaTime);
 
 
         Vector2 vAct = pa.activate.ReadValue<Vector2>().normalized;
-        if(vAct == Vector2.up)
+
+        int slot = GetActivatedSlot(vAct);
+        if(slot != -1)
         {
-            if(pa.TimerSlotCooldowns[0] <= 0){pa.ActivateUpgradeSlot(0);}
+            if(pa.TimerSlotCooldowns[slot] <= 0){pa.ActivateUpgradeSlot(slot);}
         }
-        else if(vAct == Vector2.right)
-        {
-            if(pa.TimerSlotCooldowns[1] <= 0){pa.ActivateUpgradeSlot(1);}
-        }
-        else if(vAct == Vector2.down)
-        {
-            if(pa.TimerSlotCooldowns[2] <= 0){pa.ActivateUpgradeSlot(2);}
-        }
-        else if(vAct == Vector2.left)
-        {
-            if(pa.TimerSlotCooldowns[3] <= 0){pa.ActivateUpgradeSlot(3);}
-        }
+
+        // if(vAct == Vector2.up)
+        // {
+        //     if(pa.TimerSlotCooldowns[0] <= 0){pa.ActivateUpgradeSlot(0);}
+        // }
+        // else if(vAct == Vector2.right)
+        // {
+        //     if(pa.TimerSlotCooldowns[1] <= 0){pa.ActivateUpgradeSlot(1);}
+        // }
+        // else if(vAct == Vector2.down)
+        // {
+        //     if(pa.TimerSlotCooldowns[2] <= 0){pa.ActivateUpgradeSlot(2);}
+        // }
+        // else if(vAct == Vector2.left)
+        // {
+        //     if(pa.TimerSlotCooldowns[3] <= 0){pa.ActivateUpgradeSlot(3);}
+        // }
 
         Vector2 v = pa.move.ReadValue<Vector2>() * pa.CurrentSpeed;
         pa.rb.velocity = new Vector3(v.x, 0, v.y);
