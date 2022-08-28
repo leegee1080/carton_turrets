@@ -27,6 +27,8 @@ public class LevelUpPopup : MonoBehaviour
         if(PotentialUpgradeArray[0] is IUpgradeable)
         {
             Debug.Log("LevelUpPopup is gathering potential upgrades...(When the objects are selected: detect what the player has already)");
+            Debug.Log("If the player already has the upgrade change the tier number in the Upgrade slot struct the player has to reflect the correct tier");
+            Debug.Log("impletment the commented notes in the TUrret class");
             //gather this list from a central global location
         }
         else
@@ -84,12 +86,6 @@ public class LevelUpPopup : MonoBehaviour
     public void UpgradeChosen(int index)
     {
         Debug.Log("tier is one above the tier the player already has");
-        UpgradeSlot us = new UpgradeSlot();
-        us.name = AvailableUpgradeArray[index].UpgradeName;
-        us.SO = AvailableUpgradeArray[index];
-        us.Tier = 0;
-        us.Tier = us.SO.MaxUpgradeTier;
-        StageController.singlton.Player.CurrentUpgradesArray[0] = us;
         //upgrade tier is 0 just for now
         AvailableUpgradeArray[index].ApplyUpgrade(0);
         Hide();

@@ -29,6 +29,7 @@ public class PlayerActor : StageActor, IPassableObject
     public float LevelUpThreshold;
     public float LevelUpThresholdMultiplier;
     public GameObject ExpPickupGameObject;
+    public float[] TimerSlotCooldowns = new float[4]{0,0,0,0};
 
     [Header("TurretVars")]
     public GameObject TurretContainer;
@@ -98,7 +99,11 @@ public class PlayerActor : StageActor, IPassableObject
     {
         if(CurrentUpgradesArray[i].name == ""){Debug.LogWarning("Slot chosen is empty!"); return;}
 
-        CurrentUpgradesArray[i].SO.Activate(CurrentUpgradesArray[i].Tier);
+        if(TimerSlotCooldowns[i] > 0){return;}
+
+        TimerSlotCooldowns[i] = CurrentUpgradesArray[i].SO.Cooldown;
+
+        CurrentUpgradesArray[i].SO.Activate(CurrentUpgradesArray[i].Tier, i);
     }
 
 
@@ -126,6 +131,23 @@ public class PlayerActor : StageActor, IPassableObject
             LevelUpPopup.singlton.Show();
         }
 
+    }
+
+    public void PlaceTurret(int slot)
+    {
+        if(CurrentUpgradesArray[slot].name == ""){Debug.LogWarning("Could not place turret, slot chosen is empty!"); return;}
+
+        GameObject tTurret =  TurretObjectPools[CurrentUpgradesArray[slot].name].ActivateNextObject(this);
+        tTurret.transform.position = gameObject.transform.position + (LastViewInput * turretPlaceOffset);
+        tTurret.transform.rotation = Quaternion.LookRotation(LastViewInput*90);
+    }
+
+    public void DecUpgradeSlotTimers(float time)
+    {
+        for (int i = 0; i < TimerSlotCooldowns.Length; i++)
+        {
+            if(TimerSlotCooldowns[i] > 0){TimerSlotCooldowns[i] -= time;}else{TimerSlotCooldowns[i] = 0;}
+        }
     }
 
 
@@ -235,28 +257,30 @@ public class PlayerState_Normal: ActorStatesAbstractClass
     public override void OnUpdateState(StageActor _cont)
     {
         PlayerActor pa = (PlayerActor)_cont;
-        Vector2 v = pa.move.ReadValue<Vector2>() * pa.CurrentSpeed;
-        Vector2 vAct = pa.activate.ReadValue<Vector2>().normalized;
 
-        pa.rb.velocity = new Vector3(v.x, 0, v.y);
-        
+        pa.DecUpgradeSlotTimers(Time.fixedDeltaTime);
+
+
+        Vector2 vAct = pa.activate.ReadValue<Vector2>().normalized;
         if(vAct == Vector2.up)
         {
-            pa.ActivateUpgradeSlot(0);
+            if(pa.TimerSlotCooldowns[0] <= 0){pa.ActivateUpgradeSlot(0);}
         }
         else if(vAct == Vector2.right)
         {
-            pa.ActivateUpgradeSlot(1);
+            if(pa.TimerSlotCooldowns[1] <= 0){pa.ActivateUpgradeSlot(1);}
         }
         else if(vAct == Vector2.down)
         {
-            pa.ActivateUpgradeSlot(2);
+            if(pa.TimerSlotCooldowns[2] <= 0){pa.ActivateUpgradeSlot(2);}
         }
         else if(vAct == Vector2.left)
         {
-            pa.ActivateUpgradeSlot(3);
+            if(pa.TimerSlotCooldowns[3] <= 0){pa.ActivateUpgradeSlot(3);}
         }
 
+        Vector2 v = pa.move.ReadValue<Vector2>() * pa.CurrentSpeed;
+        pa.rb.velocity = new Vector3(v.x, 0, v.y);
         if(pa.transform.position != pa.LastPos)
         {
             pa.LastViewInput = Vector3.Normalize(pa.transform.position - pa.LastPos);
@@ -266,7 +290,6 @@ public class PlayerState_Normal: ActorStatesAbstractClass
             pa.MainSprite.material.SetFloat("_ShakeUvSpeed", 7f);
             return;
         }
-        
         pa.MainSprite.material.SetFloat("_ShakeUvSpeed", 0f);
     }   
 }
