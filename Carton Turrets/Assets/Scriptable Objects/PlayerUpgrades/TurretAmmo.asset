@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: 3426723381814396700, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Turret Ammo
-  _tiers:
-  - func: 7
-    amt: 1
+  <MaxUpgradeTier>k__BackingField: 0
+  <Tiers>k__BackingField:
+  - EquipFunc: 10
+    ActivateFunc: 0
+    amt: 0
+  <Cooldown>k__BackingField: 0
