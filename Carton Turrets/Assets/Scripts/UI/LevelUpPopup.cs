@@ -18,6 +18,7 @@ public class LevelUpPopup : MonoBehaviour
 
     [Header("Upgrades")]
     public ScriptableObject[] UnfilteredUpgradeArray;
+    public ScriptableObject[] FillInUpgradeList;
     public List<IUpgradeable> PotentialUpgradeArray = new List<IUpgradeable>();
     public IUpgradeable[] AvailableUpgradeArray;
 
@@ -51,32 +52,50 @@ public class LevelUpPopup : MonoBehaviour
         {
             item.SetActive(false);
         }
-
         Time.timeScale = 1;
     }
+
+    public void UpgradeChosen(int index)
+    {
+        FindAndApplyUpgrade(AvailableUpgradeArray[index]);
+        Hide();
+    }
+
+    void FindAndApplyUpgrade(IUpgradeable chosenUpgrade)
+    {
+        for (int i = 0; i < StageController.singlton.Player.CurrentUpgradesArray.Length; i++)
+        {
+            if(chosenUpgrade.UpgradeName == StageController.singlton.Player.CurrentUpgradesArray[i].name)
+            {
+                int tier = StageController.singlton.Player.CurrentUpgradesArray[i].Tier + 1;
+
+                StageController.singlton.Player.CurrentUpgradesArray[i].Tier = tier;
+                StageController.singlton.Player.CurrentUpgradesArray[i].SO.ApplyUpgrade(tier);
+                return;
+            }
+        }
+        chosenUpgrade.ApplyUpgrade(0);//otherwise start over
+        return;
+    }
+
+
 
     void CreateAvailableUpgradeArray()
     {
         PotentialUpgradeArray.Clear();
-
-        //if player has no available slots, fill choices with money, health, and exp
-
-
-        foreach (IUpgradeable item in UnfilteredUpgradeArray)//grab upgrades that have more tiers to go
-        {
-            foreach (UpgradeSlot equippedupgrade in StageController.singlton.Player.CurrentUpgradesArray)
+        
+        if(CheckForAllFullUpgradeSlots()){//if player has no available slots, fill choices with money, health, and exp
+            foreach (IUpgradeable item in FillInUpgradeList)
             {
-                if(item.UpgradeName != equippedupgrade.name)
-                {
-                    continue;
-                }
-                else
-                {
-                    
-                }
+                PotentialUpgradeArray.Add(item);
+            }
+        }else{ //else filter the unfiltered list
+            foreach (IUpgradeable item in UnfilteredUpgradeArray)
+            {
+                if(CheckPlayerSlotsForMaxUpgrade(item)){continue;}
+                PotentialUpgradeArray.Add(item);
             }
         }
-
 
         IUpgradeable[] temp = new IUpgradeable[PotentialUpgradeArray.Count];
 
@@ -89,7 +108,26 @@ public class LevelUpPopup : MonoBehaviour
         AvailableUpgradeArray = temp;
         ApplyUpgradeArt();
     }
-
+    bool CheckForAllFullUpgradeSlots()
+    {
+        foreach (UpgradeSlot item in StageController.singlton.Player.CurrentUpgradesArray)
+        {
+            if(item.name == ""){return false;}
+        }
+        return true;
+    }
+    bool CheckPlayerSlotsForMaxUpgrade(IUpgradeable item)
+    {
+        foreach (UpgradeSlot equippedupgrade in StageController.singlton.Player.CurrentUpgradesArray)
+        {
+            if(item.UpgradeName == equippedupgrade.name)
+            {
+                if(equippedupgrade.Tier < equippedupgrade.MaxAllowedTier){return false;}
+                return true;
+            }
+        }
+        return false;
+    }
     void ApplyUpgradeArt()
     {
         for (int i = 0; i < _buttonArray.Length; i++)
@@ -99,13 +137,4 @@ public class LevelUpPopup : MonoBehaviour
             _textArray[i].text = AvailableUpgradeArray[i].UpgradeName;
         }
     }
-
-    public void UpgradeChosen(int index)
-    {
-        Debug.Log("tier is one above the tier the player already has");
-        //upgrade tier is 0 just for now
-        AvailableUpgradeArray[index].ApplyUpgrade(0);
-        Hide();
-    }
-
 }

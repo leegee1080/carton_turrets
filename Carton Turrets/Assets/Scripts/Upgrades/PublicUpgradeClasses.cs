@@ -139,6 +139,25 @@ public class PublicUpgradeClasses
             return;
         }
     }
+    public static void UpdageSlottedUpgradeTier(float value, IUpgradeable upgradeSO)
+    {
+        PlayerActor pd = StageController.singlton.Player;
+
+        UpgradeSlot NewUpgrade = new UpgradeSlot();
+        NewUpgrade.name = upgradeSO.UpgradeName;
+        NewUpgrade.SO = upgradeSO;
+        NewUpgrade.Tier = 0;
+        NewUpgrade.MaxAllowedTier = NewUpgrade.SO.Tiers.Length -1;
+
+        //apply to first open slot
+        for (int i = 0; i < pd.CurrentUpgradesArray.Length; i++)
+        {
+            if(pd.CurrentUpgradesArray[i].name != ""){continue;}
+            pd.CurrentUpgradesArray[i] = NewUpgrade;
+            return;
+        }
+    }
+
 #endregion
 
 

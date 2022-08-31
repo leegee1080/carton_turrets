@@ -596,7 +596,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0f6138b1610cf924f9ca722223425f9d, type: 2}
   - {fileID: 11400000, guid: 83366c71f3c38f748816973a2d25d8fe, type: 2}
   - {fileID: 11400000, guid: 990e3bab40ca7584189ad478a8c4f243, type: 2}
-  PotentialUpgradeArray: []
+  - {fileID: 11400000, guid: 60a671292fc0f98488533a657416f678, type: 2}
+  FillInUpgradeList:
+  - {fileID: 11400000, guid: 9466c5cddd4909347aa821e62972d0a3, type: 2}
+  - {fileID: 11400000, guid: 9466c5cddd4909347aa821e62972d0a3, type: 2}
+  - {fileID: 11400000, guid: 9466c5cddd4909347aa821e62972d0a3, type: 2}
 --- !u!1 &559413341 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8765379060142134297, guid: 95611a4ae71f8491cb11d410875147bd, type: 3}
@@ -2408,9 +2412,6 @@ MonoBehaviour:
     m_Flags: 0
   PlayerData: {fileID: 11400000, guid: 9ffeab990231817458959966cf54332c, type: 2}
   CurrentUpgradesArray:
-  - name: 
-    Tier: 0
-    MaxAllowedTier: 0
   - name: 
     Tier: 0
     MaxAllowedTier: 0

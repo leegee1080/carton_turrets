@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8342e2ef5b99c4aa6c7d79118ef7e3, type: 3}
+  m_Name: Money
+  m_EditorClassIdentifier: 
+  <Icon>k__BackingField: {fileID: -3977184504499897954, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  <UpgradeName>k__BackingField: Money
+  <Tiers>k__BackingField:
+  - EquipFunc: 0
+    ActivateFunc: 0
+    amt: 1
+  <IsUnlimited>k__BackingField: 0
+  <Cooldown>k__BackingField: 0
