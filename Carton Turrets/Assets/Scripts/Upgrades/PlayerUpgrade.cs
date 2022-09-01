@@ -14,6 +14,10 @@ public class PlayerUpgrade : ScriptableObject, IUpgradeable
 
     public void ApplyUpgrade(int chosenTier)
     {
+        if(chosenTier == 0 && IsUnlimited == false)
+        {
+            PublicUpgradeClasses.EquipUpgradeInFirstOpenSlot(0, this);
+        }
         Action<float, IUpgradeable> chosenUpgradeFunc = PublicUpgradeClasses.PlayerUpgradeEquipFuncDict[Tiers[chosenTier].EquipFunc];
         float upgradeAmount = Tiers[chosenTier].amt;
 

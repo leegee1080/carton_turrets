@@ -41,6 +41,11 @@ public class TurretScriptableObject : ActorDataScriptableObject, IUpgradeable
 
     public void ApplyUpgrade(int chosenTier)
     {
+        if(chosenTier == 0)
+        {
+            PublicUpgradeClasses.EquipTurretInFirstOpenSlot(0, this);
+            return;
+        }
         Action<float, IUpgradeable> chosenUpgradeFunc = PublicUpgradeClasses.PlayerUpgradeEquipFuncDict[Tiers[chosenTier].EquipFunc];
         float upgradeAmount = Tiers[chosenTier].amt;
 

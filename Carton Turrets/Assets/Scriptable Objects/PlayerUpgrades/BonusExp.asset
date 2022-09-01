@@ -15,10 +15,11 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 5758965880726059572, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Bonus XP
   <Tiers>k__BackingField:
-  - EquipFunc: 10
-    ActivateFunc: 0
-    amt: 2
   - EquipFunc: 4
     ActivateFunc: 0
-    amt: 2
+    amt: 1
+  - EquipFunc: 4
+    ActivateFunc: 0
+    amt: 10
+  <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0

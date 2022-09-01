@@ -15,9 +15,7 @@ public enum PlayerUpgradeEquipTypes
     TurretShootSpeed,
     TurretLifetime,
     TurretAmmo,
-    //equip types
-    EquipTurret,
-    EquipUpgrade
+    money,
 }
 public enum PlayerUpgradeActivateTypes
 {
@@ -48,9 +46,7 @@ public class PublicUpgradeClasses
         {PlayerUpgradeEquipTypes.TurretShootSpeed, UpgradeIncreasePlayerTurretShootSpeed},
         {PlayerUpgradeEquipTypes.TurretLifetime, UpgradeIncreasePlayerTurretLifetime},
         {PlayerUpgradeEquipTypes.TurretAmmo, UpgradeIncreasePlayerTurretAmmo},
-        //equip func
-        {PlayerUpgradeEquipTypes.EquipTurret, EquipTurretInFirstOpenSlot},
-        {PlayerUpgradeEquipTypes.EquipUpgrade, EquipUpgradeInFirstOpenSlot},
+        {PlayerUpgradeEquipTypes.money, GiveMoney},
     };
 
     public static readonly Dictionary<PlayerUpgradeActivateTypes, Action<int, IUpgradeable>> PlayerUpgradeActivateFuncDict = new Dictionary<PlayerUpgradeActivateTypes, Action<int, IUpgradeable>>
@@ -62,42 +58,64 @@ public class PublicUpgradeClasses
     };
  
 #region EqiupFuncs
-    public static void UpgradeNull(float value, IUpgradeable turretSO)
+    public static void UpgradeNull(float value, IUpgradeable passedUpgradeData)
     {
         return;
     }
-    public static void UpgradeIncreasePlayerSpeed(float value, IUpgradeable turretSO)
+    public static void UpgradeIncreasePlayerSpeed(float value, IUpgradeable passedUpgradeData)
     {
         StageController.singlton.Player.CurrentSpeed += value;
     }
-    public static void UpgradeIncreasePlayerHealth(float value, IUpgradeable turretSO)
+    public static void UpgradeIncreasePlayerHealth(float value, IUpgradeable passedUpgradeData)
     {
         StageController.singlton.Player.CurrentHealth += value;
     }
-    public static void UpgradeIncreasePlayerExpGatherRange(float value, IUpgradeable turretSO)
+    public static void UpgradeIncreasePlayerExpGatherRange(float value, IUpgradeable passedUpgradeData)
     {
         StageController.singlton.Player.ExpPickupGameObject.GetComponent<SphereCollider>().radius += value;
     }
-    public static void UpgradeIncreasePlayerExpMultiplier(float value, IUpgradeable turretSO)
+    public static void UpgradeIncreasePlayerExpMultiplier(float value, IUpgradeable passedUpgradeData)
     {
         StageController.singlton.Player.ExpMultiplier += value;
     }
-    public static void UpgradeIncreasePlayerTurretRecharge(float value, IUpgradeable turretSO)
+    public static void UpgradeIncreasePlayerTurretRecharge(float value, IUpgradeable passedUpgradeData)
     {
         StageController.singlton.Player.CurrentReloadTimerMax += value;
     }
-    public static void UpgradeIncreasePlayerTurretShootSpeed(float value, IUpgradeable turretSO)
+    public static void UpgradeIncreasePlayerTurretShootSpeed(float value, IUpgradeable passedUpgradeData)
     {
         StageController.singlton.Player.CurrentTurretBonusShootSpeed += value;
     }
-    public static void UpgradeIncreasePlayerTurretLifetime(float value, IUpgradeable turretSO)
+    public static void UpgradeIncreasePlayerTurretLifetime(float value, IUpgradeable passedUpgradeData)
     {
         StageController.singlton.Player.CurrentTurretBonusLifeTime += value;
     }
-    public static void UpgradeIncreasePlayerTurretAmmo(float value, IUpgradeable turretSO)
+    public static void UpgradeIncreasePlayerTurretAmmo(float value, IUpgradeable passedUpgradeData)
     {
         StageController.singlton.Player.CurrentTurretBonusAmmo += value;
     }
+    public static void GiveMoney(float value, IUpgradeable passedUpgradeData)
+    {
+        Debug.Log("Gave Player: " + value + " doll hairs.");
+    }
+#endregion
+
+
+#region ActivateFuncs
+    public static void ActivateNull(int slot, IUpgradeable turretSO)
+    {
+        return;
+    }
+    public static void ActivateSpeedBoost(int slot, IUpgradeable turretSO)
+    {
+        //start speedboost coroutine
+    }
+    public static void PlaceTurret(int slot, IUpgradeable turretSO)
+    {
+        StageController.singlton.Player.PlaceTurret(slot);
+    }
+#endregion
+
     public static void EquipTurretInFirstOpenSlot(float value, IUpgradeable turretSO)
     {
         PlayerActor pd = StageController.singlton.Player;
@@ -139,40 +157,4 @@ public class PublicUpgradeClasses
             return;
         }
     }
-    public static void UpdageSlottedUpgradeTier(float value, IUpgradeable upgradeSO)
-    {
-        PlayerActor pd = StageController.singlton.Player;
-
-        UpgradeSlot NewUpgrade = new UpgradeSlot();
-        NewUpgrade.name = upgradeSO.UpgradeName;
-        NewUpgrade.SO = upgradeSO;
-        NewUpgrade.Tier = 0;
-        NewUpgrade.MaxAllowedTier = NewUpgrade.SO.Tiers.Length -1;
-
-        //apply to first open slot
-        for (int i = 0; i < pd.CurrentUpgradesArray.Length; i++)
-        {
-            if(pd.CurrentUpgradesArray[i].name != ""){continue;}
-            pd.CurrentUpgradesArray[i] = NewUpgrade;
-            return;
-        }
-    }
-
-#endregion
-
-
-#region ActivateFuncs
-    public static void ActivateNull(int slot, IUpgradeable turretSO)
-    {
-        return;
-    }
-    public static void ActivateSpeedBoost(int slot, IUpgradeable turretSO)
-    {
-        //start speedboost coroutine
-    }
-    public static void PlaceTurret(int slot, IUpgradeable turretSO)
-    {
-        StageController.singlton.Player.PlaceTurret(slot);
-    }
-#endregion
 }

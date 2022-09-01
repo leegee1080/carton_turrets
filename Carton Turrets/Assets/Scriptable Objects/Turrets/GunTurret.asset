@@ -36,9 +36,9 @@ MonoBehaviour:
   Mesh: {fileID: 4300182, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}
   <Icon>k__BackingField: {fileID: -1140342232090195849, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Gun Turret
-  <MaxUpgradeTier>k__BackingField: 1
   <Tiers>k__BackingField:
-  - EquipFunc: 9
+  - EquipFunc: 0
     ActivateFunc: 2
     amt: 0
+  <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 1

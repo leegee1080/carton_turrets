@@ -15,7 +15,8 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: -3897761439659027702, guid: 93c2a04a6f3a95f4cbdf7379934291d5, type: 3}
   <UpgradeName>k__BackingField: Turret Lifetime
   <Tiers>k__BackingField:
-  - EquipFunc: 10
+  - EquipFunc: 7
     ActivateFunc: 0
-    amt: 0
+    amt: 10
+  <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0
