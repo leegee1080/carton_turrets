@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: -31695106925954461, guid: 93c2a04a6f3a95f4cbdf7379934291d5, type: 3}
   <UpgradeName>k__BackingField: Pickup Range
-  <MaxUpgradeTier>k__BackingField: 0
   <Tiers>k__BackingField:
-  - EquipFunc: 10
+  - EquipFunc: 3
     ActivateFunc: 0
-    amt: 0
+    amt: 0.5
+  <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0

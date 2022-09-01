@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: -4399871233024827926, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Health
-  <MaxUpgradeTier>k__BackingField: 0
   <Tiers>k__BackingField:
-  - EquipFunc: 10
+  - EquipFunc: 2
     ActivateFunc: 0
-    amt: 0
+    amt: 10
+  <IsUnlimited>k__BackingField: 1
   <Cooldown>k__BackingField: 0
