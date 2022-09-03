@@ -71,7 +71,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8903252950350368669}
-  m_Mesh: {fileID: 4300182, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}
+  m_Mesh: {fileID: 4300166, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}
 --- !u!23 &8903252950350368670
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 8903252950405436256}
   - component: {fileID: 8903252950405436257}
   m_Layer: 8
-  m_Name: BulletTurret
+  m_Name: BeamTurret
   m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ MonoBehaviour:
   CurrentSpeed: 0
   CurrentHealth: 0
   DamageColor: {r: 0, g: 0, b: 0, a: 0}
-  TurretData: {fileID: 11400000, guid: 60a671292fc0f98488533a657416f678, type: 2}
+  TurretData: {fileID: 11400000, guid: 7cad782fab39c004f94302b9d874f116, type: 2}
   _barrel: {fileID: 3074358141296015960}
   ControllingActor: {fileID: 0}
   LifeTime: 0

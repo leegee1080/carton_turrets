@@ -207,7 +207,7 @@ MonoBehaviour:
   WaveArray: []
   _genericEnemyGameObject: {fileID: 9184136763064923520, guid: ab26bb0011d96424cb9a6d2d932764d2, type: 3}
   _poolEnemyContainer: {fileID: 1741954581}
-  _enemiesToPool: 100
+  _enemiesToPool: 1000
   _genericDeathParticleContainer: {fileID: 95278915}
   _genericDeathParticleObject: {fileID: 8933188411812420761, guid: 2b4d88d0c0794434da673d2a5b6c8e62, type: 3}
   _pickupContainer: {fileID: 1243884443}
@@ -588,6 +588,8 @@ MonoBehaviour:
   - {fileID: 678308944}
   - {fileID: 1067636086}
   UnfilteredUpgradeArray:
+  - {fileID: 11400000, guid: 60a671292fc0f98488533a657416f678, type: 2}
+  - {fileID: 11400000, guid: 7cad782fab39c004f94302b9d874f116, type: 2}
   - {fileID: 11400000, guid: 1f525070ee3977242b7355573cfa7d75, type: 2}
   - {fileID: 11400000, guid: 1eb71aa06053e4d43a4e4b973befaa67, type: 2}
   - {fileID: 11400000, guid: 7e0a3ab83ba6b3b4397d6d5b521289fb, type: 2}
@@ -596,7 +598,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0f6138b1610cf924f9ca722223425f9d, type: 2}
   - {fileID: 11400000, guid: 83366c71f3c38f748816973a2d25d8fe, type: 2}
   - {fileID: 11400000, guid: 990e3bab40ca7584189ad478a8c4f243, type: 2}
-  - {fileID: 11400000, guid: 60a671292fc0f98488533a657416f678, type: 2}
   FillInUpgradeList:
   - {fileID: 11400000, guid: 9466c5cddd4909347aa821e62972d0a3, type: 2}
   - {fileID: 11400000, guid: 9466c5cddd4909347aa821e62972d0a3, type: 2}

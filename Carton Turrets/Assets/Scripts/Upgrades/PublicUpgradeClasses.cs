@@ -126,16 +126,16 @@ public class PublicUpgradeClasses
         NewTurret.Tier = 0;
         NewTurret.MaxAllowedTier = NewTurret.SO.Tiers.Length -1;
 
-        TurretScriptableObject TSO = NewTurret.SO as TurretScriptableObject;
-
+        TurretScriptableObject TSO = turretSO as TurretScriptableObject;
+        
         //apply to first open slot
         for (int i = 0; i < pd.CurrentUpgradesArray.Length; i++)
         {
             if(pd.CurrentUpgradesArray[i].name != ""){continue;}
             pd.CurrentUpgradesArray[i] = NewTurret;
-            pd.TurretObjectPools[pd.CurrentUpgradesArray[i].name] = new ObjectPooler(TSO.TurretGameObject, TSO.TurretAmountToPool, pd.TurretContainer, false);
-            pd.BulletObjectPools[pd.CurrentUpgradesArray[i].name] = new ObjectPooler(TSO.BulletGameObject, TSO.BulletAmountToPool, pd.BulletContainer, false);
-            pd.ExplosionObjectPools[pd.CurrentUpgradesArray[i].name] = new ObjectPooler(TSO.ExplosionGameObject, TSO.ExplosionAmountToPool, pd.ExplosionContainer, false);
+            pd.TurretObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.TurretGameObject, TSO.TurretAmountToPool, pd.TurretContainer, false);
+            pd.BulletObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.BulletGameObject, TSO.BulletAmountToPool, pd.BulletContainer, false);
+            pd.ExplosionObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.ExplosionGameObject, TSO.ExplosionAmountToPool, pd.ExplosionContainer, false);
             return;
         }
     }
