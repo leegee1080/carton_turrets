@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Tester
   Desc: Testy Test Testerson
-  MaxHealth: 100
+  MaxHealth: 1000
   MaxSpeed: 1
-  MaxTurretReloadTime: 0.5
+  MaxAbilityCooldownTime: 1
   StartingPlayerExpBonus: 1
   LevelUpThresholdMultiplier: 2
   StartingTurret: {fileID: 11400000, guid: 60a671292fc0f98488533a657416f678, type: 2}

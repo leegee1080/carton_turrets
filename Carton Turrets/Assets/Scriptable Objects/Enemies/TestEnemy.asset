@@ -18,3 +18,4 @@ MonoBehaviour:
   MaxSpeed: 0.2
   Sprite: {fileID: 21300000, guid: c9ce7cfcbaae312449366199f36d92b1, type: 3}
   MaxDamage: 1
+  ColliderSize: 0.1

@@ -26,8 +26,7 @@ public class LevelUpPopup : MonoBehaviour
         Hide();
 
         Debug.Log("LevelUpPopup is gathering potential upgrades...(When the objects are selected: detect what the player has already)");
-        Debug.Log("If the player already has the upgrade change the tier number in the Upgrade slot struct the player has to reflect the correct tier");
-        Debug.Log("impletment the commented notes in the TUrret class");
+        Debug.Log("implement the commented notes in the TUrret class");
         
         for (int i = 0; i < UnfilteredUpgradeArray.Length; i++)
         {
@@ -92,7 +91,7 @@ public class LevelUpPopup : MonoBehaviour
         }else{ //else filter the unfiltered list
             foreach (IUpgradeable item in UnfilteredUpgradeArray)
             {
-                if(CheckPlayerSlotsForMaxUpgrade(item)){continue;}
+                if(CheckPlayerSlotsForMaxUpgrade(item)){continue;}//if not maxed out or all slots filled add the potential upgrade array
                 PotentialUpgradeArray.Add(item);
             }
         }
@@ -112,6 +111,7 @@ public class LevelUpPopup : MonoBehaviour
     {
         foreach (UpgradeSlot item in StageController.singlton.Player.CurrentUpgradesArray)
         {
+            if(item.Tier < item.MaxAllowedTier){return false;}
             if(item.name == ""){return false;}
         }
         return true;
@@ -120,13 +120,15 @@ public class LevelUpPopup : MonoBehaviour
     {
         foreach (UpgradeSlot equippedupgrade in StageController.singlton.Player.CurrentUpgradesArray)
         {
+            if(equippedupgrade.name == ""){return false;}
+
             if(item.UpgradeName == equippedupgrade.name)
             {
                 if(equippedupgrade.Tier < equippedupgrade.MaxAllowedTier){return false;}
                 return true;
             }
         }
-        return false;
+        return true;
     }
     void ApplyUpgradeArt()
     {

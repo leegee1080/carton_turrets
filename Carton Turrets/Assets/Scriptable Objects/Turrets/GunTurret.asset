@@ -20,9 +20,9 @@ MonoBehaviour:
   TReloadTime: 0.5
   TAmmo: 30
   TColliderSize: 0.04
-  BLifeTime: 1
-  BDamage: 1
-  BSpeed: 0.1
+  BLifeTime: 0.8
+  BDamage: 0.5
+  BSpeed: 0.06
   ELifeTime: 0.2
   EDamage: 10
   ESpeed: 1

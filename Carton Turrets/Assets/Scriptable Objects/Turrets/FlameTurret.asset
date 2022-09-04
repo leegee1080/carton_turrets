@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60b8ea5a4eda5b94c81a5b96cd80fbc2, type: 3}
-  m_Name: BeamTurret
+  m_Name: FlameTurret
   m_EditorClassIdentifier: 
-  name: Beam Turret
+  name: Flame Turret
   Desc: Channels a beam out front.
   MaxHealth: 1
   MaxSpeed: 1
   TLifeTime: 5
-  TReloadTime: 5
+  TReloadTime: 1000
   TAmmo: 2
   TColliderSize: 0.04
   BLifeTime: 5
@@ -35,7 +35,7 @@ MonoBehaviour:
   ExplosionGameObject: {fileID: 5925393004181974638, guid: 524c5e0dce837d143a0a0b50594f4d12, type: 3}
   Mesh: {fileID: 4300076, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}
   <Icon>k__BackingField: {fileID: 5572240525638473726, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
-  <UpgradeName>k__BackingField: Beam Turret
+  <UpgradeName>k__BackingField: Flame Turret
   <Tiers>k__BackingField:
   - EquipFunc: 0
     ActivateFunc: 2

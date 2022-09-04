@@ -34,7 +34,7 @@ public class PlayerActor : StageActor, IPassableObject
     [Header("TurretVars")]
     public GameObject TurretContainer;
     [SerializeField]private float turretPlaceOffset;
-    public float CurrentReloadTimerMax;
+    public float CurrentAbilityCooldown;
     public Dictionary<string, ObjectPooler> TurretObjectPools = new Dictionary<string, ObjectPooler>();
     public float CurrentTurretBonusShootSpeed;
     public float CurrentTurretBonusLifeTime;
@@ -101,7 +101,7 @@ public class PlayerActor : StageActor, IPassableObject
 
         if(TimerSlotCooldowns[i] > 0){return;}
 
-        TimerSlotCooldowns[i] = CurrentUpgradesArray[i].SO.Cooldown;
+        TimerSlotCooldowns[i] = CurrentUpgradesArray[i].SO.Cooldown / CurrentAbilityCooldown;
 
         CurrentUpgradesArray[i].SO.Activate(CurrentUpgradesArray[i].Tier, i);
     }
@@ -160,7 +160,7 @@ public class PlayerActor : StageActor, IPassableObject
         ExpMultiplier = PlayerData.StartingPlayerExpBonus;
         LevelUpThresholdMultiplier = PlayerData.LevelUpThresholdMultiplier;
 
-        // CurrentReloadTimerMax = PlayerData.MaxTurretReloadTime;
+        CurrentAbilityCooldown = PlayerData.MaxAbilityCooldownTime;
         CurrentTurretBonusShootSpeed = PlayerData.StartingTurretBonusShootSpeed;
         CurrentTurretBonusLifeTime = PlayerData.StartingTurretBonusShootSpeed;
         CurrentTurretBonusAmmo = PlayerData.StartingTurretBonusShootSpeed;

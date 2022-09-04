@@ -17,6 +17,15 @@ MonoBehaviour:
   <Tiers>k__BackingField:
   - EquipFunc: 6
     ActivateFunc: 0
-    amt: 10
+    amt: 5
+  - EquipFunc: 6
+    ActivateFunc: 0
+    amt: 5
+  - EquipFunc: 6
+    ActivateFunc: 0
+    amt: 5
+  - EquipFunc: 6
+    ActivateFunc: 0
+    amt: 5
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0
