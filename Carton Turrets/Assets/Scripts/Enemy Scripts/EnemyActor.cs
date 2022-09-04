@@ -22,12 +22,15 @@ public class EnemyActor : StageActor, IColliderMessageable
 
     [Header("Phys Vars")]
     public Rigidbody rb;
+    public SphereCollider[] Colliders;
 
     public void Respawn()//if player gets too far
     {
         Vector3 nearPos = Target.transform.position + (StageController.singlton.Player.LastViewInput * ViewDistance);
 
-        ActorArtContainer.transform.position = new Vector3(nearPos.x, ActorArtContainer.transform.position.y,nearPos.z);
+        float ranOffset = UnityEngine.Random.Range(-1, 1);
+
+        ActorArtContainer.transform.position = new Vector3(nearPos.x + ranOffset, ActorArtContainer.transform.position.y,nearPos.z + ranOffset);
     }
 
     public void RecMessageEnter(GameObject obj)
@@ -66,8 +69,17 @@ public class EnemyActor : StageActor, IColliderMessageable
         Target = StageController.singlton.Player.gameObject;
         CurrentHealth = EnemyData.MaxHealth;
         CurrentSpeed = EnemyData.MaxSpeed;
+
+        float walkAniSpeed = 5f + EnemyData.MaxSpeed + UnityEngine.Random.Range(-0.1f, 0.1f);
+        _sR.material.SetFloat("_ShakeUvSpeed", walkAniSpeed);
+
         CurrentDamage = EnemyData.MaxDamage;
         _sR.sprite = EnemyData.Sprite;
+
+        foreach (SphereCollider coll in Colliders)
+        {
+            coll.radius = EnemyData.ColliderSize;
+        }
     }
     public override void Activate()
     {

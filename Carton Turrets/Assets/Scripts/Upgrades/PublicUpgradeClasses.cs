@@ -11,7 +11,7 @@ public enum PlayerUpgradeEquipTypes
     Health,
     ExpGatherRange,
     ExpMultiplier,
-    TurretRecharge,
+    AbilityCooldown,
     TurretShootSpeed,
     TurretLifetime,
     TurretAmmo,
@@ -42,7 +42,7 @@ public class PublicUpgradeClasses
         {PlayerUpgradeEquipTypes.Health, UpgradeIncreasePlayerHealth},
         {PlayerUpgradeEquipTypes.ExpGatherRange, UpgradeIncreasePlayerExpGatherRange},
         {PlayerUpgradeEquipTypes.ExpMultiplier, UpgradeIncreasePlayerExpMultiplier},
-        {PlayerUpgradeEquipTypes.TurretRecharge, UpgradeIncreasePlayerTurretRecharge},
+        {PlayerUpgradeEquipTypes.AbilityCooldown, UpgradeIncreasePlayerAbilityCooldown},
         {PlayerUpgradeEquipTypes.TurretShootSpeed, UpgradeIncreasePlayerTurretShootSpeed},
         {PlayerUpgradeEquipTypes.TurretLifetime, UpgradeIncreasePlayerTurretLifetime},
         {PlayerUpgradeEquipTypes.TurretAmmo, UpgradeIncreasePlayerTurretAmmo},
@@ -78,9 +78,9 @@ public class PublicUpgradeClasses
     {
         StageController.singlton.Player.ExpMultiplier += value;
     }
-    public static void UpgradeIncreasePlayerTurretRecharge(float value, IUpgradeable passedUpgradeData)
+    public static void UpgradeIncreasePlayerAbilityCooldown(float value, IUpgradeable passedUpgradeData)
     {
-        StageController.singlton.Player.CurrentReloadTimerMax += value;
+        StageController.singlton.Player.CurrentAbilityCooldown += value;
     }
     public static void UpgradeIncreasePlayerTurretShootSpeed(float value, IUpgradeable passedUpgradeData)
     {
@@ -136,6 +136,8 @@ public class PublicUpgradeClasses
             pd.TurretObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.TurretGameObject, TSO.TurretAmountToPool, pd.TurretContainer, false);
             pd.BulletObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.BulletGameObject, TSO.BulletAmountToPool, pd.BulletContainer, false);
             pd.ExplosionObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.ExplosionGameObject, TSO.ExplosionAmountToPool, pd.ExplosionContainer, false);
+
+            CurrentEquipmentUI.singlton.UpdateUpgradeUI(i, NewTurret.SO.Icon, NewTurret.name);
             return;
         }
     }
@@ -154,6 +156,8 @@ public class PublicUpgradeClasses
         {
             if(pd.CurrentUpgradesArray[i].name != ""){continue;}
             pd.CurrentUpgradesArray[i] = NewUpgrade;
+
+            CurrentEquipmentUI.singlton.UpdateUpgradeUI(i, NewUpgrade.SO.Icon, NewUpgrade.name);
             return;
         }
     }

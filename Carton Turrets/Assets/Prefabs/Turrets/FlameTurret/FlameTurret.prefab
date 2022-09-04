@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 8903252950405436256}
   - component: {fileID: 8903252950405436257}
   m_Layer: 8
-  m_Name: BeamTurret
+  m_Name: FlameTurret
   m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

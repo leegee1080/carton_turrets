@@ -171,7 +171,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.09
+  m_Radius: 0.1
   m_Center: {x: 0, y: -0.04, z: 0}
 --- !u!1 &9184136763064923520
 GameObject:
@@ -271,6 +271,9 @@ MonoBehaviour:
   EnemyData: {fileID: 11400000, guid: 8edeb15b61e7ce24c8acfef33f350afc, type: 2}
   CurrentDamage: 0
   Target: {fileID: 0}
-  ViewDistance: 5
+  ViewDistance: 8
   _sR: {fileID: 5914418368182736709}
   rb: {fileID: 876886369771236080}
+  Colliders:
+  - {fileID: 1189094093611846471}
+  - {fileID: 8141175436138465618}

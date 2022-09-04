@@ -7,4 +7,5 @@ public class EnemyScriptableObject : ActorDataScriptableObject
 {
     public Sprite Sprite;
     public float MaxDamage;
+    public float ColliderSize;
 }
