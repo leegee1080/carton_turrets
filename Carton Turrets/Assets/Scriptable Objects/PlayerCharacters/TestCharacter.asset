@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Tester
   Desc: Testy Test Testerson
-  MaxHealth: 1000
+  MaxHealth: 100
   MaxSpeed: 1
   MaxAbilityCooldownTime: 1
   StartingPlayerExpBonus: 1
