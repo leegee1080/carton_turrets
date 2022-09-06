@@ -146,7 +146,19 @@ public class PlayerActor : StageActor, IPassableObject
     {
         for (int i = 0; i < TimerSlotCooldowns.Length; i++)
         {
-            if(TimerSlotCooldowns[i] > 0){TimerSlotCooldowns[i] -= time;}else{TimerSlotCooldowns[i] = 0;}
+            if(TimerSlotCooldowns[i] > 0)
+            {
+                TimerSlotCooldowns[i] -= time; CurrentEquipmentUI.singlton.UpdateUpgradeTimers
+                (
+                    CurrentUpgradesArray[i].SO.Cooldown / CurrentAbilityCooldown,
+                    i,
+                    TimerSlotCooldowns[i]
+                );
+            }
+            else
+            {
+                TimerSlotCooldowns[i] = 0;
+            }
         }
     }
 
@@ -277,23 +289,6 @@ public class PlayerState_Normal: ActorStatesAbstractClass
         {
             if(pa.TimerSlotCooldowns[slot] <= 0){pa.ActivateUpgradeSlot(slot);}
         }
-
-        // if(vAct == Vector2.up)
-        // {
-        //     if(pa.TimerSlotCooldowns[0] <= 0){pa.ActivateUpgradeSlot(0);}
-        // }
-        // else if(vAct == Vector2.right)
-        // {
-        //     if(pa.TimerSlotCooldowns[1] <= 0){pa.ActivateUpgradeSlot(1);}
-        // }
-        // else if(vAct == Vector2.down)
-        // {
-        //     if(pa.TimerSlotCooldowns[2] <= 0){pa.ActivateUpgradeSlot(2);}
-        // }
-        // else if(vAct == Vector2.left)
-        // {
-        //     if(pa.TimerSlotCooldowns[3] <= 0){pa.ActivateUpgradeSlot(3);}
-        // }
 
         Vector2 v = pa.move.ReadValue<Vector2>() * pa.CurrentSpeed;
         pa.rb.velocity = new Vector3(v.x, 0, v.y);

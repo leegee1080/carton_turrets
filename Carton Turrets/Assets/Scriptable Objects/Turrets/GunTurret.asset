@@ -41,4 +41,4 @@ MonoBehaviour:
     ActivateFunc: 2
     amt: 0
   <IsUnlimited>k__BackingField: 0
-  <Cooldown>k__BackingField: 1
+  <Cooldown>k__BackingField: 4
