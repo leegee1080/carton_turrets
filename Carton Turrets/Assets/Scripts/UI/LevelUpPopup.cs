@@ -96,14 +96,21 @@ public class LevelUpPopup : MonoBehaviour
             }
         }
 
-        IUpgradeable[] temp = new IUpgradeable[PotentialUpgradeArray.Count];
+        IUpgradeable[] tempPotentialUpgrades = ArrayShuffle(PotentialUpgradeArray);
+
+        // IUpgradeable[] temp = new IUpgradeable[PotentialUpgradeArray.Count];
+        IUpgradeable[] temp = new IUpgradeable[tempPotentialUpgrades.Length];
+
 
         for (int i = 0; i < _buttonArray.Length; i++)
         {
-            if(i >= PotentialUpgradeArray.Count){_buttonArray[i].SetActive(false); continue;}
+            if(i >= tempPotentialUpgrades.Length){_buttonArray[i].SetActive(false); continue;}
             _buttonArray[i].SetActive(true);
-            temp[i] = (IUpgradeable)PotentialUpgradeArray[i];
+            temp[i] = (IUpgradeable)tempPotentialUpgrades[i];
         }
+
+
+
         AvailableUpgradeArray = temp;
         ApplyUpgradeArt();
     }
@@ -138,5 +145,29 @@ public class LevelUpPopup : MonoBehaviour
             _iconArray[i].sprite = AvailableUpgradeArray[i].Icon;
             _textArray[i].text = AvailableUpgradeArray[i].UpgradeName;
         }
+    }
+
+    IUpgradeable[] ArrayShuffle(List<IUpgradeable> original)
+    {
+
+        IUpgradeable[] temp = new IUpgradeable[original.Count];
+
+        List<IUpgradeable> aftList = new List<IUpgradeable>();
+
+        for (int i = 0; i < temp.Length; i++)
+        {
+            int r = Random.Range(0, original.Count);
+            
+            aftList.Add(original[r]);
+
+            original.RemoveAt(r);
+        }
+
+        for (int i = 0; i < aftList.Count; i++)
+        {
+            temp[i] = aftList[i];
+        }
+
+        return temp;
     }
 }

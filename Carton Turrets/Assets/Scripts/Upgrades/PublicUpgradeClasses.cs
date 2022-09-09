@@ -9,6 +9,7 @@ public enum PlayerUpgradeEquipTypes
     //upgrade types
     Speed,
     Health,
+    MaxHealth,
     ExpGatherRange,
     ExpMultiplier,
     AbilityCooldown,
@@ -40,6 +41,7 @@ public class PublicUpgradeClasses
         //upgrade func
         {PlayerUpgradeEquipTypes.Speed, UpgradeIncreasePlayerSpeed},
         {PlayerUpgradeEquipTypes.Health, UpgradeIncreasePlayerHealth},
+        {PlayerUpgradeEquipTypes.MaxHealth, UpgradeIncreasePlayerMaxHealth},
         {PlayerUpgradeEquipTypes.ExpGatherRange, UpgradeIncreasePlayerExpGatherRange},
         {PlayerUpgradeEquipTypes.ExpMultiplier, UpgradeIncreasePlayerExpMultiplier},
         {PlayerUpgradeEquipTypes.AbilityCooldown, UpgradeIncreasePlayerAbilityCooldown},
@@ -68,7 +70,16 @@ public class PublicUpgradeClasses
     }
     public static void UpgradeIncreasePlayerHealth(float value, IUpgradeable passedUpgradeData)
     {
+        if(StageController.singlton.Player.CurrentHealth + value >= StageController.singlton.Player.MaxHealth)
+        {
+            StageController.singlton.Player.CurrentHealth = StageController.singlton.Player.MaxHealth;
+            return;
+        }
         StageController.singlton.Player.CurrentHealth += value;
+    }
+    public static void UpgradeIncreasePlayerMaxHealth(float value, IUpgradeable passedUpgradeData)
+    {
+        StageController.singlton.Player.MaxHealth += value;
     }
     public static void UpgradeIncreasePlayerExpGatherRange(float value, IUpgradeable passedUpgradeData)
     {
