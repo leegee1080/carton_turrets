@@ -23,6 +23,7 @@ public class PlayerActor : StageActor, IPassableObject
     public PlayerScriptableObject PlayerData;
 
     [Header("Progression Vars")]
+    public float MaxHealth;
     public UpgradeSlot[] CurrentUpgradesArray = new UpgradeSlot[4];
     public float ExpMultiplier;
     public int CurrentExpAmount;
@@ -168,6 +169,7 @@ public class PlayerActor : StageActor, IPassableObject
         base.Setup();
 
         CurrentHealth = PlayerData.MaxHealth;
+        MaxHealth = PlayerData.MaxHealth;
         CurrentSpeed = PlayerData.MaxSpeed;
         ExpMultiplier = PlayerData.StartingPlayerExpBonus;
         LevelUpThresholdMultiplier = PlayerData.LevelUpThresholdMultiplier;
@@ -206,6 +208,7 @@ public class PlayerActor : StageActor, IPassableObject
         part.transform.position = new Vector3(ActorArtContainer.transform.position.x, 0.1f, ActorArtContainer.transform.position.z);
         ActorArtContainer.SetActive(false);
         ExpPickupGameObject.SetActive(false);
+        PlayerHealthIndicatorUI.singlton.HideUI();
     }
 
     public void CheckMapTiles()
@@ -276,11 +279,12 @@ public class PlayerState_Normal: ActorStatesAbstractClass
             if (v[1] < 0) return 2;
             return -1;
         }
-
         PlayerActor pa = (PlayerActor)_cont;
+
 
         pa.DecUpgradeSlotTimers(Time.fixedDeltaTime);
 
+        PlayerHealthIndicatorUI.singlton.UpdateUI(pa.CurrentHealth, pa.MaxHealth);
 
         Vector2 vAct = pa.activate.ReadValue<Vector2>().normalized;
 
