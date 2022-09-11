@@ -236,6 +236,7 @@ public class StageState_Running: StageState
     public override void OnUpdateState(StageController _cont)
     {
         _cont.GameTime += Time.fixedDeltaTime;
+        GameTimeIndicatorUI.singlton.UpdateTime(_cont.GameTime);
         _cont.CheckEnemySpawnWave();
     }   
 }
