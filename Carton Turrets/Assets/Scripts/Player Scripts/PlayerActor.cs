@@ -23,6 +23,7 @@ public class PlayerActor : StageActor, IPassableObject
     public PlayerScriptableObject PlayerData;
 
     [Header("Progression Vars")]
+    public int CurrentPlayerLevel;
     public float MaxHealth;
     public UpgradeSlot[] CurrentUpgradesArray = new UpgradeSlot[4];
     public float ExpMultiplier;
@@ -126,10 +127,16 @@ public class PlayerActor : StageActor, IPassableObject
     public void ApplyExp(int xp)
     {
         CurrentExpAmount += (int)(xp * ExpMultiplier);
+        CurrentExpIndicatorUI.singlton.UpdateExpAmountUI(CurrentExpAmount, (int)LevelUpThreshold);
         if(CurrentExpAmount >= LevelUpThreshold)
         {
+            CurrentExpIndicatorUI.singlton.SetPrevLevelThreshold((int)LevelUpThreshold);
+
             LevelUpThreshold *= LevelUpThresholdMultiplier;
             LevelUpPopup.singlton.Show();
+            CurrentPlayerLevel += 1;
+
+            CurrentExpIndicatorUI.singlton.UpdateLevelCountUI(CurrentPlayerLevel, (int)LevelUpThreshold);
         }
 
     }
@@ -167,6 +174,7 @@ public class PlayerActor : StageActor, IPassableObject
     public override void Setup()
     {
         base.Setup();
+        CurrentPlayerLevel = 1;
 
         CurrentHealth = PlayerData.MaxHealth;
         MaxHealth = PlayerData.MaxHealth;
@@ -295,6 +303,7 @@ public class PlayerState_Normal: ActorStatesAbstractClass
         }
 
         Vector2 v = pa.move.ReadValue<Vector2>() * pa.CurrentSpeed;
+        PlayerDirectionIndicatorUI.singlton.UpdateDirectionIndicator(pa.move.ReadValue<Vector2>());
         pa.rb.velocity = new Vector3(v.x, 0, v.y);
         if(pa.transform.position != pa.LastPos)
         {
