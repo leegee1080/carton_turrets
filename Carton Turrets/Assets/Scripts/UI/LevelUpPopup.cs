@@ -27,6 +27,7 @@ public class LevelUpPopup : MonoBehaviour
 
         Debug.Log("LevelUpPopup is gathering potential upgrades...(When the objects are selected: detect what the player has already)");
         Debug.Log("implement the commented notes in the TUrret class");
+        Debug.Log("implement the commented notes in the EnemyActor Class");
         
         for (int i = 0; i < UnfilteredUpgradeArray.Length; i++)
         {

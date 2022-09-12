@@ -26,6 +26,8 @@ public class EnemyActor : StageActor, IColliderMessageable
 
     public void Respawn()//if player gets too far
     {
+        //make this a function that picked based on an enum determined in the scripable object, that woul allow the enemey to spawn in different patterns: circle, line, etc
+        //do the same for the movement so that the movement type could be adjusted to act like the bat waves in VampSurv
         Vector3 nearPos = Target.transform.position + (StageController.singlton.Player.LastViewInput * ViewDistance);
 
         float ranOffset = UnityEngine.Random.Range(-1, 1);
@@ -75,6 +77,8 @@ public class EnemyActor : StageActor, IColliderMessageable
 
         CurrentDamage = EnemyData.MaxDamage;
         _sR.sprite = EnemyData.Sprite;
+        _sR.gameObject.transform.localScale = new Vector3(EnemyData.SpriteSize, EnemyData.SpriteSize, EnemyData.SpriteSize);
+
 
         foreach (SphereCollider coll in Colliders)
         {
