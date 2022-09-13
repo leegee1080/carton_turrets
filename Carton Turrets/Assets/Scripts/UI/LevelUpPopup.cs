@@ -26,6 +26,7 @@ public class LevelUpPopup : MonoBehaviour
         Hide();
 
         Debug.Log("LevelUpPopup is gathering potential upgrades...(When the objects are selected: detect what the player has already)");
+        Debug.Log("Stage enemy spawning should be over a time period, and should be defined as a spawn speed during that interval, wavevar: time start, time stop, spawn speed, enemy to spawn SO");
         Debug.Log("implement the commented notes in the TUrret class");
         Debug.Log("implement the commented notes in the EnemyActor Class");
         

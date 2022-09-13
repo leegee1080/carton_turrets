@@ -18,33 +18,33 @@ MonoBehaviour:
   - SecondsThreshold: 1
     Amount: 100
     Spawned: 0
-    Enemy: {fileID: 11400000, guid: 8edeb15b61e7ce24c8acfef33f350afc, type: 2}
-  - SecondsThreshold: 5
-    Amount: 50
-    Spawned: 0
-    Enemy: {fileID: 11400000, guid: 8edeb15b61e7ce24c8acfef33f350afc, type: 2}
+    Enemy: {fileID: 11400000, guid: 711ec42f94b39f04287949318eba63f6, type: 2}
   - SecondsThreshold: 10
-    Amount: 40
+    Amount: 100
     Spawned: 0
-    Enemy: {fileID: 11400000, guid: 8edeb15b61e7ce24c8acfef33f350afc, type: 2}
+    Enemy: {fileID: 11400000, guid: 711ec42f94b39f04287949318eba63f6, type: 2}
   - SecondsThreshold: 15
     Amount: 100
     Spawned: 0
-    Enemy: {fileID: 11400000, guid: af60334ab56d3984491abc9848ac00b2, type: 2}
+    Enemy: {fileID: 11400000, guid: 773c45bcf15ad8246ba4cdbb0a1c75cc, type: 2}
+  - SecondsThreshold: 20
+    Amount: 100
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: 773c45bcf15ad8246ba4cdbb0a1c75cc, type: 2}
+  - SecondsThreshold: 25
+    Amount: 100
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: 773c45bcf15ad8246ba4cdbb0a1c75cc, type: 2}
   - SecondsThreshold: 30
     Amount: 100
     Spawned: 0
-    Enemy: {fileID: 11400000, guid: af60334ab56d3984491abc9848ac00b2, type: 2}
-  - SecondsThreshold: 45
-    Amount: 50
+    Enemy: {fileID: 11400000, guid: 773c45bcf15ad8246ba4cdbb0a1c75cc, type: 2}
+  - SecondsThreshold: 35
+    Amount: 100
     Spawned: 0
-    Enemy: {fileID: 11400000, guid: 8edeb15b61e7ce24c8acfef33f350afc, type: 2}
-  - SecondsThreshold: 45
-    Amount: 50
-    Spawned: 0
-    Enemy: {fileID: 11400000, guid: af60334ab56d3984491abc9848ac00b2, type: 2}
-  - SecondsThreshold: 60
-    Amount: 40
+    Enemy: {fileID: 11400000, guid: 773c45bcf15ad8246ba4cdbb0a1c75cc, type: 2}
+  - SecondsThreshold: 40
+    Amount: 100
     Spawned: 0
     Enemy: {fileID: 11400000, guid: 773c45bcf15ad8246ba4cdbb0a1c75cc, type: 2}
   MapMaxX: 100
