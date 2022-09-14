@@ -22,10 +22,14 @@ public class StagePOI
 [Serializable]
 public struct EnemySpawnWave
 {
-    public float SecondsThreshold;
+    // public float SecondsThreshold;
+    public float EnemySpawnStartThreshold;
+    public float SpawnInterval;
     public int Amount;
     public bool Spawned;
     public EnemyScriptableObject Enemy;
+    public IEnumerator EnemySpawnCoRoutine;
+    
 }
 
 [CreateAssetMenu(fileName = "New Stage", menuName = "Scriptable Objects/New Stage")]

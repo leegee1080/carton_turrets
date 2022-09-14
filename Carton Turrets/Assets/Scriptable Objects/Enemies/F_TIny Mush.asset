@@ -19,4 +19,4 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: cc42d2810d1008649be0241f224219c2, type: 3}
   SpriteSize: 1
   MaxDamage: 1
-  ColliderSize: 0.1
+  ColliderSize: 0.06
