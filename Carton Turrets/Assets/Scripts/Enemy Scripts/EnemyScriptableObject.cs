@@ -9,4 +9,6 @@ public class EnemyScriptableObject : ActorDataScriptableObject
     public float SpriteSize;
     public float MaxDamage;
     public float ColliderSize;
+    public EnemyRespawnType RespawnType;
+    public EnemyMovementType MovementType;
 }
