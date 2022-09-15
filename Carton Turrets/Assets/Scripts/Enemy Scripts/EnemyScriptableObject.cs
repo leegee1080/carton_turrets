@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyScriptableObject : ActorDataScriptableObject
 {
     public Sprite Sprite;
+    public float SpriteSize;
     public float MaxDamage;
     public float ColliderSize;
 }

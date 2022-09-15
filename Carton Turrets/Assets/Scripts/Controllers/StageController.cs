@@ -196,18 +196,24 @@ public class StageController : MonoBehaviour
 
     public void CheckEnemySpawnWave()
     {
+        IEnumerator SpawnEnemyOnTimer(float time, EnemySpawnWave wave)
+        {
+            for (int s = 0; s < wave.Amount; s++)
+            {
+                EnemyInfo ei = new EnemyInfo();
+                ei.info = wave.Enemy;
+                EnemyObjectPooler.ActivateNextObject(ei);
+                yield return new WaitForSeconds(time);
+            }
+        }
+
         for (int i = 0; i < WaveArray.Length; i++)
         {
-            if(!WaveArray[i].Spawned && WaveArray[i].SecondsThreshold <= GameTime)
+            if(!WaveArray[i].Spawned && WaveArray[i].EnemySpawnStartThreshold <= GameTime)
             {
+                WaveArray[i].EnemySpawnCoRoutine = SpawnEnemyOnTimer(WaveArray[i].SpawnInterval, WaveArray[i]);
+                StartCoroutine(WaveArray[i].EnemySpawnCoRoutine);
                 WaveArray[i].Spawned = true;
-                for (int s = 0; s < WaveArray[i].Amount; s++)
-                {
-                    EnemyInfo ei = new EnemyInfo();
-                    ei.info = WaveArray[i].Enemy;
-                    EnemyObjectPooler.ActivateNextObject(ei);
-                }
-
             }
         }
     }
