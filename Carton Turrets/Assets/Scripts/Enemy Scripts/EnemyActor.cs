@@ -100,7 +100,7 @@ public class EnemyActor : StageActor, IColliderMessageable
         //do the same for the movement so that the movement type could be adjusted to act like the bat waves in VampSurv
 
 
-        EnemyAIClass.RespawnDict[RespawnType](Target, this.gameObject, ViewDistance);
+        EnemyAIClass.RespawnDict[RespawnType](Target, ActorArtContainer, ViewDistance);
         // Vector3 nearPos = Target.transform.position + (StageController.singlton.Player.LastViewInput * ViewDistance);
 
         // float ranOffset = UnityEngine.Random.Range(-1, 1);
@@ -153,6 +153,7 @@ public class EnemyActor : StageActor, IColliderMessageable
         CurrentDamage = EnemyData.MaxDamage;
         _sR.sprite = EnemyData.Sprite;
         _sR.gameObject.transform.localScale = new Vector3(EnemyData.SpriteSize, EnemyData.SpriteSize, EnemyData.SpriteSize);
+        ActorArtContainer.transform.position = new Vector3(ActorArtContainer.transform.position.x, .12f * EnemyData.SpriteSize, ActorArtContainer.transform.position.z);
 
 
         foreach (SphereCollider coll in Colliders)

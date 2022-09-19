@@ -4,6 +4,7 @@
 #
 /[Ll]ibrary/
 /Library/
+/library/
 !/[Ll]ibrary/*.asset
 /[Tt]emp/
 /[Oo]bj/
