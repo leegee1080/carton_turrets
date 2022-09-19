@@ -374,7 +374,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &104405512
 GameObject:
@@ -2173,7 +2173,7 @@ Transform:
   m_Children:
   - {fileID: 1426675217}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1011387857
 GameObject:
@@ -2255,7 +2255,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1067636082
 PrefabInstance:
@@ -2642,7 +2642,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5aec2393e4d82f44d9f3de14112d6298, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 180e92a22e009f445a5c56b2d5c5a5a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3127,7 +3127,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1346155505
 GameObject:
@@ -4243,9 +4243,9 @@ MonoBehaviour:
   turretPlaceOffset: 0.3
   CurrentAbilityCooldown: 0
   CurrentTurretBonusShootSpeed: 0
-  CurrentTurretBonusLifeTime: 0
   CurrentTurretBonusAmmo: 0
   CurrentBulletDamageBonus: 0
+  CurrentBulletLifetimeBonus: 0
   CurrentBulletRangeBonus: 0
   CurrentBulletSpeedBonus: 0
   CurrentExploDamageBonus: 0
@@ -4320,7 +4320,7 @@ Transform:
   m_Children:
   - {fileID: 1555916285}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1648610358
 GameObject:
@@ -4422,7 +4422,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1743308406
 GameObject:
@@ -4452,7 +4452,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1775877643
 GameObject:

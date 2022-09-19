@@ -6,8 +6,9 @@ using System;
 public class TurretScriptableObject : ActorDataScriptableObject, IUpgradeable
 {
     [Header("Turret Stats")]
-    public float TLifeTime;
     public float TReloadTime;
+    [Space]
+    [Header("***If TReloadTime set to -1, then the reload time will be the BulletLifeTime.***")]
     public int TAmmo;
     public float TColliderSize;
 

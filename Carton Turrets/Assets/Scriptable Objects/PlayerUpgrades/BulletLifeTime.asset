@@ -10,13 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e8342e2ef5b99c4aa6c7d79118ef7e3, type: 3}
-  m_Name: TurretLifeTime
+  m_Name: BulletLifeTime
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: -3897761439659027702, guid: 93c2a04a6f3a95f4cbdf7379934291d5, type: 3}
-  <UpgradeName>k__BackingField: Turret Lifetime
+  <UpgradeName>k__BackingField: Bullet Lifetime
   <Tiers>k__BackingField:
-  - EquipFunc: 7
+  - EquipFunc: 9
     ActivateFunc: 0
-    amt: 10
+    amt: 1
+  - EquipFunc: 9
+    ActivateFunc: 0
+    amt: 1
+  - EquipFunc: 9
+    ActivateFunc: 0
+    amt: 1
+  - EquipFunc: 9
+    ActivateFunc: 0
+    amt: 1
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0

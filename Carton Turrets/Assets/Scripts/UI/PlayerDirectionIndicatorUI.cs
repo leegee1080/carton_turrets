@@ -17,7 +17,7 @@ public class PlayerDirectionIndicatorUI : MonoBehaviour
 
     public void UpdateDirectionIndicator(Vector2 dir)
     {
-        if(dir[0] == 0 && dir[1] == 0){DirectionIndicatorGameObject.SetActive(false); return;}
+        if(dir[0] == 0 && dir[1] == 0){return;}
         DirectionIndicatorGameObject.SetActive(true);
         DirectionIndicatorGameObject.transform.localPosition = dir*IndicatorOffset;
     }
