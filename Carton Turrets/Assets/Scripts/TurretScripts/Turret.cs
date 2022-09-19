@@ -9,7 +9,7 @@ public class Turret : StageActor, IPassableObject
     public PlayerActor ControllingActor;
 
     [Header("Turret Stats")]
-    public float LifeTime;
+    // public float LifeTime;
     public float ReloadTime;
     public float ReloadCountdown;
     public int Ammo;
@@ -70,8 +70,9 @@ public class Turret : StageActor, IPassableObject
 
     public void Fire()
     {
+        
+        if(Ammo <= 0){ChangeState(new TurretState_Dead()); return;}
         Ammo -= 1;
-        if(Ammo <= 0){ChangeState(new TurretState_Dead());}
         GameObject bullet = ControllingActor.BulletObjectPools[TurretData.name].ActivateNextObject(this);
         bullet.transform.position = _barrel.transform.position;
         bullet.transform.rotation = this.gameObject.transform.rotation;
@@ -82,14 +83,21 @@ public class Turret : StageActor, IPassableObject
     {
         ControllingActor = (PlayerActor)Player;
 
-        LifeTime = TurretData.TLifeTime * ControllingActor.CurrentTurretBonusLifeTime;     
-        ReloadTime = TurretData.TReloadTime / ControllingActor.CurrentTurretBonusShootSpeed;     
+        if(TurretData.TReloadTime == -1)
+        {
+            ReloadTime = TurretData.BLifeTime * ControllingActor.CurrentBulletLifetimeBonus; 
+        }
+        else
+        {
+            ReloadTime = TurretData.TReloadTime / ControllingActor.CurrentTurretBonusShootSpeed;  
+        }
+   
         ReloadCountdown = 0;     
         Ammo = (int)(TurretData.TAmmo * ControllingActor.CurrentTurretBonusAmmo);
         _collider.radius = TurretData.TColliderSize;
 
 
-        BLifeTime = TurretData.BLifeTime; 
+        BLifeTime = TurretData.BLifeTime * ControllingActor.CurrentBulletLifetimeBonus; 
         BDamage = TurretData.BDamage; 
         BSpeed = TurretData.BSpeed; 
 
@@ -167,7 +175,7 @@ public class TurretState_Normal: ActorStatesAbstractClass
 
         if(tu.ReloadCountdown >0){tu.ReloadCountdown -= Time.fixedDeltaTime;}else{tu.ReloadCountdown = tu.ReloadTime; tu.Fire();}
         
-        if(tu.LifeTime > 0){tu.LifeTime -= Time.fixedDeltaTime;}else{tu.ChangeState(new TurretState_Dead());}
+        // if(tu.LifeTime > 0){tu.LifeTime -= Time.fixedDeltaTime;}else{tu.ChangeState(new TurretState_Dead());}
 
     }   
 }

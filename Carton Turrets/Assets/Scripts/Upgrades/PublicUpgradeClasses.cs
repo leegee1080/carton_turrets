@@ -14,8 +14,8 @@ public enum PlayerUpgradeEquipTypes
     ExpMultiplier,
     AbilityCooldown,
     TurretShootSpeed,
-    TurretLifetime,
     TurretAmmo,
+    BulletLifetime,
     money,
 }
 public enum PlayerUpgradeActivateTypes
@@ -46,7 +46,7 @@ public class PublicUpgradeClasses
         {PlayerUpgradeEquipTypes.ExpMultiplier, UpgradeIncreasePlayerExpMultiplier},
         {PlayerUpgradeEquipTypes.AbilityCooldown, UpgradeIncreasePlayerAbilityCooldown},
         {PlayerUpgradeEquipTypes.TurretShootSpeed, UpgradeIncreasePlayerTurretShootSpeed},
-        {PlayerUpgradeEquipTypes.TurretLifetime, UpgradeIncreasePlayerTurretLifetime},
+        {PlayerUpgradeEquipTypes.BulletLifetime, UpgradeIncreasePlayerBulletLifetime},
         {PlayerUpgradeEquipTypes.TurretAmmo, UpgradeIncreasePlayerTurretAmmo},
         {PlayerUpgradeEquipTypes.money, GiveMoney},
     };
@@ -97,9 +97,9 @@ public class PublicUpgradeClasses
     {
         StageController.singlton.Player.CurrentTurretBonusShootSpeed += value;
     }
-    public static void UpgradeIncreasePlayerTurretLifetime(float value, IUpgradeable passedUpgradeData)
+    public static void UpgradeIncreasePlayerBulletLifetime(float value, IUpgradeable passedUpgradeData)
     {
-        StageController.singlton.Player.CurrentTurretBonusLifeTime += value;
+        StageController.singlton.Player.CurrentBulletLifetimeBonus += value;
     }
     public static void UpgradeIncreasePlayerTurretAmmo(float value, IUpgradeable passedUpgradeData)
     {

@@ -39,9 +39,10 @@ public class PlayerActor : StageActor, IPassableObject
     public float CurrentAbilityCooldown;
     public Dictionary<string, ObjectPooler> TurretObjectPools = new Dictionary<string, ObjectPooler>();
     public float CurrentTurretBonusShootSpeed;
-    public float CurrentTurretBonusLifeTime;
+    // public float CurrentTurretBonusLifeTime;
     public float CurrentTurretBonusAmmo;
     public float CurrentBulletDamageBonus;
+    public float CurrentBulletLifetimeBonus;
     public float CurrentBulletRangeBonus;
     public float CurrentBulletSpeedBonus;
     public float CurrentExploDamageBonus;
@@ -184,10 +185,10 @@ public class PlayerActor : StageActor, IPassableObject
 
         CurrentAbilityCooldown = PlayerData.MaxAbilityCooldownTime;
         CurrentTurretBonusShootSpeed = PlayerData.StartingTurretBonusShootSpeed;
-        CurrentTurretBonusLifeTime = PlayerData.StartingTurretBonusShootSpeed;
-        CurrentTurretBonusAmmo = PlayerData.StartingTurretBonusShootSpeed;
+        CurrentTurretBonusAmmo = PlayerData.StartingTurretBonusAmmo;
 
         CurrentBulletDamageBonus = PlayerData.StartingBulletDamageBonus;
+        CurrentBulletLifetimeBonus = PlayerData.StartingBulletLifetimeBonus;
         CurrentBulletRangeBonus= PlayerData.StartingBulletRangeBonus;
         CurrentBulletSpeedBonus= PlayerData.StartingBulletSpeedBonus;
 

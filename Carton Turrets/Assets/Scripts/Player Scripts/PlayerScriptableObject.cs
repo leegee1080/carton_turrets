@@ -18,6 +18,7 @@ public class PlayerScriptableObject : ActorDataScriptableObject
     public float StartingTurretBonusAmmo;
 
     public float StartingBulletDamageBonus;
+    public float StartingBulletLifetimeBonus;
     public float StartingBulletRangeBonus;
     public float StartingBulletSpeedBonus;
     

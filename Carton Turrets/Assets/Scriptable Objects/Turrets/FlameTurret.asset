@@ -16,9 +16,8 @@ MonoBehaviour:
   Desc: Channels a beam out front.
   MaxHealth: 1
   MaxSpeed: 1
-  TLifeTime: 5
-  TReloadTime: 1000
-  TAmmo: 2
+  TReloadTime: -1
+  TAmmo: 1
   TColliderSize: 0.04
   BLifeTime: 5
   BDamage: 0.1
