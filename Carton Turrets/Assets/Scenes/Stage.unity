@@ -987,6 +987,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 83366c71f3c38f748816973a2d25d8fe, type: 2}
   - {fileID: 11400000, guid: 990e3bab40ca7584189ad478a8c4f243, type: 2}
   - {fileID: 11400000, guid: 2f56855a24b830746a40323f6789bd4a, type: 2}
+  - {fileID: 11400000, guid: 353fa482735732e48ae6ad5fd1269c07, type: 2}
+  - {fileID: 11400000, guid: ba37dff01d5b36f408ce30002b22ddc7, type: 2}
   FillInUpgradeList:
   - {fileID: 11400000, guid: 9466c5cddd4909347aa821e62972d0a3, type: 2}
   - {fileID: 11400000, guid: 2f56855a24b830746a40323f6789bd4a, type: 2}

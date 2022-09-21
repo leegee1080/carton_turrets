@@ -16,16 +16,16 @@ MonoBehaviour:
   Desc: Simple turret shoots forward.
   MaxHealth: 1
   MaxSpeed: 1
-  TReloadTime: 0.5
+  TReloadTime: 1.5
   TAmmo: 10
   TColliderSize: 0.04
-  BulletsShotPerReload: 5
-  BulletSpreadAngle: 20
-  BLifeTime: 0.8
+  BulletsShotPerReload: 1
+  BulletSpreadAngle: 0
+  BLifeTime: 0.6
   BDamage: 0.5
-  BSpeed: 0.06
+  BSpeed: 0.08
   ELifeTime: 0.2
-  EDamage: 10
+  EDamage: 0
   ESpeed: 1
   ESize: 0.5
   TurretAmountToPool: 10
@@ -33,7 +33,7 @@ MonoBehaviour:
   ExplosionAmountToPool: 10
   TurretGameObject: {fileID: 8903252950405436271, guid: 2ab11beef16bf3a43b78bc9aa3544b85, type: 3}
   BulletGameObject: {fileID: 741848558832750205, guid: 09ad2b3bca4baf0459660c3d383288ee, type: 3}
-  ExplosionGameObject: {fileID: 5925393004181974638, guid: 2c70c7a2558cc124c860571375f7c31f, type: 3}
+  ExplosionGameObject: {fileID: 5925393004181974638, guid: f29e092f6e553064cb9828bdb984dca2, type: 3}
   Mesh: {fileID: 4300182, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}
   <Icon>k__BackingField: {fileID: -1140342232090195849, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Gun Turret
@@ -42,4 +42,4 @@ MonoBehaviour:
     ActivateFunc: 2
     amt: 0
   <IsUnlimited>k__BackingField: 0
-  <Cooldown>k__BackingField: 1
+  <Cooldown>k__BackingField: 3

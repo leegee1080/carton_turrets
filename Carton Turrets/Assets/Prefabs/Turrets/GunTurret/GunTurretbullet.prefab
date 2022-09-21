@@ -101,11 +101,11 @@ GameObject:
   - component: {fileID: 5487349967070431236}
   m_Layer: 9
   m_Name: SparkTrail
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5487349967050415414
 Transform:
   m_ObjectHideFlags: 0
@@ -4845,7 +4845,7 @@ GameObject:
   - component: {fileID: 5487349967070500398}
   m_Layer: 9
   m_Name: Glow
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9591,7 +9591,7 @@ GameObject:
   - component: {fileID: 1577768553287258500}
   m_Layer: 9
   m_Name: BulletSmallFire
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
