@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b8ea5a4eda5b94c81a5b96cd80fbc2, type: 3}
+  m_Name: BombTurret
+  m_EditorClassIdentifier: 
+  name: Bomb Turret
+  Desc: No projectile just explodes
+  MaxHealth: 1
+  MaxSpeed: 1
+  TReloadTime: -1
+  TAmmo: 1
+  TColliderSize: 0.04
+  BulletsShotPerReload: 1
+  BulletSpreadAngle: 0
+  BLifeTime: 1
+  BDamage: 0
+  BSpeed: 0
+  ELifeTime: 0.2
+  EDamage: 10
+  ESpeed: 1
+  ESize: 0.5
+  TurretAmountToPool: 10
+  BulletAmountToPool: 60
+  ExplosionAmountToPool: 10
+  TurretGameObject: {fileID: 8903252950405436271, guid: 6b161708f415038459a65ecc45d51f37, type: 3}
+  BulletGameObject: {fileID: 741848558832750205, guid: a71fca5f03e3597438ba2132c3c44952, type: 3}
+  ExplosionGameObject: {fileID: 5925393004181974638, guid: 524c5e0dce837d143a0a0b50594f4d12, type: 3}
+  Mesh: {fileID: 4300182, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}
+  <Icon>k__BackingField: {fileID: -1140342232090195849, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  <UpgradeName>k__BackingField: Bomb Turret
+  <Tiers>k__BackingField:
+  - EquipFunc: 0
+    ActivateFunc: 2
+    amt: 0
+  <IsUnlimited>k__BackingField: 0
+  <Cooldown>k__BackingField: 2
