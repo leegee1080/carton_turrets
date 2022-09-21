@@ -13,6 +13,8 @@ public class TurretScriptableObject : ActorDataScriptableObject, IUpgradeable
     public float TColliderSize;
 
     [Header("Bullet Stats")]
+    public int BulletsShotPerReload;
+    public int BulletSpreadAngle;
     public float BLifeTime;
     public float BDamage;
     public float BSpeed;

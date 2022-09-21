@@ -15,6 +15,8 @@ public class Turret : StageActor, IPassableObject
     public int Ammo;
 
     [Header("Bullet Stats")]
+    public int BulletsShotPerReload;
+    public int BulletSpreadAngle;
     public float BLifeTime;
     public float BDamage;
     public float BSpeed;
@@ -73,10 +75,14 @@ public class Turret : StageActor, IPassableObject
         
         if(Ammo <= 0){ChangeState(new TurretState_Dead()); return;}
         Ammo -= 1;
-        GameObject bullet = ControllingActor.BulletObjectPools[TurretData.name].ActivateNextObject(this);
-        bullet.transform.position = _barrel.transform.position;
-        bullet.transform.rotation = this.gameObject.transform.rotation;
-        
+        for (int i = 0; i < BulletsShotPerReload; i++)
+        {
+            GameObject bullet = ControllingActor.BulletObjectPools[TurretData.name].ActivateNextObject(this);
+            bullet.transform.position = _barrel.transform.position;
+            // bullet.transform.rotation = this.gameObject.transform.rotation;
+            float angle = i * BulletSpreadAngle;
+            bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.up) * _barrel.transform.rotation;
+        }
     }
 
     public void BuildTurret(IPassableObject Player)
@@ -96,7 +102,10 @@ public class Turret : StageActor, IPassableObject
         Ammo = (int)(TurretData.TAmmo * ControllingActor.CurrentTurretBonusAmmo);
         _collider.radius = TurretData.TColliderSize;
 
-
+        BulletsShotPerReload = TurretData.BulletsShotPerReload;
+        BulletSpreadAngle = TurretData.BulletSpreadAngle;
+        _barrel.transform.rotation = this.gameObject.transform.rotation;
+        _barrel.transform.rotation *= Quaternion.AngleAxis((-BulletSpreadAngle * (BulletsShotPerReload-1))/2, Vector3.up);
         BLifeTime = TurretData.BLifeTime * ControllingActor.CurrentBulletLifetimeBonus; 
         BDamage = TurretData.BDamage; 
         BSpeed = TurretData.BSpeed; 

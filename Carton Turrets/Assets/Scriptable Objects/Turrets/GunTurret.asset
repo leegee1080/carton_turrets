@@ -16,10 +16,11 @@ MonoBehaviour:
   Desc: Simple turret shoots forward.
   MaxHealth: 1
   MaxSpeed: 1
-  TLifeTime: 10
   TReloadTime: 0.5
-  TAmmo: 30
+  TAmmo: 10
   TColliderSize: 0.04
+  BulletsShotPerReload: 5
+  BulletSpreadAngle: 20
   BLifeTime: 0.8
   BDamage: 0.5
   BSpeed: 0.06
@@ -41,4 +42,4 @@ MonoBehaviour:
     ActivateFunc: 2
     amt: 0
   <IsUnlimited>k__BackingField: 0
-  <Cooldown>k__BackingField: 4
+  <Cooldown>k__BackingField: 1
