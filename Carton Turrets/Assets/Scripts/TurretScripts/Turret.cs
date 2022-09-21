@@ -105,7 +105,7 @@ public class Turret : StageActor, IPassableObject
         BulletsShotPerReload = TurretData.BulletsShotPerReload;
         BulletSpreadAngle = TurretData.BulletSpreadAngle;
         _barrel.transform.rotation = this.gameObject.transform.rotation;
-        _barrel.transform.rotation *= Quaternion.AngleAxis(-BulletSpreadAngle/BulletsShotPerReload, Vector3.up);
+        _barrel.transform.rotation *= Quaternion.AngleAxis((-BulletSpreadAngle * (BulletsShotPerReload-1))/2, Vector3.up);
         BLifeTime = TurretData.BLifeTime * ControllingActor.CurrentBulletLifetimeBonus; 
         BDamage = TurretData.BDamage; 
         BSpeed = TurretData.BSpeed; 
