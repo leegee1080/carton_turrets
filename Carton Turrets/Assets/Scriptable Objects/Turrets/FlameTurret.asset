@@ -19,6 +19,8 @@ MonoBehaviour:
   TReloadTime: -1
   TAmmo: 1
   TColliderSize: 0.04
+  BulletsShotPerReload: 1
+  BulletSpreadAngle: 0
   BLifeTime: 5
   BDamage: 0.1
   BSpeed: 0
