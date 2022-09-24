@@ -16,8 +16,17 @@ MonoBehaviour:
   Desc: No projectile just explodes
   MaxHealth: 1
   MaxSpeed: 1
+  <UpgradeName>k__BackingField: Bomb Turret
+  <UpgradeDesc>k__BackingField: Short countdown then, BOOM!
+  <Tiers>k__BackingField:
+  - TierDesc: 
+    EquipFunc: 0
+    ActivateFunc: 2
+    amt: 0
+  <IsUnlimited>k__BackingField: 0
+  <Cooldown>k__BackingField: 2
   TReloadTime: -1
-  TAmmo: 1
+  TAmmo: -1
   TColliderSize: 0.04
   BulletsShotPerReload: 1
   BulletSpreadAngle: 0
@@ -35,11 +44,4 @@ MonoBehaviour:
   BulletGameObject: {fileID: 741848558832750205, guid: a71fca5f03e3597438ba2132c3c44952, type: 3}
   ExplosionGameObject: {fileID: 5925393004181974638, guid: 524c5e0dce837d143a0a0b50594f4d12, type: 3}
   Mesh: {fileID: 4300182, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}
-  <Icon>k__BackingField: {fileID: -1140342232090195849, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
-  <UpgradeName>k__BackingField: Bomb Turret
-  <Tiers>k__BackingField:
-  - EquipFunc: 0
-    ActivateFunc: 2
-    amt: 0
-  <IsUnlimited>k__BackingField: 0
-  <Cooldown>k__BackingField: 2
+  <Icon>k__BackingField: {fileID: 2935707681824743193, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}

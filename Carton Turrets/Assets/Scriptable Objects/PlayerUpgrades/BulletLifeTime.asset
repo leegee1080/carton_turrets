@@ -14,17 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: -3897761439659027702, guid: 93c2a04a6f3a95f4cbdf7379934291d5, type: 3}
   <UpgradeName>k__BackingField: Bullet Lifetime
+  <UpgradeDesc>k__BackingField: Bullets go farther.
   <Tiers>k__BackingField:
-  - EquipFunc: 9
+  - TierDesc: 
+    EquipFunc: 9
     ActivateFunc: 0
     amt: 1
-  - EquipFunc: 9
+  - TierDesc: Bullets go farther.
+    EquipFunc: 9
     ActivateFunc: 0
     amt: 1
-  - EquipFunc: 9
+  - TierDesc: Bullets go farther.
+    EquipFunc: 9
     ActivateFunc: 0
     amt: 1
-  - EquipFunc: 9
+  - TierDesc: Bullets go farther.
+    EquipFunc: 9
     ActivateFunc: 0
     amt: 1
   <IsUnlimited>k__BackingField: 0

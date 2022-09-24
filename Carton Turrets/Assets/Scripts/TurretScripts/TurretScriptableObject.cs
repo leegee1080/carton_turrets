@@ -8,6 +8,7 @@ public class TurretScriptableObject : ActorDataScriptableObject, IUpgradeable
     
     //upgrade stats
     [field: SerializeField]public string UpgradeName {get; set;}
+    [field: SerializeField]public string UpgradeDesc {get; set;}
     [field: SerializeField]public UpgradeTier[] Tiers {get; set;}
     [field: SerializeField]public bool IsUnlimited {get; set;}
     [field: SerializeField]public float Cooldown {get; set;}
@@ -17,6 +18,8 @@ public class TurretScriptableObject : ActorDataScriptableObject, IUpgradeable
     [Space]
     [Header("***If TReloadTime set to -1, then the reload time will be the BulletLifeTime.***")]
     public int TAmmo;
+    [Space]
+    [Header("***If TAmmo set to negative number, then the ammo cannot be higher than the inverse.***")]
     public float TColliderSize;
 
     [Header("Bullet Stats")]

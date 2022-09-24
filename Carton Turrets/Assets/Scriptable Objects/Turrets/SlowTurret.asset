@@ -16,6 +16,15 @@ MonoBehaviour:
   Desc: Fires a large slow projectile.
   MaxHealth: 1
   MaxSpeed: 1
+  <UpgradeName>k__BackingField: Slow Turret
+  <UpgradeDesc>k__BackingField: Eveything about this one is slow...
+  <Tiers>k__BackingField:
+  - TierDesc: 
+    EquipFunc: 0
+    ActivateFunc: 2
+    amt: 0
+  <IsUnlimited>k__BackingField: 0
+  <Cooldown>k__BackingField: 5
   TReloadTime: 3
   TAmmo: 3
   TColliderSize: 0.04
@@ -35,11 +44,4 @@ MonoBehaviour:
   BulletGameObject: {fileID: 741848558832750205, guid: f236222e1cea9474e89c1703c9388038, type: 3}
   ExplosionGameObject: {fileID: 5925393004181974638, guid: 7307da6cf58c09b4084f1567cbb2227c, type: 3}
   Mesh: {fileID: 4300182, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}
-  <Icon>k__BackingField: {fileID: -1140342232090195849, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
-  <UpgradeName>k__BackingField: Slow Turret
-  <Tiers>k__BackingField:
-  - EquipFunc: 0
-    ActivateFunc: 2
-    amt: 0
-  <IsUnlimited>k__BackingField: 0
-  <Cooldown>k__BackingField: 5
+  <Icon>k__BackingField: {fileID: 2653811183072668675, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}

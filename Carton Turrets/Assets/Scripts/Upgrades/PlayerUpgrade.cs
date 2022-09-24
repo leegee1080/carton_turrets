@@ -8,6 +8,7 @@ public class PlayerUpgrade : ScriptableObject, IUpgradeable
 
     [field: SerializeField]public Sprite Icon {get; set;}
     [field: SerializeField]public string UpgradeName {get; set;}
+    [field: SerializeField]public string UpgradeDesc {get; set;}
     [field: SerializeField]public UpgradeTier[] Tiers {get; set;}
     [field: SerializeField]public bool IsUnlimited {get; set;}
     [field: SerializeField]public float Cooldown {get; set;}

@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: 3426723381814396700, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Turret Ammo
+  <UpgradeDesc>k__BackingField: 10x More ammo to fire before the turret expires.
   <Tiers>k__BackingField:
-  - EquipFunc: 8
+  - TierDesc: 
+    EquipFunc: 8
     ActivateFunc: 0
     amt: 10
   <IsUnlimited>k__BackingField: 0

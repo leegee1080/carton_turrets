@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [System.Serializable]
 public class GridData
@@ -35,6 +36,8 @@ public class StageController : MonoBehaviour
 
     public GridData[,] GridArray;
     public PlayerActor Player;
+    private PiaMainControls PlayerInputActions;
+    public InputAction move, activate;
 
     
     
@@ -64,8 +67,52 @@ public class StageController : MonoBehaviour
     public ObjectPooler PickupPooler;
 
 
-    private void Awake() => singlton = this;
+    private void Awake()
+    {
+        singlton = this;
+        PlayerInputActions = new PiaMainControls();
+    }
+    public void OnEnable()
+    {
+        move = PlayerInputActions.MainMap.PlayerMovement;
+        move.Enable();
+        activate = PlayerInputActions.MainMap.PlaceTurret;
+        activate.Enable();
+    }
+    private void OnDisable()
+    {
+        move.Disable();
+        activate.Disable();
+    }
 
+    public int FindActivateControlsIndex()//looks at the controls on the right side for the button pressed
+    {
+        int GetActivatedSlot(Vector2 v)
+        {
+            if (v[0] > 0) return 1;
+            if (v[0] < 0) return 3;
+            if (v[1] > 0) return 0;
+            if (v[1] < 0) return 2;
+            return -1;
+        }
+        int index = GetActivatedSlot(StageController.singlton.activate.ReadValue<Vector2>().normalized);
+        if(index == -1){return -1;}
+        return index;
+    }
+    public int FindMoveControlsIndex()//looks at the controls on the left side for the button pressed
+    {
+        int GetActivatedSlot(Vector2 v)
+        {
+            if (v[0] > 0) return 1;
+            if (v[0] < 0) return 3;
+            if (v[1] > 0) return 0;
+            if (v[1] < 0) return 2;
+            return -1;
+        }
+        int index = GetActivatedSlot(StageController.singlton.move.ReadValue<Vector2>().normalized);
+        if(index == -1){return -1;}
+        return index;
+    }
 
     private void Start()
     {

@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: 3934249035535238144, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Small Health
+  <UpgradeDesc>k__BackingField: Refill 10 health.
   <Tiers>k__BackingField:
-  - EquipFunc: 2
+  - TierDesc: 
+    EquipFunc: 2
     ActivateFunc: 0
     amt: 10
   <IsUnlimited>k__BackingField: 1

@@ -14,8 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: -9069065776505696662, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Ability Cooldown
+  <UpgradeDesc>k__BackingField: Cast abilities and place turrets 2x faster.
   <Tiers>k__BackingField:
-  - EquipFunc: 5
+  - TierDesc: 
+    EquipFunc: 6
+    ActivateFunc: 0
+    amt: 1
+  - TierDesc: Cast abilities and place turrets 3x faster.
+    EquipFunc: 6
+    ActivateFunc: 0
+    amt: 1
+  - TierDesc: Cast abilities and place turrets 4x faster.
+    EquipFunc: 6
+    ActivateFunc: 0
+    amt: 1
+  - TierDesc: Cast abilities and place turrets 5x faster.
+    EquipFunc: 6
     ActivateFunc: 0
     amt: 1
   <IsUnlimited>k__BackingField: 0

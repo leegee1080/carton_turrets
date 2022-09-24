@@ -98,8 +98,15 @@ public class Turret : StageActor, IPassableObject
             ReloadTime = TurretData.TReloadTime / ControllingActor.CurrentTurretBonusShootSpeed;  
         }
    
-        ReloadCountdown = 0;     
-        Ammo = (int)(TurretData.TAmmo * ControllingActor.CurrentTurretBonusAmmo);
+        ReloadCountdown = 0;  
+        if(TurretData.TAmmo < 0)
+        {
+            Ammo = TurretData.TAmmo * -1;
+        }
+        else
+        {
+            Ammo = (int)(TurretData.TAmmo * ControllingActor.CurrentTurretBonusAmmo);
+        }   
         _collider.radius = TurretData.TColliderSize;
 
         BulletsShotPerReload = TurretData.BulletsShotPerReload;

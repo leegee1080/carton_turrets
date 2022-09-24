@@ -14,14 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: 3061872641144933912, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Move Speed
+  <UpgradeDesc>k__BackingField: Run Faster!
   <Tiers>k__BackingField:
-  - EquipFunc: 1
+  - TierDesc: 
+    EquipFunc: 1
     ActivateFunc: 0
     amt: 1
-  - EquipFunc: 1
+  - TierDesc: Run Faster!
+    EquipFunc: 1
     ActivateFunc: 0
     amt: 2
-  - EquipFunc: 1
+  - TierDesc: Run Faster!
+    EquipFunc: 1
     ActivateFunc: 0
     amt: 3
   <IsUnlimited>k__BackingField: 0

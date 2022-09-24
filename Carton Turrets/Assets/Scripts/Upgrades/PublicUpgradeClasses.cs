@@ -28,6 +28,7 @@ public enum PlayerUpgradeActivateTypes
 [Serializable]
 public struct UpgradeTier
 {
+    public string TierDesc;
     public PlayerUpgradeEquipTypes EquipFunc;
     public PlayerUpgradeActivateTypes ActivateFunc;
     public float amt;
@@ -140,17 +141,25 @@ public class PublicUpgradeClasses
         TurretScriptableObject TSO = turretSO as TurretScriptableObject;
         
         //apply to first open slot
-        for (int i = 0; i < pd.CurrentUpgradesArray.Length; i++)
-        {
-            if(pd.CurrentUpgradesArray[i].name != ""){continue;}
-            pd.CurrentUpgradesArray[i] = NewTurret;
-            pd.TurretObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.TurretGameObject, TSO.TurretAmountToPool, pd.TurretContainer, false);
-            pd.BulletObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.BulletGameObject, TSO.BulletAmountToPool, pd.BulletContainer, false);
-            pd.ExplosionObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.ExplosionGameObject, TSO.ExplosionAmountToPool, pd.ExplosionContainer, false);
+        int OpenSlotIndex = StageController.singlton.Player.ReturnPlayerFirstUpgradableSlot();
+        if(OpenSlotIndex < 0){return;}
+        // for (int i = 0; i < pd.CurrentUpgradesArray.Length; i++)
+        // {
+        //     if(pd.CurrentUpgradesArray[i].name != ""){continue;}
+        //     pd.CurrentUpgradesArray[i] = NewTurret;
+        //     pd.TurretObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.TurretGameObject, TSO.TurretAmountToPool, pd.TurretContainer, false);
+        //     pd.BulletObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.BulletGameObject, TSO.BulletAmountToPool, pd.BulletContainer, false);
+        //     pd.ExplosionObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.ExplosionGameObject, TSO.ExplosionAmountToPool, pd.ExplosionContainer, false);
 
-            CurrentEquipmentUI.singlton.UpdateUpgradeUI(i, NewTurret.SO.Icon, NewTurret.name);
-            return;
-        }
+        //     CurrentEquipmentUI.singlton.UpdateUpgradeUI(i, NewTurret.SO.Icon, NewTurret.name, NewTurret.Tier.ToString());
+        //     return;
+        // }
+        pd.CurrentUpgradesArray[OpenSlotIndex] = NewTurret;
+        pd.TurretObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.TurretGameObject, TSO.TurretAmountToPool, pd.TurretContainer, false);
+        pd.BulletObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.BulletGameObject, TSO.BulletAmountToPool, pd.BulletContainer, false);
+        pd.ExplosionObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.ExplosionGameObject, TSO.ExplosionAmountToPool, pd.ExplosionContainer, false);
+
+        CurrentEquipmentUI.singlton.UpdateUpgradeUI(OpenSlotIndex, NewTurret.SO.Icon, NewTurret.name, NewTurret.Tier.ToString());
     }
     public static void EquipUpgradeInFirstOpenSlot(float value, IUpgradeable upgradeSO)
     {
@@ -163,13 +172,17 @@ public class PublicUpgradeClasses
         NewUpgrade.MaxAllowedTier = NewUpgrade.SO.Tiers.Length -1;
 
         //apply to first open slot
-        for (int i = 0; i < pd.CurrentUpgradesArray.Length; i++)
-        {
-            if(pd.CurrentUpgradesArray[i].name != ""){continue;}
-            pd.CurrentUpgradesArray[i] = NewUpgrade;
+        int OpenSlotIndex = StageController.singlton.Player.ReturnPlayerFirstUpgradableSlot();
+        if(OpenSlotIndex < 0){return;}
+        // for (int i = 0; i < pd.CurrentUpgradesArray.Length; i++)
+        // {
+        //     if(pd.CurrentUpgradesArray[i].name != ""){continue;}
+        //     pd.CurrentUpgradesArray[i] = NewUpgrade;
 
-            CurrentEquipmentUI.singlton.UpdateUpgradeUI(i, NewUpgrade.SO.Icon, NewUpgrade.name);
-            return;
-        }
+        //     CurrentEquipmentUI.singlton.UpdateUpgradeUI(i, NewUpgrade.SO.Icon, NewUpgrade.name, NewUpgrade.Tier.ToString());
+        //     return;
+        // }
+        pd.CurrentUpgradesArray[OpenSlotIndex] = NewUpgrade;
+        CurrentEquipmentUI.singlton.UpdateUpgradeUI(OpenSlotIndex, NewUpgrade.SO.Icon, NewUpgrade.name, NewUpgrade.Tier.ToString());
     }
 }
