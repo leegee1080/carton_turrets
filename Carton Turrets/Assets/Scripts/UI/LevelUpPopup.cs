@@ -9,11 +9,18 @@ public class LevelUpPopup : MonoBehaviour
     public static LevelUpPopup singlton;
     private void Awake() => singlton = this;
 
+    [Header("Control Lockout")]
+    bool _isShown;
+    bool _controlsLocked;
+    [SerializeField]float _controlLockoutTime;
+    IEnumerator _lockoutTimer;
+
     [Header("UI")]
     [SerializeField]GameObject[] _elementsToShowArray;
     [SerializeField]GameObject[] _buttonArray;
     [SerializeField]SpriteRenderer[] _iconArray;
-    [SerializeField]TMP_Text[] _textArray;
+    [SerializeField]TMP_Text[] _textBtnArray;
+    [SerializeField]TMP_Text[] _textDescArray;
 
 
     [Header("Upgrades")]
@@ -22,11 +29,12 @@ public class LevelUpPopup : MonoBehaviour
     public List<IUpgradeable> PotentialUpgradeArray = new List<IUpgradeable>();
     public IUpgradeable[] AvailableUpgradeArray;
 
+
     private void Start() {
         Hide();
 
-        Debug.Log("LevelUpPopup is gathering potential upgrades...(When the objects are selected: detect what the player has already)");
-        Debug.Log("implement the commented notes in the TUrret class");
+        Debug.Log("LevelUpPopup is gathering potential upgrades. (Upgrade this to pull from one global source (Load into a global constant that pulls from a folder maybe))");
+        Debug.Log("implement the commented notes in the Turret class");
         Debug.Log("implement the commented notes in the EnemyActor Class");
         
         for (int i = 0; i < UnfilteredUpgradeArray.Length; i++)
@@ -44,7 +52,26 @@ public class LevelUpPopup : MonoBehaviour
         }
         CreateAvailableUpgradeArray();
         Time.timeScale = 0;
+
+        int UpgradeableSlot = StageController.singlton.Player.ReturnPlayerFirstUpgradableSlot();
+        if(UpgradeableSlot > 0){CurrentEquipmentUI.singlton.ShowNextAvailableSlot(UpgradeableSlot);}
+
+
+        _isShown =true;
+
+        //this is designed to allow the player time to react to the UI popups
+        _controlsLocked = true;
+        IEnumerator ControlLockTimer()
+        {
+            yield return new WaitForSecondsRealtime(_controlLockoutTime);
+            _controlsLocked = false;
+        }
+        if(_lockoutTimer != null){StopCoroutine(_lockoutTimer);}
+        _lockoutTimer = ControlLockTimer();
+        StartCoroutine(_lockoutTimer);
     }
+
+
     public void Hide()
     {
         if(_elementsToShowArray.Length == 0){return;}
@@ -53,24 +80,39 @@ public class LevelUpPopup : MonoBehaviour
             item.SetActive(false);
         }
         Time.timeScale = 1;
+        _isShown = false;
+        CurrentEquipmentUI.singlton.HideNextAvailableSlots();
+    }
+    private void Update()
+    {
+        if(_isShown && !_controlsLocked)
+        {
+            int slot = StageController.singlton.FindMoveControlsIndex();
+            if(slot == -1){return;}
+            UpgradeChosen(slot);
+        }
     }
 
     public void UpgradeChosen(int index)
     {
+        if(index >= AvailableUpgradeArray.Length){return;}
         FindAndApplyUpgrade(AvailableUpgradeArray[index]);
         Hide();
     }
 
     void FindAndApplyUpgrade(IUpgradeable chosenUpgrade)
     {
-        for (int i = 0; i < StageController.singlton.Player.CurrentUpgradesArray.Length; i++)
-        {
-            if(chosenUpgrade.UpgradeName == StageController.singlton.Player.CurrentUpgradesArray[i].name)
-            {
-                int tier = StageController.singlton.Player.CurrentUpgradesArray[i].Tier + 1;
+        StageController SCref =  StageController.singlton;
 
-                StageController.singlton.Player.CurrentUpgradesArray[i].Tier = tier;
-                StageController.singlton.Player.CurrentUpgradesArray[i].SO.ApplyUpgrade(tier);
+        for (int i = 0; i < SCref.Player.CurrentUpgradesArray.Length; i++)
+        {
+            if(chosenUpgrade.UpgradeName == SCref.Player.CurrentUpgradesArray[i].name)
+            {
+                int tier = SCref.Player.CurrentUpgradesArray[i].Tier + 1;
+
+                SCref.Player.CurrentUpgradesArray[i].Tier = tier;
+                SCref.Player.CurrentUpgradesArray[i].SO.ApplyUpgrade(tier);
+                CurrentEquipmentUI.singlton.UpdateUpgradeUI(i,  SCref.Player.CurrentUpgradesArray[i].SO.Icon,  SCref.Player.CurrentUpgradesArray[i].name, tier.ToString());
                 return;
             }
         }
@@ -144,7 +186,8 @@ public class LevelUpPopup : MonoBehaviour
         {
             if(!_buttonArray[i].activeSelf){continue;}
             _iconArray[i].sprite = AvailableUpgradeArray[i].Icon;
-            _textArray[i].text = AvailableUpgradeArray[i].UpgradeName;
+            _textBtnArray[i].text = AvailableUpgradeArray[i].UpgradeName;
+            _textDescArray[i].text = AvailableUpgradeArray[i].UpgradeDesc;
         }
     }
 

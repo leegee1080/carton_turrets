@@ -14,11 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Icon>k__BackingField: {fileID: 5758965880726059572, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Bonus XP
+  <UpgradeDesc>k__BackingField: Get more XP per pickup.
   <Tiers>k__BackingField:
-  - EquipFunc: 4
+  - TierDesc: 
+    EquipFunc: 5
     ActivateFunc: 0
     amt: 1
-  - EquipFunc: 4
+  - TierDesc: 10 Times More XP!
+    EquipFunc: 5
     ActivateFunc: 0
     amt: 10
   <IsUnlimited>k__BackingField: 0

@@ -16,6 +16,14 @@ MonoBehaviour:
   Desc: Simple turret shoots forward.
   MaxHealth: 1
   MaxSpeed: 1
+  <UpgradeName>k__BackingField: Gun Turret
+  <UpgradeDesc>k__BackingField: Shoots bullets out of the barrel.
+  <Tiers>k__BackingField:
+  - EquipFunc: 0
+    ActivateFunc: 2
+    amt: 0
+  <IsUnlimited>k__BackingField: 0
+  <Cooldown>k__BackingField: 3
   TReloadTime: 1.5
   TAmmo: 10
   TColliderSize: 0.04
@@ -36,10 +44,3 @@ MonoBehaviour:
   ExplosionGameObject: {fileID: 5925393004181974638, guid: f29e092f6e553064cb9828bdb984dca2, type: 3}
   Mesh: {fileID: 4300182, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}
   <Icon>k__BackingField: {fileID: -1140342232090195849, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
-  <UpgradeName>k__BackingField: Gun Turret
-  <Tiers>k__BackingField:
-  - EquipFunc: 0
-    ActivateFunc: 2
-    amt: 0
-  <IsUnlimited>k__BackingField: 0
-  <Cooldown>k__BackingField: 3

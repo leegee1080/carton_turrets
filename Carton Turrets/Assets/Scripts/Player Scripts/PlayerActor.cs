@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+// using UnityEngine.InputSystem;
 using System.Linq;
 using System;
 
@@ -18,7 +18,7 @@ public class PlayerActor : StageActor, IPassableObject
 {
     private PiaMainControls PlayerInputActions;
 
-    public InputAction move, activate;
+    // public InputAction move, activate;
     // public InputAction move, placeturret;
     public PlayerScriptableObject PlayerData;
 
@@ -71,21 +71,21 @@ public class PlayerActor : StageActor, IPassableObject
     {
         PlayerInputActions = new PiaMainControls();
     }
-    public override void OnEnable()
-    {
-        base.OnEnable();
-        move = PlayerInputActions.MainMap.PlayerMovement;
-        move.Enable();
-        activate = PlayerInputActions.MainMap.PlaceTurret;
-        activate.Enable();
-        // activate.performed += context => PlaceTurret(context);
-    }
-    private void OnDisable()
-    {
-        // placeturret.performed -= context => PlaceTurret(context);
-        move.Disable();
-        activate.Disable();
-    }
+    // public override void OnEnable()
+    // {
+    //     base.OnEnable();
+    //     move = PlayerInputActions.MainMap.PlayerMovement;
+    //     move.Enable();
+    //     activate = PlayerInputActions.MainMap.PlaceTurret;
+    //     activate.Enable();
+    //     // activate.performed += context => PlaceTurret(context);
+    // }
+    // private void OnDisable()
+    // {
+    //     // placeturret.performed -= context => PlaceTurret(context);
+    //     move.Disable();
+    //     activate.Disable();
+    // }
 
     public void TakeDamage(float amt)
     {
@@ -107,6 +107,16 @@ public class PlayerActor : StageActor, IPassableObject
         TimerSlotCooldowns[i] = CurrentUpgradesArray[i].SO.Cooldown / CurrentAbilityCooldown;
 
         CurrentUpgradesArray[i].SO.Activate(CurrentUpgradesArray[i].Tier, i);
+    }
+
+    public int ReturnPlayerFirstUpgradableSlot()
+    {
+        for (int i = 0; i < CurrentUpgradesArray.Length; i++)
+        {
+            if(CurrentUpgradesArray[i].name != ""){continue;}
+            return i;
+        }
+        return -1;
     }
 
 
@@ -211,8 +221,8 @@ public class PlayerActor : StageActor, IPassableObject
     public override void Die()
     {
         base.Die();
-        move.Disable();
-        activate.Disable();
+        // move.Disable();
+        // activate.Disable();
         GameObject part = StageController.singlton.DeathParticlePooler.ActivateNextObject(null);
         part.transform.position = new Vector3(ActorArtContainer.transform.position.x, 0.1f, ActorArtContainer.transform.position.z);
         ActorArtContainer.SetActive(false);
@@ -280,14 +290,14 @@ public class PlayerState_Normal: ActorStatesAbstractClass
     }   
     public override void OnUpdateState(StageActor _cont)
     {
-        int GetActivatedSlot(Vector2 v)
-        {
-            if (v[0] > 0) return 1;
-            if (v[0] < 0) return 3;
-            if (v[1] > 0) return 0;
-            if (v[1] < 0) return 2;
-            return -1;
-        }
+        // int GetActivatedSlot(Vector2 v)
+        // {
+        //     if (v[0] > 0) return 1;
+        //     if (v[0] < 0) return 3;
+        //     if (v[1] > 0) return 0;
+        //     if (v[1] < 0) return 2;
+        //     return -1;
+        // }
         PlayerActor pa = (PlayerActor)_cont;
 
 
@@ -295,16 +305,16 @@ public class PlayerState_Normal: ActorStatesAbstractClass
 
         PlayerHealthIndicatorUI.singlton.UpdateUI(pa.CurrentHealth, pa.MaxHealth);
 
-        Vector2 vAct = pa.activate.ReadValue<Vector2>().normalized;
+        // Vector2 vAct = StageController.singlton.activate.ReadValue<Vector2>().normalized;
 
-        int slot = GetActivatedSlot(vAct);
+        int slot = StageController.singlton.FindActivateControlsIndex();
         if(slot != -1)
         {
             if(pa.TimerSlotCooldowns[slot] <= 0){pa.ActivateUpgradeSlot(slot);}
         }
 
-        Vector2 v = pa.move.ReadValue<Vector2>() * pa.CurrentSpeed;
-        PlayerDirectionIndicatorUI.singlton.UpdateDirectionIndicator(pa.move.ReadValue<Vector2>());
+        Vector2 v = StageController.singlton.move.ReadValue<Vector2>() * pa.CurrentSpeed;
+        PlayerDirectionIndicatorUI.singlton.UpdateDirectionIndicator(StageController.singlton.move.ReadValue<Vector2>());
         pa.rb.velocity = new Vector3(v.x, 0, v.y);
         if(pa.transform.position != pa.LastPos)
         {
