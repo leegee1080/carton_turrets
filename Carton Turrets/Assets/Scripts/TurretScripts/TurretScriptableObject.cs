@@ -5,6 +5,13 @@ using System;
 [CreateAssetMenu(fileName = "New Turret", menuName = "Scriptable Objects/New Turret")]
 public class TurretScriptableObject : ActorDataScriptableObject, IUpgradeable
 {
+    
+    //upgrade stats
+    [field: SerializeField]public string UpgradeName {get; set;}
+    [field: SerializeField]public UpgradeTier[] Tiers {get; set;}
+    [field: SerializeField]public bool IsUnlimited {get; set;}
+    [field: SerializeField]public float Cooldown {get; set;}
+    
     [Header("Turret Stats")]
     public float TReloadTime;
     [Space]
@@ -36,10 +43,7 @@ public class TurretScriptableObject : ActorDataScriptableObject, IUpgradeable
     [Header("Turret Art")]
     public Mesh Mesh;
     [field: SerializeField]public Sprite Icon {get; set;}
-    [field: SerializeField]public string UpgradeName {get; set;}
-    [field: SerializeField]public UpgradeTier[] Tiers {get; set;}
-    [field: SerializeField]public bool IsUnlimited {get; set;}
-    [field: SerializeField]public float Cooldown {get; set;}
+
 
 
     public void ApplyUpgrade(int chosenTier)
