@@ -17,7 +17,7 @@ MonoBehaviour:
   <UpgradeDesc>k__BackingField: A litte cash.
   <Tiers>k__BackingField:
   - TierDesc: 
-    EquipFunc: 10
+    EquipFunc: 1
     ActivateFunc: 0
     amt: 10
   <IsUnlimited>k__BackingField: 1

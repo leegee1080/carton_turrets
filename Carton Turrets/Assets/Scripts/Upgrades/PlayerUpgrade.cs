@@ -19,10 +19,10 @@ public class PlayerUpgrade : ScriptableObject, IUpgradeable
         {
             PublicUpgradeClasses.EquipUpgradeInFirstOpenSlot(0, this);
         }
-        Action<float, IUpgradeable> chosenUpgradeFunc = PublicUpgradeClasses.PlayerUpgradeEquipFuncDict[Tiers[chosenTier].EquipFunc];
+        Action<float, Dictionary<PlayerStatEnum, float>, IUpgradeable> chosenUpgradeFunc = PublicUpgradeClasses.PlayerUpgradeEquipFuncDict[Tiers[chosenTier].EquipFunc];
         float upgradeAmount = Tiers[chosenTier].amt;
 
-        chosenUpgradeFunc(upgradeAmount, this);
+        chosenUpgradeFunc(upgradeAmount,StageController.singlton.Player.PlayerCurrentStatDict, this);
     }
 
     public void Activate(int chosenTier, int slot)

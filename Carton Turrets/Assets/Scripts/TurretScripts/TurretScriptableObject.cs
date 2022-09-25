@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 
 [CreateAssetMenu(fileName = "New Turret", menuName = "Scriptable Objects/New Turret")]
@@ -56,10 +57,10 @@ public class TurretScriptableObject : ActorDataScriptableObject, IUpgradeable
             PublicUpgradeClasses.EquipTurretInFirstOpenSlot(0, this);
             return;
         }
-        Action<float, IUpgradeable> chosenUpgradeFunc = PublicUpgradeClasses.PlayerUpgradeEquipFuncDict[Tiers[chosenTier].EquipFunc];
+        Action<float, Dictionary<PlayerStatEnum, float>, IUpgradeable> chosenUpgradeFunc = PublicUpgradeClasses.PlayerUpgradeEquipFuncDict[Tiers[chosenTier].EquipFunc];
         float upgradeAmount = Tiers[chosenTier].amt;
 
-        chosenUpgradeFunc(upgradeAmount, this);
+        chosenUpgradeFunc(upgradeAmount, StageController.singlton.Player.PlayerCurrentStatDict, this);
     }
 
     public void Activate(int chosenTier, int slot)

@@ -17,7 +17,7 @@ MonoBehaviour:
   <UpgradeDesc>k__BackingField: Pick up XP from farther away.
   <Tiers>k__BackingField:
   - TierDesc: Pick up XP from farther away.
-    EquipFunc: 4
+    EquipFunc: 6
     ActivateFunc: 0
     amt: 0.5
   <IsUnlimited>k__BackingField: 0

@@ -71,7 +71,6 @@ public class LevelUpPopup : MonoBehaviour
         StartCoroutine(_lockoutTimer);
     }
 
-
     public void Hide()
     {
         if(_elementsToShowArray.Length == 0){return;}
@@ -96,11 +95,27 @@ public class LevelUpPopup : MonoBehaviour
     public void UpgradeChosen(int index)
     {
         if(index >= AvailableUpgradeArray.Length){return;}
-        FindAndApplyUpgrade(AvailableUpgradeArray[index]);
-        Hide();
+        UpgradeConfirmContainer.singlton.Show(AvailableUpgradeArray[index], FindAndReturnNextAvailableTier(AvailableUpgradeArray[index]));
+        // FindAndApplyUpgrade(AvailableUpgradeArray[index]);
+        // Hide();
     }
 
-    void FindAndApplyUpgrade(IUpgradeable chosenUpgrade)
+    public int FindAndReturnNextAvailableTier(IUpgradeable chosenUpgrade)
+    {
+        StageController SCref =  StageController.singlton;
+
+        for (int i = 0; i < SCref.Player.CurrentUpgradesArray.Length; i++)
+        {
+            if(chosenUpgrade.UpgradeName == SCref.Player.CurrentUpgradesArray[i].name)
+            {
+                int tier = SCref.Player.CurrentUpgradesArray[i].Tier + 1;
+                return tier;
+            }
+        }
+        return 0;
+    }
+
+    public void FindAndApplyUpgrade(IUpgradeable chosenUpgrade)
     {
         StageController SCref =  StageController.singlton;
 

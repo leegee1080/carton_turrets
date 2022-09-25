@@ -14,41 +14,54 @@ public struct UpgradeSlot
     public int MaxAllowedTier;
 }
 
+[Serializable]
+public enum PlayerStatEnum
+{
+    none,
+    money,
+    CurrentHealth,
+    MaxHealth,
+    CurrentSpeed,
+    ExpMultiplier,
+    ExpGatherRange,
+    LevelUpThresholdMultiplier,
+    CurrentAbilityCooldown,
+    CurrentTurretBonusShootSpeed,
+    CurrentTurretBonusAmmo,
+    CurrentBulletDamageBonus,
+    CurrentBulletLifetimeBonus,
+    CurrentBulletRangeBonus,
+    CurrentBulletSpeedBonus,
+    CurrentExploDamageBonus,
+    CurrentExploSpeedBonus,
+    CurrentExploSizeBonus,
+    CurrentExploDamageRangeBonus,
+}
+
 public class PlayerActor : StageActor, IPassableObject
 {
-    private PiaMainControls PlayerInputActions;
 
-    // public InputAction move, activate;
-    // public InputAction move, placeturret;
     public PlayerScriptableObject PlayerData;
 
     [Header("Progression Vars")]
     public int CurrentPlayerLevel;
-    public float MaxHealth;
+
     public UpgradeSlot[] CurrentUpgradesArray = new UpgradeSlot[4];
-    public float ExpMultiplier;
+
     public int CurrentExpAmount;
     public float LevelUpThreshold;
-    public float LevelUpThresholdMultiplier;
+
     public GameObject ExpPickupGameObject;
     public float[] TimerSlotCooldowns = new float[4]{0,0,0,0};
 
     [Header("TurretVars")]
     public GameObject TurretContainer;
     [SerializeField]private float turretPlaceOffset;
-    public float CurrentAbilityCooldown;
+
     public Dictionary<string, ObjectPooler> TurretObjectPools = new Dictionary<string, ObjectPooler>();
-    public float CurrentTurretBonusShootSpeed;
-    // public float CurrentTurretBonusLifeTime;
-    public float CurrentTurretBonusAmmo;
-    public float CurrentBulletDamageBonus;
-    public float CurrentBulletLifetimeBonus;
-    public float CurrentBulletRangeBonus;
-    public float CurrentBulletSpeedBonus;
-    public float CurrentExploDamageBonus;
-    public float CurrentExploSpeedBonus;
-    public float CurrentExploSizeBonus;
-    public float CurrentExploDamageRangeBonus;
+
+    [Header("Current Player Stats")]
+    public Dictionary<PlayerStatEnum, float> PlayerCurrentStatDict = new Dictionary<PlayerStatEnum, float>();
 
 
     [Header("Bullet Vars")]
@@ -67,32 +80,13 @@ public class PlayerActor : StageActor, IPassableObject
     [Header("Phys Vars")]
     public Rigidbody rb;
 
-    private void Awake()
-    {
-        PlayerInputActions = new PiaMainControls();
-    }
-    // public override void OnEnable()
-    // {
-    //     base.OnEnable();
-    //     move = PlayerInputActions.MainMap.PlayerMovement;
-    //     move.Enable();
-    //     activate = PlayerInputActions.MainMap.PlaceTurret;
-    //     activate.Enable();
-    //     // activate.performed += context => PlaceTurret(context);
-    // }
-    // private void OnDisable()
-    // {
-    //     // placeturret.performed -= context => PlaceTurret(context);
-    //     move.Disable();
-    //     activate.Disable();
-    // }
 
     public void TakeDamage(float amt)
     {
         if(CurrentStateClass.name != "normal"){return;}
-        CurrentHealth -= amt;
+        PlayerCurrentStatDict[PlayerStatEnum.CurrentHealth] -= amt;
         BlinkSprite();
-        if(CurrentHealth <=0 )
+        if(PlayerCurrentStatDict[PlayerStatEnum.CurrentHealth] <=0 )
         {
             ChangeState(new PlayerState_Dead());
         }
@@ -104,7 +98,7 @@ public class PlayerActor : StageActor, IPassableObject
 
         if(TimerSlotCooldowns[i] > 0){return;}
 
-        TimerSlotCooldowns[i] = CurrentUpgradesArray[i].SO.Cooldown / CurrentAbilityCooldown;
+        TimerSlotCooldowns[i] = CurrentUpgradesArray[i].SO.Cooldown / PlayerCurrentStatDict[PlayerStatEnum.CurrentAbilityCooldown];
 
         CurrentUpgradesArray[i].SO.Activate(CurrentUpgradesArray[i].Tier, i);
     }
@@ -137,13 +131,13 @@ public class PlayerActor : StageActor, IPassableObject
 
     public void ApplyExp(int xp)
     {
-        CurrentExpAmount += (int)(xp * ExpMultiplier);
+        CurrentExpAmount += (int)(xp * PlayerCurrentStatDict[PlayerStatEnum.ExpMultiplier]);
         CurrentExpIndicatorUI.singlton.UpdateExpAmountUI(CurrentExpAmount, (int)LevelUpThreshold);
         if(CurrentExpAmount >= LevelUpThreshold)
         {
             CurrentExpIndicatorUI.singlton.SetPrevLevelThreshold((int)LevelUpThreshold);
 
-            LevelUpThreshold *= LevelUpThresholdMultiplier;
+            LevelUpThreshold *= PlayerCurrentStatDict[PlayerStatEnum.LevelUpThresholdMultiplier];
             LevelUpPopup.singlton.Show();
             CurrentPlayerLevel += 1;
 
@@ -169,7 +163,7 @@ public class PlayerActor : StageActor, IPassableObject
             {
                 TimerSlotCooldowns[i] -= time; CurrentEquipmentUI.singlton.UpdateUpgradeTimers
                 (
-                    CurrentUpgradesArray[i].SO.Cooldown / CurrentAbilityCooldown,
+                    CurrentUpgradesArray[i].SO.Cooldown / PlayerCurrentStatDict[PlayerStatEnum.CurrentAbilityCooldown],
                     i,
                     TimerSlotCooldowns[i]
                 );
@@ -182,30 +176,32 @@ public class PlayerActor : StageActor, IPassableObject
     }
 
 
-    public override void Setup()
+    public override void Setup() //big change here
     {
         base.Setup();
         CurrentPlayerLevel = 1;
 
-        CurrentHealth = PlayerData.MaxHealth;
-        MaxHealth = PlayerData.MaxHealth;
-        CurrentSpeed = PlayerData.MaxSpeed;
-        ExpMultiplier = PlayerData.StartingPlayerExpBonus;
-        LevelUpThresholdMultiplier = PlayerData.LevelUpThresholdMultiplier;
+        PlayerCurrentStatDict[PlayerStatEnum.money] = 0;
 
-        CurrentAbilityCooldown = PlayerData.MaxAbilityCooldownTime;
-        CurrentTurretBonusShootSpeed = PlayerData.StartingTurretBonusShootSpeed;
-        CurrentTurretBonusAmmo = PlayerData.StartingTurretBonusAmmo;
+        PlayerCurrentStatDict[PlayerStatEnum.CurrentHealth] = PlayerData.MaxHealth;
+        PlayerCurrentStatDict[PlayerStatEnum.MaxHealth] = PlayerData.MaxHealth;
+        PlayerCurrentStatDict[PlayerStatEnum.CurrentSpeed] = PlayerData.MaxSpeed;
+        PlayerCurrentStatDict[PlayerStatEnum.ExpMultiplier] = PlayerData.StartingPlayerExpBonus;
+        PlayerCurrentStatDict[PlayerStatEnum.LevelUpThresholdMultiplier] = PlayerData.LevelUpThresholdMultiplier;
 
-        CurrentBulletDamageBonus = PlayerData.StartingBulletDamageBonus;
-        CurrentBulletLifetimeBonus = PlayerData.StartingBulletLifetimeBonus;
-        CurrentBulletRangeBonus= PlayerData.StartingBulletRangeBonus;
-        CurrentBulletSpeedBonus= PlayerData.StartingBulletSpeedBonus;
+        PlayerCurrentStatDict[PlayerStatEnum.CurrentAbilityCooldown] = PlayerData.MaxAbilityCooldownTime;
+        PlayerCurrentStatDict[PlayerStatEnum.CurrentTurretBonusShootSpeed] = PlayerData.StartingTurretBonusShootSpeed;
+        PlayerCurrentStatDict[PlayerStatEnum.CurrentTurretBonusAmmo] = PlayerData.StartingTurretBonusAmmo;
 
-        CurrentExploDamageBonus= PlayerData.StartingExploDamageBonus;
-        CurrentExploSpeedBonus= PlayerData.StartingExploSpeedBonus;
-        CurrentExploSizeBonus= PlayerData.StartingExploSizeBonus;
-        CurrentExploDamageRangeBonus= PlayerData.StartingExploDamageRangeBonus;
+        PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletDamageBonus] = PlayerData.StartingBulletDamageBonus;
+        PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletLifetimeBonus] = PlayerData.StartingBulletLifetimeBonus;
+        PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletRangeBonus] = PlayerData.StartingBulletRangeBonus;
+        PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletSpeedBonus] = PlayerData.StartingBulletSpeedBonus;
+
+        PlayerCurrentStatDict[PlayerStatEnum.CurrentExploDamageBonus] = PlayerData.StartingExploDamageBonus;
+        PlayerCurrentStatDict[PlayerStatEnum.CurrentExploSpeedBonus] = PlayerData.StartingExploSpeedBonus;
+        PlayerCurrentStatDict[PlayerStatEnum.CurrentExploSizeBonus] = PlayerData.StartingExploSizeBonus;
+        PlayerCurrentStatDict[PlayerStatEnum.CurrentExploDamageRangeBonus] = PlayerData.StartingExploDamageRangeBonus;
 
 
         SpriteRenderer s = (SpriteRenderer)MainSprite;
@@ -221,8 +217,7 @@ public class PlayerActor : StageActor, IPassableObject
     public override void Die()
     {
         base.Die();
-        // move.Disable();
-        // activate.Disable();
+
         GameObject part = StageController.singlton.DeathParticlePooler.ActivateNextObject(null);
         part.transform.position = new Vector3(ActorArtContainer.transform.position.x, 0.1f, ActorArtContainer.transform.position.z);
         ActorArtContainer.SetActive(false);
@@ -290,22 +285,14 @@ public class PlayerState_Normal: ActorStatesAbstractClass
     }   
     public override void OnUpdateState(StageActor _cont)
     {
-        // int GetActivatedSlot(Vector2 v)
-        // {
-        //     if (v[0] > 0) return 1;
-        //     if (v[0] < 0) return 3;
-        //     if (v[1] > 0) return 0;
-        //     if (v[1] < 0) return 2;
-        //     return -1;
-        // }
+
         PlayerActor pa = (PlayerActor)_cont;
 
 
         pa.DecUpgradeSlotTimers(Time.fixedDeltaTime);
 
-        PlayerHealthIndicatorUI.singlton.UpdateUI(pa.CurrentHealth, pa.MaxHealth);
+        PlayerHealthIndicatorUI.singlton.UpdateUI(pa.PlayerCurrentStatDict[PlayerStatEnum.CurrentHealth], pa.PlayerCurrentStatDict[PlayerStatEnum.MaxHealth]);
 
-        // Vector2 vAct = StageController.singlton.activate.ReadValue<Vector2>().normalized;
 
         int slot = StageController.singlton.FindActivateControlsIndex();
         if(slot != -1)
@@ -313,7 +300,7 @@ public class PlayerState_Normal: ActorStatesAbstractClass
             if(pa.TimerSlotCooldowns[slot] <= 0){pa.ActivateUpgradeSlot(slot);}
         }
 
-        Vector2 v = StageController.singlton.move.ReadValue<Vector2>() * pa.CurrentSpeed;
+        Vector2 v = StageController.singlton.move.ReadValue<Vector2>() * pa.PlayerCurrentStatDict[PlayerStatEnum.CurrentSpeed];
         PlayerDirectionIndicatorUI.singlton.UpdateDirectionIndicator(StageController.singlton.move.ReadValue<Vector2>());
         pa.rb.velocity = new Vector3(v.x, 0, v.y);
         if(pa.transform.position != pa.LastPos)

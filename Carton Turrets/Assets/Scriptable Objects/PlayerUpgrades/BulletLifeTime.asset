@@ -17,19 +17,19 @@ MonoBehaviour:
   <UpgradeDesc>k__BackingField: Bullets go farther.
   <Tiers>k__BackingField:
   - TierDesc: 
-    EquipFunc: 9
+    EquipFunc: 12
     ActivateFunc: 0
     amt: 1
   - TierDesc: Bullets go farther.
-    EquipFunc: 9
+    EquipFunc: 12
     ActivateFunc: 0
     amt: 1
   - TierDesc: Bullets go farther.
-    EquipFunc: 9
+    EquipFunc: 12
     ActivateFunc: 0
     amt: 1
   - TierDesc: Bullets go farther.
-    EquipFunc: 9
+    EquipFunc: 12
     ActivateFunc: 0
     amt: 1
   <IsUnlimited>k__BackingField: 0

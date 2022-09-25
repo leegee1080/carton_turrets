@@ -91,11 +91,11 @@ public class Turret : StageActor, IPassableObject
 
         if(TurretData.TReloadTime == -1)
         {
-            ReloadTime = TurretData.BLifeTime * ControllingActor.CurrentBulletLifetimeBonus; 
+            ReloadTime = TurretData.BLifeTime * ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletLifetimeBonus]; 
         }
         else
         {
-            ReloadTime = TurretData.TReloadTime / ControllingActor.CurrentTurretBonusShootSpeed;  
+            ReloadTime = TurretData.TReloadTime / ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentTurretBonusShootSpeed];  
         }
    
         ReloadCountdown = 0;  
@@ -105,7 +105,7 @@ public class Turret : StageActor, IPassableObject
         }
         else
         {
-            Ammo = (int)(TurretData.TAmmo * ControllingActor.CurrentTurretBonusAmmo);
+            Ammo = (int)(TurretData.TAmmo * ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentTurretBonusAmmo]);
         }   
         _collider.radius = TurretData.TColliderSize;
 
@@ -113,7 +113,7 @@ public class Turret : StageActor, IPassableObject
         BulletSpreadAngle = TurretData.BulletSpreadAngle;
         _barrel.transform.rotation = this.gameObject.transform.rotation;
         _barrel.transform.rotation *= Quaternion.AngleAxis((-BulletSpreadAngle * (BulletsShotPerReload-1))/2, Vector3.up);
-        BLifeTime = TurretData.BLifeTime * ControllingActor.CurrentBulletLifetimeBonus; 
+        BLifeTime = TurretData.BLifeTime * ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletLifetimeBonus]; 
         BDamage = TurretData.BDamage; 
         BSpeed = TurretData.BSpeed; 
 
@@ -190,8 +190,6 @@ public class TurretState_Normal: ActorStatesAbstractClass
         Turret tu = (Turret)_cont;
 
         if(tu.ReloadCountdown >0){tu.ReloadCountdown -= Time.fixedDeltaTime;}else{tu.ReloadCountdown = tu.ReloadTime; tu.Fire();}
-        
-        // if(tu.LifeTime > 0){tu.LifeTime -= Time.fixedDeltaTime;}else{tu.ChangeState(new TurretState_Dead());}
 
     }   
 }

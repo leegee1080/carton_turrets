@@ -17,19 +17,19 @@ MonoBehaviour:
   <UpgradeDesc>k__BackingField: Cast abilities and place turrets 2x faster.
   <Tiers>k__BackingField:
   - TierDesc: 
-    EquipFunc: 6
+    EquipFunc: 8
     ActivateFunc: 0
     amt: 1
   - TierDesc: Cast abilities and place turrets 3x faster.
-    EquipFunc: 6
+    EquipFunc: 8
     ActivateFunc: 0
     amt: 1
   - TierDesc: Cast abilities and place turrets 4x faster.
-    EquipFunc: 6
+    EquipFunc: 8
     ActivateFunc: 0
     amt: 1
   - TierDesc: Cast abilities and place turrets 5x faster.
-    EquipFunc: 6
+    EquipFunc: 8
     ActivateFunc: 0
     amt: 1
   <IsUnlimited>k__BackingField: 0
