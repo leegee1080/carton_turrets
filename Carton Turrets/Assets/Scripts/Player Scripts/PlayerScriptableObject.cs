@@ -8,6 +8,7 @@ public class PlayerScriptableObject : ActorDataScriptableObject
     [Header("Character Stat Vars")]
     public float MaxAbilityCooldownTime;
     public float StartingPlayerExpBonus;
+    public float StartingPlayerExpGatherRange;
     public float LevelUpThresholdMultiplier;
 
 

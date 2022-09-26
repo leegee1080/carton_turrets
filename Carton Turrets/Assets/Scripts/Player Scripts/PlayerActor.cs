@@ -187,6 +187,8 @@ public class PlayerActor : StageActor, IPassableObject
         PlayerCurrentStatDict[PlayerStatEnum.MaxHealth] = PlayerData.MaxHealth;
         PlayerCurrentStatDict[PlayerStatEnum.CurrentSpeed] = PlayerData.MaxSpeed;
         PlayerCurrentStatDict[PlayerStatEnum.ExpMultiplier] = PlayerData.StartingPlayerExpBonus;
+        PlayerCurrentStatDict[PlayerStatEnum.ExpGatherRange] = PlayerData.StartingPlayerExpGatherRange;
+        ExpPickupGameObject.GetComponent<SphereCollider>().radius = PlayerData.StartingPlayerExpGatherRange;
         PlayerCurrentStatDict[PlayerStatEnum.LevelUpThresholdMultiplier] = PlayerData.LevelUpThresholdMultiplier;
 
         PlayerCurrentStatDict[PlayerStatEnum.CurrentAbilityCooldown] = PlayerData.MaxAbilityCooldownTime;

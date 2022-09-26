@@ -56,11 +56,12 @@ public class UpgradeConfirmContainer : MonoBehaviour
         {
             
             tempDict[_chosenUpgrade.Tiers[0].EquipFunc] = StageController.singlton.Player.PlayerCurrentStatDict[_chosenUpgrade.Tiers[0].EquipFunc];
+        
 
             _oldStatText.text = tempDict[_chosenUpgrade.Tiers[0].EquipFunc].ToString();
 
             chosenUpgradeFunc = PublicUpgradeClasses.PlayerUpgradeEquipFuncDict[_chosenUpgrade.Tiers[0].EquipFunc];
-            chosenUpgradeFunc(_chosenUpgrade.Tiers[0].amt,tempDict, _chosenUpgrade);
+            chosenUpgradeFunc(_chosenUpgrade.Tiers[0].amt, tempDict, _chosenUpgrade);
 
             _newStatText.text = tempDict[_chosenUpgrade.Tiers[0].EquipFunc].ToString();
             return;

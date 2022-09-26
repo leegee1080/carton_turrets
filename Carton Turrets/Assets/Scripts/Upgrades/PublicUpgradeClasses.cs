@@ -71,12 +71,12 @@ public class PublicUpgradeClasses
     }
     public static void UpgradeIncreasePlayerHealth(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData)
     {
-        if(statDictToEffect[PlayerStatEnum.CurrentHealth] + value >= statDictToEffect[PlayerStatEnum.MaxHealth])
+        if(statDictToEffect[PlayerStatEnum.CurrentHealth] + value >= StageController.singlton.Player.PlayerCurrentStatDict[PlayerStatEnum.MaxHealth])
         {
-            statDictToEffect[PlayerStatEnum.CurrentHealth] = statDictToEffect[PlayerStatEnum.MaxHealth];
+            statDictToEffect[PlayerStatEnum.CurrentHealth] = StageController.singlton.Player.PlayerCurrentStatDict[PlayerStatEnum.MaxHealth];
             return;
         }
-        StageController.singlton.Player.CurrentHealth += value;
+        statDictToEffect[PlayerStatEnum.CurrentHealth] += value;
     }
     public static void UpgradeIncreasePlayerMaxHealth(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData)
     {
@@ -84,6 +84,7 @@ public class PublicUpgradeClasses
     }
     public static void UpgradeIncreasePlayerExpGatherRange(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData)
     {
+        statDictToEffect[PlayerStatEnum.ExpGatherRange] += value;
         StageController.singlton.Player.ExpPickupGameObject.GetComponent<SphereCollider>().radius += value;
     }
     public static void UpgradeIncreasePlayerExpMultiplier(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData)
