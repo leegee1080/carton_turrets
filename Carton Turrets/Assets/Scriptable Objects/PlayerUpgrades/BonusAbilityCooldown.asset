@@ -15,6 +15,7 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: -9069065776505696662, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Ability Cooldown
   <UpgradeDesc>k__BackingField: Cast abilities and place turrets 2x faster.
+  <UpgradeType>k__BackingField: 1
   <Tiers>k__BackingField:
   - TierDesc: 
     EquipFunc: 8

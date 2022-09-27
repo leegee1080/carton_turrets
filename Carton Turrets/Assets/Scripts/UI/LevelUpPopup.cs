@@ -53,9 +53,6 @@ public class LevelUpPopup : MonoBehaviour
         CreateAvailableUpgradeArray();
         Time.timeScale = 0;
 
-        int UpgradeableSlot = StageController.singlton.Player.ReturnPlayerFirstUpgradableSlot();
-        if(UpgradeableSlot > 0){CurrentEquipmentUI.singlton.ShowNextAvailableSlot(UpgradeableSlot);}
-
 
         _isShown =true;
 
@@ -80,7 +77,6 @@ public class LevelUpPopup : MonoBehaviour
         }
         Time.timeScale = 1;
         _isShown = false;
-        CurrentEquipmentUI.singlton.HideNextAvailableSlots();
     }
     private void Update()
     {
@@ -95,46 +91,51 @@ public class LevelUpPopup : MonoBehaviour
     public void UpgradeChosen(int index)
     {
         if(index >= AvailableUpgradeArray.Length){return;}
-        UpgradeConfirmContainer.singlton.Show(AvailableUpgradeArray[index], FindAndReturnNextAvailableTier(AvailableUpgradeArray[index]));
-        // FindAndApplyUpgrade(AvailableUpgradeArray[index]);
-        // Hide();
+        UpgradeConfirmContainer.singlton.Show
+        (
+            AvailableUpgradeArray[index],
+            FindAndReturnNextAvailableTier
+            (
+                AvailableUpgradeArray[index],
+                StageController.singlton.Player.ReturnArrayToSearchBasedOnUpgradeType(AvailableUpgradeArray[index].UpgradeType)
+            )
+        );
     }
 
-    public int FindAndReturnNextAvailableTier(IUpgradeable chosenUpgrade)
+    public int FindAndReturnNextAvailableTier(IUpgradeable chosenUpgrade, UpgradeSlot[] upgradeArray)
     {
         StageController SCref =  StageController.singlton;
 
-        for (int i = 0; i < SCref.Player.CurrentUpgradesArray.Length; i++)
+        for (int i = 0; i < upgradeArray.Length; i++)
         {
-            if(chosenUpgrade.UpgradeName == SCref.Player.CurrentUpgradesArray[i].name)
+            if(chosenUpgrade.UpgradeName == upgradeArray[i].name)
             {
-                int tier = SCref.Player.CurrentUpgradesArray[i].Tier + 1;
+                int tier = upgradeArray[i].Tier + 1;
                 return tier;
             }
         }
         return 0;
     }
 
-    public void FindAndApplyUpgrade(IUpgradeable chosenUpgrade)
+    public void FindAndApplyUpgrade(IUpgradeable chosenUpgrade, UpgradeSlot[] upgradeArray)
     {
         StageController SCref =  StageController.singlton;
 
-        for (int i = 0; i < SCref.Player.CurrentUpgradesArray.Length; i++)
+        for (int i = 0; i < upgradeArray.Length; i++)
         {
-            if(chosenUpgrade.UpgradeName == SCref.Player.CurrentUpgradesArray[i].name)
+            if(chosenUpgrade.UpgradeName == upgradeArray[i].name)
             {
-                int tier = SCref.Player.CurrentUpgradesArray[i].Tier + 1;
+                int tier = upgradeArray[i].Tier + 1;
 
-                SCref.Player.CurrentUpgradesArray[i].Tier = tier;
-                SCref.Player.CurrentUpgradesArray[i].SO.ApplyUpgrade(tier);
-                CurrentEquipmentUI.singlton.UpdateUpgradeUI(i,  SCref.Player.CurrentUpgradesArray[i].SO.Icon,  SCref.Player.CurrentUpgradesArray[i].name, tier.ToString());
+                upgradeArray[i].Tier = tier;
+                upgradeArray[i].SO.ApplyUpgrade(tier);
+                CurrentEquipmentUI.singlton.UpdateUpgradeUI(i,  upgradeArray[i].SO.Icon,  upgradeArray[i].name, tier.ToString());
                 return;
             }
         }
         chosenUpgrade.ApplyUpgrade(0);//otherwise start over
         return;
     }
-
 
 
     void CreateAvailableUpgradeArray()
@@ -179,11 +180,26 @@ public class LevelUpPopup : MonoBehaviour
             if(item.Tier < item.MaxAllowedTier){return false;}
             if(item.name == ""){return false;}
         }
+        foreach (UpgradeSlot item in StageController.singlton.Player.CurrentEquipmentArray)
+        {
+            if(item.Tier < item.MaxAllowedTier){return false;}
+            if(item.name == ""){return false;}
+        }
         return true;
     }
     bool CheckPlayerSlotsForMaxUpgrade(IUpgradeable item)
     {
         foreach (UpgradeSlot equippedupgrade in StageController.singlton.Player.CurrentUpgradesArray)
+        {
+            if(equippedupgrade.name == ""){return false;}
+
+            if(item.UpgradeName == equippedupgrade.name)
+            {
+                if(equippedupgrade.Tier < equippedupgrade.MaxAllowedTier){return false;}
+                return true;
+            }
+        }
+        foreach (UpgradeSlot equippedupgrade in StageController.singlton.Player.CurrentEquipmentArray)
         {
             if(equippedupgrade.name == ""){return false;}
 

@@ -15,6 +15,7 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: -31695106925954461, guid: 93c2a04a6f3a95f4cbdf7379934291d5, type: 3}
   <UpgradeName>k__BackingField: Pickup Range
   <UpgradeDesc>k__BackingField: Pick up XP from farther away.
+  <UpgradeType>k__BackingField: 1
   <Tiers>k__BackingField:
   - TierDesc: Pick up XP from farther away.
     EquipFunc: 6

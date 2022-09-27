@@ -18,6 +18,7 @@ MonoBehaviour:
   MaxSpeed: 1
   <UpgradeName>k__BackingField: Bomb Turret
   <UpgradeDesc>k__BackingField: Short countdown then, BOOM!
+  <UpgradeType>k__BackingField: 0
   <Tiers>k__BackingField:
   - TierDesc: 
     EquipFunc: 0

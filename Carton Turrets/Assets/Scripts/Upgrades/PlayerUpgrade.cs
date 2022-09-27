@@ -9,6 +9,7 @@ public class PlayerUpgrade : ScriptableObject, IUpgradeable
     [field: SerializeField]public Sprite Icon {get; set;}
     [field: SerializeField]public string UpgradeName {get; set;}
     [field: SerializeField]public string UpgradeDesc {get; set;}
+    [field: SerializeField]public UpgradeType UpgradeType {get; set;}
     [field: SerializeField]public UpgradeTier[] Tiers {get; set;}
     [field: SerializeField]public bool IsUnlimited {get; set;}
     [field: SerializeField]public float Cooldown {get; set;}
@@ -17,7 +18,7 @@ public class PlayerUpgrade : ScriptableObject, IUpgradeable
     {
         if(chosenTier == 0 && IsUnlimited == false)
         {
-            PublicUpgradeClasses.EquipUpgradeInFirstOpenSlot(0, this);
+            PublicUpgradeClasses.PutUpgradeInFirstOpenSlot(0, this);
         }
         Action<float, Dictionary<PlayerStatEnum, float>, IUpgradeable> chosenUpgradeFunc = PublicUpgradeClasses.PlayerUpgradeEquipFuncDict[Tiers[chosenTier].EquipFunc];
         float upgradeAmount = Tiers[chosenTier].amt;
@@ -27,7 +28,7 @@ public class PlayerUpgrade : ScriptableObject, IUpgradeable
 
     public void Activate(int chosenTier, int slot)
     {
-        Action<int, IUpgradeable> chosenActivateFunc = PublicUpgradeClasses.PlayerUpgradeActivateFuncDict[Tiers[chosenTier].ActivateFunc];
+        Action<int, IUpgradeable> chosenActivateFunc = PublicUpgradeClasses.PlayerEquipmentActivateFuncDict[Tiers[chosenTier].ActivateFunc];
 
         chosenActivateFunc(slot, this);
     }

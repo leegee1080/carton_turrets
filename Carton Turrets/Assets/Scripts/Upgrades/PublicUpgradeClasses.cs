@@ -52,7 +52,7 @@ public class PublicUpgradeClasses
         {PlayerStatEnum.money, GiveMoney},
     };
 
-    public static readonly Dictionary<PlayerUpgradeActivateTypes, Action<int, IUpgradeable>> PlayerUpgradeActivateFuncDict = new Dictionary<PlayerUpgradeActivateTypes, Action<int, IUpgradeable>>
+    public static readonly Dictionary<PlayerUpgradeActivateTypes, Action<int, IUpgradeable>> PlayerEquipmentActivateFuncDict = new Dictionary<PlayerUpgradeActivateTypes, Action<int, IUpgradeable>>
     {
         {PlayerUpgradeActivateTypes.none, ActivateNull},
         //activate func
@@ -129,51 +129,43 @@ public class PublicUpgradeClasses
     }
 #endregion
 
-    public static void EquipTurretInFirstOpenSlot(float value, IUpgradeable turretSO)
+    public static void PutUpgradeInFirstOpenSlot(float value, IUpgradeable upgradeable)
     {
         PlayerActor pd = StageController.singlton.Player;
 
-        UpgradeSlot NewTurret = new UpgradeSlot();
-        NewTurret.name = turretSO.UpgradeName;
-        NewTurret.SO = turretSO;
-        NewTurret.Tier = 0;
-        NewTurret.MaxAllowedTier = NewTurret.SO.Tiers.Length -1;
+        UpgradeSlot newUpgrade = new UpgradeSlot();
+        newUpgrade.name = upgradeable.UpgradeName;
+        newUpgrade.SO = upgradeable;
+        newUpgrade.Tier = 0;
+        newUpgrade.MaxAllowedTier = newUpgrade.SO.Tiers.Length -1;
 
-        TurretScriptableObject TSO = turretSO as TurretScriptableObject;
-        
-        //apply to first open slot
-        int OpenSlotIndex = StageController.singlton.Player.ReturnPlayerFirstUpgradableSlot();
-        if(OpenSlotIndex < 0){return;}
+        int OpenSlotIndex = StageController.singlton.Player.ReturnPlayerFirstUpgradableSlot(upgradeable.UpgradeType);
 
-        pd.CurrentUpgradesArray[OpenSlotIndex] = NewTurret;
-        pd.TurretObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.TurretGameObject, TSO.TurretAmountToPool, pd.TurretContainer, false);
-        pd.BulletObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.BulletGameObject, TSO.BulletAmountToPool, pd.BulletContainer, false);
-        pd.ExplosionObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.ExplosionGameObject, TSO.ExplosionAmountToPool, pd.ExplosionContainer, false);
+        switch (upgradeable.UpgradeType)
+        {
+            case UpgradeType.PlayerUpgrade:
+                //apply to first open slot
+                if(OpenSlotIndex < 0){return;}
+                pd.CurrentUpgradesArray[OpenSlotIndex] = newUpgrade;
+                CurrentUpgradesUI.singlton.UpdateUpgradeUI(OpenSlotIndex, newUpgrade.SO.Icon, newUpgrade.name, newUpgrade.Tier.ToString());
+                break;
+            case UpgradeType.Equipment:
+                TurretScriptableObject TSO = upgradeable as TurretScriptableObject;
+                
+                //apply to first open slot
+                if(OpenSlotIndex < 0){return;}
 
-        CurrentEquipmentUI.singlton.UpdateUpgradeUI(OpenSlotIndex, NewTurret.SO.Icon, NewTurret.name, NewTurret.Tier.ToString());
-    }
-    public static void EquipUpgradeInFirstOpenSlot(float value, IUpgradeable upgradeSO)
-    {
-        PlayerActor pd = StageController.singlton.Player;
+                pd.CurrentEquipmentArray[OpenSlotIndex] = newUpgrade;
+                pd.TurretObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.TurretGameObject, TSO.TurretAmountToPool, pd.TurretContainer, false);
+                pd.BulletObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.BulletGameObject, TSO.BulletAmountToPool, pd.BulletContainer, false);
+                pd.ExplosionObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.ExplosionGameObject, TSO.ExplosionAmountToPool, pd.ExplosionContainer, false);
 
-        UpgradeSlot NewUpgrade = new UpgradeSlot();
-        NewUpgrade.name = upgradeSO.UpgradeName;
-        NewUpgrade.SO = upgradeSO;
-        NewUpgrade.Tier = 0;
-        NewUpgrade.MaxAllowedTier = NewUpgrade.SO.Tiers.Length -1;
-
-        //apply to first open slot
-        int OpenSlotIndex = StageController.singlton.Player.ReturnPlayerFirstUpgradableSlot();
-        if(OpenSlotIndex < 0){return;}
-        // for (int i = 0; i < pd.CurrentUpgradesArray.Length; i++)
-        // {
-        //     if(pd.CurrentUpgradesArray[i].name != ""){continue;}
-        //     pd.CurrentUpgradesArray[i] = NewUpgrade;
-
-        //     CurrentEquipmentUI.singlton.UpdateUpgradeUI(i, NewUpgrade.SO.Icon, NewUpgrade.name, NewUpgrade.Tier.ToString());
-        //     return;
-        // }
-        pd.CurrentUpgradesArray[OpenSlotIndex] = NewUpgrade;
-        CurrentEquipmentUI.singlton.UpdateUpgradeUI(OpenSlotIndex, NewUpgrade.SO.Icon, NewUpgrade.name, NewUpgrade.Tier.ToString());
+                CurrentEquipmentUI.singlton.UpdateUpgradeUI(OpenSlotIndex, newUpgrade.SO.Icon, newUpgrade.name, newUpgrade.Tier.ToString());
+                break;
+            case UpgradeType.TurretMod:
+                break;
+            default:
+                return;
+        }
     }
 }

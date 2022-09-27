@@ -18,6 +18,7 @@ MonoBehaviour:
   MaxSpeed: 1
   <UpgradeName>k__BackingField: Slow Turret
   <UpgradeDesc>k__BackingField: Eveything about this one is slow...
+  <UpgradeType>k__BackingField: 0
   <Tiers>k__BackingField:
   - TierDesc: 
     EquipFunc: 0
