@@ -46,7 +46,9 @@ public class PlayerActor : StageActor, IPassableObject
     [Header("Progression Vars")]
     public int CurrentPlayerLevel;
 
+    public UpgradeSlot[] CurrentEquipmentArray = new UpgradeSlot[4];
     public UpgradeSlot[] CurrentUpgradesArray = new UpgradeSlot[4];
+    public UpgradeSlot[] CurrentTurretModsArray = new UpgradeSlot[2];
 
     public int CurrentExpAmount;
     public float LevelUpThreshold;
@@ -94,24 +96,59 @@ public class PlayerActor : StageActor, IPassableObject
 
     public void ActivateUpgradeSlot(int i)
     {
-        if(CurrentUpgradesArray[i].name == ""){Debug.LogWarning("Slot chosen is empty!"); return;}
+        if(CurrentEquipmentArray[i].name == ""){Debug.LogWarning("Slot chosen is empty!"); return;}
 
         if(TimerSlotCooldowns[i] > 0){return;}
 
-        TimerSlotCooldowns[i] = CurrentUpgradesArray[i].SO.Cooldown / PlayerCurrentStatDict[PlayerStatEnum.CurrentAbilityCooldown];
+        TimerSlotCooldowns[i] = CurrentEquipmentArray[i].SO.Cooldown / PlayerCurrentStatDict[PlayerStatEnum.CurrentAbilityCooldown];
 
-        CurrentUpgradesArray[i].SO.Activate(CurrentUpgradesArray[i].Tier, i);
+        CurrentEquipmentArray[i].SO.Activate(CurrentEquipmentArray[i].Tier, i);
     }
 
-    public int ReturnPlayerFirstUpgradableSlot()
+    public int ReturnPlayerFirstUpgradableSlot(UpgradeType typeToSearch)
     {
-        for (int i = 0; i < CurrentUpgradesArray.Length; i++)
+        switch (typeToSearch)
         {
-            if(CurrentUpgradesArray[i].name != ""){continue;}
-            return i;
+            case UpgradeType.PlayerUpgrade:
+                for (int i = 0; i < CurrentUpgradesArray.Length; i++)
+                {
+                    if(CurrentUpgradesArray[i].name != ""){continue;}
+                    return i;
+                }
+                return -1;
+            case UpgradeType.Equipment:
+                for (int i = 0; i < CurrentEquipmentArray.Length; i++)
+                {
+                    if(CurrentEquipmentArray[i].name != ""){continue;}
+                    return i;
+                }
+                return -1;
+            case UpgradeType.TurretMod:
+                for (int i = 0; i < CurrentTurretModsArray.Length; i++)
+                {
+                    if(CurrentTurretModsArray[i].name != ""){continue;}
+                    return i;
+                }
+                return -1;
+            default:
+                return -1;
         }
-        return -1;
     }
+    public UpgradeSlot[] ReturnArrayToSearchBasedOnUpgradeType(UpgradeType type)
+    {
+        switch (type)
+        {
+            case UpgradeType.PlayerUpgrade:
+                return CurrentUpgradesArray;
+            case UpgradeType.Equipment:
+                return CurrentEquipmentArray;
+            case UpgradeType.TurretMod:
+                return null;
+            default:
+                return null;
+        }
+    }
+
 
 
     public void PickupItem(PickUps item)
@@ -148,9 +185,9 @@ public class PlayerActor : StageActor, IPassableObject
 
     public void PlaceTurret(int slot)
     {
-        if(CurrentUpgradesArray[slot].name == ""){Debug.LogWarning("Could not place turret, slot chosen is empty!"); return;}
+        if(CurrentEquipmentArray[slot].name == ""){Debug.LogWarning("Could not place turret, slot chosen is empty!"); return;}
 
-        GameObject tTurret =  TurretObjectPools[CurrentUpgradesArray[slot].name].ActivateNextObject(this);
+        GameObject tTurret =  TurretObjectPools[CurrentEquipmentArray[slot].name].ActivateNextObject(this);
         tTurret.transform.position = gameObject.transform.position + (LastViewInput * turretPlaceOffset);
         tTurret.transform.rotation = Quaternion.LookRotation(LastViewInput*90);
     }
@@ -163,7 +200,7 @@ public class PlayerActor : StageActor, IPassableObject
             {
                 TimerSlotCooldowns[i] -= time; CurrentEquipmentUI.singlton.UpdateUpgradeTimers
                 (
-                    CurrentUpgradesArray[i].SO.Cooldown / PlayerCurrentStatDict[PlayerStatEnum.CurrentAbilityCooldown],
+                    CurrentEquipmentArray[i].SO.Cooldown / PlayerCurrentStatDict[PlayerStatEnum.CurrentAbilityCooldown],
                     i,
                     TimerSlotCooldowns[i]
                 );

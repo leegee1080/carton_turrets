@@ -15,6 +15,7 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: -4528079395343913193, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Reload Speed
   <UpgradeDesc>k__BackingField: Turrets go through ammo 5x faster.
+  <UpgradeType>k__BackingField: 1
   <Tiers>k__BackingField:
   - TierDesc: 
     EquipFunc: 9

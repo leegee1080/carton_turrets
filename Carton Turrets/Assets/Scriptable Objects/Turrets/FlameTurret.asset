@@ -18,8 +18,10 @@ MonoBehaviour:
   MaxSpeed: 1
   <UpgradeName>k__BackingField: Flame Turret
   <UpgradeDesc>k__BackingField: Spits fire for a little while.
+  <UpgradeType>k__BackingField: 0
   <Tiers>k__BackingField:
-  - EquipFunc: 0
+  - TierDesc: 
+    EquipFunc: 0
     ActivateFunc: 2
     amt: 0
   <IsUnlimited>k__BackingField: 0

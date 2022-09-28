@@ -10,6 +10,7 @@ public class TurretScriptableObject : ActorDataScriptableObject, IUpgradeable
     //upgrade stats
     [field: SerializeField]public string UpgradeName {get; set;}
     [field: SerializeField]public string UpgradeDesc {get; set;}
+    [field: SerializeField]public UpgradeType UpgradeType {get; set;}
     [field: SerializeField]public UpgradeTier[] Tiers {get; set;}
     [field: SerializeField]public bool IsUnlimited {get; set;}
     [field: SerializeField]public float Cooldown {get; set;}
@@ -54,7 +55,7 @@ public class TurretScriptableObject : ActorDataScriptableObject, IUpgradeable
     {
         if(chosenTier == 0)
         {
-            PublicUpgradeClasses.EquipTurretInFirstOpenSlot(0, this);
+            PublicUpgradeClasses.PutUpgradeInFirstOpenSlot(0, this);
             return;
         }
         Action<float, Dictionary<PlayerStatEnum, float>, IUpgradeable> chosenUpgradeFunc = PublicUpgradeClasses.PlayerUpgradeEquipFuncDict[Tiers[chosenTier].EquipFunc];
@@ -65,7 +66,7 @@ public class TurretScriptableObject : ActorDataScriptableObject, IUpgradeable
 
     public void Activate(int chosenTier, int slot)
     {
-        Action<int, IUpgradeable> chosenActivateFunc = PublicUpgradeClasses.PlayerUpgradeActivateFuncDict[Tiers[chosenTier].ActivateFunc];
+        Action<int, IUpgradeable> chosenActivateFunc = PublicUpgradeClasses.PlayerEquipmentActivateFuncDict[Tiers[chosenTier].ActivateFunc];
 
         chosenActivateFunc(slot, this);
     }

@@ -18,8 +18,10 @@ MonoBehaviour:
   MaxSpeed: 1
   <UpgradeName>k__BackingField: Gun Turret
   <UpgradeDesc>k__BackingField: Shoots bullets out of the barrel.
+  <UpgradeType>k__BackingField: 0
   <Tiers>k__BackingField:
-  - EquipFunc: 0
+  - TierDesc: 
+    EquipFunc: 0
     ActivateFunc: 2
     amt: 0
   <IsUnlimited>k__BackingField: 0

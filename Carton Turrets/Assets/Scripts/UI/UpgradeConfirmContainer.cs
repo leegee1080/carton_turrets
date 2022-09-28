@@ -42,7 +42,30 @@ public class UpgradeConfirmContainer : MonoBehaviour
         _chosenUpgradeNameText.text = _chosenUpgrade.UpgradeName;
         _chosenUpgradeDescText.text = _chosenUpgrade.UpgradeDesc;
         SetupStatCompare();
+
+        ShowNextAvailSlot(passedChosenUpgrade.UpgradeType);
+
         _isShown = true;
+    }
+
+    void ShowNextAvailSlot(UpgradeType upgradeType)
+    {
+        int UpgradeableSlot = StageController.singlton.Player.ReturnPlayerFirstUpgradableSlot(upgradeType);
+        if(UpgradeableSlot < 0){return;}
+
+
+        switch (upgradeType)
+        {
+            case UpgradeType.PlayerUpgrade:
+                CurrentUpgradesUI.singlton.ShowNextAvailableSlot(UpgradeableSlot);
+                return;
+            case UpgradeType.Equipment:
+                CurrentEquipmentUI.singlton.ShowNextAvailableSlot(UpgradeableSlot);
+                return;
+            default:
+                Debug.LogWarning("upgradeType is incorrect: " + upgradeType);
+                return;
+        }
     }
 
     public void SetupStatCompare()
@@ -85,12 +108,14 @@ public class UpgradeConfirmContainer : MonoBehaviour
         {
             item.SetActive(false);   
         }
+        CurrentEquipmentUI.singlton.HideNextAvailableSlots();
+        CurrentUpgradesUI.singlton.HideNextAvailableSlots();
         _isShown = false;  
     }
     public void ConfirmUpgrade()
     {
         Hide();
-        LevelUpPopup.singlton.FindAndApplyUpgrade(_chosenUpgrade);
+        LevelUpPopup.singlton.FindAndApplyUpgrade(_chosenUpgrade, StageController.singlton.Player.ReturnArrayToSearchBasedOnUpgradeType(_chosenUpgrade.UpgradeType));
         LevelUpPopup.singlton.Hide();
     }
     public void DenyUpgrade()
