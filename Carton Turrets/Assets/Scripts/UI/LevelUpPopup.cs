@@ -24,6 +24,7 @@ public class LevelUpPopup : MonoBehaviour
 
 
     [Header("Upgrades")]
+    public ScriptableObject[] UnfilteredEquipmentArray;
     public ScriptableObject[] UnfilteredUpgradeArray;
     public ScriptableObject[] FillInUpgradeList;
     public List<IUpgradeable> PotentialUpgradeArray = new List<IUpgradeable>();
@@ -37,9 +38,18 @@ public class LevelUpPopup : MonoBehaviour
         Debug.Log("implement the commented notes in the Turret class");
         Debug.Log("implement the commented notes in the EnemyActor Class");
         
+        for (int i = 0; i < UnfilteredEquipmentArray.Length; i++)
+        {
+            if(!(UnfilteredEquipmentArray[i] is IUpgradeable)){Debug.LogError("There is an upgrade that does not impliment IUpgradable, index is: " + i); continue;}
+            IUpgradeable equ = (IUpgradeable)UnfilteredEquipmentArray[i];
+            if(equ.UpgradeType != UpgradeType.Equipment){Debug.LogError("There is an upgrade that is not of type equipment in the equipment array: " + i);}
+
+        }
         for (int i = 0; i < UnfilteredUpgradeArray.Length; i++)
         {
-            if(!(UnfilteredUpgradeArray[i] is IUpgradeable)){Debug.LogError("There is an upgrade that does not impliment IUpgradable, index is: " + i);}
+            if(!(UnfilteredUpgradeArray[i] is IUpgradeable)){Debug.LogError("There is an upgrade that does not impliment IUpgradable, index is: " + i); continue;}
+            IUpgradeable up = (IUpgradeable)UnfilteredUpgradeArray[i];
+            if(up.UpgradeType != UpgradeType.PlayerUpgrade){Debug.LogError("There is an upgrade that is not of type PlayerUpgrade in the Upgrade array: " + i);}
         }
     }
 
@@ -129,7 +139,18 @@ public class LevelUpPopup : MonoBehaviour
 
                 upgradeArray[i].Tier = tier;
                 upgradeArray[i].SO.ApplyUpgrade(tier);
-                CurrentEquipmentUI.singlton.UpdateUpgradeUI(i,  upgradeArray[i].SO.Icon,  upgradeArray[i].name, tier.ToString());
+                switch (chosenUpgrade.UpgradeType)
+                {
+                    case UpgradeType.Equipment:
+                        CurrentEquipmentUI.singlton.UpdateUpgradeUI(i,  upgradeArray[i].SO.Icon,  upgradeArray[i].name, tier.ToString());
+                        break;
+                    case UpgradeType.PlayerUpgrade:
+                        CurrentUpgradesUI.singlton.UpdateUpgradeUI(i,  upgradeArray[i].SO.Icon,  upgradeArray[i].name, tier.ToString());
+                        break;
+                    default:
+                        Debug.LogError("Chosen Upgrade was not a valid type");
+                        break;
+                }
                 return;
             }
         }
@@ -148,6 +169,11 @@ public class LevelUpPopup : MonoBehaviour
                 PotentialUpgradeArray.Add(item);
             }
         }else{ //else filter the unfiltered list
+            foreach (IUpgradeable item in UnfilteredEquipmentArray)
+            {
+                if(CheckPlayerSlotsForMaxEquipment(item)){continue;}//if not maxed out or all slots filled add the potential upgrade array
+                PotentialUpgradeArray.Add(item);
+            }
             foreach (IUpgradeable item in UnfilteredUpgradeArray)
             {
                 if(CheckPlayerSlotsForMaxUpgrade(item)){continue;}//if not maxed out or all slots filled add the potential upgrade array
@@ -187,9 +213,9 @@ public class LevelUpPopup : MonoBehaviour
         }
         return true;
     }
-    bool CheckPlayerSlotsForMaxUpgrade(IUpgradeable item)
+    bool CheckPlayerSlotsForMaxEquipment(IUpgradeable item)
     {
-        foreach (UpgradeSlot equippedupgrade in StageController.singlton.Player.CurrentUpgradesArray)
+        foreach (UpgradeSlot equippedupgrade in StageController.singlton.Player.CurrentEquipmentArray)
         {
             if(equippedupgrade.name == ""){return false;}
 
@@ -199,7 +225,11 @@ public class LevelUpPopup : MonoBehaviour
                 return true;
             }
         }
-        foreach (UpgradeSlot equippedupgrade in StageController.singlton.Player.CurrentEquipmentArray)
+        return true;
+    }
+    bool CheckPlayerSlotsForMaxUpgrade(IUpgradeable item)
+    {
+        foreach (UpgradeSlot equippedupgrade in StageController.singlton.Player.CurrentUpgradesArray)
         {
             if(equippedupgrade.name == ""){return false;}
 

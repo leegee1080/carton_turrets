@@ -62,9 +62,6 @@ public class UpgradeConfirmContainer : MonoBehaviour
             case UpgradeType.Equipment:
                 CurrentEquipmentUI.singlton.ShowNextAvailableSlot(UpgradeableSlot);
                 return;
-            case UpgradeType.TurretMod:
-                print("turret mods UI needed here");
-                return;
             default:
                 Debug.LogWarning("upgradeType is incorrect: " + upgradeType);
                 return;
