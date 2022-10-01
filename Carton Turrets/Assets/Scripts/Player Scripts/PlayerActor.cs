@@ -96,7 +96,7 @@ public class PlayerActor : StageActor, IPassableObject
 
     public void ActivateUpgradeSlot(int i)
     {
-        if(CurrentEquipmentArray[i].name == ""){Debug.LogWarning("Slot chosen is empty!"); return;}
+        if(CurrentEquipmentArray[i].name == ""){return;}
 
         if(TimerSlotCooldowns[i] > 0){return;}
 
@@ -213,12 +213,13 @@ public class PlayerActor : StageActor, IPassableObject
     }
 
 
-    public override void Setup() //big change here
+    public override void Setup()
     {
         base.Setup();
         CurrentPlayerLevel = 1;
 
         PlayerCurrentStatDict[PlayerStatEnum.money] = 0;
+        StageMoneyEarnedIndicatorUI.singlton.UpdateMoneyAmountUI((int)PlayerCurrentStatDict[PlayerStatEnum.money]);
 
         PlayerCurrentStatDict[PlayerStatEnum.CurrentHealth] = PlayerData.MaxHealth;
         PlayerCurrentStatDict[PlayerStatEnum.MaxHealth] = PlayerData.MaxHealth;

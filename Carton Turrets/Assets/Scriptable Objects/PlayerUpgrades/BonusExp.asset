@@ -20,10 +20,10 @@ MonoBehaviour:
   - TierDesc: 
     EquipFunc: 5
     ActivateFunc: 0
-    amt: 1
+    amt: 10
   - TierDesc: 10 Times More XP!
     EquipFunc: 5
     ActivateFunc: 0
-    amt: 10
+    amt: 20
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0

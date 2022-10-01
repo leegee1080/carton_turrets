@@ -20,14 +20,14 @@ MonoBehaviour:
   - TierDesc: 
     EquipFunc: 4
     ActivateFunc: 0
-    amt: 1
+    amt: 0.5
   - TierDesc: Run Faster!
     EquipFunc: 4
     ActivateFunc: 0
-    amt: 2
+    amt: 0.5
   - TierDesc: Run Faster!
-    EquipFunc: 2
+    EquipFunc: 4
     ActivateFunc: 0
-    amt: 3
+    amt: 0.5
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0
