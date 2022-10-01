@@ -36,7 +36,7 @@ public struct UpgradeTier
 
 public class PublicUpgradeClasses
 {
-    public static readonly Dictionary<PlayerStatEnum, Action<float, Dictionary<PlayerStatEnum, float>, IUpgradeable>> PlayerUpgradeEquipFuncDict = new Dictionary<PlayerStatEnum, Action<float, Dictionary<PlayerStatEnum, float>, IUpgradeable>>
+    public static readonly Dictionary<PlayerStatEnum, Action<float, Dictionary<PlayerStatEnum, float>, IUpgradeable, bool>> PlayerUpgradeEquipFuncDict = new Dictionary<PlayerStatEnum, Action<float, Dictionary<PlayerStatEnum, float>, IUpgradeable, bool>>
     {
         {PlayerStatEnum.none, UpgradeNull},
         //upgrade func
@@ -61,15 +61,15 @@ public class PublicUpgradeClasses
     };
  
 #region EqiupFuncs
-    public static void UpgradeNull(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData)
+    public static void UpgradeNull(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData, bool testApply)
     {
         return;
     }
-    public static void UpgradeIncreasePlayerSpeed(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData)
+    public static void UpgradeIncreasePlayerSpeed(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData, bool testApply)
     {
         statDictToEffect[PlayerStatEnum.CurrentSpeed] += value;
     }
-    public static void UpgradeIncreasePlayerHealth(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData)
+    public static void UpgradeIncreasePlayerHealth(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData, bool testApply)
     {
         if(statDictToEffect[PlayerStatEnum.CurrentHealth] + value >= StageController.singlton.Player.PlayerCurrentStatDict[PlayerStatEnum.MaxHealth])
         {
@@ -78,38 +78,41 @@ public class PublicUpgradeClasses
         }
         statDictToEffect[PlayerStatEnum.CurrentHealth] += value;
     }
-    public static void UpgradeIncreasePlayerMaxHealth(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData)
+    public static void UpgradeIncreasePlayerMaxHealth(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData, bool testApply)
     {
         statDictToEffect[PlayerStatEnum.MaxHealth] += value;
     }
-    public static void UpgradeIncreasePlayerExpGatherRange(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData)
+    public static void UpgradeIncreasePlayerExpGatherRange(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData, bool testApply)
     {
         statDictToEffect[PlayerStatEnum.ExpGatherRange] += value;
+        if(testApply){return;}
         StageController.singlton.Player.ExpPickupGameObject.GetComponent<SphereCollider>().radius += value;
     }
-    public static void UpgradeIncreasePlayerExpMultiplier(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData)
+    public static void UpgradeIncreasePlayerExpMultiplier(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData, bool testApply)
     {
         statDictToEffect[PlayerStatEnum.ExpMultiplier] += value;
     }
-    public static void UpgradeIncreasePlayerAbilityCooldown(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData)
+    public static void UpgradeIncreasePlayerAbilityCooldown(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData, bool testApply)
     {
         statDictToEffect[PlayerStatEnum.CurrentAbilityCooldown] += value;
     }
-    public static void UpgradeIncreasePlayerTurretShootSpeed(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData)
+    public static void UpgradeIncreasePlayerTurretShootSpeed(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData, bool testApply)
     {
         statDictToEffect[PlayerStatEnum.CurrentTurretBonusShootSpeed] += value;
     }
-    public static void UpgradeIncreasePlayerBulletLifetime(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData)
+    public static void UpgradeIncreasePlayerBulletLifetime(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData, bool testApply)
     {
         statDictToEffect[PlayerStatEnum.CurrentBulletLifetimeBonus] += value;
     }
-    public static void UpgradeIncreasePlayerTurretAmmo(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData)
+    public static void UpgradeIncreasePlayerTurretAmmo(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData, bool testApply)
     {
         statDictToEffect[PlayerStatEnum.CurrentTurretBonusAmmo] += value;
     }
-    public static void GiveMoney(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData)
+    public static void GiveMoney(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData, bool testApply)
     {
-        Debug.Log("Gave Player: " + value + " doll hairs.");
+        statDictToEffect[PlayerStatEnum.money] += value;
+        if(testApply){return;}
+        StageMoneyEarnedIndicatorUI.singlton.UpdateMoneyAmountUI((int)value);
     }
 #endregion
 

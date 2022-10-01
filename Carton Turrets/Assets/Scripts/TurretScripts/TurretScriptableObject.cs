@@ -58,10 +58,10 @@ public class TurretScriptableObject : ActorDataScriptableObject, IUpgradeable
             PublicUpgradeClasses.PutUpgradeInFirstOpenSlot(0, this);
             return;
         }
-        Action<float, Dictionary<PlayerStatEnum, float>, IUpgradeable> chosenUpgradeFunc = PublicUpgradeClasses.PlayerUpgradeEquipFuncDict[Tiers[chosenTier].EquipFunc];
+        Action<float, Dictionary<PlayerStatEnum, float>, IUpgradeable, bool> chosenUpgradeFunc = PublicUpgradeClasses.PlayerUpgradeEquipFuncDict[Tiers[chosenTier].EquipFunc];
         float upgradeAmount = Tiers[chosenTier].amt;
 
-        chosenUpgradeFunc(upgradeAmount, StageController.singlton.Player.PlayerCurrentStatDict, this);
+        chosenUpgradeFunc(upgradeAmount, StageController.singlton.Player.PlayerCurrentStatDict, this, false);
     }
 
     public void Activate(int chosenTier, int slot)
