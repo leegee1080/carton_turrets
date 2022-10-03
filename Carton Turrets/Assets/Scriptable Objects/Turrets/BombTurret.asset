@@ -32,7 +32,7 @@ MonoBehaviour:
   BulletsShotPerReload: 1
   BulletSpreadAngle: 0
   BLifeTime: 1
-  BDamage: 0
+  BDamage: 10
   BSpeed: 0
   ELifeTime: 0.2
   EDamage: 10

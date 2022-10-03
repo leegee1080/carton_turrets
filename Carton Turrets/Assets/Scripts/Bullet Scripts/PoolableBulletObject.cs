@@ -5,17 +5,20 @@ using UnityEngine;
 public class PoolableBulletObject : MonoBehaviour
 {
 
-    private float _lifeTime;
-    private float _damage;
-    private float _speed;
+    protected float _lifeTime;
+    protected float _damage;
+    protected float _speed;
 
-    private bool _fired = false;
+    protected bool _fired = false;
+
+    protected Turret _parentTurret;
 
     private void GrabInfoFromTurret(Turret t)
     {
         _lifeTime = t.BLifeTime;
         _damage = t.BDamage;
         _speed = t.BSpeed;
+        _parentTurret = t;
     }
 
     public void Fire(IPassableObject Turret)
@@ -26,6 +29,11 @@ public class PoolableBulletObject : MonoBehaviour
     }
 
     private void FixedUpdate()
+    {
+        BulletMovement();
+    }
+
+    virtual public void BulletMovement()
     {
         if(!_fired){return;}
         if(_lifeTime <=0){_fired = false; this.gameObject.SetActive(false);}

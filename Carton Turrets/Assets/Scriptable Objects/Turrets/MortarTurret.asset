@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60b8ea5a4eda5b94c81a5b96cd80fbc2, type: 3}
-  m_Name: SlowTurret
+  m_Name: MortarTurret
   m_EditorClassIdentifier: 
-  name: Slow Turret
-  Desc: Fires a large slow projectile.
+  name: Mortar Turret
+  Desc: Fires an projectile in a high arc.
   MaxHealth: 1
   MaxSpeed: 1
-  <UpgradeName>k__BackingField: Slow Turret
-  <UpgradeDesc>k__BackingField: Eveything about this one is slow...
+  <UpgradeName>k__BackingField: Mortar Turret
+  <UpgradeDesc>k__BackingField: Fires an projectile in a high arc.
   <UpgradeType>k__BackingField: 0
   <Tiers>k__BackingField:
   - TierDesc: 
@@ -26,23 +26,23 @@ MonoBehaviour:
     amt: 0
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 5
-  TReloadTime: 2
-  TAmmo: 4
+  TReloadTime: 3
+  TAmmo: 3
   TColliderSize: 0.04
   BulletsShotPerReload: 1
   BulletSpreadAngle: 0
-  BLifeTime: 3
-  BDamage: 0.2
+  BLifeTime: 1
+  BDamage: 0
   BSpeed: 0.02
   ELifeTime: 0.2
-  EDamage: 0
+  EDamage: 10
   ESpeed: 1
-  ESize: 0.1
+  ESize: 0.5
   TurretAmountToPool: 10
   BulletAmountToPool: 120
   ExplosionAmountToPool: 10
-  TurretGameObject: {fileID: 8903252950405436271, guid: 23ef3245053b07245ac7a4e21626ae37, type: 3}
-  BulletGameObject: {fileID: 741848558832750205, guid: f236222e1cea9474e89c1703c9388038, type: 3}
-  ExplosionGameObject: {fileID: 5925393004181974638, guid: 7307da6cf58c09b4084f1567cbb2227c, type: 3}
-  Mesh: {fileID: 4300182, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}
-  <Icon>k__BackingField: {fileID: 2653811183072668675, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  TurretGameObject: {fileID: 8903252950405436271, guid: a83800469c8da024787d3c78e52e6271, type: 3}
+  BulletGameObject: {fileID: 741848558832750205, guid: bfd357c83f7df974381938735bca47ce, type: 3}
+  ExplosionGameObject: {fileID: 5925393004181974638, guid: d5ad949436f900c4b84d23a95e4ea41b, type: 3}
+  Mesh: {fileID: 4300230, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}
+  <Icon>k__BackingField: {fileID: 2406641779483282129, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
