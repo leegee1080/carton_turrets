@@ -5,7 +5,16 @@ using UnityEngine;
 public class MortarBullet : PoolableBulletObject
 {
     [SerializeField] GameObject _explosionObject;
+    [SerializeField] AnimationCurve curve;
+    [SerializeField] float _arcHeight;
+
+    float _timeElapsed = 0;
     
+    private void Awake()
+    {
+        _timeElapsed = 0;
+    }
+
     override public void BulletMovement()
     {
         if(!_fired){return;}
@@ -16,8 +25,16 @@ public class MortarBullet : PoolableBulletObject
             this.gameObject.SetActive(false);
         }
 
-        gameObject.transform.position += transform.forward * _speed;
+        Vector3 nextPos = new Vector3
+        (
+            gameObject.transform.position.x + (transform.forward.x * _speed),
+            curve.Evaluate(_timeElapsed) * _arcHeight,
+            gameObject.transform.position.z + (transform.forward.z * _speed)
+        );
+
+        gameObject.transform.position = nextPos;
         _lifeTime -= Time.fixedDeltaTime;
+        _timeElapsed += Time.fixedDeltaTime/_parentTurret.BLifeTime;
     }
 
     private void Explode()

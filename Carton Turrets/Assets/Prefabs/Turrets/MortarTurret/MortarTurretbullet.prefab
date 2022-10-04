@@ -4789,6 +4789,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _explosionObject: {fileID: 1015939629928685463}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2.7735848
+      outSlope: 2.7735848
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.041666668
+    - serializedVersion: 3
+      time: 0.19999695
+      value: 1.0023575
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.36312535
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -2.8301873
+      outSlope: -2.8301873
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.05208316
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _arcHeight: 2
 --- !u!199 &41645241464480023
 ParticleSystemRenderer:
   serializedVersion: 6
