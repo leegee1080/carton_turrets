@@ -20,7 +20,7 @@ MonoBehaviour:
   StartingPlayerExpBonus: 1
   StartingPlayerExpGatherRange: 0.5
   LevelUpThresholdMultiplier: 2
-  StartingTurret: {fileID: 11400000, guid: 58b15c4aec8ac4e45965535b35eb1850, type: 2}
+  StartingTurret: {fileID: 11400000, guid: fc42811bc276f12418d24232ebfb35d2, type: 2}
   StartingTurretBonusShootSpeed: 1
   StartingTurretBonusLifeTime: 1
   StartingTurretBonusAmmo: 1

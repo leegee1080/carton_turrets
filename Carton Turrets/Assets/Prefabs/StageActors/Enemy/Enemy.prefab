@@ -267,9 +267,11 @@ MonoBehaviour:
   MainSprite: {fileID: 5914418368182736709}
   CurrentSpeed: 0
   CurrentHealth: 0
-  DamageColor: {r: 1, g: 0, b: 0, a: 0}
+  DamageColor: {r: 1, g: 1, b: 1, a: 0}
   EnemyData: {fileID: 11400000, guid: 8edeb15b61e7ce24c8acfef33f350afc, type: 2}
   CurrentDamage: 0
+  RespawnType: 0
+  MovementType: 0
   Target: {fileID: 0}
   ViewDistance: 8
   _sR: {fileID: 5914418368182736709}
