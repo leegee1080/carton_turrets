@@ -26,8 +26,8 @@ MonoBehaviour:
     amt: 0
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 5
-  TReloadTime: 2
-  TAmmo: 4
+  TReloadTime: -1
+  TAmmo: 1
   TColliderSize: 0.04
   BulletsShotPerReload: 1
   BulletSpreadAngle: 0

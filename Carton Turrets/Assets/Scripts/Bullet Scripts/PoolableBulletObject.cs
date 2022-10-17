@@ -46,7 +46,12 @@ public class PoolableBulletObject : MonoBehaviour
     {
         if(other.gameObject.tag == "Enemy")
         {
-            other.gameObject.GetComponentInParent<EnemyActor>().TakeDamage(_damage);
+            BulletCollide(other.gameObject);
         }
+    }
+
+    virtual public void BulletCollide(GameObject collidedEnemy)
+    {
+        collidedEnemy.GetComponentInParent<EnemyActor>().TakeDamage(_damage);
     }
 }

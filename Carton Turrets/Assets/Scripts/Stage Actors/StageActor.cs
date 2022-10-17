@@ -16,6 +16,8 @@ public class StageActor : MonoBehaviour
 
     [Header("Damage Effect Vars")]
     public Color DamageColor;
+    public Color FreezeColor;
+    private bool _colorOverride;
     
     public IEnumerator DamageBlinkerCoroutine;
 
@@ -58,10 +60,26 @@ public class StageActor : MonoBehaviour
 
     public virtual void BlinkSprite()
     {
+        if(_colorOverride){return;}
         if(DamageBlinkerCoroutine != null){StopCoroutine(DamageBlinkerCoroutine);}
         MainSprite.material.SetColor("_HitEffectColor", DamageColor);
         DamageBlinkerCoroutine = BlinkCoroutine();
         StartCoroutine(DamageBlinkerCoroutine);
+    }
+
+    public virtual void ChangeSpriteColor(bool resetColor, Color colorToApply)
+    {
+        if(resetColor)
+        {
+            if(DamageBlinkerCoroutine != null){StopCoroutine(DamageBlinkerCoroutine);}
+            _colorOverride = false;
+            MainSprite.material.SetColor("_HitEffectColor", DamageColor);
+            MainSprite.material.SetFloat("_HitEffectBlend", 0);
+            return;
+        }
+        _colorOverride = true;
+        MainSprite.material.SetColor("_HitEffectColor", colorToApply);
+        MainSprite.material.SetFloat("_HitEffectBlend", 1);
     }
 
     protected IEnumerator BlinkCoroutine()

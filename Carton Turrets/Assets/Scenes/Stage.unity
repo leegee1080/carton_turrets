@@ -4368,7 +4368,8 @@ MonoBehaviour:
   MainSprite: {fileID: 1116513453}
   CurrentSpeed: 0
   CurrentHealth: 0
-  DamageColor: {r: 1, g: 0, b: 0, a: 0}
+  DamageColor: {r: 0.27450982, g: 0.27450982, b: 0.27450982, a: 0}
+  FreezeColor: {r: 0, g: 0.72214794, b: 1, a: 0}
   PlayerData: {fileID: 11400000, guid: 9ffeab990231817458959966cf54332c, type: 2}
   CurrentPlayerLevel: 0
   CurrentEquipmentArray:
