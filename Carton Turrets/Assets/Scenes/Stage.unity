@@ -1106,6 +1106,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7cad782fab39c004f94302b9d874f116, type: 2}
   - {fileID: 11400000, guid: 60a671292fc0f98488533a657416f678, type: 2}
   - {fileID: 11400000, guid: ba37dff01d5b36f408ce30002b22ddc7, type: 2}
+  - {fileID: 11400000, guid: 58b15c4aec8ac4e45965535b35eb1850, type: 2}
   UnfilteredUpgradeArray:
   - {fileID: 11400000, guid: 7e0a3ab83ba6b3b4397d6d5b521289fb, type: 2}
   - {fileID: 11400000, guid: 1eb71aa06053e4d43a4e4b973befaa67, type: 2}
@@ -4367,7 +4368,8 @@ MonoBehaviour:
   MainSprite: {fileID: 1116513453}
   CurrentSpeed: 0
   CurrentHealth: 0
-  DamageColor: {r: 1, g: 0, b: 0, a: 0}
+  DamageColor: {r: 0.27450982, g: 0.27450982, b: 0.27450982, a: 0}
+  FreezeColor: {r: 0, g: 0.72214794, b: 1, a: 0}
   PlayerData: {fileID: 11400000, guid: 9ffeab990231817458959966cf54332c, type: 2}
   CurrentPlayerLevel: 0
   CurrentEquipmentArray:

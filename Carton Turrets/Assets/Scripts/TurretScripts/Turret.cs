@@ -117,7 +117,6 @@ public class Turret : StageActor, IPassableObject
         BDamage = TurretData.BDamage; 
         BSpeed = TurretData.BSpeed; 
 
-
         ELifeTime = TurretData.ELifeTime; 
         EDamage = TurretData.EDamage; 
         ESpeed = TurretData.ESpeed; 

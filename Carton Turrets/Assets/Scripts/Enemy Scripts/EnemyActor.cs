@@ -94,6 +94,9 @@ public class EnemyActor : StageActor, IColliderMessageable
     public Rigidbody rb;
     public SphereCollider[] Colliders;
 
+    [Header("Timers")]
+    private IEnumerator _freezeTimer;
+
     public void Respawn()//if player gets too far
     {
         //make this a function that picked based on an enum determined in the scripable object, that woul allow the enemey to spawn in different patterns: circle, line, etc
@@ -115,6 +118,7 @@ public class EnemyActor : StageActor, IColliderMessageable
 
     public void RecMessageStay(GameObject obj)
     {
+        if(CurrentStateClass.name != "normal"){return;}
         obj.GetComponentInParent<PlayerActor>().TakeDamage(CurrentDamage);
     }
     
@@ -128,6 +132,23 @@ public class EnemyActor : StageActor, IColliderMessageable
         {
             ChangeState(new EnemyState_Dead());
         }
+    }
+
+    public void Freeze(float time)
+    {
+        if(CurrentStateClass.name != "normal"){return;}
+        ChangeState(new EnemyState_Frozen());
+        if(_freezeTimer != null){StopCoroutine(_freezeTimer);}
+        _freezeTimer = FreezeTimer(time);
+        StartCoroutine(_freezeTimer);
+        ChangeSpriteColor(false,FreezeColor);
+    }
+
+    private IEnumerator FreezeTimer(float time)
+    {
+        yield return new WaitForSeconds(time);
+        ChangeState(new EnemyState_Normal());
+        ChangeSpriteColor(true,FreezeColor);
     }
 
     public void ActivateEnemy(IPassableObject info)
@@ -187,7 +208,7 @@ public class EnemyState_Frozen: ActorStatesAbstractClass
     public override string name {get {return "frozen";}}
     public override void OnEnterState(StageActor _cont)
     {
-        
+
     }   
     public override void OnExitState(StageActor _cont)
     {
@@ -203,7 +224,7 @@ public class EnemyState_Normal: ActorStatesAbstractClass
     public override string name {get {return "normal";}}
     public override void OnEnterState(StageActor _cont)
     {
-        
+
     }   
     public override void OnExitState(StageActor _cont)
     {

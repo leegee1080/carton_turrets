@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60b8ea5a4eda5b94c81a5b96cd80fbc2, type: 3}
-  m_Name: SlowTurret
+  m_Name: FreezeTurret
   m_EditorClassIdentifier: 
-  name: Slow Turret
+  name: Freeze Turret
   Desc: Fires a large slow projectile.
   MaxHealth: 1
   MaxSpeed: 1
-  <UpgradeName>k__BackingField: Slow Turret
+  <UpgradeName>k__BackingField: Freeze Turret
   <UpgradeDesc>k__BackingField: Eveything about this one is slow...
   <UpgradeType>k__BackingField: 0
   <Tiers>k__BackingField:
@@ -26,13 +26,13 @@ MonoBehaviour:
     amt: 0
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 5
-  TReloadTime: 2
-  TAmmo: 4
+  TReloadTime: -1
+  TAmmo: 1
   TColliderSize: 0.04
   BulletsShotPerReload: 1
   BulletSpreadAngle: 0
   BLifeTime: 3
-  BDamage: 0.2
+  BDamage: 2
   BSpeed: 0.02
   ELifeTime: 0.2
   EDamage: 0
@@ -41,8 +41,8 @@ MonoBehaviour:
   TurretAmountToPool: 10
   BulletAmountToPool: 120
   ExplosionAmountToPool: 10
-  TurretGameObject: {fileID: 8903252950405436271, guid: 23ef3245053b07245ac7a4e21626ae37, type: 3}
-  BulletGameObject: {fileID: 741848558832750205, guid: f236222e1cea9474e89c1703c9388038, type: 3}
-  ExplosionGameObject: {fileID: 5925393004181974638, guid: 7307da6cf58c09b4084f1567cbb2227c, type: 3}
-  Mesh: {fileID: 4300182, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}
-  <Icon>k__BackingField: {fileID: 2653811183072668675, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  TurretGameObject: {fileID: 8903252950405436271, guid: 19d447df1e7a7c54fbb29dbcff7226f1, type: 3}
+  BulletGameObject: {fileID: 741848558832750205, guid: a58f6bdd4b5995e428015db0dc354523, type: 3}
+  ExplosionGameObject: {fileID: 5925393004181974638, guid: 8a71e296650274943a0b85aff08fe834, type: 3}
+  Mesh: {fileID: 4300192, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}
+  <Icon>k__BackingField: {fileID: -5326120278402101576, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}

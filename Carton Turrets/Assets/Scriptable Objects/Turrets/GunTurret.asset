@@ -37,7 +37,7 @@ MonoBehaviour:
   ELifeTime: 0.2
   EDamage: 0
   ESpeed: 1
-  ESize: 0.5
+  ESize: 0.1
   TurretAmountToPool: 10
   BulletAmountToPool: 60
   ExplosionAmountToPool: 10
