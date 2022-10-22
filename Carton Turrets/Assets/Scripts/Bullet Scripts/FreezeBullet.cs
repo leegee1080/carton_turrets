@@ -5,7 +5,6 @@ using UnityEngine;
 public class FreezeBullet : PoolableBulletObject
 {
 
-
     public override void BulletCollide(GameObject collidedEnemy)
     {
         collidedEnemy.GetComponentInParent<EnemyActor>().Freeze(_damage);
