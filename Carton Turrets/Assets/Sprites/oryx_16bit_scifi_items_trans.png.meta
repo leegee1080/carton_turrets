@@ -597,7 +597,7 @@ TextureImporter:
       213: -5379822883561997643
     second: oryx_16bit_scifi_items_trans_197
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -618,6 +618,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -656,6 +657,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -719,6 +721,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
@@ -4900,6 +4914,205 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      oryx_16bit_scifi_items_trans_180: 5259295140255076553
+      oryx_16bit_scifi_items_trans_126: -2849629643288280666
+      oryx_16bit_scifi_items_trans_192: 7194874075423739880
+      oryx_16bit_scifi_items_trans_86: -7224455564643616304
+      oryx_16bit_scifi_items_trans_83: 9021371608920668441
+      oryx_16bit_scifi_items_trans_138: -2933140030990115485
+      oryx_16bit_scifi_items_trans_123: -7141803160920167508
+      oryx_16bit_scifi_items_trans_66: -3447838221303530135
+      oryx_16bit_scifi_items_trans_125: 3507792988124901642
+      oryx_16bit_scifi_items_trans_94: 8941369298906508431
+      oryx_16bit_scifi_items_trans_63: -7614343555470728196
+      oryx_16bit_scifi_items_trans_174: -2811063614828314102
+      oryx_16bit_scifi_items_trans_187: -5604998607120251468
+      oryx_16bit_scifi_items_trans_41: -4951614125410053472
+      oryx_16bit_scifi_items_trans_157: 3313738043062968709
+      oryx_16bit_scifi_items_trans_33: 756625807958560929
+      oryx_16bit_scifi_items_trans_141: -8596423263322024559
+      oryx_16bit_scifi_items_trans_70: 2056815835260227641
+      oryx_16bit_scifi_items_trans_135: 8789660792787412548
+      oryx_16bit_scifi_items_trans_111: -2498236382432668759
+      oryx_16bit_scifi_items_trans_184: 7649608089132040095
+      oryx_16bit_scifi_items_trans_155: 8252935055544201714
+      oryx_16bit_scifi_items_trans_60: 6154580622364476258
+      oryx_16bit_scifi_items_trans_173: -870823084326639149
+      oryx_16bit_scifi_items_trans_163: 5086212437695224402
+      oryx_16bit_scifi_items_trans_54: 2298363086795135801
+      oryx_16bit_scifi_items_trans_0: 7945230645254323457
+      oryx_16bit_scifi_items_trans_99: -2979402286903579331
+      oryx_16bit_scifi_items_trans_37: -7920610654139976415
+      oryx_16bit_scifi_items_trans_147: -1736753292771700491
+      oryx_16bit_scifi_items_trans_194: 5293702442420105539
+      oryx_16bit_scifi_items_trans_132: -5684198142732841513
+      oryx_16bit_scifi_items_trans_96: 6551866266158398280
+      oryx_16bit_scifi_items_trans_148: 8490132053661674495
+      oryx_16bit_scifi_items_trans_16: 7057925259163957143
+      oryx_16bit_scifi_items_trans_116: 2653811183072668675
+      oryx_16bit_scifi_items_trans_179: -5569262955065813511
+      oryx_16bit_scifi_items_trans_190: 8785893130922466559
+      oryx_16bit_scifi_items_trans_106: 3934249035535238144
+      oryx_16bit_scifi_items_trans_101: 2050678503348445017
+      oryx_16bit_scifi_items_trans_100: -4528079395343913193
+      oryx_16bit_scifi_items_trans_104: -4262069159997971855
+      oryx_16bit_scifi_items_trans_143: 2554724830326685001
+      oryx_16bit_scifi_items_trans_91: 1471846152178710533
+      oryx_16bit_scifi_items_trans_162: -6624520623543449295
+      oryx_16bit_scifi_items_trans_28: -5061445027229792975
+      oryx_16bit_scifi_items_trans_57: -6639632047376936459
+      oryx_16bit_scifi_items_trans_170: -9069065776505696662
+      oryx_16bit_scifi_items_trans_80: 3787192294353876953
+      oryx_16bit_scifi_items_trans_67: -8575111399654447085
+      oryx_16bit_scifi_items_trans_19: -3951804264695385377
+      oryx_16bit_scifi_items_trans_107: 7275941136373917633
+      oryx_16bit_scifi_items_trans_137: 7893076528607665857
+      oryx_16bit_scifi_items_trans_14: 6783498840948921083
+      oryx_16bit_scifi_items_trans_195: -8357078989369997698
+      oryx_16bit_scifi_items_trans_85: 3644803428135196649
+      oryx_16bit_scifi_items_trans_142: 3061872641144933912
+      oryx_16bit_scifi_items_trans_43: -6344213833747160975
+      oryx_16bit_scifi_items_trans_49: 3549793131459707597
+      oryx_16bit_scifi_items_trans_151: 4885390505385692094
+      oryx_16bit_scifi_items_trans_7: -3737721739380164352
+      oryx_16bit_scifi_items_trans_68: 741161107342165949
+      oryx_16bit_scifi_items_trans_26: -9092691522758098887
+      oryx_16bit_scifi_items_trans_156: -4325658435955093555
+      oryx_16bit_scifi_items_trans_105: 3320138831593795774
+      oryx_16bit_scifi_items_trans_51: -3711883993573359321
+      oryx_16bit_scifi_items_trans_27: 2780264453635173155
+      oryx_16bit_scifi_items_trans_185: -4435426925539718049
+      oryx_16bit_scifi_items_trans_58: 3553319631593811392
+      oryx_16bit_scifi_items_trans_30: 6066953822528572562
+      oryx_16bit_scifi_items_trans_98: 5472424368793639952
+      oryx_16bit_scifi_items_trans_17: 3333088877086639062
+      oryx_16bit_scifi_items_trans_119: -4491730399181471284
+      oryx_16bit_scifi_items_trans_18: -5157326876963788714
+      oryx_16bit_scifi_items_trans_5: -3257112394068861814
+      oryx_16bit_scifi_items_trans_115: 2935707681824743193
+      oryx_16bit_scifi_items_trans_121: 6046496974568869345
+      oryx_16bit_scifi_items_trans_172: 4663439493616768813
+      oryx_16bit_scifi_items_trans_15: 599521898592158690
+      oryx_16bit_scifi_items_trans_46: 1182522622409500910
+      oryx_16bit_scifi_items_trans_81: -5141619106877309333
+      oryx_16bit_scifi_items_trans_78: 4635616926247283617
+      oryx_16bit_scifi_items_trans_52: 7004107676331988854
+      oryx_16bit_scifi_items_trans_22: -3741870984664551611
+      oryx_16bit_scifi_items_trans_182: -3977184504499897954
+      oryx_16bit_scifi_items_trans_167: -1666789493992711279
+      oryx_16bit_scifi_items_trans_88: -5420648838323117540
+      oryx_16bit_scifi_items_trans_56: -4917980755808654557
+      oryx_16bit_scifi_items_trans_154: -7896744010444253178
+      oryx_16bit_scifi_items_trans_2: 4847366609812180781
+      oryx_16bit_scifi_items_trans_161: 4635740628629780466
+      oryx_16bit_scifi_items_trans_73: -2281004933102310521
+      oryx_16bit_scifi_items_trans_168: 594796609746604181
+      oryx_16bit_scifi_items_trans_181: -3576472126685101315
+      oryx_16bit_scifi_items_trans_45: -844111831403205405
+      oryx_16bit_scifi_items_trans_82: 1367644296615156856
+      oryx_16bit_scifi_items_trans_197: -5379822883561997643
+      oryx_16bit_scifi_items_trans_3: -3255735867993728527
+      oryx_16bit_scifi_items_trans_146: 5793042505968316771
+      oryx_16bit_scifi_items_trans_131: -8954380610731392475
+      oryx_16bit_scifi_items_trans_177: 696209214883202926
+      oryx_16bit_scifi_items_trans_89: -7977221402598033887
+      oryx_16bit_scifi_items_trans_109: 2106677208751789169
+      oryx_16bit_scifi_items_trans_9: 1509650086772382539
+      oryx_16bit_scifi_items_trans_133: 4015032726179329402
+      oryx_16bit_scifi_items_trans_129: 6081932450767728218
+      oryx_16bit_scifi_items_trans_12: -2219501657688387891
+      oryx_16bit_scifi_items_trans_169: -8224148147566768099
+      oryx_16bit_scifi_items_trans_23: 7865098594380713850
+      oryx_16bit_scifi_items_trans_10: 5864430314517664582
+      oryx_16bit_scifi_items_trans_75: -7662129796200642555
+      oryx_16bit_scifi_items_trans_47: 3044869618111541175
+      oryx_16bit_scifi_items_trans_90: -6027998156543011901
+      oryx_16bit_scifi_items_trans_176: 2123691675925257031
+      oryx_16bit_scifi_items_trans_140: 7600400622199194626
+      oryx_16bit_scifi_items_trans_164: -3155533288940826477
+      oryx_16bit_scifi_items_trans_38: 8050905055596140282
+      oryx_16bit_scifi_items_trans_152: 7661810332563371820
+      oryx_16bit_scifi_items_trans_139: 3168481757134127168
+      oryx_16bit_scifi_items_trans_95: -1501201453123083976
+      oryx_16bit_scifi_items_trans_39: 3426723381814396700
+      oryx_16bit_scifi_items_trans_21: 638162772689340912
+      oryx_16bit_scifi_items_trans_186: 24145998276335886
+      oryx_16bit_scifi_items_trans_44: 8628895468590767
+      oryx_16bit_scifi_items_trans_128: -8632875329370889712
+      oryx_16bit_scifi_items_trans_34: 5758965880726059572
+      oryx_16bit_scifi_items_trans_76: 6506252799732950870
+      oryx_16bit_scifi_items_trans_93: 8900020578877512892
+      oryx_16bit_scifi_items_trans_72: 3364531066182886343
+      oryx_16bit_scifi_items_trans_87: 6645872447471353612
+      oryx_16bit_scifi_items_trans_42: -474663051569935670
+      oryx_16bit_scifi_items_trans_59: 5883562013404263513
+      oryx_16bit_scifi_items_trans_36: -5749805301603785479
+      oryx_16bit_scifi_items_trans_188: -4096505908158852490
+      oryx_16bit_scifi_items_trans_160: -5433006169895437045
+      oryx_16bit_scifi_items_trans_122: -9038683501669084734
+      oryx_16bit_scifi_items_trans_77: 3373627926746887808
+      oryx_16bit_scifi_items_trans_112: -1140342232090195849
+      oryx_16bit_scifi_items_trans_108: 1310950020064727805
+      oryx_16bit_scifi_items_trans_62: 3903593892201315864
+      oryx_16bit_scifi_items_trans_13: -5821171784550597746
+      oryx_16bit_scifi_items_trans_97: -6554005268413053510
+      oryx_16bit_scifi_items_trans_11: -1669872465823482081
+      oryx_16bit_scifi_items_trans_92: 4599374984594433234
+      oryx_16bit_scifi_items_trans_175: 3904404747885509925
+      oryx_16bit_scifi_items_trans_178: -8137332652077177361
+      oryx_16bit_scifi_items_trans_8: -6875711385702090545
+      oryx_16bit_scifi_items_trans_65: -5645748447685237815
+      oryx_16bit_scifi_items_trans_159: -7055664401632716179
+      oryx_16bit_scifi_items_trans_40: 9022830609306860929
+      oryx_16bit_scifi_items_trans_165: 9011609287733193577
+      oryx_16bit_scifi_items_trans_50: 1245390062085671894
+      oryx_16bit_scifi_items_trans_4: 5578284975005149300
+      oryx_16bit_scifi_items_trans_35: 3805563241693786015
+      oryx_16bit_scifi_items_trans_110: -7966638352337107432
+      oryx_16bit_scifi_items_trans_118: 5572240525638473726
+      oryx_16bit_scifi_items_trans_145: -1520104820319647552
+      oryx_16bit_scifi_items_trans_189: -9078980540089648255
+      oryx_16bit_scifi_items_trans_69: -1158191161829845383
+      oryx_16bit_scifi_items_trans_53: 8763075273576840768
+      oryx_16bit_scifi_items_trans_6: 5394581887508019360
+      oryx_16bit_scifi_items_trans_183: -3005112065155881659
+      oryx_16bit_scifi_items_trans_79: -1183045618801038082
+      oryx_16bit_scifi_items_trans_130: -4099167761840212890
+      oryx_16bit_scifi_items_trans_55: 7992958038849230121
+      oryx_16bit_scifi_items_trans_120: 1513240059392439594
+      oryx_16bit_scifi_items_trans_71: -5171389871389780369
+      oryx_16bit_scifi_items_trans_32: -8174675472150475893
+      oryx_16bit_scifi_items_trans_127: 504656818898694826
+      oryx_16bit_scifi_items_trans_196: -441167934063821673
+      oryx_16bit_scifi_items_trans_103: -580285041446099669
+      oryx_16bit_scifi_items_trans_149: 4446259917009388642
+      oryx_16bit_scifi_items_trans_124: -8679984673231549777
+      oryx_16bit_scifi_items_trans_136: 2494383889284999394
+      oryx_16bit_scifi_items_trans_150: -4399871233024827926
+      oryx_16bit_scifi_items_trans_117: -5326120278402101576
+      oryx_16bit_scifi_items_trans_31: 8201247898743848453
+      oryx_16bit_scifi_items_trans_191: 6148468929911272037
+      oryx_16bit_scifi_items_trans_102: 8367269380423089317
+      oryx_16bit_scifi_items_trans_114: 2406641779483282129
+      oryx_16bit_scifi_items_trans_24: 2383286471834681652
+      oryx_16bit_scifi_items_trans_171: -5248809156930819265
+      oryx_16bit_scifi_items_trans_193: -2845039214668319767
+      oryx_16bit_scifi_items_trans_64: 7503314590574056698
+      oryx_16bit_scifi_items_trans_1: 1110909127292135635
+      oryx_16bit_scifi_items_trans_29: 4741991561203247116
+      oryx_16bit_scifi_items_trans_166: 8390208885643776931
+      oryx_16bit_scifi_items_trans_84: 1223170353541318458
+      oryx_16bit_scifi_items_trans_144: 18009603293130897
+      oryx_16bit_scifi_items_trans_74: -4603992961003305829
+      oryx_16bit_scifi_items_trans_113: -1152255343268342358
+      oryx_16bit_scifi_items_trans_48: -1611485977359224706
+      oryx_16bit_scifi_items_trans_134: -8147014802138905927
+      oryx_16bit_scifi_items_trans_25: -281411428587726667
+      oryx_16bit_scifi_items_trans_61: 3239238789835998889
+      oryx_16bit_scifi_items_trans_20: -4405194300325866625
+      oryx_16bit_scifi_items_trans_153: 1071704590276321030
+      oryx_16bit_scifi_items_trans_158: -4499868623662578671
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

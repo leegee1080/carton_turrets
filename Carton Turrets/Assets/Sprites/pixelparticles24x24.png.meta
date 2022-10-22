@@ -540,7 +540,7 @@ TextureImporter:
       213: 144660771943641318
     second: pixelparticles24x24_178
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -561,6 +561,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -599,6 +600,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -662,6 +664,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
@@ -4444,6 +4458,186 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      pixelparticles24x24_99: -9011227395126255044
+      pixelparticles24x24_13: 1269171315671490923
+      pixelparticles24x24_68: 8751808890747750943
+      pixelparticles24x24_85: 4809213282849294910
+      pixelparticles24x24_164: -3993248506234336567
+      pixelparticles24x24_120: 265042269126259370
+      pixelparticles24x24_98: 21081213483067375
+      pixelparticles24x24_124: -4410220033059015094
+      pixelparticles24x24_39: 7469379659471055943
+      pixelparticles24x24_58: 4782277182072760423
+      pixelparticles24x24_95: 813130255472861959
+      pixelparticles24x24_17: -7415560534527895491
+      pixelparticles24x24_165: -9205537594862268320
+      pixelparticles24x24_31: -5750237577667741180
+      pixelparticles24x24_74: -3171103637661215665
+      pixelparticles24x24_33: -4507579635165102861
+      pixelparticles24x24_59: 952502188795050305
+      pixelparticles24x24_119: 2347196471289036738
+      pixelparticles24x24_67: 9158197761760049401
+      pixelparticles24x24_90: 2598852045029453834
+      pixelparticles24x24_57: -4571029642436293505
+      pixelparticles24x24_3: -8950964610553296205
+      pixelparticles24x24_19: -1247808385457311329
+      pixelparticles24x24_171: 8560329839276435847
+      pixelparticles24x24_149: 2859012567429880117
+      pixelparticles24x24_117: 2055319706664718712
+      pixelparticles24x24_122: -2349235225862624524
+      pixelparticles24x24_110: -5393946486661096151
+      pixelparticles24x24_115: 4232203223342878277
+      pixelparticles24x24_61: -3897761439659027702
+      pixelparticles24x24_94: 3028278681349114942
+      pixelparticles24x24_159: 6943751357896732107
+      pixelparticles24x24_155: 1048181405402773670
+      pixelparticles24x24_163: 8855797444887289355
+      pixelparticles24x24_38: 7287687694501370736
+      pixelparticles24x24_127: -8550538028902097822
+      pixelparticles24x24_0: 8995462927000415388
+      pixelparticles24x24_154: 5000258921079434531
+      pixelparticles24x24_30: -5601193507448801018
+      pixelparticles24x24_27: -434510163182129543
+      pixelparticles24x24_54: -7383201133034092656
+      pixelparticles24x24_130: -2546189920170119386
+      pixelparticles24x24_83: 5673209403570754823
+      pixelparticles24x24_47: -8815974834744879556
+      pixelparticles24x24_62: 1324753647125495649
+      pixelparticles24x24_147: -2438484618374196878
+      pixelparticles24x24_45: 5227785495743360842
+      pixelparticles24x24_108: -472422450818602684
+      pixelparticles24x24_148: 7974974550387558014
+      pixelparticles24x24_142: 5580900795934122145
+      pixelparticles24x24_43: -1416342815674696624
+      pixelparticles24x24_126: -2262047979874857406
+      pixelparticles24x24_167: -1627397936771969028
+      pixelparticles24x24_92: 6853472479541220922
+      pixelparticles24x24_89: 7673133431293537943
+      pixelparticles24x24_66: 4499464547571075610
+      pixelparticles24x24_49: -6313020961097232930
+      pixelparticles24x24_128: -503700213359521551
+      pixelparticles24x24_113: 4410770943802105828
+      pixelparticles24x24_14: 6525036069741315043
+      pixelparticles24x24_109: -6184333343606045871
+      pixelparticles24x24_5: -3477537208441923797
+      pixelparticles24x24_41: -5547679545771103370
+      pixelparticles24x24_65: -6045576375007359731
+      pixelparticles24x24_93: 2043527224044353746
+      pixelparticles24x24_138: -3561313766367879850
+      pixelparticles24x24_11: -208690950285235526
+      pixelparticles24x24_166: -5249143605187550318
+      pixelparticles24x24_81: 1248977091091053093
+      pixelparticles24x24_73: 5553595717514991346
+      pixelparticles24x24_4: -7870080471482006065
+      pixelparticles24x24_175: 5882170908852138770
+      pixelparticles24x24_105: -865404274562054583
+      pixelparticles24x24_114: -9108341858221918513
+      pixelparticles24x24_55: 9057809788408965765
+      pixelparticles24x24_53: 7598201144954580043
+      pixelparticles24x24_70: -3604555939938838262
+      pixelparticles24x24_8: -1409886894617502302
+      pixelparticles24x24_97: -5552422260799540919
+      pixelparticles24x24_177: -2632129177311710240
+      pixelparticles24x24_18: 1810948072472661058
+      pixelparticles24x24_72: 1714994835491180553
+      pixelparticles24x24_37: 4049790184097913981
+      pixelparticles24x24_173: 557274829502562981
+      pixelparticles24x24_131: 5596389717936411402
+      pixelparticles24x24_1: -6235490228700498743
+      pixelparticles24x24_143: 4653363760663654602
+      pixelparticles24x24_153: -3828750131182332765
+      pixelparticles24x24_50: -7655800199136208630
+      pixelparticles24x24_82: -8469170582460336552
+      pixelparticles24x24_172: 1103243148853005947
+      pixelparticles24x24_84: -7573715902945285161
+      pixelparticles24x24_32: 277412887597999097
+      pixelparticles24x24_86: -1052543028895639999
+      pixelparticles24x24_87: -1842111304259893893
+      pixelparticles24x24_71: -4194641982471701911
+      pixelparticles24x24_64: -7793350148684655530
+      pixelparticles24x24_103: 6108543660407307886
+      pixelparticles24x24_34: -2304419875915045045
+      pixelparticles24x24_96: -5379493692708126150
+      pixelparticles24x24_152: -6190543757240443150
+      pixelparticles24x24_22: 3444797029572294565
+      pixelparticles24x24_56: -1156851235093837108
+      pixelparticles24x24_104: -6028951096107129858
+      pixelparticles24x24_156: -3213130564283395692
+      pixelparticles24x24_121: 5549036155857233091
+      pixelparticles24x24_134: -609822010526271701
+      pixelparticles24x24_158: -2933866302467836559
+      pixelparticles24x24_168: 4030319621085155726
+      pixelparticles24x24_24: -7487920747986302415
+      pixelparticles24x24_28: -2878966436771008981
+      pixelparticles24x24_25: -8873735140083687925
+      pixelparticles24x24_174: 521818639428428395
+      pixelparticles24x24_112: -5228098541838923201
+      pixelparticles24x24_91: -46459097618234039
+      pixelparticles24x24_139: 8229525944220418956
+      pixelparticles24x24_137: -6708445203103009019
+      pixelparticles24x24_141: -5449902327962841220
+      pixelparticles24x24_106: 1477599715678989781
+      pixelparticles24x24_80: 182752689047804025
+      pixelparticles24x24_129: -4580870232807235452
+      pixelparticles24x24_77: 6560711480721632990
+      pixelparticles24x24_42: 8190356999644317315
+      pixelparticles24x24_88: -7109204046360103462
+      pixelparticles24x24_6: -2741783033781203546
+      pixelparticles24x24_48: -3799102027787837903
+      pixelparticles24x24_133: -3105464035842943904
+      pixelparticles24x24_170: 7422717407428710482
+      pixelparticles24x24_178: 144660771943641318
+      pixelparticles24x24_7: 2053691235441464438
+      pixelparticles24x24_125: 5928436763949160639
+      pixelparticles24x24_46: 1418212157676410876
+      pixelparticles24x24_102: -7493212373214040416
+      pixelparticles24x24_107: -493154895441464115
+      pixelparticles24x24_44: 206834382439906995
+      pixelparticles24x24_35: 2632686876453019590
+      pixelparticles24x24_162: -1068891558821958099
+      pixelparticles24x24_75: 4003238164943507951
+      pixelparticles24x24_9: 8084281799921791314
+      pixelparticles24x24_79: 540813771855520009
+      pixelparticles24x24_157: -128806955634750446
+      pixelparticles24x24_40: 9199784423416448941
+      pixelparticles24x24_16: 1956575013070099207
+      pixelparticles24x24_146: -705125867383477384
+      pixelparticles24x24_76: -9116078119105755581
+      pixelparticles24x24_123: -4790078970934365744
+      pixelparticles24x24_101: 2460785011568324113
+      pixelparticles24x24_60: 604692643679662074
+      pixelparticles24x24_36: -1357533997323521840
+      pixelparticles24x24_29: -2534996554924703796
+      pixelparticles24x24_144: -5601645489122455414
+      pixelparticles24x24_160: 4525341063216358210
+      pixelparticles24x24_111: -3965163284965466343
+      pixelparticles24x24_12: 4884269824438129421
+      pixelparticles24x24_21: 4609072398644355938
+      pixelparticles24x24_2: 5022315678249658125
+      pixelparticles24x24_132: 8906860874078751895
+      pixelparticles24x24_116: -7815793701761724936
+      pixelparticles24x24_100: 8179302312725501358
+      pixelparticles24x24_20: -3462662002208938761
+      pixelparticles24x24_145: 6590284586952262421
+      pixelparticles24x24_63: 1397160398264319866
+      pixelparticles24x24_150: -8725367315292863710
+      pixelparticles24x24_23: -8521159074346173988
+      pixelparticles24x24_51: 1000270822420735279
+      pixelparticles24x24_118: 3664529380203603741
+      pixelparticles24x24_135: 5551028562391497431
+      pixelparticles24x24_136: -5406889986459108915
+      pixelparticles24x24_140: 4407109893424528066
+      pixelparticles24x24_151: 7991883710996830325
+      pixelparticles24x24_26: 9212711332760681091
+      pixelparticles24x24_169: -3503449565931297620
+      pixelparticles24x24_10: -2643748864034983282
+      pixelparticles24x24_78: 6827466549032146059
+      pixelparticles24x24_69: 2335623601591177052
+      pixelparticles24x24_161: 8000505574623388887
+      pixelparticles24x24_176: -4497852334386386474
+      pixelparticles24x24_52: 3622021971415384471
+      pixelparticles24x24_15: -31695106925954461
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

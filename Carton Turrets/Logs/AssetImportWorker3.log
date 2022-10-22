@@ -1,0 +1,350 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.11f1 (0a5ca18544bf) revision 679073'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19043) 64bit Core' Language: 'en' Physical Memory: 16326 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+F:\UnityInstalls\2021.3.11f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker3
+-projectPath
+C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets
+-logFile
+Logs/AssetImportWorker3.log
+-srvPort
+58161
+Successfully changed project path to: C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets
+C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 84.98 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.11f1 (0a5ca18544bf)
+[Subsystems] Discovering subsystems at path F:/UnityInstalls/2021.3.11f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2080 (ID=0x1e82)
+    Vendor:   NVIDIA
+    VRAM:     8011 MB
+    Driver:   31.0.15.2225
+Initialize mono
+Mono path[0] = 'F:/UnityInstalls/2021.3.11f1/Editor/Data/Managed'
+Mono path[1] = 'F:/UnityInstalls/2021.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'F:/UnityInstalls/2021.3.11f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56052
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004082 seconds.
+Native extension for WindowsStandalone target not found
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 84.23 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.582 seconds
+Domain Reload Profiling:
+	ReloadAssembly (582ms)
+		BeginReloadAssembly (70ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (426ms)
+			LoadAssemblies (70ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (91ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (23ms)
+			SetupLoadedEditorAssemblies (268ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (56ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (84ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (87ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.007633 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 86.19 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.245 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1245ms)
+		BeginReloadAssembly (206ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (120ms)
+		EndReloadAssembly (958ms)
+			LoadAssemblies (86ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (217ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (54ms)
+			SetupLoadedEditorAssemblies (566ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (25ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (86ms)
+				BeforeProcessingInitializeOnLoad (89ms)
+				ProcessInitializeOnLoadAttributes (285ms)
+				ProcessInitializeOnLoadMethodAttributes (78ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 1.31 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4443 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 45 unused Assets / (0.7 MB). Loaded Objects now: 4909.
+Memory consumption went from 199.7 MB to 198.9 MB.
+Total: 3.861100 ms (FindLiveObjects: 0.325500 ms CreateObjectMapping: 0.273600 ms MarkObjects: 2.983100 ms  DeleteObjects: 0.278200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 7485.845879 seconds.
+  path: Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailElectric9.png
+  artifactKey: Guid(a3a687db0f24f5f4d9e59c5de51c8f41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailElectric9.png using Guid(a3a687db0f24f5f4d9e59c5de51c8f41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e62f07677bcca7432335ff317d909f46') in 0.079267 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Textures/truck.png
+  artifactKey: Guid(7616343db6f6b6647a607dc90ea78eee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/truck.png using Guid(7616343db6f6b6647a607dc90ea78eee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a1a73f6f7c27ae4b0aa7d14f5c2cffb') in 0.015456 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailLines5.png
+  artifactKey: Guid(5196d28d2d01d684daf0532a7dcc1886) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailLines5.png using Guid(5196d28d2d01d684daf0532a7dcc1886) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5faec6f637f86a94c0555506a5d9f572') in 0.012735 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareCurved02.png
+  artifactKey: Guid(282d742ce2ddf9f458812ab84ea6fa88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareCurved02.png using Guid(282d742ce2ddf9f458812ab84ea6fa88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c27aaa404cffe458e8495cc0c0fdd575') in 0.011380 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/yellowSquare.png
+  artifactKey: Guid(517a5bfe18f2ee04d9925db10be034e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/yellowSquare.png using Guid(517a5bfe18f2ee04d9925db10be034e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb3c853291fd8ef30283129064d0878a') in 0.013760 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Shapes/Triangle.png
+  artifactKey: Guid(543f173ee4e88d743bd0c9e24fe596bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Shapes/Triangle.png using Guid(543f173ee4e88d743bd0c9e24fe596bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4826c77cf1eed1fdd9068c39c27eeb1b') in 0.013050 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Sprites/Monsters/undead_108.png
+  artifactKey: Guid(03e07e091821e3f419316e9615541f8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Monsters/undead_108.png using Guid(03e07e091821e3f419316e9615541f8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1faa44d7783fd648e121eba794c40c55') in 0.050451 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailHead9.png
+  artifactKey: Guid(fac8dd8c97ac9ad40b983aa619536d69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailHead9.png using Guid(fac8dd8c97ac9ad40b983aa619536d69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73f9155c60ab84b66ec78e12e4b063d3') in 0.012841 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot_darkBorder.png
+  artifactKey: Guid(27df4ca974a8eaf40803907859421506) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot_darkBorder.png using Guid(27df4ca974a8eaf40803907859421506) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '973aafce767b3ba500c5a6d42f62fd66') in 0.010788 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/WaterStreakHead.png
+  artifactKey: Guid(77bff874a559f1f4cb62b00a806a6158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/WaterStreakHead.png using Guid(77bff874a559f1f4cb62b00a806a6158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25642a4f63b9feb6f30018d778e3efff') in 0.013310 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailElectric16.png
+  artifactKey: Guid(a4cb2ebd008bb0446b05d68aa891e0ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailElectric16.png using Guid(a4cb2ebd008bb0446b05d68aa891e0ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a02bf8075f6ddf359fd0491ed0f4a18f') in 0.012489 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailHead6.png
+  artifactKey: Guid(cb6b5265921c29d48a46f951f385ea0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailHead6.png using Guid(cb6b5265921c29d48a46f951f385ea0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41b77eee8954b504047b2f589e23bee0') in 0.014198 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Monsters/undead_105.png
+  artifactKey: Guid(60bef2fb8bf6a3941abf863db3a384a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Monsters/undead_105.png using Guid(60bef2fb8bf6a3941abf863db3a384a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '434689db5c948222fe249e6d53652f61') in 0.019985 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailHead1.png
+  artifactKey: Guid(a214b4a067765bd4ebf150cdb526467e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailHead1.png using Guid(a214b4a067765bd4ebf150cdb526467e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd189b16c6016aa3628b89972c040f246') in 0.015184 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailHead5.png
+  artifactKey: Guid(6e874bc427d9315489803d3f9da900db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailHead5.png using Guid(6e874bc427d9315489803d3f9da900db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cbe77e5a9d53cfa20a5d24deb90b9a1') in 0.012602 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquare_fadeOut_bt.png
+  artifactKey: Guid(a40dc0d6372a9084fb45976308087290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquare_fadeOut_bt.png using Guid(a40dc0d6372a9084fb45976308087290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a6645fc863927af55554308a4bf6a90') in 0.011303 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Textures/wave3.png
+  artifactKey: Guid(909a245172e987b429ea32e22c65512e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/wave3.png using Guid(909a245172e987b429ea32e22c65512e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9c2adc7d7e28d4ef6d9d2f98e40b7d3') in 0.012226 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailElectric12.png
+  artifactKey: Guid(32c675d4e10b3b042af000839c647fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailElectric12.png using Guid(32c675d4e10b3b042af000839c647fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2f7677bd288e078a6f4da35c11414bd') in 0.015501 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailLines1.png
+  artifactKey: Guid(e3cbda2e9f8b0514d9e467b176b6326b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailLines1.png using Guid(e3cbda2e9f8b0514d9e467b176b6326b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '195c300f50a1be90912de57159da2173') in 0.012549 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/AllIn1SpriteShader/Textures/white.png
+  artifactKey: Guid(839adabbc5de26041bac66450214a831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AllIn1SpriteShader/Textures/white.png using Guid(839adabbc5de26041bac66450214a831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bee8b3be524f36dc44cf94948935012') in 0.019565 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailElectric17.png
+  artifactKey: Guid(ca2272368bac879429c8e31aad75c287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailElectric17.png using Guid(ca2272368bac879429c8e31aad75c287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81d128e72426aae56ebd3697c81f46c1') in 0.013459 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Textures/windows.png
+  artifactKey: Guid(c238f661245b8bb439979bb0c78a0b1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/windows.png using Guid(c238f661245b8bb439979bb0c78a0b1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e55046b6ff6f562e5d12daaff7eaeae') in 0.012313 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailHead2.png
+  artifactKey: Guid(903f85205ff9fe543b5cddc53ee7fce0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailHead2.png using Guid(903f85205ff9fe543b5cddc53ee7fce0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43f4720b712532c12702adde590752bb') in 0.013709 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/transparentSquare.png
+  artifactKey: Guid(4d338c631fa36f345b72a36f1c91ff9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/transparentSquare.png using Guid(4d338c631fa36f345b72a36f1c91ff9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ab13f189277d4625abe2c4f46ddbbb4') in 0.014016 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailHead4.png
+  artifactKey: Guid(25fecbfb3355a7d46a009bd3808cc776) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailHead4.png using Guid(25fecbfb3355a7d46a009bd3808cc776) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4213b35ab4b5cee2581c1dc88b09f40c') in 0.015681 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailElectric23.png
+  artifactKey: Guid(f6638fad457e8f04e940f236df263616) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailElectric23.png using Guid(f6638fad457e8f04e940f236df263616) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e3c99700e204d941a255545cb0ea515') in 0.014894 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha80.png
+  artifactKey: Guid(11848dd30e516d846a02cd302634d317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha80.png using Guid(11848dd30e516d846a02cd302634d317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be3d5d63c85bcdfa2e704809ddfb22f5') in 0.012091 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailHead3.png
+  artifactKey: Guid(9042ef574bbb51d4aa15892fb1bc90d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailHead3.png using Guid(9042ef574bbb51d4aa15892fb1bc90d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20a0ca9f87b57fa1c7f313f02c4d12cd') in 0.014248 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailLines3.png
+  artifactKey: Guid(17524aac3a10d11488610cd3c5190f7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/AllIn1VfxToolkit/Demo & Assets/Textures/Trails/TrailLines3.png using Guid(17524aac3a10d11488610cd3c5190f7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4649b640a8738fe801b887ed6ac8e918') in 0.012184 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

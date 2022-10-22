@@ -267,7 +267,7 @@ TextureImporter:
       213: 8221695261390011041
     second: pixelparticles32x32_87
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -288,6 +288,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -326,6 +327,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -389,6 +391,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2260,6 +2274,95 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      pixelparticles32x32_42: 2385061618306734033
+      pixelparticles32x32_20: -1010093257829533898
+      pixelparticles32x32_72: -4747563044173163620
+      pixelparticles32x32_77: 7905912574654088751
+      pixelparticles32x32_66: -3534005950955938348
+      pixelparticles32x32_16: 4071078851682168923
+      pixelparticles32x32_9: 2632208492480123229
+      pixelparticles32x32_15: -4928455157542925326
+      pixelparticles32x32_34: 4775604276865904479
+      pixelparticles32x32_81: -2476414621513087501
+      pixelparticles32x32_43: -1741938078106229402
+      pixelparticles32x32_3: 24561686457558191
+      pixelparticles32x32_85: 7854770821325340768
+      pixelparticles32x32_28: 5216948299431695181
+      pixelparticles32x32_67: -7631349564352605580
+      pixelparticles32x32_61: 8735602083083976010
+      pixelparticles32x32_14: 7214636330625470459
+      pixelparticles32x32_56: -2207604667377664446
+      pixelparticles32x32_59: -469831658742991448
+      pixelparticles32x32_21: 1258595836957878813
+      pixelparticles32x32_82: -4556933153333036972
+      pixelparticles32x32_52: 4232890756107951245
+      pixelparticles32x32_38: 2093718922881787124
+      pixelparticles32x32_36: -3742741639018894844
+      pixelparticles32x32_83: 5153831415351135940
+      pixelparticles32x32_87: 8221695261390011041
+      pixelparticles32x32_23: -8300902253311530470
+      pixelparticles32x32_11: -7876519886113286592
+      pixelparticles32x32_79: -2033236422665029574
+      pixelparticles32x32_26: -5729858815491756593
+      pixelparticles32x32_47: 6876265041794200498
+      pixelparticles32x32_4: -1743858608306863405
+      pixelparticles32x32_53: -3072118786317927952
+      pixelparticles32x32_29: 9015281912681716720
+      pixelparticles32x32_22: -4123563632237383588
+      pixelparticles32x32_33: -7231401376052665023
+      pixelparticles32x32_1: 2304262028115770670
+      pixelparticles32x32_30: 892728638366272503
+      pixelparticles32x32_37: 6300207372459229948
+      pixelparticles32x32_40: 7144340436052335078
+      pixelparticles32x32_75: -8826744369558903597
+      pixelparticles32x32_65: 172957326344852509
+      pixelparticles32x32_76: -7640841842204664335
+      pixelparticles32x32_49: -6046517823186517550
+      pixelparticles32x32_39: 7801569146654002260
+      pixelparticles32x32_27: -2187948233538133038
+      pixelparticles32x32_13: -7211780848741161971
+      pixelparticles32x32_60: 1847283222884707195
+      pixelparticles32x32_57: 2039065925703158838
+      pixelparticles32x32_45: -6952882412367623086
+      pixelparticles32x32_86: 2913097544624725113
+      pixelparticles32x32_51: -3503827649006367741
+      pixelparticles32x32_7: -5950237737360180966
+      pixelparticles32x32_44: 1878464938656462231
+      pixelparticles32x32_69: -5547281847095490188
+      pixelparticles32x32_32: 3947825360002377883
+      pixelparticles32x32_68: 430893645958899082
+      pixelparticles32x32_19: -7561104217155313171
+      pixelparticles32x32_84: 5755438261992996505
+      pixelparticles32x32_74: -760518463916137077
+      pixelparticles32x32_12: -2739024392691575392
+      pixelparticles32x32_6: 8779052478503973158
+      pixelparticles32x32_17: -7385623782853781575
+      pixelparticles32x32_55: -9215389024158270742
+      pixelparticles32x32_35: -7014783233094718507
+      pixelparticles32x32_78: -7296933992983561834
+      pixelparticles32x32_50: 6389160413386167221
+      pixelparticles32x32_25: 443240300761122589
+      pixelparticles32x32_18: 5470065067653286574
+      pixelparticles32x32_64: 9205122465929584235
+      pixelparticles32x32_8: -5559715934715345695
+      pixelparticles32x32_31: 6336073043241376942
+      pixelparticles32x32_0: -6925071528155665454
+      pixelparticles32x32_48: -1604272795067918811
+      pixelparticles32x32_58: -7780538342234842817
+      pixelparticles32x32_2: 3080896827496150925
+      pixelparticles32x32_5: -1848257132330938928
+      pixelparticles32x32_70: -3615954542480023871
+      pixelparticles32x32_24: 8912316930534633642
+      pixelparticles32x32_54: -87452195498778986
+      pixelparticles32x32_41: 3033061288527385851
+      pixelparticles32x32_10: 6204944547550913145
+      pixelparticles32x32_62: -1889381098279988523
+      pixelparticles32x32_46: -8816613496704855907
+      pixelparticles32x32_80: 6271223376936587441
+      pixelparticles32x32_73: 7168329654803033355
+      pixelparticles32x32_63: 3320372605047322493
+      pixelparticles32x32_71: 4476865386371482795
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
