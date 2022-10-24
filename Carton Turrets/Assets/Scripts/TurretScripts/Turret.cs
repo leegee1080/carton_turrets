@@ -5,7 +5,7 @@ using UnityEngine;
 public class Turret : StageActor, IPassableObject
 {
     [SerializeField] private TurretScriptableObject TurretData;
-    [SerializeField] private GameObject _barrel;
+    public GameObject _barrel;
     public PlayerActor ControllingActor;
 
     [Header("Turret Stats")]
