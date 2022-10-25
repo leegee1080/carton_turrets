@@ -25,6 +25,19 @@ public enum PlayerUpgradeActivateTypes
     PlaceTurret
 }
 
+public enum TurretBuildTypes
+{
+    normal,
+}
+public enum TurretFireTypes
+{
+    normal,
+}
+public enum TurretDeathTypes
+{
+    normal,
+}
+
 [Serializable]
 public struct UpgradeTier
 {
@@ -36,6 +49,9 @@ public struct UpgradeTier
 
 public class PublicUpgradeClasses
 {
+ 
+#region EqiupFuncs
+
     public static readonly Dictionary<PlayerStatEnum, Action<float, Dictionary<PlayerStatEnum, float>, IUpgradeable, bool>> PlayerUpgradeEquipFuncDict = new Dictionary<PlayerStatEnum, Action<float, Dictionary<PlayerStatEnum, float>, IUpgradeable, bool>>
     {
         {PlayerStatEnum.none, UpgradeNull},
@@ -51,16 +67,6 @@ public class PublicUpgradeClasses
         {PlayerStatEnum.CurrentTurretBonusAmmo, UpgradeIncreasePlayerTurretAmmo},
         {PlayerStatEnum.money, GiveMoney},
     };
-
-    public static readonly Dictionary<PlayerUpgradeActivateTypes, Action<int, IUpgradeable>> PlayerEquipmentActivateFuncDict = new Dictionary<PlayerUpgradeActivateTypes, Action<int, IUpgradeable>>
-    {
-        {PlayerUpgradeActivateTypes.none, ActivateNull},
-        //activate func
-        {PlayerUpgradeActivateTypes.PlayerSpeedBoost, ActivateSpeedBoost},
-        {PlayerUpgradeActivateTypes.PlaceTurret, PlaceTurret}
-    };
- 
-#region EqiupFuncs
     public static void UpgradeNull(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData, bool testApply)
     {
         return;
@@ -118,6 +124,13 @@ public class PublicUpgradeClasses
 
 
 #region ActivateFuncs
+    public static readonly Dictionary<PlayerUpgradeActivateTypes, Action<int, IUpgradeable>> PlayerEquipmentActivateFuncDict = new Dictionary<PlayerUpgradeActivateTypes, Action<int, IUpgradeable>>
+    {
+        {PlayerUpgradeActivateTypes.none, ActivateNull},
+        //activate func
+        {PlayerUpgradeActivateTypes.PlayerSpeedBoost, ActivateSpeedBoost},
+        {PlayerUpgradeActivateTypes.PlaceTurret, PlaceTurret}
+    };
     public static void ActivateNull(int slot, IUpgradeable turretSO)
     {
         return;
@@ -130,6 +143,27 @@ public class PublicUpgradeClasses
     {
         StageController.singlton.Player.PlaceTurret(slot);
     }
+#endregion
+
+#region TurretBuildFuncs
+    public static readonly Dictionary<TurretBuildTypes, Action<int, IUpgradeable>> TurretBuildFuncDict = new Dictionary<TurretBuildTypes, Action<int, IUpgradeable>>
+    {
+        {TurretBuildTypes.normal, ActivateNull}
+    };
+#endregion
+
+#region TurretFireFuncs
+    public static readonly Dictionary<TurretFireTypes, Action<int, IUpgradeable>> TurretFireFuncDict = new Dictionary<TurretFireTypes, Action<int, IUpgradeable>>
+    {
+        {TurretFireTypes.normal, ActivateNull}
+    };
+#endregion
+
+#region TurretDeathFuncs
+    public static readonly Dictionary<TurretDeathTypes, Action<int, IUpgradeable>> TurretDeathFuncDict = new Dictionary<TurretDeathTypes, Action<int, IUpgradeable>>
+    {
+        {TurretDeathTypes.normal, ActivateNull}
+    };
 #endregion
 
     public static void PutUpgradeInFirstOpenSlot(float value, IUpgradeable upgradeable)

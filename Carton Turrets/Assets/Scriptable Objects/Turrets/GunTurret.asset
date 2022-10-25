@@ -24,6 +24,10 @@ MonoBehaviour:
     EquipFunc: 0
     ActivateFunc: 2
     amt: 0
+  - TierDesc: 
+    EquipFunc: 0
+    ActivateFunc: 2
+    amt: 0
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 3
   TReloadTime: 1.5
