@@ -27,14 +27,17 @@ public enum PlayerUpgradeActivateTypes
 
 public enum TurretBuildTypes
 {
+    none,
     normal,
 }
 public enum TurretFireTypes
 {
+    none,
     normal,
 }
 public enum TurretDeathTypes
 {
+    none,
     normal,
 }
 
@@ -44,6 +47,9 @@ public struct UpgradeTier
     public string TierDesc;
     public PlayerStatEnum EquipFunc;
     public PlayerUpgradeActivateTypes ActivateFunc;
+    public TurretBuildTypes TurretBuildFunc;
+    public TurretFireTypes TurretFireFunc;
+    public TurretDeathTypes TurretDeathFunc;
     public float amt;
 }
 
@@ -146,23 +152,76 @@ public class PublicUpgradeClasses
 #endregion
 
 #region TurretBuildFuncs
-    public static readonly Dictionary<TurretBuildTypes, Action<int, IUpgradeable>> TurretBuildFuncDict = new Dictionary<TurretBuildTypes, Action<int, IUpgradeable>>
+    public static readonly Dictionary<TurretBuildTypes, Action<Turret, PlayerActor>> TurretBuildFuncDict = new Dictionary<TurretBuildTypes, Action<Turret, PlayerActor>>
     {
-        {TurretBuildTypes.normal, ActivateNull}
+        {TurretBuildTypes.none, null},
+        {TurretBuildTypes.normal, NormalBuild}
     };
+    public static void NormalBuild(Turret t, PlayerActor p)
+    {
+        t.ControllingActor = p;
+
+        if(t.TurretData.TReloadTime == -1)
+        {
+            t.ReloadTime = t.TurretData.BLifeTime * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletLifetimeBonus]; 
+        }
+        else
+        {
+            t.ReloadTime = t.TurretData.TReloadTime / t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentTurretBonusShootSpeed];  
+        }
+   
+        t.ReloadCountdown = 0;  
+        if(t.TurretData.TAmmo < 0)
+        {
+            t.Ammo = t.TurretData.TAmmo * -1;
+        }
+        else
+        {
+            t.Ammo = (int)(t.TurretData.TAmmo * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentTurretBonusAmmo]);
+        }   
+
+        t.AdjustCollider(t.TurretData.TColliderSize);
+
+        t.BulletsShotPerReload = t.TurretData.BulletsShotPerReload;
+        t.BulletSpreadAngle = t.TurretData.BulletSpreadAngle;
+        t._barrel.transform.rotation = t.gameObject.transform.rotation;
+        t._barrel.transform.rotation *= Quaternion.AngleAxis((-t.BulletSpreadAngle * (t.BulletsShotPerReload-1))/2, Vector3.up);
+        t.BLifeTime = t.TurretData.BLifeTime * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletLifetimeBonus]; 
+        t.BDamage = t.TurretData.BDamage; 
+        t.BSpeed = t.TurretData.BSpeed; 
+
+        t.ELifeTime = t.TurretData.ELifeTime; 
+        t.EDamage = t.TurretData.EDamage; 
+        t.ESpeed = t.TurretData.ESpeed; 
+        t.ESize = t.TurretData.ESize; 
+
+
+        // // // // CurrentBulletDamageBonus = PlayerData.StartingBulletDamageBonus;
+        // // // // CurrentBulletRangeBonus= PlayerData.StartingBulletRangeBonus;
+        // // // // CurrentBulletSpeedBonus= PlayerData.StartingBulletSpeedBonus;
+
+        // // // // CurrentExploDamageBonus= PlayerData.StartingExploDamageBonus;
+        // // // // CurrentExploSpeedBonus= PlayerData.StartingExploSpeedBonus;
+        // // // // CurrentExploSizeBonus= PlayerData.StartingExploSizeBonus;
+        // // // // CurrentExploDamageRangeBonus= PlayerData.StartingExploDamageRangeBonus;
+
+
+        // _turretMesh.mesh = tStats.Mesh;
+        t.Setup();
+    }
 #endregion
 
 #region TurretFireFuncs
-    public static readonly Dictionary<TurretFireTypes, Action<int, IUpgradeable>> TurretFireFuncDict = new Dictionary<TurretFireTypes, Action<int, IUpgradeable>>
+    public static readonly Dictionary<TurretFireTypes, Action<Turret>> TurretFireFuncDict = new Dictionary<TurretFireTypes, Action<Turret>>
     {
-        {TurretFireTypes.normal, ActivateNull}
+        {TurretFireTypes.none, null}
     };
 #endregion
 
 #region TurretDeathFuncs
-    public static readonly Dictionary<TurretDeathTypes, Action<int, IUpgradeable>> TurretDeathFuncDict = new Dictionary<TurretDeathTypes, Action<int, IUpgradeable>>
+    public static readonly Dictionary<TurretDeathTypes, Action<Turret>> TurretDeathFuncDict = new Dictionary<TurretDeathTypes, Action<Turret>>
     {
-        {TurretDeathTypes.normal, ActivateNull}
+        {TurretDeathTypes.none, null}
     };
 #endregion
 
