@@ -23,6 +23,9 @@ MonoBehaviour:
   - TierDesc: 
     EquipFunc: 0
     ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
     amt: 0
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 5
@@ -37,7 +40,7 @@ MonoBehaviour:
   ELifeTime: 0.2
   EDamage: 0
   ESpeed: 1
-  ESize: 0.1
+  ESize: 0.3
   TurretAmountToPool: 10
   BulletAmountToPool: 120
   ExplosionAmountToPool: 10

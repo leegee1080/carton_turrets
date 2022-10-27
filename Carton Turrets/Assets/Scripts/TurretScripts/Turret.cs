@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Turret : StageActor, IPassableObject
 {
-    [SerializeField] private TurretScriptableObject TurretData;
+    public TurretScriptableObject TurretData;
     public GameObject _barrel;
     public PlayerActor ControllingActor;
 
@@ -27,28 +28,9 @@ public class Turret : StageActor, IPassableObject
     public float ESpeed;
     public float ESize;
 
-    // [Header("Tier Vars")]
-    //which teir is it
-    //each tier has a state just like the state machine
-    //startup action
-    //fire action
-    //death action
-    
-//     public class TurretTier_0: TurretTiersAbstractClass
-// {
-//     public override string name {get {return "0";}}
-//     public override void OnSetup(Turret _cont)
-//     {
-        
-//     }   
-//     public override void OnLifetimeEnd(Turret _cont)
-//     {
-        
-//     }   
-//     public override void OnFire(Turret _cont)
-//     {
+    [Header("Tier Vars")]
+    public int currentTier;
 
-//     }   
 
 
     [Header("Turret Art")]
@@ -72,69 +54,42 @@ public class Turret : StageActor, IPassableObject
 
     public void Fire()
     {
+        int RequestedTier = 0;
+
+        TurretFireTypes chosenFireType = TurretData.Tiers[RequestedTier].TurretFireFunc;
+        if(chosenFireType == TurretFireTypes.none){return;}
+
+        currentTier = RequestedTier;
+        Action<Turret> chosenFireFunc = PublicUpgradeClasses.TurretFireFuncDict[chosenFireType];
+        chosenFireFunc(this);
         
-        if(Ammo <= 0){ChangeState(new TurretState_Dead()); return;}
-        Ammo -= 1;
-        for (int i = 0; i < BulletsShotPerReload; i++)
-        {
-            GameObject bullet = ControllingActor.BulletObjectPools[TurretData.name].ActivateNextObject(this);
-            bullet.transform.position = _barrel.transform.position;
-            // bullet.transform.rotation = this.gameObject.transform.rotation;
-            float angle = i * BulletSpreadAngle;
-            bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.up) * _barrel.transform.rotation;
-        }
+    }
+
+    public void AdjustCollider(float newSize)
+    {
+        _collider.radius = newSize;
     }
 
     public void BuildTurret(IPassableObject Player)
     {
-        ControllingActor = (PlayerActor)Player;
-
-        if(TurretData.TReloadTime == -1)
+        PlayerActor p = (PlayerActor)Player;
+        int RequestedTier =0;
+        
+        foreach (UpgradeSlot item in p.CurrentEquipmentArray)
         {
-            ReloadTime = TurretData.BLifeTime * ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletLifetimeBonus]; 
+            if(item.name == this.TurretData.name)
+            {
+                RequestedTier = item.Tier;
+                break;
+            }
         }
-        else
-        {
-            ReloadTime = TurretData.TReloadTime / ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentTurretBonusShootSpeed];  
-        }
-   
-        ReloadCountdown = 0;  
-        if(TurretData.TAmmo < 0)
-        {
-            Ammo = TurretData.TAmmo * -1;
-        }
-        else
-        {
-            Ammo = (int)(TurretData.TAmmo * ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentTurretBonusAmmo]);
-        }   
-        _collider.radius = TurretData.TColliderSize;
 
-        BulletsShotPerReload = TurretData.BulletsShotPerReload;
-        BulletSpreadAngle = TurretData.BulletSpreadAngle;
-        _barrel.transform.rotation = this.gameObject.transform.rotation;
-        _barrel.transform.rotation *= Quaternion.AngleAxis((-BulletSpreadAngle * (BulletsShotPerReload-1))/2, Vector3.up);
-        BLifeTime = TurretData.BLifeTime * ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletLifetimeBonus]; 
-        BDamage = TurretData.BDamage; 
-        BSpeed = TurretData.BSpeed; 
+        TurretBuildTypes chosenBuildType = TurretData.Tiers[RequestedTier].TurretBuildFunc;
+        if(chosenBuildType == TurretBuildTypes.none){return;}
 
-        ELifeTime = TurretData.ELifeTime; 
-        EDamage = TurretData.EDamage; 
-        ESpeed = TurretData.ESpeed; 
-        ESize = TurretData.ESize; 
-
-
-        // // // // CurrentBulletDamageBonus = PlayerData.StartingBulletDamageBonus;
-        // // // // CurrentBulletRangeBonus= PlayerData.StartingBulletRangeBonus;
-        // // // // CurrentBulletSpeedBonus= PlayerData.StartingBulletSpeedBonus;
-
-        // // // // CurrentExploDamageBonus= PlayerData.StartingExploDamageBonus;
-        // // // // CurrentExploSpeedBonus= PlayerData.StartingExploSpeedBonus;
-        // // // // CurrentExploSizeBonus= PlayerData.StartingExploSizeBonus;
-        // // // // CurrentExploDamageRangeBonus= PlayerData.StartingExploDamageRangeBonus;
-
-
-        // _turretMesh.mesh = tStats.Mesh;
-        Setup();
+        currentTier = RequestedTier;
+        Action<Turret, PlayerActor> chosenBuildFunc = PublicUpgradeClasses.TurretBuildFuncDict[chosenBuildType];
+        chosenBuildFunc(this, p);
     }
 
     public override void Setup()
@@ -150,9 +105,17 @@ public class Turret : StageActor, IPassableObject
     public override void Die()
     {
         base.Die();
-        GameObject explo = ControllingActor.ExplosionObjectPools[TurretData.name].ActivateNextObject(this);
-        explo.transform.position = _barrel.transform.position;
-        explo.transform.rotation = this.gameObject.transform.rotation;
+
+        int RequestedTier = 0;
+
+        TurretDeathTypes chosenDeathType = TurretData.Tiers[RequestedTier].TurretDeathFunc;
+        if(chosenDeathType == TurretDeathTypes.none){return;}
+
+        currentTier = RequestedTier;
+        Action<Turret> chosenDeathFunc = PublicUpgradeClasses.TurretDeathFuncDict[chosenDeathType];
+        chosenDeathFunc(this);
+
+        //hide the art. this should be done no matter what the custom death is
         _turretArtObject.SetActive(false);
     }
 }
