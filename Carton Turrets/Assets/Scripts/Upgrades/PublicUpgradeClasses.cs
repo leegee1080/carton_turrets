@@ -214,15 +214,37 @@ public class PublicUpgradeClasses
 #region TurretFireFuncs
     public static readonly Dictionary<TurretFireTypes, Action<Turret>> TurretFireFuncDict = new Dictionary<TurretFireTypes, Action<Turret>>
     {
-        {TurretFireTypes.none, null}
+        {TurretFireTypes.none, null},
+        {TurretFireTypes.normal, NormalFire}
     };
+
+    public static void NormalFire(Turret t)
+    {
+        if(t.Ammo <= 0){t.ChangeState(new TurretState_Dead()); return;}
+        t.Ammo -= 1;
+        for (int i = 0; i < t.BulletsShotPerReload; i++)
+        {
+            GameObject bullet = t.ControllingActor.BulletObjectPools[t.TurretData.name].ActivateNextObject(t);
+            bullet.transform.position = t._barrel.transform.position;
+            // bullet.transform.rotation = this.gameObject.transform.rotation;
+            float angle = i * t.BulletSpreadAngle;
+            bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.up) * t._barrel.transform.rotation;
+        }
+    }
 #endregion
 
 #region TurretDeathFuncs
     public static readonly Dictionary<TurretDeathTypes, Action<Turret>> TurretDeathFuncDict = new Dictionary<TurretDeathTypes, Action<Turret>>
     {
-        {TurretDeathTypes.none, null}
+        {TurretDeathTypes.none, null},
+        {TurretDeathTypes.normal, NormalDeath}
     };
+    public static void NormalDeath(Turret t)
+    {
+        GameObject explo = t.ControllingActor.ExplosionObjectPools[t.TurretData.name].ActivateNextObject(t);
+        explo.transform.position = t._barrel.transform.position;
+        explo.transform.rotation = t.transform.rotation;
+    }
 #endregion
 
     public static void PutUpgradeInFirstOpenSlot(float value, IUpgradeable upgradeable)

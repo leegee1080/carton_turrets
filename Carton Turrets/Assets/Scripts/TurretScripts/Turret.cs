@@ -30,27 +30,7 @@ public class Turret : StageActor, IPassableObject
 
     [Header("Tier Vars")]
     public int currentTier;
-    //which teir is it
-    //each tier has a state just like the state machine
-    //startup action
-    //fire action
-    //death action
-    
-//     public class TurretTier_0: TurretTiersAbstractClass
-// {
-//     public override string name {get {return "0";}}
-//     public override void OnSetup(Turret _cont)
-//     {
-        
-//     }   
-//     public override void OnLifetimeEnd(Turret _cont)
-//     {
-        
-//     }   
-//     public override void OnFire(Turret _cont)
-//     {
 
-//     }   
 
 
     [Header("Turret Art")]
@@ -74,17 +54,15 @@ public class Turret : StageActor, IPassableObject
 
     public void Fire()
     {
+        int RequestedTier = 0;
+
+        TurretFireTypes chosenFireType = TurretData.Tiers[RequestedTier].TurretFireFunc;
+        if(chosenFireType == TurretFireTypes.none){return;}
+
+        currentTier = RequestedTier;
+        Action<Turret> chosenFireFunc = PublicUpgradeClasses.TurretFireFuncDict[chosenFireType];
+        chosenFireFunc(this);
         
-        if(Ammo <= 0){ChangeState(new TurretState_Dead()); return;}
-        Ammo -= 1;
-        for (int i = 0; i < BulletsShotPerReload; i++)
-        {
-            GameObject bullet = ControllingActor.BulletObjectPools[TurretData.name].ActivateNextObject(this);
-            bullet.transform.position = _barrel.transform.position;
-            // bullet.transform.rotation = this.gameObject.transform.rotation;
-            float angle = i * BulletSpreadAngle;
-            bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.up) * _barrel.transform.rotation;
-        }
     }
 
     public void AdjustCollider(float newSize)
@@ -127,9 +105,17 @@ public class Turret : StageActor, IPassableObject
     public override void Die()
     {
         base.Die();
-        GameObject explo = ControllingActor.ExplosionObjectPools[TurretData.name].ActivateNextObject(this);
-        explo.transform.position = _barrel.transform.position;
-        explo.transform.rotation = this.gameObject.transform.rotation;
+
+        int RequestedTier = 0;
+
+        TurretDeathTypes chosenDeathType = TurretData.Tiers[RequestedTier].TurretDeathFunc;
+        if(chosenDeathType == TurretDeathTypes.none){return;}
+
+        currentTier = RequestedTier;
+        Action<Turret> chosenDeathFunc = PublicUpgradeClasses.TurretDeathFuncDict[chosenDeathType];
+        chosenDeathFunc(this);
+
+        //hide the art. this should be done no matter what the custom death is
         _turretArtObject.SetActive(false);
     }
 }
