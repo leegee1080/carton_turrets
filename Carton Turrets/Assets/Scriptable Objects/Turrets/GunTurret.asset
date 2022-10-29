@@ -20,22 +20,40 @@ MonoBehaviour:
   <UpgradeDesc>k__BackingField: Shoots bullets out of the barrel.
   <UpgradeType>k__BackingField: 0
   <Tiers>k__BackingField:
-  - TierDesc: 
+  - TierDesc: Tier 1
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
+    TurretBuildMods: []
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
-  - TierDesc: 
+  - TierDesc: Tier 2 (2 Bullets)
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
-    TurretFireFunc: 0
-    TurretDeathFunc: 0
+    TurretBuildMods:
+    - StatName: 19
+      StatAmount: 2
+    - StatName: 20
+      StatAmount: 10
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 2 (3 Bullets)
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 19
+      StatAmount: 3
+    - StatName: 20
+      StatAmount: 10
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
     amt: 0
   <IsUnlimited>k__BackingField: 0
-  <Cooldown>k__BackingField: 3
+  <Cooldown>k__BackingField: 2
   TReloadTime: 1.5
   TAmmo: 2
   TColliderSize: 0.04

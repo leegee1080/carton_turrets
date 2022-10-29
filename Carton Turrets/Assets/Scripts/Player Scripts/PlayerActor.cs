@@ -36,6 +36,16 @@ public enum PlayerStatEnum
     CurrentExploSpeedBonus,
     CurrentExploSizeBonus,
     CurrentExploDamageRangeBonus,
+    //turret bonuses
+    BulletsShotPerReload,
+    BulletSpreadAngle
+}
+
+[Serializable]
+public class TurretBonusClass
+{
+    public PlayerStatEnum StatName;
+    public float StatAmount;
 }
 
 public class PlayerActor : StageActor, IPassableObject

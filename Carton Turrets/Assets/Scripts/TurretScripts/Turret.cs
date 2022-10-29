@@ -88,8 +88,14 @@ public class Turret : StageActor, IPassableObject
         if(chosenBuildType == TurretBuildTypes.none){return;}
 
         currentTier = RequestedTier;
-        Action<Turret, PlayerActor> chosenBuildFunc = PublicUpgradeClasses.TurretBuildFuncDict[chosenBuildType];
-        chosenBuildFunc(this, p);
+        Action<Turret, PlayerActor, Hashtable> chosenBuildFunc = PublicUpgradeClasses.TurretBuildFuncDict[chosenBuildType];
+
+        Hashtable hash = new Hashtable();
+        foreach (var item in this.TurretData.Tiers[currentTier].TurretBuildMods)
+        {
+            hash.Add(item.StatName, item.StatAmount);
+        }
+        chosenBuildFunc(this, p, hash);
     }
 
     public override void Setup()

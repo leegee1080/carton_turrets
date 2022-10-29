@@ -48,6 +48,7 @@ public struct UpgradeTier
     public PlayerStatEnum EquipFunc;
     public PlayerUpgradeActivateTypes ActivateFunc;
     public TurretBuildTypes TurretBuildFunc;
+    public TurretBonusClass[] TurretBuildMods;
     public TurretFireTypes TurretFireFunc;
     public TurretDeathTypes TurretDeathFunc;
     public float amt;
@@ -152,12 +153,12 @@ public class PublicUpgradeClasses
 #endregion
 
 #region TurretBuildFuncs
-    public static readonly Dictionary<TurretBuildTypes, Action<Turret, PlayerActor>> TurretBuildFuncDict = new Dictionary<TurretBuildTypes, Action<Turret, PlayerActor>>
+    public static readonly Dictionary<TurretBuildTypes, Action<Turret, PlayerActor, Hashtable>> TurretBuildFuncDict = new Dictionary<TurretBuildTypes, Action<Turret, PlayerActor, Hashtable>>
     {
         {TurretBuildTypes.none, null},
         {TurretBuildTypes.normal, NormalBuild}
     };
-    public static void NormalBuild(Turret t, PlayerActor p)
+    public static void NormalBuild(Turret t, PlayerActor p, Hashtable hashtable)
     {
         t.ControllingActor = p;
 
@@ -181,11 +182,13 @@ public class PublicUpgradeClasses
         }   
 
         t.AdjustCollider(t.TurretData.TColliderSize);
-
-        t.BulletsShotPerReload = t.TurretData.BulletsShotPerReload;
-        t.BulletSpreadAngle = t.TurretData.BulletSpreadAngle;
         t._barrel.transform.rotation = t.gameObject.transform.rotation;
         t._barrel.transform.rotation *= Quaternion.AngleAxis((-t.BulletSpreadAngle * (t.BulletsShotPerReload-1))/2, Vector3.up);
+
+
+        t.BulletsShotPerReload = (int)(hashtable.Contains(PlayerStatEnum.BulletsShotPerReload) ? (float)hashtable[PlayerStatEnum.BulletsShotPerReload] : t.TurretData.BulletsShotPerReload);
+        t.BulletSpreadAngle =(int)(hashtable.Contains(PlayerStatEnum.BulletSpreadAngle) ? (float)hashtable[PlayerStatEnum.BulletSpreadAngle] : t.TurretData.BulletSpreadAngle);
+
         t.BLifeTime = t.TurretData.BLifeTime * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletLifetimeBonus]; 
         t.BDamage = t.TurretData.BDamage; 
         t.BSpeed = t.TurretData.BSpeed; 
@@ -222,13 +225,14 @@ public class PublicUpgradeClasses
     {
         if(t.Ammo <= 0){t.ChangeState(new TurretState_Dead()); return;}
         t.Ammo -= 1;
+        float angle = -((t.BulletSpreadAngle*(t.BulletsShotPerReload-1))/2);
         for (int i = 0; i < t.BulletsShotPerReload; i++)
         {
             GameObject bullet = t.ControllingActor.BulletObjectPools[t.TurretData.name].ActivateNextObject(t);
             bullet.transform.position = t._barrel.transform.position;
-            // bullet.transform.rotation = this.gameObject.transform.rotation;
-            float angle = i * t.BulletSpreadAngle;
+            //bullet.transform.rotation = t._barrel.transform.rotation;
             bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.up) * t._barrel.transform.rotation;
+            angle += t.BulletSpreadAngle;
         }
     }
 #endregion
