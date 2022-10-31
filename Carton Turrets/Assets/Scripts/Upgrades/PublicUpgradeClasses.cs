@@ -186,27 +186,40 @@ public class PublicUpgradeClasses
         t._barrel.transform.rotation *= Quaternion.AngleAxis((-t.BulletSpreadAngle * (t.BulletsShotPerReload-1))/2, Vector3.up);
 
 
-        t.BulletsShotPerReload = (int)(hashtable.Contains(PlayerStatEnum.BulletsShotPerReload) ? (float)hashtable[PlayerStatEnum.BulletsShotPerReload] : t.TurretData.BulletsShotPerReload);
-        t.BulletSpreadAngle =(int)(hashtable.Contains(PlayerStatEnum.BulletSpreadAngle) ? (float)hashtable[PlayerStatEnum.BulletSpreadAngle] : t.TurretData.BulletSpreadAngle);
+        t.BulletsShotPerReload = (int)(hashtable.Contains(PlayerStatEnum.BulletsShotPerReload) 
+        ? (float)hashtable[PlayerStatEnum.BulletsShotPerReload] + t.TurretData.BulletsShotPerReload 
+        : t.TurretData.BulletsShotPerReload);
 
-        t.BLifeTime = t.TurretData.BLifeTime * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletLifetimeBonus]; 
-        t.BDamage = t.TurretData.BDamage; 
-        t.BSpeed = t.TurretData.BSpeed; 
+        t.BulletSpreadAngle =(int)(hashtable.Contains(PlayerStatEnum.BulletSpreadAngle) 
+        ? (float)hashtable[PlayerStatEnum.BulletSpreadAngle] + t.TurretData.BulletSpreadAngle 
+        : t.TurretData.BulletSpreadAngle);
+
+        t.BLifeTime =(float)(hashtable.Contains(PlayerStatEnum.CurrentBulletLifetimeBonus) 
+        ? (float)hashtable[PlayerStatEnum.CurrentBulletLifetimeBonus] + t.TurretData.BLifeTime * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletLifetimeBonus] 
+        : t.TurretData.BLifeTime * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletLifetimeBonus]); 
+        
+        t.BDamage =(float)(hashtable.Contains(PlayerStatEnum.CurrentBulletDamageBonus) 
+        ? (float)hashtable[PlayerStatEnum.CurrentBulletDamageBonus] + t.TurretData.BDamage * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletDamageBonus] 
+        : t.TurretData.BDamage * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletDamageBonus]); 
+        
+        t.BSpeed =(float)(hashtable.Contains(PlayerStatEnum.CurrentBulletSpeedBonus) 
+        ? (float)hashtable[PlayerStatEnum.CurrentBulletSpeedBonus] + t.TurretData.BSpeed * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletSpeedBonus] 
+        : t.TurretData.BSpeed * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletSpeedBonus]); 
+
 
         t.ELifeTime = t.TurretData.ELifeTime; 
-        t.EDamage = t.TurretData.EDamage; 
-        t.ESpeed = t.TurretData.ESpeed; 
-        t.ESize = t.TurretData.ESize; 
 
+        t.EDamage =(float)(hashtable.Contains(PlayerStatEnum.CurrentExploDamageBonus) 
+        ? (float)hashtable[PlayerStatEnum.CurrentExploDamageBonus] + t.TurretData.EDamage * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentExploDamageBonus] 
+        : t.TurretData.EDamage * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentExploDamageBonus]); 
 
-        // // // // CurrentBulletDamageBonus = PlayerData.StartingBulletDamageBonus;
-        // // // // CurrentBulletRangeBonus= PlayerData.StartingBulletRangeBonus;
-        // // // // CurrentBulletSpeedBonus= PlayerData.StartingBulletSpeedBonus;
+        t.ESpeed =(float)(hashtable.Contains(PlayerStatEnum.CurrentExploSpeedBonus) 
+        ? (float)hashtable[PlayerStatEnum.CurrentExploSpeedBonus] + t.TurretData.ESpeed * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentExploSpeedBonus] 
+        : t.TurretData.ESpeed * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentExploSpeedBonus]); 
 
-        // // // // CurrentExploDamageBonus= PlayerData.StartingExploDamageBonus;
-        // // // // CurrentExploSpeedBonus= PlayerData.StartingExploSpeedBonus;
-        // // // // CurrentExploSizeBonus= PlayerData.StartingExploSizeBonus;
-        // // // // CurrentExploDamageRangeBonus= PlayerData.StartingExploDamageRangeBonus;
+        t.ESize =(float)(hashtable.Contains(PlayerStatEnum.CurrentExploSizeBonus) 
+        ? (float)hashtable[PlayerStatEnum.CurrentExploSizeBonus] + t.TurretData.ESize * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentExploSizeBonus] 
+        : t.TurretData.ESize * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentExploSizeBonus]); 
 
 
         // _turretMesh.mesh = tStats.Mesh;

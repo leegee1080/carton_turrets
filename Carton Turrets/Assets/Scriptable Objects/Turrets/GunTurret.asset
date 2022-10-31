@@ -40,13 +40,37 @@ MonoBehaviour:
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
-  - TierDesc: Tier 2 (3 Bullets)
+  - TierDesc: Tier 3 (3 Bullets)
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods:
     - StatName: 19
       StatAmount: 3
+    - StatName: 20
+      StatAmount: 10
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 4 (4 Bullets)
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 19
+      StatAmount: 4
+    - StatName: 20
+      StatAmount: 10
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 5 (5 Bullets)
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 19
+      StatAmount: 5
     - StatName: 20
       StatAmount: 10
     TurretFireFunc: 1

@@ -20,10 +20,37 @@ MonoBehaviour:
   <UpgradeDesc>k__BackingField: Fires an projectile in a high arc.
   <UpgradeType>k__BackingField: 0
   <Tiers>k__BackingField:
-  - TierDesc: 
+  - TierDesc: Tier 1
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
+    TurretBuildMods: []
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 2 (+2 bullets )
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 20
+      StatAmount: 180
+    - StatName: 19
+      StatAmount: 2
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 3 (+explo size)
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 20
+      StatAmount: 180
+    - StatName: 19
+      StatAmount: 2
+    - StatName: 17
+      StatAmount: 0.1
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
