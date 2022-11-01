@@ -24,6 +24,7 @@ MonoBehaviour:
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
+    TurretBuildMods: []
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
@@ -41,6 +42,11 @@ MonoBehaviour:
   EDamage: 0
   ESpeed: 1
   ESize: 0.3
+  UseAltExploStats: 1
+  ALTELifeTime: 0.2
+  ALTEDamage: 0
+  ALTESpeed: 1
+  ALTESize: 0.3
   TurretAmountToPool: 10
   BulletAmountToPool: 120
   ExplosionAmountToPool: 10

@@ -43,5 +43,6 @@ public class MortarBullet : PoolableBulletObject
         _explosionObject.transform.position = gameObject.transform.position;
         _explosionObject.transform.rotation = gameObject.transform.rotation;
         _explosionObject.GetComponent<PoolableObject>().ActivateObjectFunc.Invoke(_parentTurret);
+        _timeElapsed=0;
     }
 }

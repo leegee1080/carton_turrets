@@ -37,6 +37,8 @@ MonoBehaviour:
       StatAmount: 2
     - StatName: 20
       StatAmount: 10
+    - StatName: 10
+      StatAmount: 4
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
@@ -49,6 +51,8 @@ MonoBehaviour:
       StatAmount: 3
     - StatName: 20
       StatAmount: 10
+    - StatName: 10
+      StatAmount: 5
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
@@ -61,6 +65,8 @@ MonoBehaviour:
       StatAmount: 4
     - StatName: 20
       StatAmount: 10
+    - StatName: 10
+      StatAmount: 6
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
@@ -73,6 +79,8 @@ MonoBehaviour:
       StatAmount: 5
     - StatName: 20
       StatAmount: 10
+    - StatName: 10
+      StatAmount: 7
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
@@ -90,6 +98,11 @@ MonoBehaviour:
   EDamage: 0
   ESpeed: 1
   ESize: 0.3
+  UseAltExploStats: 1
+  ALTELifeTime: 0.2
+  ALTEDamage: 0
+  ALTESpeed: 1
+  ALTESize: 0.3
   TurretAmountToPool: 10
   BulletAmountToPool: 60
   ExplosionAmountToPool: 10

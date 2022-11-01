@@ -36,6 +36,13 @@ public class TurretScriptableObject : ActorDataScriptableObject, IUpgradeable
     public float EDamage;
     public float ESpeed;
     public float ESize;
+    public bool UseAltExploStats;
+    [Space]
+    [Header("***If UseAltExploStats set to TRUE, then the turret death explosion will be uneffected by the player bonuses.***")]
+    public float ALTELifeTime;
+    public float ALTEDamage;
+    public float ALTESpeed;
+    public float ALTESize;
 
     [Header("Turret Vars")]
     public int TurretAmountToPool;

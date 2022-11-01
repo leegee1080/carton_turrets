@@ -28,15 +28,17 @@ MonoBehaviour:
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
-  - TierDesc: Tier 2 (+2 bullets )
+  - TierDesc: Tier 2 (+1 bullets )
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods:
     - StatName: 20
-      StatAmount: 180
+      StatAmount: 90
     - StatName: 19
-      StatAmount: 2
+      StatAmount: 1
+    - StatName: 10
+      StatAmount: 4
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
@@ -46,11 +48,45 @@ MonoBehaviour:
     TurretBuildFunc: 1
     TurretBuildMods:
     - StatName: 20
-      StatAmount: 180
+      StatAmount: 90
+    - StatName: 19
+      StatAmount: 1
+    - StatName: 17
+      StatAmount: 0.5
+    - StatName: 10
+      StatAmount: 5
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 4 (+2 bullets)
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 20
+      StatAmount: 90
     - StatName: 19
       StatAmount: 2
     - StatName: 17
-      StatAmount: 0.1
+      StatAmount: 0.5
+    - StatName: 10
+      StatAmount: 6
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 5 (+3 bullets)
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 20
+      StatAmount: 90
+    - StatName: 19
+      StatAmount: 3
+    - StatName: 17
+      StatAmount: 0.5
+    - StatName: 10
+      StatAmount: 7
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
@@ -68,6 +104,11 @@ MonoBehaviour:
   EDamage: 10
   ESpeed: 1
   ESize: 0.5
+  UseAltExploStats: 1
+  ALTELifeTime: 0.2
+  ALTEDamage: 0
+  ALTESpeed: 1
+  ALTESize: 0.3
   TurretAmountToPool: 10
   BulletAmountToPool: 120
   ExplosionAmountToPool: 10
