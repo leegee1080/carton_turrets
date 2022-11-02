@@ -9,7 +9,6 @@ public class TurretScriptableObject : ActorDataScriptableObject, IUpgradeable
     
     //upgrade stats
     [field: SerializeField]public string UpgradeName {get; set;}
-    [field: SerializeField]public string UpgradeDesc {get; set;}
     [field: SerializeField]public UpgradeType UpgradeType {get; set;}
     [field: SerializeField]public UpgradeTier[] Tiers {get; set;}
     [field: SerializeField]public bool IsUnlimited {get; set;}

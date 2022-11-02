@@ -45,6 +45,8 @@ public enum TurretDeathTypes
 public struct UpgradeTier
 {
     public string TierDesc;
+    [TextArea]
+    public string InGameDesc;
     public PlayerStatEnum EquipFunc;
     public PlayerUpgradeActivateTypes ActivateFunc;
     public TurretBuildTypes TurretBuildFunc;

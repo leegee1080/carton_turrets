@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FreezeTurret
   m_EditorClassIdentifier: 
   name: Freeze Turret
-  Desc: Fires a large slow projectile.
+  Desc: Fires a large slow projectile. Bullet speed controls the laser length)
   MaxHealth: 1
   MaxSpeed: 1
   <UpgradeName>k__BackingField: Freeze Turret

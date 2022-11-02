@@ -20,7 +20,7 @@ MonoBehaviour:
   <UpgradeDesc>k__BackingField: Eveything about this one is slow...
   <UpgradeType>k__BackingField: 0
   <Tiers>k__BackingField:
-  - TierDesc: 
+  - TierDesc: Tier 1
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
@@ -28,10 +28,56 @@ MonoBehaviour:
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
+  - TierDesc: Tier 2 (+ 1 ammo)
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 10
+      StatAmount: 1
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 3 (+ 2 ammo)
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 10
+      StatAmount: 2
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 4 (+ Bullet range)
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 10
+      StatAmount: 2
+    - StatName: 12
+      StatAmount: 2
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 5 (- bullet speed)
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 10
+      StatAmount: 2
+    - StatName: 12
+      StatAmount: 2
+    - StatName: 14
+      StatAmount: -0.01
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 5
-  TReloadTime: 2
-  TAmmo: 4
+  TReloadTime: 4
+  TAmmo: 1
   TColliderSize: 0.04
   BulletsShotPerReload: 1
   BulletSpreadAngle: 0
