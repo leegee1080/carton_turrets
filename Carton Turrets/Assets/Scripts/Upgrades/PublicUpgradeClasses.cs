@@ -271,7 +271,16 @@ public class PublicUpgradeClasses
         PlayerActor pd = StageController.singlton.Player;
 
         UpgradeSlot newUpgrade = new UpgradeSlot();
-        newUpgrade.name = upgradeable.UpgradeName;
+        if(upgradeable.GetType() == typeof(TurretScriptableObject))
+        {
+            TurretScriptableObject actorCast = (TurretScriptableObject)upgradeable;
+            newUpgrade.name = actorCast.name;
+        }
+        else
+        {
+            newUpgrade.name = upgradeable.UpgradeName;
+        }
+
         newUpgrade.SO = upgradeable;
         newUpgrade.Tier = 0;
         newUpgrade.MaxAllowedTier = newUpgrade.SO.Tiers.Length -1;

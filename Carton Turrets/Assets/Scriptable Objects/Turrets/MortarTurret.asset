@@ -17,10 +17,10 @@ MonoBehaviour:
   MaxHealth: 1
   MaxSpeed: 1
   <UpgradeName>k__BackingField: Mortar Turret
-  <UpgradeDesc>k__BackingField: Fires an projectile in a high arc.
   <UpgradeType>k__BackingField: 0
   <Tiers>k__BackingField:
   - TierDesc: Tier 1
+    InGameDesc: Fires an projectile in a high arc.
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
@@ -29,6 +29,7 @@ MonoBehaviour:
     TurretDeathFunc: 1
     amt: 0
   - TierDesc: Tier 2 (+1 bullets )
+    InGameDesc: Now with two shots.
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
@@ -43,6 +44,7 @@ MonoBehaviour:
     TurretDeathFunc: 1
     amt: 0
   - TierDesc: Tier 3 (+explo size)
+    InGameDesc: The impact is bigger.
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
@@ -59,6 +61,7 @@ MonoBehaviour:
     TurretDeathFunc: 1
     amt: 0
   - TierDesc: Tier 4 (+2 bullets)
+    InGameDesc: Now with three shots.
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
@@ -75,6 +78,7 @@ MonoBehaviour:
     TurretDeathFunc: 1
     amt: 0
   - TierDesc: Tier 5 (+3 bullets)
+    InGameDesc: Now with four shots.
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1

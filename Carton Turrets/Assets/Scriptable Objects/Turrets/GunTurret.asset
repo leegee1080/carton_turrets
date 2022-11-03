@@ -17,10 +17,10 @@ MonoBehaviour:
   MaxHealth: 1
   MaxSpeed: 1
   <UpgradeName>k__BackingField: Gun Turret
-  <UpgradeDesc>k__BackingField: Shoots bullets out of the barrel.
   <UpgradeType>k__BackingField: 0
   <Tiers>k__BackingField:
   - TierDesc: Tier 1
+    InGameDesc: Simply shoots a bullet out the front.
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
@@ -28,7 +28,8 @@ MonoBehaviour:
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
-  - TierDesc: Tier 2 (2 Bullets)
+  - TierDesc: Tier 2 (+1 Bullets)
+    InGameDesc: Shoots two bullets now!
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
@@ -42,7 +43,8 @@ MonoBehaviour:
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
-  - TierDesc: Tier 3 (3 Bullets)
+  - TierDesc: Tier 3 (+2 Bullets)
+    InGameDesc: Shoots three bullets now!
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
@@ -56,7 +58,8 @@ MonoBehaviour:
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
-  - TierDesc: Tier 4 (4 Bullets)
+  - TierDesc: Tier 4 (+3 Bullets)
+    InGameDesc: Shoots four bullets now!
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
@@ -70,7 +73,8 @@ MonoBehaviour:
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
-  - TierDesc: Tier 5 (5 Bullets)
+  - TierDesc: Tier 5 (+4 Bullets)
+    InGameDesc: Shoots five bullets now!
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1

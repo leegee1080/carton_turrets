@@ -1126,7 +1126,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7dd724062dde52c4f883d72e3807fd76, type: 2}
   - {fileID: 11400000, guid: 0f6138b1610cf924f9ca722223425f9d, type: 2}
   - {fileID: 11400000, guid: 83366c71f3c38f748816973a2d25d8fe, type: 2}
-  - {fileID: 11400000, guid: a4ed9379b4f8c444cbc60133dff377e5, type: 2}
   - {fileID: 11400000, guid: 1f525070ee3977242b7355573cfa7d75, type: 2}
   FillInUpgradeList:
   - {fileID: 11400000, guid: 9466c5cddd4909347aa821e62972d0a3, type: 2}

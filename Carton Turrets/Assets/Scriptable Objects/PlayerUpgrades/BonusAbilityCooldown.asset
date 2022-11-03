@@ -17,21 +17,41 @@ MonoBehaviour:
   <UpgradeDesc>k__BackingField: Cast abilities and place turrets 2x faster.
   <UpgradeType>k__BackingField: 1
   <Tiers>k__BackingField:
-  - TierDesc: 
+  - TierDesc: Tier 1
+    InGameDesc: Place turrets down faster.
     EquipFunc: 8
     ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
     amt: 1
   - TierDesc: Cast abilities and place turrets 3x faster.
+    InGameDesc: 
     EquipFunc: 8
     ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
     amt: 1
   - TierDesc: Cast abilities and place turrets 4x faster.
+    InGameDesc: 
     EquipFunc: 8
     ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
     amt: 1
   - TierDesc: Cast abilities and place turrets 5x faster.
+    InGameDesc: 
     EquipFunc: 8
     ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
     amt: 1
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0

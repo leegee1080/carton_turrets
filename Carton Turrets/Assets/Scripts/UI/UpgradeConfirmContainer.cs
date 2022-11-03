@@ -40,8 +40,7 @@ public class UpgradeConfirmContainer : MonoBehaviour
         _nextTier = tier;
         _chosenUpgradeSR.sprite = _chosenUpgrade.Icon;
         _chosenUpgradeNameText.text = _chosenUpgrade.UpgradeName;
-        print("this is where desc is upgraded (use upgrade tier ---> InGameDesc;)");
-        // _chosenUpgradeDescText.text = _chosenUpgrade.UpgradeDesc;
+        _chosenUpgradeDescText.text = _chosenUpgrade.Tiers[_nextTier].InGameDesc;
         SetupStatCompare();
 
         ShowNextAvailSlot(passedChosenUpgrade, tier);

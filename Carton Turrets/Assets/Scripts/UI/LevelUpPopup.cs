@@ -248,8 +248,7 @@ public class LevelUpPopup : MonoBehaviour
             if(!_buttonArray[i].activeSelf){continue;}
             _iconArray[i].sprite = AvailableUpgradeArray[i].Icon;
             _textBtnArray[i].text = AvailableUpgradeArray[i].UpgradeName;
-            // _textDescArray[i].text = AvailableUpgradeArray[i].UpgradeDesc;
-            print("this is where desc is upgraded (use upgrade tier ---> InGameDesc;)");
+            _textDescArray[i].text = AvailableUpgradeArray[i].Tiers[0].InGameDesc;
         }
     }
 

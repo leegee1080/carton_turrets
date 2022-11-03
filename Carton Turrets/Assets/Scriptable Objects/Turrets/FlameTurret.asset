@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b8ea5a4eda5b94c81a5b96cd80fbc2, type: 3}
   m_Name: FlameTurret
   m_EditorClassIdentifier: 
-  name: Flame Turret
+  name: FlameTurret
   Desc: Channels a beam out front.
   MaxHealth: 1
   MaxSpeed: 1
   <UpgradeName>k__BackingField: Flame Turret
-  <UpgradeDesc>k__BackingField: Spits fire for a little while.
   <UpgradeType>k__BackingField: 0
   <Tiers>k__BackingField:
-  - TierDesc: 
+  - TierDesc: Tier 1
+    InGameDesc: Channels a beam out front.
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
