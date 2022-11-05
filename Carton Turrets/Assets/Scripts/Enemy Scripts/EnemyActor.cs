@@ -153,6 +153,7 @@ public class EnemyActor : StageActor, IColliderMessageable
 
     public void ActivateEnemy(IPassableObject info)
     {
+        if(CurrentStateClass != null && CurrentStateClass.name == "normal"){return;}
         EnemyInfo ei = (EnemyInfo)info;
         EnemyData = ei.info;
         Activate();
