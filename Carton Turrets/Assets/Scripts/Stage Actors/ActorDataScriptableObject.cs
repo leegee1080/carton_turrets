@@ -4,6 +4,7 @@ public class ActorDataScriptableObject : ScriptableObject
 {
     [Header("Character Text")]
     public new string name;
+    [TextArea]
     public string Desc;
 
     [Header("Character Vars")]

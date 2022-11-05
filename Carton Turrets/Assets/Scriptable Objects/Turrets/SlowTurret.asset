@@ -12,25 +12,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b8ea5a4eda5b94c81a5b96cd80fbc2, type: 3}
   m_Name: SlowTurret
   m_EditorClassIdentifier: 
-  name: Slow Turret
+  name: SlowTurret
   Desc: Fires a large slow projectile.
   MaxHealth: 1
   MaxSpeed: 1
-  <UpgradeName>k__BackingField: Slow Turret
-  <UpgradeDesc>k__BackingField: Eveything about this one is slow...
+  <UpgradeName>k__BackingField: Nova Turret
   <UpgradeType>k__BackingField: 0
   <Tiers>k__BackingField:
-  - TierDesc: 
+  - TierDesc: Tier 1
+    InGameDesc: Fires a large slow-moving projectile.
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
+    TurretBuildMods: []
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 2 (+ 1 ammo)
+    InGameDesc: One more ammo before turret is done.
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 10
+      StatAmount: 1
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 3 (+ 2 ammo)
+    InGameDesc: Two more ammo before turret is done.
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 10
+      StatAmount: 2
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 4 (+ Bullet range)
+    InGameDesc: The projectile travels farther now.
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 10
+      StatAmount: 2
+    - StatName: 12
+      StatAmount: 2
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 5 (- bullet speed)
+    InGameDesc: Projectile moves slower.
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 10
+      StatAmount: 2
+    - StatName: 12
+      StatAmount: 2
+    - StatName: 14
+      StatAmount: -0.01
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 5
-  TReloadTime: 2
-  TAmmo: 4
+  TReloadTime: 4
+  TAmmo: 1
   TColliderSize: 0.04
   BulletsShotPerReload: 1
   BulletSpreadAngle: 0
@@ -41,6 +92,11 @@ MonoBehaviour:
   EDamage: 0
   ESpeed: 1
   ESize: 0.3
+  UseAltExploStats: 1
+  ALTELifeTime: 0.2
+  ALTEDamage: 0
+  ALTESpeed: 1
+  ALTESize: 0.3
   TurretAmountToPool: 10
   BulletAmountToPool: 120
   ExplosionAmountToPool: 10

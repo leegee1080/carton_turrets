@@ -17,17 +17,32 @@ MonoBehaviour:
   <UpgradeDesc>k__BackingField: Run Faster!
   <UpgradeType>k__BackingField: 1
   <Tiers>k__BackingField:
-  - TierDesc: 
+  - TierDesc: Tier 1
+    InGameDesc: Run Faster!
     EquipFunc: 4
     ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
     amt: 0.5
   - TierDesc: Run Faster!
+    InGameDesc: 
     EquipFunc: 4
     ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
     amt: 0.5
   - TierDesc: Run Faster!
+    InGameDesc: 
     EquipFunc: 4
     ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
     amt: 0.5
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0

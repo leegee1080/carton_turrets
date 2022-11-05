@@ -17,25 +17,79 @@ MonoBehaviour:
   MaxHealth: 1
   MaxSpeed: 1
   <UpgradeName>k__BackingField: Gun Turret
-  <UpgradeDesc>k__BackingField: Shoots bullets out of the barrel.
   <UpgradeType>k__BackingField: 0
   <Tiers>k__BackingField:
-  - TierDesc: 
+  - TierDesc: Tier 1
+    InGameDesc: Simply shoots a bullet out the front.
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
+    TurretBuildMods: []
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
-  - TierDesc: 
+  - TierDesc: Tier 2 (+1 Bullets)
+    InGameDesc: Shoots two bullets now!
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
-    TurretFireFunc: 0
-    TurretDeathFunc: 0
+    TurretBuildMods:
+    - StatName: 19
+      StatAmount: 2
+    - StatName: 20
+      StatAmount: 10
+    - StatName: 10
+      StatAmount: 4
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 3 (+2 Bullets)
+    InGameDesc: Shoots three bullets now!
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 19
+      StatAmount: 3
+    - StatName: 20
+      StatAmount: 10
+    - StatName: 10
+      StatAmount: 5
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 4 (+3 Bullets)
+    InGameDesc: Shoots four bullets now!
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 19
+      StatAmount: 4
+    - StatName: 20
+      StatAmount: 10
+    - StatName: 10
+      StatAmount: 6
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 5 (+4 Bullets)
+    InGameDesc: Shoots five bullets now!
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 19
+      StatAmount: 5
+    - StatName: 20
+      StatAmount: 10
+    - StatName: 10
+      StatAmount: 7
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
     amt: 0
   <IsUnlimited>k__BackingField: 0
-  <Cooldown>k__BackingField: 3
+  <Cooldown>k__BackingField: 2
   TReloadTime: 1.5
   TAmmo: 2
   TColliderSize: 0.04
@@ -48,6 +102,11 @@ MonoBehaviour:
   EDamage: 0
   ESpeed: 1
   ESize: 0.3
+  UseAltExploStats: 1
+  ALTELifeTime: 0.2
+  ALTEDamage: 0
+  ALTESpeed: 1
+  ALTESize: 0.3
   TurretAmountToPool: 10
   BulletAmountToPool: 60
   ExplosionAmountToPool: 10

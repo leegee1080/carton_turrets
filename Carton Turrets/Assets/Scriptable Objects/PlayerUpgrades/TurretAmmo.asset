@@ -17,9 +17,14 @@ MonoBehaviour:
   <UpgradeDesc>k__BackingField: 10x More ammo to fire before the turret expires.
   <UpgradeType>k__BackingField: 1
   <Tiers>k__BackingField:
-  - TierDesc: 
+  - TierDesc: Tier 1
+    InGameDesc: 10x More ammo to fire before the turret expires.
     EquipFunc: 10
     ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
     amt: 10
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0

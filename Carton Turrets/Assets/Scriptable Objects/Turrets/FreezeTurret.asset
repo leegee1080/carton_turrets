@@ -12,18 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b8ea5a4eda5b94c81a5b96cd80fbc2, type: 3}
   m_Name: FreezeTurret
   m_EditorClassIdentifier: 
-  name: Freeze Turret
-  Desc: Fires a large slow projectile.
+  name: FreezeTurret
+  Desc: Fires a beam. Bullet speed controls the laser length)
   MaxHealth: 1
   MaxSpeed: 1
   <UpgradeName>k__BackingField: Freeze Turret
-  <UpgradeDesc>k__BackingField: Eveything about this one is slow...
   <UpgradeType>k__BackingField: 0
   <Tiers>k__BackingField:
-  - TierDesc: 
+  - TierDesc: Tier 1
+    InGameDesc: A steady beam that freezes enemies for a moment.
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
+    TurretBuildMods: []
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0
@@ -41,6 +42,11 @@ MonoBehaviour:
   EDamage: 0
   ESpeed: 1
   ESize: 0.3
+  UseAltExploStats: 1
+  ALTELifeTime: 0.2
+  ALTEDamage: 0
+  ALTESpeed: 1
+  ALTESize: 0.3
   TurretAmountToPool: 10
   BulletAmountToPool: 120
   ExplosionAmountToPool: 10

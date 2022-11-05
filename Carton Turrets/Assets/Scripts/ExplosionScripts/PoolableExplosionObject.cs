@@ -13,6 +13,7 @@ public class PoolableExplosionObject : MonoBehaviour
     private float _speed;
 
     private bool _fired = false;
+    [SerializeField]private bool _ignoreUseAltExploStatsBool = false;
 
     private void GrabInfoFromTurret(Turret t)
     {
@@ -20,6 +21,14 @@ public class PoolableExplosionObject : MonoBehaviour
         _damage = t.EDamage;
         _size = t.ESize;
         _speed = t.ESpeed;
+
+        if(t.TurretData.UseAltExploStats && !_ignoreUseAltExploStatsBool)
+        {
+            _lifeTime = t.TurretData.ALTELifeTime;
+            _damage = t.TurretData.ALTEDamage;
+            _size = t.TurretData.ALTESize;
+            _speed = t.TurretData.ALTESpeed;
+        }
     }
 
     public void Fire(IPassableObject Turret)

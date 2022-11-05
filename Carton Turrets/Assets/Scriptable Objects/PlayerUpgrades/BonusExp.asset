@@ -17,13 +17,23 @@ MonoBehaviour:
   <UpgradeDesc>k__BackingField: Get more XP per pickup.
   <UpgradeType>k__BackingField: 1
   <Tiers>k__BackingField:
-  - TierDesc: 
+  - TierDesc: Tier 1
+    InGameDesc: Get more XP per pickup.
     EquipFunc: 5
     ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
     amt: 10
   - TierDesc: 10 Times More XP!
+    InGameDesc: 
     EquipFunc: 5
     ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
     amt: 20
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0

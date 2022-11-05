@@ -17,21 +17,41 @@ MonoBehaviour:
   <UpgradeDesc>k__BackingField: Turrets go through ammo 5x faster.
   <UpgradeType>k__BackingField: 1
   <Tiers>k__BackingField:
-  - TierDesc: 
+  - TierDesc: Tier 1
+    InGameDesc: Turrets go through ammo 5x faster.
     EquipFunc: 9
     ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
     amt: 5
   - TierDesc: Turrets go through ammo 10x faster.
+    InGameDesc: 
     EquipFunc: 9
     ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
     amt: 5
   - TierDesc: Turrets go through ammo 15x faster.
+    InGameDesc: 
     EquipFunc: 9
     ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
     amt: 5
   - TierDesc: Turrets go through ammo 20x faster.
+    InGameDesc: 
     EquipFunc: 9
     ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
     amt: 5
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0

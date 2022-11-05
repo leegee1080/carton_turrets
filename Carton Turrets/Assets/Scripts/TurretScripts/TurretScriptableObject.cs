@@ -9,7 +9,6 @@ public class TurretScriptableObject : ActorDataScriptableObject, IUpgradeable
     
     //upgrade stats
     [field: SerializeField]public string UpgradeName {get; set;}
-    [field: SerializeField]public string UpgradeDesc {get; set;}
     [field: SerializeField]public UpgradeType UpgradeType {get; set;}
     [field: SerializeField]public UpgradeTier[] Tiers {get; set;}
     [field: SerializeField]public bool IsUnlimited {get; set;}
@@ -36,6 +35,13 @@ public class TurretScriptableObject : ActorDataScriptableObject, IUpgradeable
     public float EDamage;
     public float ESpeed;
     public float ESize;
+    public bool UseAltExploStats;
+    [Space]
+    [Header("***If UseAltExploStats set to TRUE, then the turret death explosion will be uneffected by the player bonuses.***")]
+    public float ALTELifeTime;
+    public float ALTEDamage;
+    public float ALTESpeed;
+    public float ALTESize;
 
     [Header("Turret Vars")]
     public int TurretAmountToPool;

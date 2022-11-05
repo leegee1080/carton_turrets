@@ -17,9 +17,14 @@ MonoBehaviour:
   <UpgradeDesc>k__BackingField: Increase your max health by 100.
   <UpgradeType>k__BackingField: 1
   <Tiers>k__BackingField:
-  - TierDesc: 
+  - TierDesc: Tier 1
+    InGameDesc: Increase your max health by 100.
     EquipFunc: 3
     ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
     amt: 100
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0
