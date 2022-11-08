@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: FreezeTurret
   m_EditorClassIdentifier: 
   name: FreezeTurret
-  Desc: Fires a beam. Bullet speed controls the laser length)
+  Desc: Fires a beam. (Bullet speed controls the laser length) (bullet damage is
+    freeze time)
   MaxHealth: 1
   MaxSpeed: 1
   <UpgradeName>k__BackingField: Freeze Turret
@@ -25,6 +26,66 @@ MonoBehaviour:
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods: []
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 2 (+b lifetime)
+    InGameDesc: The beam now lasts one second longer.
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 12
+      StatAmount: 1
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 3 (+2 beam)
+    InGameDesc: The turret fires 3 beams.
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 12
+      StatAmount: 1
+    - StatName: 19
+      StatAmount: 2
+    - StatName: 20
+      StatAmount: 45
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 4 (+b speed)
+    InGameDesc: The beams are longer.
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 12
+      StatAmount: 1
+    - StatName: 19
+      StatAmount: 2
+    - StatName: 20
+      StatAmount: 45
+    - StatName: 14
+      StatAmount: 0.01
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 5 (+b lifetime)
+    InGameDesc: The turret lasts 1 second longer.
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 12
+      StatAmount: 2
+    - StatName: 19
+      StatAmount: 2
+    - StatName: 20
+      StatAmount: 45
+    - StatName: 14
+      StatAmount: 0.01
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0

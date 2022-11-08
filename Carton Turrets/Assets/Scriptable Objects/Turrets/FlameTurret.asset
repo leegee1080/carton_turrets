@@ -20,11 +20,69 @@ MonoBehaviour:
   <UpgradeType>k__BackingField: 0
   <Tiers>k__BackingField:
   - TierDesc: Tier 1
-    InGameDesc: Channels a beam out front.
+    InGameDesc: Fires a short range flame.
     EquipFunc: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods: []
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 2 (+1 bullet)
+    InGameDesc: The flames are twice as wide.
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 19
+      StatAmount: 1
+    - StatName: 20
+      StatAmount: 15
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 3 (+damage)
+    InGameDesc: The flame does twice as much damage.
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 19
+      StatAmount: 1
+    - StatName: 20
+      StatAmount: 15
+    - StatName: 15
+      StatAmount: 0.2
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 4 (+2 bullet)
+    InGameDesc: The flame is twice as wide again.
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 19
+      StatAmount: 2
+    - StatName: 20
+      StatAmount: 15
+    - StatName: 15
+      StatAmount: 0.2
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+    amt: 0
+  - TierDesc: Tier 5 (+damage)
+    InGameDesc: The fire is twice as powerful again.
+    EquipFunc: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 19
+      StatAmount: 2
+    - StatName: 20
+      StatAmount: 15
+    - StatName: 15
+      StatAmount: 0.6
     TurretFireFunc: 1
     TurretDeathFunc: 1
     amt: 0

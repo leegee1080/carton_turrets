@@ -197,7 +197,7 @@ public class PlayerActor : StageActor, IPassableObject
     {
         if(CurrentEquipmentArray[slot].name == ""){Debug.LogWarning("Could not place turret, slot chosen is empty!"); return;}
 
-        GameObject tTurret =  TurretObjectPools[CurrentEquipmentArray[slot].name].ActivateNextObject(this);
+        GameObject tTurret =  TurretObjectPools[CurrentEquipmentArray[slot].SO.UpgradeName].ActivateNextObject(this);
         tTurret.transform.position = gameObject.transform.position + (LastViewInput * turretPlaceOffset);
         tTurret.transform.rotation = Quaternion.LookRotation(LastViewInput*90);
     }

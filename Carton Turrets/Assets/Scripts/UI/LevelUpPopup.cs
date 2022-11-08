@@ -35,7 +35,6 @@ public class LevelUpPopup : MonoBehaviour
         Hide();
 
         Debug.Log("LevelUpPopup is gathering potential upgrades. (Upgrade this to pull from one global source (Load into a global constant that pulls from a folder maybe))");
-        Debug.Log("implement the commented notes in the Turret class");
         Debug.Log("implement the commented notes in the EnemyActor Class");
         
         for (int i = 0; i < UnfilteredEquipmentArray.Length; i++)
@@ -131,6 +130,7 @@ public class LevelUpPopup : MonoBehaviour
     {
         StageController SCref =  StageController.singlton;
 
+
         for (int i = 0; i < upgradeArray.Length; i++)
         {
             if(chosenUpgrade.UpgradeName == upgradeArray[i].name)
@@ -142,10 +142,10 @@ public class LevelUpPopup : MonoBehaviour
                 switch (chosenUpgrade.UpgradeType)
                 {
                     case UpgradeType.Equipment:
-                        CurrentEquipmentUI.singlton.UpdateUpgradeUI(i,  upgradeArray[i].SO.Icon,  upgradeArray[i].name, tier.ToString());
+                        CurrentEquipmentUI.singlton.UpdateUpgradeUI(i,  upgradeArray[i].SO.Icon,  upgradeArray[i].SO.UpgradeName, tier.ToString());
                         break;
                     case UpgradeType.PlayerUpgrade:
-                        CurrentUpgradesUI.singlton.UpdateUpgradeUI(i,  upgradeArray[i].SO.Icon,  upgradeArray[i].name, tier.ToString());
+                        CurrentUpgradesUI.singlton.UpdateUpgradeUI(i,  upgradeArray[i].SO.Icon,  upgradeArray[i].SO.UpgradeName, tier.ToString());
                         break;
                     default:
                         Debug.LogError("Chosen Upgrade was not a valid type");

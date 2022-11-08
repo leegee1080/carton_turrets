@@ -22,15 +22,31 @@ MonoBehaviour:
   - TierDesc: Tier 1
     InGameDesc: Simply shoots a bullet out the front.
     EquipFunc: 0
+    amt: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods: []
     TurretFireFunc: 1
     TurretDeathFunc: 1
-    amt: 0
   - TierDesc: Tier 2 (+1 Bullets)
     InGameDesc: Shoots two bullets now!
     EquipFunc: 0
+    amt: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 19
+      StatAmount: 1
+    - StatName: 20
+      StatAmount: 10
+    - StatName: 10
+      StatAmount: 4
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+  - TierDesc: Tier 3 (+2 Bullets)
+    InGameDesc: Shoots three bullets now!
+    EquipFunc: 0
+    amt: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods:
@@ -39,13 +55,13 @@ MonoBehaviour:
     - StatName: 20
       StatAmount: 10
     - StatName: 10
-      StatAmount: 4
+      StatAmount: 5
     TurretFireFunc: 1
     TurretDeathFunc: 1
-    amt: 0
-  - TierDesc: Tier 3 (+2 Bullets)
-    InGameDesc: Shoots three bullets now!
+  - TierDesc: Tier 4 (+3 Bullets)
+    InGameDesc: Shoots four bullets now!
     EquipFunc: 0
+    amt: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods:
@@ -54,13 +70,13 @@ MonoBehaviour:
     - StatName: 20
       StatAmount: 10
     - StatName: 10
-      StatAmount: 5
+      StatAmount: 6
     TurretFireFunc: 1
     TurretDeathFunc: 1
-    amt: 0
-  - TierDesc: Tier 4 (+3 Bullets)
-    InGameDesc: Shoots four bullets now!
+  - TierDesc: Tier 5 (+4 Bullets)
+    InGameDesc: Shoots five bullets now!
     EquipFunc: 0
+    amt: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods:
@@ -69,25 +85,9 @@ MonoBehaviour:
     - StatName: 20
       StatAmount: 10
     - StatName: 10
-      StatAmount: 6
-    TurretFireFunc: 1
-    TurretDeathFunc: 1
-    amt: 0
-  - TierDesc: Tier 5 (+4 Bullets)
-    InGameDesc: Shoots five bullets now!
-    EquipFunc: 0
-    ActivateFunc: 2
-    TurretBuildFunc: 1
-    TurretBuildMods:
-    - StatName: 19
-      StatAmount: 5
-    - StatName: 20
-      StatAmount: 10
-    - StatName: 10
       StatAmount: 7
     TurretFireFunc: 1
     TurretDeathFunc: 1
-    amt: 0
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 2
   TReloadTime: 1.5

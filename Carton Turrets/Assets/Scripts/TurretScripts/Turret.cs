@@ -77,7 +77,7 @@ public class Turret : StageActor, IPassableObject
         
         foreach (UpgradeSlot item in p.CurrentEquipmentArray)
         {
-            if(item.name == this.TurretData.name)
+            if(item.name == this.TurretData.UpgradeName)
             {
                 RequestedTier = item.Tier;
                 break;

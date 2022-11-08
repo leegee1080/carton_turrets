@@ -39,6 +39,7 @@ public enum TurretDeathTypes
 {
     none,
     normal,
+    split
 }
 
 [Serializable]
@@ -48,12 +49,13 @@ public struct UpgradeTier
     [TextArea]
     public string InGameDesc;
     public PlayerStatEnum EquipFunc;
+    public float amt;
     public PlayerUpgradeActivateTypes ActivateFunc;
     public TurretBuildTypes TurretBuildFunc;
     public TurretBonusClass[] TurretBuildMods;
     public TurretFireTypes TurretFireFunc;
     public TurretDeathTypes TurretDeathFunc;
-    public float amt;
+
 }
 
 public class PublicUpgradeClasses
@@ -243,7 +245,7 @@ public class PublicUpgradeClasses
         float angle = -((t.BulletSpreadAngle*(t.BulletsShotPerReload-1))/2);
         for (int i = 0; i < t.BulletsShotPerReload; i++)
         {
-            GameObject bullet = t.ControllingActor.BulletObjectPools[t.TurretData.name].ActivateNextObject(t);
+            GameObject bullet = t.ControllingActor.BulletObjectPools[t.TurretData.UpgradeName].ActivateNextObject(t);
             bullet.transform.position = t._barrel.transform.position;
             //bullet.transform.rotation = t._barrel.transform.rotation;
             bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.up) * t._barrel.transform.rotation;
@@ -256,13 +258,42 @@ public class PublicUpgradeClasses
     public static readonly Dictionary<TurretDeathTypes, Action<Turret>> TurretDeathFuncDict = new Dictionary<TurretDeathTypes, Action<Turret>>
     {
         {TurretDeathTypes.none, null},
-        {TurretDeathTypes.normal, NormalDeath}
+        {TurretDeathTypes.normal, NormalDeath},
+        {TurretDeathTypes.split, SplitDeath}
     };
     public static void NormalDeath(Turret t)
     {
-        GameObject explo = t.ControllingActor.ExplosionObjectPools[t.TurretData.name].ActivateNextObject(t);
+        GameObject explo = t.ControllingActor.ExplosionObjectPools[t.TurretData.UpgradeName].ActivateNextObject(t);
         explo.transform.position = t._barrel.transform.position;
         explo.transform.rotation = t.transform.rotation;
+    }
+    public static void SplitDeath(Turret t)
+    {
+        GameObject explo = t.ControllingActor.ExplosionObjectPools[t.TurretData.UpgradeName].ActivateNextObject(t);
+        explo.transform.position = t._barrel.transform.position;
+        explo.transform.rotation = t.transform.rotation;
+
+        PlayerActor p = StageController.singlton.Player;
+
+        Debug.Log(t.currentTier );
+        if(t.currentTier <= 0){return;}
+        int tierDown = t.currentTier -=1;
+
+        float angle = -((t.BulletSpreadAngle*(t.BulletsShotPerReload-1))/2);
+        for (int i = 0; i < t.BulletsShotPerReload; i++)
+        {
+            GameObject tTurret =  p.TurretObjectPools[t.TurretData.UpgradeName].ActivateNextObject(p);
+            Turret subTurretScript = tTurret.GetComponent<Turret>();
+
+            subTurretScript.currentTier = tierDown;
+            Debug.Log(tierDown);
+
+            tTurret.transform.rotation = Quaternion.AngleAxis(angle, Vector3.up) * t._barrel.transform.rotation;
+            tTurret.transform.position = t.transform.position + Vector3.forward;
+            angle += t.BulletSpreadAngle;
+        }
+
+
     }
 #endregion
 
@@ -271,16 +302,8 @@ public class PublicUpgradeClasses
         PlayerActor pd = StageController.singlton.Player;
 
         UpgradeSlot newUpgrade = new UpgradeSlot();
-        if(upgradeable.GetType() == typeof(TurretScriptableObject))
-        {
-            TurretScriptableObject actorCast = (TurretScriptableObject)upgradeable;
-            newUpgrade.name = actorCast.name;
-        }
-        else
-        {
-            newUpgrade.name = upgradeable.UpgradeName;
-        }
-
+        
+        newUpgrade.name = upgradeable.UpgradeName;
         newUpgrade.SO = upgradeable;
         newUpgrade.Tier = 0;
         newUpgrade.MaxAllowedTier = newUpgrade.SO.Tiers.Length -1;
@@ -293,7 +316,7 @@ public class PublicUpgradeClasses
                 //apply to first open slot
                 if(OpenSlotIndex < 0){return;}
                 pd.CurrentUpgradesArray[OpenSlotIndex] = newUpgrade;
-                CurrentUpgradesUI.singlton.UpdateUpgradeUI(OpenSlotIndex, newUpgrade.SO.Icon, newUpgrade.name, newUpgrade.Tier.ToString());
+                CurrentUpgradesUI.singlton.UpdateUpgradeUI(OpenSlotIndex, newUpgrade.SO.Icon, newUpgrade.SO.UpgradeName, newUpgrade.Tier.ToString());
                 break;
             case UpgradeType.Equipment:
                 TurretScriptableObject TSO = upgradeable as TurretScriptableObject;
@@ -306,7 +329,7 @@ public class PublicUpgradeClasses
                 pd.BulletObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.BulletGameObject, TSO.BulletAmountToPool, pd.BulletContainer, false);
                 pd.ExplosionObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.ExplosionGameObject, TSO.ExplosionAmountToPool, pd.ExplosionContainer, false);
 
-                CurrentEquipmentUI.singlton.UpdateUpgradeUI(OpenSlotIndex, newUpgrade.SO.Icon, newUpgrade.name, newUpgrade.Tier.ToString());
+                CurrentEquipmentUI.singlton.UpdateUpgradeUI(OpenSlotIndex, newUpgrade.SO.Icon, newUpgrade.SO.UpgradeName, newUpgrade.Tier.ToString());
                 break;
             case UpgradeType.TurretMod:
                 break;

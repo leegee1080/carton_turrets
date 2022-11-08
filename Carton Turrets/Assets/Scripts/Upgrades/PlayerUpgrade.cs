@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Player Upgrade", menuName = "Scriptable Objects/New Player Upgrade")]
 public class PlayerUpgrade : ScriptableObject, IUpgradeable
 {
-
+    [field: SerializeField]public string InspectorDesc {get; set;}
     [field: SerializeField]public Sprite Icon {get; set;}
     [field: SerializeField]public string UpgradeName {get; set;}
     [field: SerializeField]public string UpgradeDesc {get; set;}

@@ -22,12 +22,66 @@ MonoBehaviour:
   - TierDesc: Tier 1
     InGameDesc: Place down a bomb with a short fuse.
     EquipFunc: 0
+    amt: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods: []
     TurretFireFunc: 1
     TurretDeathFunc: 1
+  - TierDesc: Tier 2 (+e damage)
+    InGameDesc: Explosion does twice as much damage.
+    EquipFunc: 0
     amt: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 15
+      StatAmount: 10
+    TurretFireFunc: 1
+    TurretDeathFunc: 2
+  - TierDesc: Tier 3 (+e size)
+    InGameDesc: Explosion is 50% bigger.
+    EquipFunc: 0
+    amt: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 15
+      StatAmount: 10
+    - StatName: 17
+      StatAmount: 0.5
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+  - TierDesc: Tier 4 (+b lifetime)
+    InGameDesc: Countdown is 150% longer.
+    EquipFunc: 0
+    amt: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 15
+      StatAmount: 10
+    - StatName: 17
+      StatAmount: 0.5
+    - StatName: 12
+      StatAmount: 0.5
+    TurretFireFunc: 1
+    TurretDeathFunc: 1
+  - TierDesc: Tier 5 (+split)
+    InGameDesc: Bomb splits after explosion.
+    EquipFunc: 0
+    amt: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 15
+      StatAmount: 10
+    - StatName: 17
+      StatAmount: 0.5
+    - StatName: 12
+      StatAmount: 0.5
+    TurretFireFunc: 1
+    TurretDeathFunc: 2
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 2
   TReloadTime: -1
@@ -47,7 +101,7 @@ MonoBehaviour:
   ALTEDamage: 0
   ALTESpeed: 0
   ALTESize: 0
-  TurretAmountToPool: 10
+  TurretAmountToPool: 40
   BulletAmountToPool: 60
   ExplosionAmountToPool: 10
   TurretGameObject: {fileID: 8903252950405436271, guid: 6b161708f415038459a65ecc45d51f37, type: 3}
