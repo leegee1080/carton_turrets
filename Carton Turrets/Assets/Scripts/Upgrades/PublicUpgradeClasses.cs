@@ -43,6 +43,13 @@ public enum TurretDeathTypes
 }
 
 [Serializable]
+public class GenericHashtableClass
+{
+    public string ParamName;
+    public float ParamAmount;
+}
+
+[Serializable]
 public struct UpgradeTier
 {
     public string TierDesc;
@@ -51,10 +58,14 @@ public struct UpgradeTier
     public PlayerStatEnum EquipFunc;
     public float amt;
     public PlayerUpgradeActivateTypes ActivateFunc;
+    [Header("Build Func")]
     public TurretBuildTypes TurretBuildFunc;
     public TurretBonusClass[] TurretBuildMods;
+    [Header("Fire Func")]
     public TurretFireTypes TurretFireFunc;
+    [Header("Death Func")]
     public TurretDeathTypes TurretDeathFunc;
+    public GenericHashtableClass[] TurretDeathFuncParams;
 
 }
 
@@ -166,24 +177,7 @@ public class PublicUpgradeClasses
     {
         t.ControllingActor = p;
 
-        if(t.TurretData.TReloadTime == -1)
-        {
-            t.ReloadTime = t.TurretData.BLifeTime * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentBulletLifetimeBonus]; 
-        }
-        else
-        {
-            t.ReloadTime = t.TurretData.TReloadTime / t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentTurretBonusShootSpeed];  
-        }
-   
-        t.ReloadCountdown = 0;  
-        if(t.TurretData.TAmmo < 0)
-        {
-            t.Ammo = t.TurretData.TAmmo * -1;
-        }
-        else
-        {
-            t.Ammo = (int)(t.TurretData.TAmmo * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentTurretBonusAmmo]);
-        }   
+
 
         t.AdjustCollider(t.TurretData.TColliderSize);
         t._barrel.transform.rotation = t.gameObject.transform.rotation;
@@ -226,6 +220,25 @@ public class PublicUpgradeClasses
         : t.TurretData.ESize * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentExploSizeBonus]); 
 
 
+        if(t.TurretData.TReloadTime == -1)
+        {
+            t.ReloadTime = t.BLifeTime; 
+        }
+        else
+        {
+            t.ReloadTime = t.TurretData.TReloadTime / t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentTurretBonusShootSpeed];  
+        }
+   
+        t.ReloadCountdown = 0;  
+        if(t.TurretData.TAmmo < 0)
+        {
+            t.Ammo = t.TurretData.TAmmo * -1;
+        }
+        else
+        {
+            t.Ammo = (int)(t.TurretData.TAmmo * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentTurretBonusAmmo]);
+        }   
+
         // _turretMesh.mesh = tStats.Mesh;
         t.Setup();
     }
@@ -255,19 +268,19 @@ public class PublicUpgradeClasses
 #endregion
 
 #region TurretDeathFuncs
-    public static readonly Dictionary<TurretDeathTypes, Action<Turret>> TurretDeathFuncDict = new Dictionary<TurretDeathTypes, Action<Turret>>
+    public static readonly Dictionary<TurretDeathTypes, Action<Turret, Hashtable>> TurretDeathFuncDict = new Dictionary<TurretDeathTypes, Action<Turret, Hashtable>>
     {
         {TurretDeathTypes.none, null},
         {TurretDeathTypes.normal, NormalDeath},
         {TurretDeathTypes.split, SplitDeath}
     };
-    public static void NormalDeath(Turret t)
+    public static void NormalDeath(Turret t, Hashtable h)
     {
         GameObject explo = t.ControllingActor.ExplosionObjectPools[t.TurretData.UpgradeName].ActivateNextObject(t);
         explo.transform.position = t._barrel.transform.position;
         explo.transform.rotation = t.transform.rotation;
     }
-    public static void SplitDeath(Turret t)
+    public static void SplitDeath(Turret t, Hashtable h)
     {
         GameObject explo = t.ControllingActor.ExplosionObjectPools[t.TurretData.UpgradeName].ActivateNextObject(t);
         explo.transform.position = t._barrel.transform.position;
@@ -275,25 +288,25 @@ public class PublicUpgradeClasses
 
         PlayerActor p = StageController.singlton.Player;
 
-        Debug.Log(t.currentTier );
+        float NumToSpawn =(h != null && h.Contains("NumToSplit") ? (float)h["NumToSplit"] : 1);
+        float RotAmount =(h != null && h.Contains("RotAmount") ? (float)h["RotAmount"] : 0f); 
+
         if(t.currentTier <= 0){return;}
         int tierDown = t.currentTier -=1;
 
-        float angle = -((t.BulletSpreadAngle*(t.BulletsShotPerReload-1))/2);
-        for (int i = 0; i < t.BulletsShotPerReload; i++)
+        float angle = -((RotAmount*(NumToSpawn-1))/2);
+        for (int i = 0; i < NumToSpawn; i++)
         {
             GameObject tTurret =  p.TurretObjectPools[t.TurretData.UpgradeName].ActivateNextObject(p);
             Turret subTurretScript = tTurret.GetComponent<Turret>();
 
             subTurretScript.currentTier = tierDown;
-            Debug.Log(tierDown);
-
+            
+            tTurret.transform.position = t.transform.position;
             tTurret.transform.rotation = Quaternion.AngleAxis(angle, Vector3.up) * t._barrel.transform.rotation;
-            tTurret.transform.position = t.transform.position + Vector3.forward;
-            angle += t.BulletSpreadAngle;
+            tTurret.transform.Translate(Vector3.forward * 0.5f);
+            angle += RotAmount;
         }
-
-
     }
 #endregion
 

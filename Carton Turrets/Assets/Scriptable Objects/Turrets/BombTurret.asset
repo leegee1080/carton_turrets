@@ -28,6 +28,7 @@ MonoBehaviour:
     TurretBuildMods: []
     TurretFireFunc: 1
     TurretDeathFunc: 1
+    TurretDeathFuncParams: []
   - TierDesc: Tier 2 (+e damage)
     InGameDesc: Explosion does twice as much damage.
     EquipFunc: 0
@@ -38,7 +39,8 @@ MonoBehaviour:
     - StatName: 15
       StatAmount: 10
     TurretFireFunc: 1
-    TurretDeathFunc: 2
+    TurretDeathFunc: 1
+    TurretDeathFuncParams: []
   - TierDesc: Tier 3 (+e size)
     InGameDesc: Explosion is 50% bigger.
     EquipFunc: 0
@@ -52,6 +54,7 @@ MonoBehaviour:
       StatAmount: 0.5
     TurretFireFunc: 1
     TurretDeathFunc: 1
+    TurretDeathFuncParams: []
   - TierDesc: Tier 4 (+b lifetime)
     InGameDesc: Countdown is 150% longer.
     EquipFunc: 0
@@ -67,6 +70,7 @@ MonoBehaviour:
       StatAmount: 0.5
     TurretFireFunc: 1
     TurretDeathFunc: 1
+    TurretDeathFuncParams: []
   - TierDesc: Tier 5 (+split)
     InGameDesc: Bomb splits after explosion.
     EquipFunc: 0
@@ -82,6 +86,31 @@ MonoBehaviour:
       StatAmount: 0.5
     TurretFireFunc: 1
     TurretDeathFunc: 2
+    TurretDeathFuncParams:
+    - ParamName: NumToSplit
+      ParamAmount: 2
+    - ParamName: RotAmount
+      ParamAmount: 45
+  - TierDesc: Tier 5 (+split x2)
+    InGameDesc: Bomb splits after explosion.
+    EquipFunc: 0
+    amt: 0
+    ActivateFunc: 2
+    TurretBuildFunc: 1
+    TurretBuildMods:
+    - StatName: 15
+      StatAmount: 10
+    - StatName: 17
+      StatAmount: 0.5
+    - StatName: 12
+      StatAmount: 0.5
+    TurretFireFunc: 1
+    TurretDeathFunc: 2
+    TurretDeathFuncParams:
+    - ParamName: NumToSplit
+      ParamAmount: 2
+    - ParamName: RotAmount
+      ParamAmount: 45
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 2
   TReloadTime: -1

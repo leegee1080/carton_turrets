@@ -54,12 +54,9 @@ public class Turret : StageActor, IPassableObject
 
     public void Fire()
     {
-        int RequestedTier = 0;
-
-        TurretFireTypes chosenFireType = TurretData.Tiers[RequestedTier].TurretFireFunc;
+        TurretFireTypes chosenFireType = TurretData.Tiers[currentTier].TurretFireFunc;
         if(chosenFireType == TurretFireTypes.none){return;}
 
-        currentTier = RequestedTier;
         Action<Turret> chosenFireFunc = PublicUpgradeClasses.TurretFireFuncDict[chosenFireType];
         chosenFireFunc(this);
         
@@ -112,14 +109,25 @@ public class Turret : StageActor, IPassableObject
     {
         base.Die();
 
-        int RequestedTier = 0;
-
-        TurretDeathTypes chosenDeathType = TurretData.Tiers[RequestedTier].TurretDeathFunc;
+        TurretDeathTypes chosenDeathType = TurretData.Tiers[currentTier].TurretDeathFunc;
         if(chosenDeathType == TurretDeathTypes.none){return;}
 
-        currentTier = RequestedTier;
-        Action<Turret> chosenDeathFunc = PublicUpgradeClasses.TurretDeathFuncDict[chosenDeathType];
-        chosenDeathFunc(this);
+        Action<Turret, Hashtable> chosenDeathFunc = PublicUpgradeClasses.TurretDeathFuncDict[chosenDeathType];
+
+        if(TurretData.Tiers[currentTier].TurretDeathFuncParams == null)
+        {
+            chosenDeathFunc(this, null);
+        }
+        else
+        {
+            Hashtable h = new Hashtable();
+            foreach (GenericHashtableClass item in TurretData.Tiers[currentTier].TurretDeathFuncParams)
+            {
+                h.Add(item.ParamName, item.ParamAmount);
+            }
+            chosenDeathFunc(this, h);
+        }
+        
 
         //hide the art. this should be done no matter what the custom death is
         _turretArtObject.SetActive(false);
