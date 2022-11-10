@@ -61,7 +61,7 @@ public static class EnemyAIClass
         Vector3 v = Vector3.Normalize((enemy.ActorArtContainer.transform.position - target)) * -speed;
 
         enemy.rb.velocity = new Vector3(v.x, 0, v.z);
-
+        enemy.RotateSpriteWalkAnimation(speed: speed, size: enemy.EnemyData.SpriteSize);
         enemy.FlipSpriteCheck(v.x);
     }
     public static void Line(Vector3 target, EnemyActor enemy, float speed)
@@ -69,7 +69,7 @@ public static class EnemyAIClass
         Vector3 v = Vector3.Normalize((enemy.ActorArtContainer.transform.position - target)) * -speed;
 
         enemy.rb.velocity = new Vector3(v.x, 0, v.z);
-
+        enemy.RotateSpriteWalkAnimation(speed: speed, size: enemy.EnemyData.SpriteSize);
         enemy.FlipSpriteCheck(v.x);
     }
     #endregion
@@ -170,7 +170,7 @@ public class EnemyActor : StageActor, IColliderMessageable
         MovementType = EnemyData.MovementType;
 
         float walkAniSpeed = 5f + EnemyData.MaxSpeed + UnityEngine.Random.Range(-0.1f, 0.1f);
-        _sR.material.SetFloat("_ShakeUvSpeed", walkAniSpeed);
+        // _sR.material.SetFloat("_ShakeUvSpeed", walkAniSpeed);
 
         CurrentDamage = EnemyData.MaxDamage;
         _sR.sprite = EnemyData.Sprite;

@@ -31,4 +31,5 @@ public class PlayerScriptableObject : ActorDataScriptableObject
 
     [Header("Character Art")]
     public Sprite InGameSprite;
+    public float WalkStrideSize;
 }

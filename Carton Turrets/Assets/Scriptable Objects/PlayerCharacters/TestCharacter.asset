@@ -32,4 +32,5 @@ MonoBehaviour:
   StartingExploSpeedBonus: 1
   StartingExploSizeBonus: 1
   StartingExploDamageRangeBonus: 1
-  InGameSprite: {fileID: 21300000, guid: 180e92a22e009f445a5c56b2d5c5a5a7, type: 3}
+  InGameSprite: {fileID: 21300000, guid: 56490599523573c4093a51aca8ba4d83, type: 3}
+  WalkStrideSize: 1

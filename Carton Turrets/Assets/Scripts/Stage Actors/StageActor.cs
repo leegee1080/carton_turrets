@@ -18,8 +18,12 @@ public class StageActor : MonoBehaviour
     public Color DamageColor;
     public Color FreezeColor;
     private bool _colorOverride;
-    
+
+    [Header("Animations")]
     public IEnumerator DamageBlinkerCoroutine;
+    public AnimationCurve WalkingCurve;
+    float _walkingTime = 0;
+    public GameObject RendererHandle;
 
     public virtual void ChangeState(ActorStatesAbstractClass newState)
     {
@@ -49,6 +53,18 @@ public class StageActor : MonoBehaviour
     public virtual void Die()
     {
 
+    }
+
+    public virtual void RotateSpriteWalkAnimation(float speed = 0, float size = 1, bool reset = false)
+    {
+        if(reset){_walkingTime = 0; RendererHandle.transform.localRotation = Quaternion.Euler(0,0,0);  return;}
+        speed = speed/10;
+        if(_walkingTime > 2){_walkingTime = 0;}
+
+        // RendererHandle.transform.localPosition = new Vector3(0, Mathf.Abs(WalkingCurve.Evaluate(_walkingTime)/50), 0);
+        // RendererHandle.transform.Rotate(new Vector3(0,0,WalkingCurve.Evaluate(_walkingTime))*(size));
+        RendererHandle.transform.localRotation = Quaternion.Euler(0,0,WalkingCurve.Evaluate(_walkingTime)*(size * 10));
+        _walkingTime += speed;
     }
 
     public void FlipSpriteCheck(float xValue)

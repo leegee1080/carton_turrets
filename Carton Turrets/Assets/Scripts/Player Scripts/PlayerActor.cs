@@ -359,10 +359,10 @@ public class PlayerState_Normal: ActorStatesAbstractClass
             pa.CheckMapTiles();
             pa.LastPos = pa.transform.position;
             pa.FlipSpriteCheck(v.x);
-            pa.MainSprite.material.SetFloat("_ShakeUvSpeed", 7f);
+            pa.RotateSpriteWalkAnimation(pa.PlayerCurrentStatDict[PlayerStatEnum.CurrentSpeed], size: pa.PlayerData.WalkStrideSize);
             return;
         }
-        pa.MainSprite.material.SetFloat("_ShakeUvSpeed", 0f);
+        pa.RotateSpriteWalkAnimation(reset: true);
     }   
 }
 public class PlayerState_Dead: ActorStatesAbstractClass
