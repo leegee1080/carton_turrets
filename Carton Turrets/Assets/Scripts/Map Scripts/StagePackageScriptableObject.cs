@@ -52,4 +52,7 @@ public class StagePackageScriptableObject : ScriptableObject
 
     [Header("Reward Vars")]
     public int ScoreMulti;
+    public TurretScriptableObject[] AvailableEquipment;
+    public PlayerUpgrade[] AvailableUpgrades;
+    public PlayerUpgrade[] FillInUpgradesForMaxLevel;
 }

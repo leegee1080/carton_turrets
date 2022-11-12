@@ -12,14 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8342e2ef5b99c4aa6c7d79118ef7e3, type: 3}
   m_Name: Money
   m_EditorClassIdentifier: 
+  <InspectorDesc>k__BackingField: 
   <Icon>k__BackingField: {fileID: -3977184504499897954, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Money
   <UpgradeDesc>k__BackingField: A litte cash.
   <UpgradeType>k__BackingField: 1
   <Tiers>k__BackingField:
-  - TierDesc: 
+  - TierDesc: Unlimited
+    InGameDesc: A litte cash.
     EquipFunc: 1
-    ActivateFunc: 0
     amt: 10
+    ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
+    TurretDeathFuncParams: []
   <IsUnlimited>k__BackingField: 1
   <Cooldown>k__BackingField: 0

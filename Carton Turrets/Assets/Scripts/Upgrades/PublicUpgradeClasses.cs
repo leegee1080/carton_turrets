@@ -329,7 +329,7 @@ public class PublicUpgradeClasses
                 //apply to first open slot
                 if(OpenSlotIndex < 0){return;}
                 pd.CurrentUpgradesArray[OpenSlotIndex] = newUpgrade;
-                CurrentUpgradesUI.singlton.UpdateUpgradeUI(OpenSlotIndex, newUpgrade.SO.Icon, newUpgrade.SO.UpgradeName, newUpgrade.Tier.ToString());
+                CurrentUpgradesUI.singlton.UpdateUpgradeUI(OpenSlotIndex, newUpgrade.SO.Icon, newUpgrade.SO.UpgradeName,  newUpgrade.Tier >= newUpgrade.MaxAllowedTier ? "MAX": (newUpgrade.Tier + 1).ToString());
                 break;
             case UpgradeType.Equipment:
                 TurretScriptableObject TSO = upgradeable as TurretScriptableObject;
@@ -342,7 +342,7 @@ public class PublicUpgradeClasses
                 pd.BulletObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.BulletGameObject, TSO.BulletAmountToPool, pd.BulletContainer, false);
                 pd.ExplosionObjectPools[TSO.UpgradeName] = new ObjectPooler(TSO.ExplosionGameObject, TSO.ExplosionAmountToPool, pd.ExplosionContainer, false);
 
-                CurrentEquipmentUI.singlton.UpdateUpgradeUI(OpenSlotIndex, newUpgrade.SO.Icon, newUpgrade.SO.UpgradeName, newUpgrade.Tier.ToString());
+                CurrentEquipmentUI.singlton.UpdateUpgradeUI(OpenSlotIndex, newUpgrade.SO.Icon, newUpgrade.SO.UpgradeName, newUpgrade.Tier >= newUpgrade.MaxAllowedTier ? "MAX": (newUpgrade.Tier + 1).ToString());
                 break;
             case UpgradeType.TurretMod:
                 break;

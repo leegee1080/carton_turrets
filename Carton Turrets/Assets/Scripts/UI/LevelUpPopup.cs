@@ -33,9 +33,9 @@ public class LevelUpPopup : MonoBehaviour
 
     private void Start() {
         Hide();
-
-        Debug.Log("LevelUpPopup is gathering potential upgrades. (Upgrade this to pull from one global source (Load into a global constant that pulls from a folder maybe))");
-        Debug.Log("implement the commented notes in the EnemyActor Class");
+        UnfilteredEquipmentArray = StageController.singlton.CurrentStage.AvailableEquipment != null ? StageController.singlton.CurrentStage.AvailableEquipment: UnfilteredEquipmentArray;
+        UnfilteredUpgradeArray = StageController.singlton.CurrentStage.AvailableUpgrades != null ? StageController.singlton.CurrentStage.AvailableUpgrades: UnfilteredUpgradeArray;
+        FillInUpgradeList = StageController.singlton.CurrentStage.FillInUpgradesForMaxLevel != null ? StageController.singlton.CurrentStage.FillInUpgradesForMaxLevel: FillInUpgradeList;
         
         for (int i = 0; i < UnfilteredEquipmentArray.Length; i++)
         {
@@ -100,6 +100,7 @@ public class LevelUpPopup : MonoBehaviour
     public void UpgradeChosen(int index)
     {
         if(index >= AvailableUpgradeArray.Length){return;}
+
         UpgradeConfirmContainer.singlton.Show
         (
             AvailableUpgradeArray[index],
@@ -142,10 +143,10 @@ public class LevelUpPopup : MonoBehaviour
                 switch (chosenUpgrade.UpgradeType)
                 {
                     case UpgradeType.Equipment:
-                        CurrentEquipmentUI.singlton.UpdateUpgradeUI(i,  upgradeArray[i].SO.Icon,  upgradeArray[i].SO.UpgradeName, tier.ToString());
+                        CurrentEquipmentUI.singlton.UpdateUpgradeUI(i,  upgradeArray[i].SO.Icon,  upgradeArray[i].SO.UpgradeName,tier >= upgradeArray[i].MaxAllowedTier ? "MAX": (tier+1).ToString());
                         break;
                     case UpgradeType.PlayerUpgrade:
-                        CurrentUpgradesUI.singlton.UpdateUpgradeUI(i,  upgradeArray[i].SO.Icon,  upgradeArray[i].SO.UpgradeName, tier.ToString());
+                        CurrentUpgradesUI.singlton.UpdateUpgradeUI(i,  upgradeArray[i].SO.Icon,  upgradeArray[i].SO.UpgradeName, tier >= upgradeArray[i].MaxAllowedTier ? "MAX": (tier+1).ToString());
                         break;
                     default:
                         Debug.LogError("Chosen Upgrade was not a valid type");

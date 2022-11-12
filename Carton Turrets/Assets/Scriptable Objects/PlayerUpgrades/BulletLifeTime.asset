@@ -12,46 +12,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8342e2ef5b99c4aa6c7d79118ef7e3, type: 3}
   m_Name: BulletLifeTime
   m_EditorClassIdentifier: 
+  <InspectorDesc>k__BackingField: 
   <Icon>k__BackingField: {fileID: -3897761439659027702, guid: 93c2a04a6f3a95f4cbdf7379934291d5, type: 3}
   <UpgradeName>k__BackingField: Bullet Lifetime
   <UpgradeDesc>k__BackingField: Bullets go farther.
   <UpgradeType>k__BackingField: 1
   <Tiers>k__BackingField:
   - TierDesc: Tier 1
-    InGameDesc: Bullets go farther.
+    InGameDesc: Bullets last one second longer.
     EquipFunc: 12
+    amt: 1
     ActivateFunc: 0
     TurretBuildFunc: 0
     TurretBuildMods: []
     TurretFireFunc: 0
     TurretDeathFunc: 0
-    amt: 1
-  - TierDesc: Bullets go farther.
-    InGameDesc: 
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 2
+    InGameDesc: Bullets last one second longer.
     EquipFunc: 12
+    amt: 1
     ActivateFunc: 0
     TurretBuildFunc: 0
     TurretBuildMods: []
     TurretFireFunc: 0
     TurretDeathFunc: 0
-    amt: 1
-  - TierDesc: Bullets go farther.
-    InGameDesc: 
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 3
+    InGameDesc: Bullets last one second longer.
     EquipFunc: 12
+    amt: 1
     ActivateFunc: 0
     TurretBuildFunc: 0
     TurretBuildMods: []
     TurretFireFunc: 0
     TurretDeathFunc: 0
-    amt: 1
-  - TierDesc: Bullets go farther.
-    InGameDesc: 
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 4
+    InGameDesc: Bullets last one second longer.
     EquipFunc: 12
+    amt: 1
     ActivateFunc: 0
     TurretBuildFunc: 0
     TurretBuildMods: []
     TurretFireFunc: 0
     TurretDeathFunc: 0
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 5
+    InGameDesc: Bullets last one second longer.
+    EquipFunc: 12
     amt: 1
+    ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
+    TurretDeathFuncParams: []
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0

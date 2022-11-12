@@ -38,3 +38,11 @@ MonoBehaviour:
   - SpawnableGO: {fileID: 6074885723609033330, guid: 58b18405ea712794bb07da841b33709c, type: 3}
     AmountToPool: 3
   ScoreMulti: 1
+  AvailableEquipment:
+  - {fileID: 11400000, guid: 353fa482735732e48ae6ad5fd1269c07, type: 2}
+  AvailableUpgrades:
+  - {fileID: 11400000, guid: 7e0a3ab83ba6b3b4397d6d5b521289fb, type: 2}
+  - {fileID: 11400000, guid: 1eb71aa06053e4d43a4e4b973befaa67, type: 2}
+  FillInUpgradesForMaxLevel:
+  - {fileID: 11400000, guid: 9466c5cddd4909347aa821e62972d0a3, type: 2}
+  - {fileID: 11400000, guid: 2f56855a24b830746a40323f6789bd4a, type: 2}

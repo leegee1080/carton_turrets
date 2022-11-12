@@ -12,19 +12,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8342e2ef5b99c4aa6c7d79118ef7e3, type: 3}
   m_Name: TurretAmmo
   m_EditorClassIdentifier: 
+  <InspectorDesc>k__BackingField: 
   <Icon>k__BackingField: {fileID: 3426723381814396700, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Turret Ammo
   <UpgradeDesc>k__BackingField: 10x More ammo to fire before the turret expires.
   <UpgradeType>k__BackingField: 1
   <Tiers>k__BackingField:
   - TierDesc: Tier 1
-    InGameDesc: 10x More ammo to fire before the turret expires.
+    InGameDesc: 2 More shots to fire before the turret expires.
     EquipFunc: 10
+    amt: 2
     ActivateFunc: 0
     TurretBuildFunc: 0
     TurretBuildMods: []
     TurretFireFunc: 0
     TurretDeathFunc: 0
-    amt: 10
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 2
+    InGameDesc: 2 More shots to fire before the turret expires.
+    EquipFunc: 10
+    amt: 2
+    ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 3
+    InGameDesc: 2 More shots to fire before the turret expires.
+    EquipFunc: 10
+    amt: 2
+    ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 4
+    InGameDesc: 2 More shots to fire before the turret expires.
+    EquipFunc: 10
+    amt: 2
+    ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 5
+    InGameDesc: 2 More shots to fire before the turret expires.
+    EquipFunc: 10
+    amt: 2
+    ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
+    TurretDeathFuncParams: []
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0

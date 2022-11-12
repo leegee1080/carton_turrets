@@ -12,19 +12,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8342e2ef5b99c4aa6c7d79118ef7e3, type: 3}
   m_Name: ExpPickRange
   m_EditorClassIdentifier: 
+  <InspectorDesc>k__BackingField: 
   <Icon>k__BackingField: {fileID: -31695106925954461, guid: 93c2a04a6f3a95f4cbdf7379934291d5, type: 3}
   <UpgradeName>k__BackingField: Pickup Range
   <UpgradeDesc>k__BackingField: Pick up XP from farther away.
   <UpgradeType>k__BackingField: 1
   <Tiers>k__BackingField:
   - TierDesc: Tier 1
-    InGameDesc: Pick up XP from farther away.
+    InGameDesc: Pick up level up progress from farther away.
     EquipFunc: 6
+    amt: 0.2
     ActivateFunc: 0
     TurretBuildFunc: 0
     TurretBuildMods: []
     TurretFireFunc: 0
     TurretDeathFunc: 0
-    amt: 0.5
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 2
+    InGameDesc: Pick up level up progress from farther away.
+    EquipFunc: 6
+    amt: 0.2
+    ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 3
+    InGameDesc: Pick up level up progress from farther away.
+    EquipFunc: 6
+    amt: 0.2
+    ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 4
+    InGameDesc: Pick up level up progress from farther away.
+    EquipFunc: 6
+    amt: 0.2
+    ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 5
+    InGameDesc: Pick up level up progress from farther away.
+    EquipFunc: 6
+    amt: 0.2
+    ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
+    TurretDeathFuncParams: []
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0

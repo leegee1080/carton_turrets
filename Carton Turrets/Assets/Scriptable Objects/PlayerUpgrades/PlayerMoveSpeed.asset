@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8342e2ef5b99c4aa6c7d79118ef7e3, type: 3}
   m_Name: PlayerMoveSpeed
   m_EditorClassIdentifier: 
+  <InspectorDesc>k__BackingField: 
   <Icon>k__BackingField: {fileID: 3061872641144933912, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Move Speed
   <UpgradeDesc>k__BackingField: Run Faster!
@@ -20,29 +21,52 @@ MonoBehaviour:
   - TierDesc: Tier 1
     InGameDesc: Run Faster!
     EquipFunc: 4
+    amt: 0.2
     ActivateFunc: 0
     TurretBuildFunc: 0
     TurretBuildMods: []
     TurretFireFunc: 0
     TurretDeathFunc: 0
-    amt: 0.5
-  - TierDesc: Run Faster!
-    InGameDesc: 
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 2
+    InGameDesc: Run Faster!
     EquipFunc: 4
+    amt: 0.2
     ActivateFunc: 0
     TurretBuildFunc: 0
     TurretBuildMods: []
     TurretFireFunc: 0
     TurretDeathFunc: 0
-    amt: 0.5
-  - TierDesc: Run Faster!
-    InGameDesc: 
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 3
+    InGameDesc: Run Faster!
     EquipFunc: 4
+    amt: 0.2
     ActivateFunc: 0
     TurretBuildFunc: 0
     TurretBuildMods: []
     TurretFireFunc: 0
     TurretDeathFunc: 0
-    amt: 0.5
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 4
+    InGameDesc: Run Faster!
+    EquipFunc: 4
+    amt: 0.2
+    ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 5
+    InGameDesc: Run Faster!
+    EquipFunc: 4
+    amt: 0.2
+    ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
+    TurretDeathFuncParams: []
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0

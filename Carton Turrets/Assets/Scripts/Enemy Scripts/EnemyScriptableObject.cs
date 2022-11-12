@@ -11,4 +11,5 @@ public class EnemyScriptableObject : ActorDataScriptableObject
     public float ColliderSize;
     public EnemyRespawnType RespawnType;
     public EnemyMovementType MovementType;
+    public AnimationCurve WalkingCurve;
 }

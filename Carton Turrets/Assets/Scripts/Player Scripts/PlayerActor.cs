@@ -256,6 +256,8 @@ public class PlayerActor : StageActor, IPassableObject
 
         SpriteRenderer s = (SpriteRenderer)MainSprite;
         s.sprite = PlayerData.InGameSprite;
+        WalkingCurve = PlayerData.WalkingCurve;
+        s.transform.localScale = new Vector3(PlayerData.SpriteSize,PlayerData.SpriteSize,PlayerData.SpriteSize);
 
         PlayerData.StartingTurret.ApplyUpgrade(0);
     }
@@ -359,7 +361,7 @@ public class PlayerState_Normal: ActorStatesAbstractClass
             pa.CheckMapTiles();
             pa.LastPos = pa.transform.position;
             pa.FlipSpriteCheck(v.x);
-            pa.RotateSpriteWalkAnimation(pa.PlayerCurrentStatDict[PlayerStatEnum.CurrentSpeed], size: pa.PlayerData.WalkStrideSize);
+            pa.RotateSpriteWalkAnimation(pa.PlayerCurrentStatDict[PlayerStatEnum.CurrentSpeed], size: pa.PlayerData.SpriteSize);
             return;
         }
         pa.RotateSpriteWalkAnimation(reset: true);

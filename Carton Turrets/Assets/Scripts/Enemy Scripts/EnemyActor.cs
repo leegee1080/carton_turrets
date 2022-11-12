@@ -34,7 +34,7 @@ public static class EnemyAIClass
     {
         Vector3 nearPos = target.transform.position + (StageController.singlton.Player.LastViewInput * offset);
 
-        float ranOffset = UnityEngine.Random.Range(-1, 1);
+        float ranOffset = UnityEngine.Random.Range(-2, 2);
 
         enemy.transform.position = new Vector3(nearPos.x + ranOffset, enemy.transform.position.y,nearPos.z + ranOffset);
     }
@@ -99,16 +99,7 @@ public class EnemyActor : StageActor, IColliderMessageable
 
     public void Respawn()//if player gets too far
     {
-        //make this a function that picked based on an enum determined in the scripable object, that woul allow the enemey to spawn in different patterns: circle, line, etc
-        //do the same for the movement so that the movement type could be adjusted to act like the bat waves in VampSurv
-
-
         EnemyAIClass.RespawnDict[RespawnType](Target, ActorArtContainer, ViewDistance);
-        // Vector3 nearPos = Target.transform.position + (StageController.singlton.Player.LastViewInput * ViewDistance);
-
-        // float ranOffset = UnityEngine.Random.Range(-1, 1);
-
-        // ActorArtContainer.transform.position = new Vector3(nearPos.x + ranOffset, ActorArtContainer.transform.position.y,nearPos.z + ranOffset);
     }
 
     public void RecMessageEnter(GameObject obj)
@@ -175,6 +166,7 @@ public class EnemyActor : StageActor, IColliderMessageable
         CurrentDamage = EnemyData.MaxDamage;
         _sR.sprite = EnemyData.Sprite;
         _sR.gameObject.transform.localScale = new Vector3(EnemyData.SpriteSize, EnemyData.SpriteSize, EnemyData.SpriteSize);
+        WalkingCurve = EnemyData.WalkingCurve;
         ActorArtContainer.transform.position = new Vector3(ActorArtContainer.transform.position.x, .12f * EnemyData.SpriteSize, ActorArtContainer.transform.position.z);
 
 

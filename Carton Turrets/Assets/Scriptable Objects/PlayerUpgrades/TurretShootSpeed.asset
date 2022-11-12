@@ -12,46 +12,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8342e2ef5b99c4aa6c7d79118ef7e3, type: 3}
   m_Name: TurretShootSpeed
   m_EditorClassIdentifier: 
+  <InspectorDesc>k__BackingField: 
   <Icon>k__BackingField: {fileID: -4528079395343913193, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Reload Speed
   <UpgradeDesc>k__BackingField: Turrets go through ammo 5x faster.
   <UpgradeType>k__BackingField: 1
   <Tiers>k__BackingField:
   - TierDesc: Tier 1
-    InGameDesc: Turrets go through ammo 5x faster.
+    InGameDesc: Turrets fire half a second faster.
     EquipFunc: 9
+    amt: 0.5
     ActivateFunc: 0
     TurretBuildFunc: 0
     TurretBuildMods: []
     TurretFireFunc: 0
     TurretDeathFunc: 0
-    amt: 5
-  - TierDesc: Turrets go through ammo 10x faster.
-    InGameDesc: 
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 2
+    InGameDesc: Turrets fire half a second faster.
     EquipFunc: 9
+    amt: 0.5
     ActivateFunc: 0
     TurretBuildFunc: 0
     TurretBuildMods: []
     TurretFireFunc: 0
     TurretDeathFunc: 0
-    amt: 5
-  - TierDesc: Turrets go through ammo 15x faster.
-    InGameDesc: 
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 3
+    InGameDesc: Turrets fire half a second faster.
     EquipFunc: 9
+    amt: 0.5
     ActivateFunc: 0
     TurretBuildFunc: 0
     TurretBuildMods: []
     TurretFireFunc: 0
     TurretDeathFunc: 0
-    amt: 5
-  - TierDesc: Turrets go through ammo 20x faster.
-    InGameDesc: 
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 4
+    InGameDesc: Turrets fire half a second faster.
     EquipFunc: 9
+    amt: 0.5
     ActivateFunc: 0
     TurretBuildFunc: 0
     TurretBuildMods: []
     TurretFireFunc: 0
     TurretDeathFunc: 0
-    amt: 5
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 5
+    InGameDesc: Turrets fire half a second faster.
+    EquipFunc: 9
+    amt: 0.5
+    ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
+    TurretDeathFuncParams: []
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0

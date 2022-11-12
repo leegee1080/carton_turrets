@@ -12,28 +12,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8342e2ef5b99c4aa6c7d79118ef7e3, type: 3}
   m_Name: BonusExp
   m_EditorClassIdentifier: 
+  <InspectorDesc>k__BackingField: 
   <Icon>k__BackingField: {fileID: 5758965880726059572, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
   <UpgradeName>k__BackingField: Bonus XP
   <UpgradeDesc>k__BackingField: Get more XP per pickup.
   <UpgradeType>k__BackingField: 1
   <Tiers>k__BackingField:
   - TierDesc: Tier 1
-    InGameDesc: Get more XP per pickup.
+    InGameDesc: Get 2x level progress per pickup.
     EquipFunc: 5
+    amt: 1
     ActivateFunc: 0
     TurretBuildFunc: 0
     TurretBuildMods: []
     TurretFireFunc: 0
     TurretDeathFunc: 0
-    amt: 10
-  - TierDesc: 10 Times More XP!
-    InGameDesc: 
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 2
+    InGameDesc: Get 4x level progress per pickup.
     EquipFunc: 5
+    amt: 2
     ActivateFunc: 0
     TurretBuildFunc: 0
     TurretBuildMods: []
     TurretFireFunc: 0
     TurretDeathFunc: 0
-    amt: 20
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 3
+    InGameDesc: Get 8x level progress per pickup.
+    EquipFunc: 5
+    amt: 4
+    ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 4
+    InGameDesc: Get 16x level progress per pickup.
+    EquipFunc: 5
+    amt: 8
+    ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
+    TurretDeathFuncParams: []
+  - TierDesc: Tier 5
+    InGameDesc: Get 32x level progress per pickup.
+    EquipFunc: 5
+    amt: 16
+    ActivateFunc: 0
+    TurretBuildFunc: 0
+    TurretBuildMods: []
+    TurretFireFunc: 0
+    TurretDeathFunc: 0
+    TurretDeathFuncParams: []
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 0
