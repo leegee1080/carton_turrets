@@ -9,11 +9,11 @@ F:\UnityInstalls\2021.3.11f1\Editor\Unity.exe
 -batchMode
 -noUpm
 -name
-AssetImportWorker0
+AssetImportWorker4
 -projectPath
 C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets
 -logFile
-Logs/AssetImportWorker0.log
+Logs/AssetImportWorker4.log
 -srvPort
 64336
 Successfully changed project path to: C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets
@@ -47,7 +47,7 @@ C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 98.28 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 88.69 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.11f1 (0a5ca18544bf)
 [Subsystems] Discovering subsystems at path F:/UnityInstalls/2021.3.11f1/Editor/Data/Resources/UnitySubsystems
@@ -63,7 +63,7 @@ Initialize mono
 Mono path[0] = 'F:/UnityInstalls/2021.3.11f1/Editor/Data/Managed'
 Mono path[1] = 'F:/UnityInstalls/2021.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'F:/UnityInstalls/2021.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56104
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56568
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
@@ -71,7 +71,7 @@ Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/Playb
 Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003789 seconds.
+Registered in 0.003615 seconds.
 Native extension for WindowsStandalone target not found
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
@@ -79,31 +79,31 @@ Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 92.71 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 82.41 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.692 seconds
+- Completed reload, in  0.587 seconds
 Domain Reload Profiling:
-	ReloadAssembly (692ms)
-		BeginReloadAssembly (93ms)
+	ReloadAssembly (587ms)
+		BeginReloadAssembly (68ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (496ms)
-			LoadAssemblies (94ms)
+		EndReloadAssembly (431ms)
+			LoadAssemblies (69ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (120ms)
+			SetupTypeCache (92ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (33ms)
-			SetupLoadedEditorAssemblies (288ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (269ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (62ms)
+				InitializePlatformSupportModulesInManaged (57ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (93ms)
+				RefreshPlugins (82ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (91ms)
+				ProcessInitializeOnLoadAttributes (88ms)
 				ProcessInitializeOnLoadMethodAttributes (41ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
@@ -111,39 +111,39 @@ Domain Reload Profiling:
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008322 seconds.
+Registered in 0.007371 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 87.13 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 85.49 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.378 seconds
+- Completed reload, in  1.265 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1379ms)
-		BeginReloadAssembly (224ms)
+	ReloadAssembly (1266ms)
+		BeginReloadAssembly (217ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (117ms)
-		EndReloadAssembly (1054ms)
-			LoadAssemblies (117ms)
+			CreateAndSetChildDomain (130ms)
+		EndReloadAssembly (961ms)
+			LoadAssemblies (86ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (251ms)
+			SetupTypeCache (216ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (58ms)
-			SetupLoadedEditorAssemblies (603ms)
+			RebuildScriptCaches (55ms)
+			SetupLoadedEditorAssemblies (569ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (31ms)
+				InitializePlatformSupportModulesInManaged (25ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (87ms)
-				BeforeProcessingInitializeOnLoad (100ms)
-				ProcessInitializeOnLoadAttributes (296ms)
-				ProcessInitializeOnLoadMethodAttributes (87ms)
+				RefreshPlugins (86ms)
+				BeforeProcessingInitializeOnLoad (89ms)
+				ProcessInitializeOnLoadAttributes (286ms)
+				ProcessInitializeOnLoadMethodAttributes (80ms)
 				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -152,12 +152,12 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 1.21 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 1.06 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4444 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 45 unused Assets / (0.7 MB). Loaded Objects now: 4910.
 Memory consumption went from 199.8 MB to 199.1 MB.
-Total: 3.725800 ms (FindLiveObjects: 0.444800 ms CreateObjectMapping: 0.339300 ms MarkObjects: 2.636400 ms  DeleteObjects: 0.304400 ms)
+Total: 3.599200 ms (FindLiveObjects: 0.372300 ms CreateObjectMapping: 0.219700 ms MarkObjects: 2.733700 ms  DeleteObjects: 0.272800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -172,22 +172,22 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 32485.269331 seconds.
-  path: Assets/Prefabs/Combat/FlamethrowerSpikyBlue.prefab
-  artifactKey: Guid(8af3b97aa9cf4b545b494ece58511c3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Combat/FlamethrowerSpikyBlue.prefab using Guid(8af3b97aa9cf4b545b494ece58511c3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9ca4f1880fa09e0c26f9d57daeba589') in 0.311161 seconds 
+  Time since last request: 36471.498432 seconds.
+  path: Assets/Prefabs/Controllers/DontDestroyControllers.prefab
+  artifactKey: Guid(733f3c9fd2b552a48921505ee4a6f578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Controllers/DontDestroyControllers.prefab using Guid(733f3c9fd2b552a48921505ee4a6f578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d4dd7d6dbd942bcaa9645b7a4cf1769') in 0.037306 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Prefabs/Combat/HitDustExplosion.prefab
-  artifactKey: Guid(30538aa757d5768459b127b9b70d4362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Combat/HitDustExplosion.prefab using Guid(30538aa757d5768459b127b9b70d4362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8f701fdb71cf06f69aec06074201408') in 0.019415 seconds 
+  Time since last request: 7.452462 seconds.
+  path: Assets/Prefabs/Ice_Turret/DummyGun(Ice).prefab
+  artifactKey: Guid(59aa4b1f86bd145aaaadca689fa233fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Ice_Turret/DummyGun(Ice).prefab using Guid(59aa4b1f86bd145aaaadca689fa233fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e8ac00a12f38d7d6ab9d175fa8bdfc9') in 0.215117 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Prefabs/Combat/LightningSoftMissileBlue.prefab
-  artifactKey: Guid(ec205f9894ffa8a4394bfa1e4fc27aad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Combat/LightningSoftMissileBlue.prefab using Guid(ec205f9894ffa8a4394bfa1e4fc27aad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba20a1f16e6ae9e24022ec8b1cdeecb6') in 0.047229 seconds 
+  Time since last request: 11.432690 seconds.
+  path: Assets/Prefabs/Turrets/FreezeTurret/FreezeTurretbullet.prefab
+  artifactKey: Guid(a58f6bdd4b5995e428015db0dc354523) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Turrets/FreezeTurret/FreezeTurretbullet.prefab using Guid(a58f6bdd4b5995e428015db0dc354523) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd87dee6373b139ab3b694b2f6869425f') in 0.022825 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting
