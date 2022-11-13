@@ -38,6 +38,7 @@ public class StageController : MonoBehaviour
     public PlayerActor Player;
     private PiaMainControls PlayerInputActions;
     public InputAction move, activate;
+    public InputAction pause;
 
     
     
@@ -78,11 +79,14 @@ public class StageController : MonoBehaviour
         move.Enable();
         activate = PlayerInputActions.MainMap.PlaceTurret;
         activate.Enable();
+        pause = PlayerInputActions.MainMap.Pause;
+        pause.Enable();
     }
     private void OnDisable()
     {
         move.Disable();
         activate.Disable();
+        pause.Disable();
     }
 
     public int FindActivateControlsIndex()//looks at the controls on the right side for the button pressed
