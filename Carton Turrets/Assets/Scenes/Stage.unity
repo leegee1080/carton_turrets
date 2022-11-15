@@ -5769,9 +5769,17 @@ PrefabInstance:
       value: -29.188198
       objectReference: {fileID: 0}
     - target: {fileID: 1058502353198869645, guid: 992f0b7ec9b0f3445929aaf5b84304f3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ef7d1e58a9d40f246ae88233e513fe94, type: 2}
+    - target: {fileID: 1058502353198869645, guid: 992f0b7ec9b0f3445929aaf5b84304f3, type: 3}
       propertyPath: m_overflowMode
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1058502353198869645, guid: 992f0b7ec9b0f3445929aaf5b84304f3, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7968958732364860451, guid: ef7d1e58a9d40f246ae88233e513fe94, type: 2}
     - target: {fileID: 1058502353198869645, guid: 992f0b7ec9b0f3445929aaf5b84304f3, type: 3}
       propertyPath: m_horizontalMapping
       value: 1
