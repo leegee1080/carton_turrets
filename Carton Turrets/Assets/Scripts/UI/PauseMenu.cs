@@ -24,6 +24,11 @@ public class PauseMenu : MonoBehaviour
         _gamePaused = false;
     }
 
+    public void ButtonExposedPauseToggle()
+    {
+        PauseToggle(new InputAction.CallbackContext());
+    }
+
     public void PauseToggle(InputAction.CallbackContext ctx)
     {
         if(_gamePaused){UnPauseGame(); return;}
