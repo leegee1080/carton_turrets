@@ -13,7 +13,7 @@ public class CurrentEquipmentUI : MonoBehaviour
     [SerializeField]TMP_Text[] _buttonLevelArray;
     [SerializeField]GameObject[] _availableSlotIndicatorArray;
     [SerializeField]GameObject[] _buttonCoverArray;
-    [SerializeField]float _startingCoverScale;
+    [SerializeField]float _startingCoverY;
 
     private void Awake()
     {
@@ -32,6 +32,7 @@ public class CurrentEquipmentUI : MonoBehaviour
         {
             item.text = "";
         }
+        Debug.Log("finish implementing the game juice at func flash equip cooldown");
     }
 
     public void Hide()
@@ -63,7 +64,20 @@ public class CurrentEquipmentUI : MonoBehaviour
     }
 
     public void UpdateUpgradeTimers(float maxTimer, int slot, float time)
+    { 
+        _buttonCoverArray[slot].transform.localPosition = new Vector3(0, Mathf.Lerp( 0, _startingCoverY, time/maxTimer), 0);
+        if(time <= 0)
+        {
+             _buttonCoverArray[slot].SetActive(false);
+        }
+        else
+        {
+             _buttonCoverArray[slot].SetActive(true);
+        }
+    }
+
+    private void FlashEquCooldown(int slot)
     {
-        _buttonCoverArray[slot].transform.localScale = new Vector3(_startingCoverScale, Mathf.LerpUnclamped( 0f, _startingCoverScale/maxTimer, time), _startingCoverScale);
+
     }
 }

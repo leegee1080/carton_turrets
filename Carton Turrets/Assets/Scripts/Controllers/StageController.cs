@@ -94,9 +94,9 @@ public class StageController : MonoBehaviour
         int GetActivatedSlot(Vector2 v)
         {
             if (v[0] > 0) return 1;
-            if (v[0] < 0) return 3;
+            if (v[0] < 0) return 2;
             if (v[1] > 0) return 0;
-            if (v[1] < 0) return 2;
+            // if (v[1] < 0) return 2;
             return -1;
         }
         int index = GetActivatedSlot(StageController.singlton.activate.ReadValue<Vector2>().normalized);

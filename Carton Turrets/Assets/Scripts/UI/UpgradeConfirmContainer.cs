@@ -133,7 +133,7 @@ public class UpgradeConfirmContainer : MonoBehaviour
                 case 1:
                     DenyUpgrade();
                     return;
-                case 3:
+                case 2:
                     ConfirmUpgrade();
                     return;
                 default:
