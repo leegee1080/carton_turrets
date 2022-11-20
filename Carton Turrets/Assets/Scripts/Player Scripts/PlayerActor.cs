@@ -208,7 +208,8 @@ public class PlayerActor : StageActor, IPassableObject
         {
             if(TimerSlotCooldowns[i] > 0)
             {
-                TimerSlotCooldowns[i] -= time; CurrentEquipmentUI.singlton.UpdateUpgradeTimers
+                TimerSlotCooldowns[i] -= time; 
+                CurrentEquipmentUI.singlton.UpdateUpgradeTimers
                 (
                     CurrentEquipmentArray[i].SO.Cooldown / PlayerCurrentStatDict[PlayerStatEnum.CurrentAbilityCooldown],
                     i,

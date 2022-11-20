@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BonusAbilityCooldown
   m_EditorClassIdentifier: 
   <InspectorDesc>k__BackingField: 
-  <Icon>k__BackingField: {fileID: -9069065776505696662, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 49dee7966f4aac846a88e4f252dc3a18, type: 3}
   <UpgradeName>k__BackingField: Ability Cooldown
   <UpgradeDesc>k__BackingField: Cast abilities and place turrets 2x faster.
   <UpgradeType>k__BackingField: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerHealth
   m_EditorClassIdentifier: 
   <InspectorDesc>k__BackingField: 
-  <Icon>k__BackingField: {fileID: 3934249035535238144, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 7b32a5e89a67ce3458dfe786ca7f552e, type: 3}
   <UpgradeName>k__BackingField: Small Health
   <UpgradeDesc>k__BackingField: Refill 10 health.
   <UpgradeType>k__BackingField: 1

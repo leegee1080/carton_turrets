@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Money
   m_EditorClassIdentifier: 
   <InspectorDesc>k__BackingField: 
-  <Icon>k__BackingField: {fileID: -3977184504499897954, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 48a4054c7fe6962469bab8439743f439, type: 3}
   <UpgradeName>k__BackingField: Money
   <UpgradeDesc>k__BackingField: A litte cash.
   <UpgradeType>k__BackingField: 1

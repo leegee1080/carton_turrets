@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerMoveSpeed
   m_EditorClassIdentifier: 
   <InspectorDesc>k__BackingField: 
-  <Icon>k__BackingField: {fileID: 3061872641144933912, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 070e17d462dda3d4eb35fd938097f17f, type: 3}
   <UpgradeName>k__BackingField: Move Speed
   <UpgradeDesc>k__BackingField: Run Faster!
   <UpgradeType>k__BackingField: 1
