@@ -22,15 +22,17 @@ MonoBehaviour:
   - TierDesc: Tier 1
     InGameDesc: Fires a large slow-moving projectile.
     EquipFunc: 0
+    amt: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods: []
     TurretFireFunc: 1
     TurretDeathFunc: 1
-    amt: 0
+    TurretDeathFuncParams: []
   - TierDesc: Tier 2 (+ 1 ammo)
     InGameDesc: One more ammo before turret is done.
     EquipFunc: 0
+    amt: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods:
@@ -38,10 +40,11 @@ MonoBehaviour:
       StatAmount: 1
     TurretFireFunc: 1
     TurretDeathFunc: 1
-    amt: 0
+    TurretDeathFuncParams: []
   - TierDesc: Tier 3 (+ 2 ammo)
     InGameDesc: Two more ammo before turret is done.
     EquipFunc: 0
+    amt: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods:
@@ -49,10 +52,11 @@ MonoBehaviour:
       StatAmount: 2
     TurretFireFunc: 1
     TurretDeathFunc: 1
-    amt: 0
+    TurretDeathFuncParams: []
   - TierDesc: Tier 4 (+ Bullet range)
     InGameDesc: The projectile travels farther now.
     EquipFunc: 0
+    amt: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods:
@@ -62,10 +66,11 @@ MonoBehaviour:
       StatAmount: 2
     TurretFireFunc: 1
     TurretDeathFunc: 1
-    amt: 0
+    TurretDeathFuncParams: []
   - TierDesc: Tier 5 (- bullet speed)
     InGameDesc: Projectile moves slower.
     EquipFunc: 0
+    amt: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods:
@@ -77,7 +82,7 @@ MonoBehaviour:
       StatAmount: -0.01
     TurretFireFunc: 1
     TurretDeathFunc: 1
-    amt: 0
+    TurretDeathFuncParams: []
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 5
   TReloadTime: 4
@@ -104,4 +109,4 @@ MonoBehaviour:
   BulletGameObject: {fileID: 741848558832750205, guid: f236222e1cea9474e89c1703c9388038, type: 3}
   ExplosionGameObject: {fileID: 5925393004181974638, guid: 7307da6cf58c09b4084f1567cbb2227c, type: 3}
   Mesh: {fileID: 4300182, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}
-  <Icon>k__BackingField: {fileID: 2653811183072668675, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 30a9ec7717288c94c8cf69bfa3329754, type: 3}

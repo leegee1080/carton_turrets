@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerMaxHealth
   m_EditorClassIdentifier: 
   <InspectorDesc>k__BackingField: 
-  <Icon>k__BackingField: {fileID: -4399871233024827926, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: acd1fcf61d4761a43a8b638d9b509989, type: 3}
   <UpgradeName>k__BackingField: Max Health
   <UpgradeDesc>k__BackingField: Increase your max health by 100.
   <UpgradeType>k__BackingField: 1

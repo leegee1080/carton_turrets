@@ -28,6 +28,7 @@ MonoBehaviour:
     TurretBuildMods: []
     TurretFireFunc: 1
     TurretDeathFunc: 1
+    TurretDeathFuncParams: []
   - TierDesc: Tier 2 (+1 Bullets)
     InGameDesc: Shoots two bullets now!
     EquipFunc: 0
@@ -43,6 +44,7 @@ MonoBehaviour:
       StatAmount: 4
     TurretFireFunc: 1
     TurretDeathFunc: 1
+    TurretDeathFuncParams: []
   - TierDesc: Tier 3 (+2 Bullets)
     InGameDesc: Shoots three bullets now!
     EquipFunc: 0
@@ -58,6 +60,7 @@ MonoBehaviour:
       StatAmount: 5
     TurretFireFunc: 1
     TurretDeathFunc: 1
+    TurretDeathFuncParams: []
   - TierDesc: Tier 4 (+3 Bullets)
     InGameDesc: Shoots four bullets now!
     EquipFunc: 0
@@ -73,6 +76,7 @@ MonoBehaviour:
       StatAmount: 6
     TurretFireFunc: 1
     TurretDeathFunc: 1
+    TurretDeathFuncParams: []
   - TierDesc: Tier 5 (+4 Bullets)
     InGameDesc: Shoots five bullets now!
     EquipFunc: 0
@@ -88,6 +92,7 @@ MonoBehaviour:
       StatAmount: 7
     TurretFireFunc: 1
     TurretDeathFunc: 1
+    TurretDeathFuncParams: []
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 2
   TReloadTime: 1.5
@@ -114,4 +119,4 @@ MonoBehaviour:
   BulletGameObject: {fileID: 741848558832750205, guid: 09ad2b3bca4baf0459660c3d383288ee, type: 3}
   ExplosionGameObject: {fileID: 5925393004181974638, guid: f29e092f6e553064cb9828bdb984dca2, type: 3}
   Mesh: {fileID: 4300182, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}
-  <Icon>k__BackingField: {fileID: -1140342232090195849, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 9cfd4e10f64b1934cb51b67279a40e14, type: 3}

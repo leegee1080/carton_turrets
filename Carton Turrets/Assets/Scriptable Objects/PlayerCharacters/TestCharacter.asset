@@ -32,7 +32,7 @@ MonoBehaviour:
   StartingExploSpeedBonus: 1
   StartingExploSizeBonus: 1
   StartingExploDamageRangeBonus: 1
-  InGameSprite: {fileID: 21300000, guid: 6e2dfc7cd357290449298da77c4406fa, type: 3}
+  InGameSprite: {fileID: 21300000, guid: fc5be1873b8550c4b89642603301dc70, type: 3}
   SpriteSize: 1
   WalkingCurve:
     serializedVersion: 2

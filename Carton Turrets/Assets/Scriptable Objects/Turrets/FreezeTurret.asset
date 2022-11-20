@@ -23,15 +23,17 @@ MonoBehaviour:
   - TierDesc: Tier 1
     InGameDesc: A steady beam that freezes enemies for a moment.
     EquipFunc: 0
+    amt: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods: []
     TurretFireFunc: 1
     TurretDeathFunc: 1
-    amt: 0
+    TurretDeathFuncParams: []
   - TierDesc: Tier 2 (+b lifetime)
     InGameDesc: The beam now lasts one second longer.
     EquipFunc: 0
+    amt: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods:
@@ -39,10 +41,11 @@ MonoBehaviour:
       StatAmount: 1
     TurretFireFunc: 1
     TurretDeathFunc: 1
-    amt: 0
+    TurretDeathFuncParams: []
   - TierDesc: Tier 3 (+2 beam)
     InGameDesc: The turret fires 3 beams.
     EquipFunc: 0
+    amt: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods:
@@ -54,10 +57,11 @@ MonoBehaviour:
       StatAmount: 45
     TurretFireFunc: 1
     TurretDeathFunc: 1
-    amt: 0
+    TurretDeathFuncParams: []
   - TierDesc: Tier 4 (+b speed)
     InGameDesc: The beams are longer.
     EquipFunc: 0
+    amt: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods:
@@ -71,10 +75,11 @@ MonoBehaviour:
       StatAmount: 0.01
     TurretFireFunc: 1
     TurretDeathFunc: 1
-    amt: 0
+    TurretDeathFuncParams: []
   - TierDesc: Tier 5 (+b lifetime)
     InGameDesc: The turret lasts 1 second longer.
     EquipFunc: 0
+    amt: 0
     ActivateFunc: 2
     TurretBuildFunc: 1
     TurretBuildMods:
@@ -88,7 +93,7 @@ MonoBehaviour:
       StatAmount: 0.01
     TurretFireFunc: 1
     TurretDeathFunc: 1
-    amt: 0
+    TurretDeathFuncParams: []
   <IsUnlimited>k__BackingField: 0
   <Cooldown>k__BackingField: 5
   TReloadTime: -1
@@ -115,4 +120,4 @@ MonoBehaviour:
   BulletGameObject: {fileID: 741848558832750205, guid: a58f6bdd4b5995e428015db0dc354523, type: 3}
   ExplosionGameObject: {fileID: 5925393004181974638, guid: 8a71e296650274943a0b85aff08fe834, type: 3}
   Mesh: {fileID: 4300192, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}
-  <Icon>k__BackingField: {fileID: -5326120278402101576, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 7bfcd71a42881cb42bfd50857759f57f, type: 3}

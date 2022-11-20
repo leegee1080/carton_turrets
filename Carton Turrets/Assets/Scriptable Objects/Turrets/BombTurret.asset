@@ -91,7 +91,7 @@ MonoBehaviour:
       ParamAmount: 2
     - ParamName: RotAmount
       ParamAmount: 45
-  - TierDesc: Tier 5 (+split x2)
+  - TierDesc: Tier 6 (+split x2)
     InGameDesc: Bomb splits after explosion.
     EquipFunc: 0
     amt: 0
@@ -137,4 +137,4 @@ MonoBehaviour:
   BulletGameObject: {fileID: 741848558832750205, guid: a71fca5f03e3597438ba2132c3c44952, type: 3}
   ExplosionGameObject: {fileID: 5925393004181974638, guid: 524c5e0dce837d143a0a0b50594f4d12, type: 3}
   Mesh: {fileID: 4300182, guid: 308d7ea7e8b451342813f016cfe08ba3, type: 3}
-  <Icon>k__BackingField: {fileID: 2935707681824743193, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: f5a67e8bfd5f12446b73461ed2a40531, type: 3}
