@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BulletLifeTime
   m_EditorClassIdentifier: 
   <InspectorDesc>k__BackingField: 
-  <Icon>k__BackingField: {fileID: -3897761439659027702, guid: 93c2a04a6f3a95f4cbdf7379934291d5, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: e33330ade0fac8e47837128490b23cec, type: 3}
   <UpgradeName>k__BackingField: Bullet Lifetime
   <UpgradeDesc>k__BackingField: Bullets go farther.
   <UpgradeType>k__BackingField: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BonusExp
   m_EditorClassIdentifier: 
   <InspectorDesc>k__BackingField: 
-  <Icon>k__BackingField: {fileID: 5758965880726059572, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: ae2b846921f88614d97a3333486cfde8, type: 3}
   <UpgradeName>k__BackingField: Bonus XP
   <UpgradeDesc>k__BackingField: Get more XP per pickup.
   <UpgradeType>k__BackingField: 1

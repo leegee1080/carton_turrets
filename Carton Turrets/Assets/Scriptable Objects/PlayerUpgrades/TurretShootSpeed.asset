@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TurretShootSpeed
   m_EditorClassIdentifier: 
   <InspectorDesc>k__BackingField: 
-  <Icon>k__BackingField: {fileID: -4528079395343913193, guid: 51348e10d17f2db4c9b7836dbb4f847b, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: bd63b800de812cb4b8dbcb6196cb6af3, type: 3}
   <UpgradeName>k__BackingField: Reload Speed
   <UpgradeDesc>k__BackingField: Turrets go through ammo 5x faster.
   <UpgradeType>k__BackingField: 1

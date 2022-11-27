@@ -64,8 +64,10 @@ public class StageController : MonoBehaviour
 
     [Header("Pickups Pool")]
     [SerializeField]private GameObject _pickupContainer;
-    [SerializeField]private GameObject _pickupObject;
-    public ObjectPooler PickupPooler;
+    [SerializeField]private GameObject _expPickupObject;
+    [SerializeField]private GameObject _moneyPickupObject;
+    public ObjectPooler ExpPickupPooler;
+    public ObjectPooler MoneyPickupPooler;
 
 
     private void Awake()
@@ -146,7 +148,12 @@ public class StageController : MonoBehaviour
 
     public void DropExp(Vector3 location)
     {
-        GameObject p = PickupPooler.ActivateNextObject(null);
+        GameObject p = ExpPickupPooler.ActivateNextObject(null);
+        p.transform.position = location;
+    }
+    public void DropMoney(Vector3 location)
+    {
+        GameObject p = MoneyPickupPooler.ActivateNextObject(null);
         p.transform.position = location;
     }
 
@@ -224,8 +231,9 @@ public class StageController : MonoBehaviour
         //death particles
         DeathParticlePooler = new ObjectPooler(_genericDeathParticleObject, _enemiesToPool, _genericDeathParticleContainer, false);
 
-        //pickup particles
-        PickupPooler = new ObjectPooler(_pickupObject, _enemiesToPool, _pickupContainer, false);
+        //pickup objects
+        ExpPickupPooler = new ObjectPooler(_expPickupObject, _enemiesToPool, _pickupContainer, false);
+        MoneyPickupPooler = new ObjectPooler(_moneyPickupObject, _enemiesToPool, _pickupContainer, false);
     }
     private void PlayerSetup()
     {
