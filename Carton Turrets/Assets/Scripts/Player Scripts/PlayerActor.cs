@@ -97,6 +97,7 @@ public class PlayerActor : StageActor, IPassableObject
     {
         if(CurrentStateClass.name != "normal"){return;}
         PlayerCurrentStatDict[PlayerStatEnum.CurrentHealth] -= amt;
+        CurrentHealth = PlayerCurrentStatDict[PlayerStatEnum.CurrentHealth];
         BlinkSprite();
         if(PlayerCurrentStatDict[PlayerStatEnum.CurrentHealth] <=0 )
         {
@@ -169,7 +170,10 @@ public class PlayerActor : StageActor, IPassableObject
                 ExpPickup t = (ExpPickup)item;
                 ApplyExp(t.ExpAmount);
                 return;
-            
+            case "Money":
+                MoneyPickup m = (MoneyPickup)item;
+                StageMoneyEarnedIndicatorUI.singlton.UpdateMoneyAmountUI(m.MoneyAmount);
+                return;
             default:
                 Debug.Log("Pickup ID not found");
                 return;
@@ -233,8 +237,10 @@ public class PlayerActor : StageActor, IPassableObject
         StageMoneyEarnedIndicatorUI.singlton.UpdateMoneyAmountUI((int)PlayerCurrentStatDict[PlayerStatEnum.money]);
 
         PlayerCurrentStatDict[PlayerStatEnum.CurrentHealth] = PlayerData.MaxHealth;
+        CurrentHealth = PlayerCurrentStatDict[PlayerStatEnum.CurrentHealth];
         PlayerCurrentStatDict[PlayerStatEnum.MaxHealth] = PlayerData.MaxHealth;
         PlayerCurrentStatDict[PlayerStatEnum.CurrentSpeed] = PlayerData.MaxSpeed;
+        CurrentSpeed = PlayerCurrentStatDict[PlayerStatEnum.CurrentSpeed];
         PlayerCurrentStatDict[PlayerStatEnum.ExpMultiplier] = PlayerData.StartingPlayerExpBonus;
         PlayerCurrentStatDict[PlayerStatEnum.ExpGatherRange] = PlayerData.StartingPlayerExpGatherRange;
         ExpPickupGameObject.GetComponent<SphereCollider>().radius = PlayerData.StartingPlayerExpGatherRange;

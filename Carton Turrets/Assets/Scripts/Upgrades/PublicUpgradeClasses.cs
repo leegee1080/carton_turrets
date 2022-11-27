@@ -96,6 +96,7 @@ public class PublicUpgradeClasses
     public static void UpgradeIncreasePlayerSpeed(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData, bool testApply)
     {
         statDictToEffect[PlayerStatEnum.CurrentSpeed] += value;
+        StageController.singlton.Player.CurrentSpeed = statDictToEffect[PlayerStatEnum.CurrentSpeed];
     }
     public static void UpgradeIncreasePlayerHealth(float value, Dictionary<PlayerStatEnum, float> statDictToEffect, IUpgradeable passedUpgradeData, bool testApply)
     {
