@@ -14,12 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: The Park
   Desc: The First Level
-  Waves:
-  - EnemySpawnStartThreshold: 1
-    SpawnInterval: 0.01
-    Amount: 1000
-    Spawned: 0
-    Enemy: {fileID: 11400000, guid: 711ec42f94b39f04287949318eba63f6, type: 2}
+  Waves: []
   MapMaxX: 100
   MapMaxY: 100
   StartingLocation:
