@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Tester
   Desc: Testy Test Testerson
   MaxHealth: 100
-  MaxSpeed: 0.5
+  MaxSpeed: 10
   MaxAbilityCooldownTime: 1
   StartingPlayerExpBonus: 1
   StartingPlayerExpGatherRange: 0.5
