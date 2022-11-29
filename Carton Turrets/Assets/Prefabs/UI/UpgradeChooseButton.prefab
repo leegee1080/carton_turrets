@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4849393375598680360}
   - component: {fileID: 5303669615057366423}
   - component: {fileID: 1468607042123577775}
+  - component: {fileID: 8285715406588347626}
   m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
@@ -76,6 +77,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 8
+--- !u!114 &8285715406588347626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3054407171168780727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c0bf097cf97fb94b8e536367034310f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3428975647417792409
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +100,7 @@ GameObject:
   - component: {fileID: 3428975647417792414}
   - component: {fileID: 3428975647417792412}
   - component: {fileID: 6211250034423471356}
+  - component: {fileID: 7067229131841075403}
   m_Layer: 5
   m_Name: Icon
   m_TagString: UI
@@ -174,6 +188,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7067229131841075403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3428975647417792409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1815cb5b9dd6c7d4b8074025c4e1d48c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3428975647559298793
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +347,7 @@ GameObject:
   - component: {fileID: 3428975647955315354}
   - component: {fileID: 3428975647955315349}
   - component: {fileID: 3428975647955315348}
-  - component: {fileID: 7902754354298787933}
+  - component: {fileID: 3754928359028845711}
   m_Layer: 5
   m_Name: UpgradeChooseButton
   m_TagString: UI
@@ -447,7 +473,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7902754354298787933
+--- !u!114 &3754928359028845711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -456,13 +482,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3428975647955315350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c0bf097cf97fb94b8e536367034310f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shaderTypes: 0
-  normalStrength: 5
-  normalSmoothing: 1
-  computingNormal: 0
 --- !u!1 &6678867339962974531
 GameObject:
   m_ObjectHideFlags: 0
