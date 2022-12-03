@@ -25,7 +25,7 @@ public class DeathCoverContainer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(_player.CurrentStateClass.name != "normal"){return;}
+        if(_player.CurrentStateClass == null || _player.CurrentStateClass.name != "normal"){return;}
         
         float dist = Vector3.Distance(_player.transform.position, new Vector3(_mapStart, 0, _mapStart));
         

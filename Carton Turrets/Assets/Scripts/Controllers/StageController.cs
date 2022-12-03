@@ -39,6 +39,7 @@ public class StageController : MonoBehaviour
     private PiaMainControls PlayerInputActions;
     public InputAction move, activate;
     public InputAction pause;
+    [SerializeField]DropPodController _dropPod;
 
     
     
@@ -122,11 +123,14 @@ public class StageController : MonoBehaviour
 
     private void Start()
     {
-        GridSetup();
-        StageObjectPoolsSetup();
-        PlayerSetup();
+        CurrentState.OnEnterState(this);
+    }
 
-        ChangeState(new StageState_Running());
+    public void LaunchPlayerDropPod()
+    {
+        _dropPod.gameObject.SetActive(true);
+        GridData StartingGrid = GridArray[CurrentStage.StartingLocation.LocationX, CurrentStage.StartingLocation.LocationY];
+        _dropPod.Launch(new Vector3(StartingGrid.ActualX,0,StartingGrid.ActualY));
     }
 
     public void ChangeState(StageState newState)
@@ -183,7 +187,7 @@ public class StageController : MonoBehaviour
     //     }
     // }
 
-    private void GridSetup()
+    public void GridSetup()
     {
         GridArray = new GridData[CurrentStage.MapMaxX, CurrentStage.MapMaxY];
 
@@ -210,7 +214,7 @@ public class StageController : MonoBehaviour
             }
         }
     }
-    private void StageObjectPoolsSetup()
+    public void StageObjectPoolsSetup()
     {
         //tile objects
         for (int i = 0; i < CurrentStage.GridObjects.Length; i++)
@@ -235,12 +239,11 @@ public class StageController : MonoBehaviour
         ExpPickupPooler = new ObjectPooler(_expPickupObject, _enemiesToPool, _pickupContainer, false);
         MoneyPickupPooler = new ObjectPooler(_moneyPickupObject, _enemiesToPool, _pickupContainer, false);
     }
-    private void PlayerSetup()
+
+    public void PlaceStartingTile()
     {
         GridData StartingGrid = GridArray[CurrentStage.StartingLocation.LocationX, CurrentStage.StartingLocation.LocationY];
         Vector3 StartingPos = new Vector3(StartingGrid.ActualX,0,StartingGrid.ActualY); 
-
-        Player.gameObject.transform.position = StartingPos;
 
         GameObject StartingTile = Instantiate(CurrentStage.StartingLocation.Object, StartingPos, Quaternion.identity, this.transform);
         StartingGrid.GridObj = StartingTile;
@@ -248,9 +251,19 @@ public class StageController : MonoBehaviour
         StartingGrid.TileType = StartingTile.GetComponent<TileData>().TileTypeTag;
         StartingTile.GetComponent<TileData>().CurrentX = StartingGrid.X;
         StartingTile.GetComponent<TileData>().CurrentY = StartingGrid.Y;
+    }
+    public void PlayerSetup()
+    {
+        GridData StartingGrid = GridArray[CurrentStage.StartingLocation.LocationX, CurrentStage.StartingLocation.LocationY];
+        Vector3 StartingPos = new Vector3(StartingGrid.ActualX,0,StartingGrid.ActualY); 
+
+        Player.gameObject.transform.position = StartingPos;
+
+
         
         Player.Setup();
-        Player.Activate();//this is just to test the player
+        Player.CheckMapTiles();
+
     }
 
     public void CheckEnemySpawnWave()
@@ -326,7 +339,11 @@ public class StageState_Setup: StageState
     public override string name {get {return "setup";}}
     public override void OnEnterState(StageController _cont)
     {
-        
+        _cont.GridSetup();
+        _cont.StageObjectPoolsSetup();
+        _cont.PlaceStartingTile();
+        _cont.PlayerSetup();
+        _cont.LaunchPlayerDropPod();
     }   
     public override void OnExitState(StageController _cont)
     {
