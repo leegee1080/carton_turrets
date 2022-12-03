@@ -271,6 +271,7 @@ public class PlayerActor : StageActor, IPassableObject
     public override void Activate()
     {
         base.Activate();
+        ActorArtContainer.SetActive(true);
         ChangeState(new PlayerState_Normal());
     }
     public override void Die()
