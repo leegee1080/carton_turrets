@@ -40,6 +40,7 @@ public class StageController : MonoBehaviour
     public InputAction move, activate;
     public InputAction pause;
     [SerializeField]DropPodController _dropPod;
+    [SerializeField]EndgameController _endgameNuke;
 
     
     
@@ -126,6 +127,11 @@ public class StageController : MonoBehaviour
         CurrentState.OnEnterState(this);
     }
 
+    public void PlayerDeath()
+    {
+        PauseMenu.singleton.ButtonExposedPauseToggle();
+    }
+
     public void LaunchPlayerDropPod()
     {
         _dropPod.gameObject.SetActive(true);
@@ -152,6 +158,7 @@ public class StageController : MonoBehaviour
 
     public void DropExp(Vector3 location)
     {
+        if(CurrentState.name != "run"){return;}
         GameObject p = ExpPickupPooler.ActivateNextObject(null);
         p.transform.position = location;
     }
@@ -290,6 +297,12 @@ public class StageController : MonoBehaviour
         }
     }
 
+    public void StartEndgame()
+    {
+        _endgameNuke.gameObject.SetActive(true);
+        _endgameNuke.LaunchBomb(Player.gameObject.transform.position);
+        ChangeState(new StageState_Endgame());
+    }
 }
 
 public abstract class StageState
@@ -316,6 +329,10 @@ public class StageState_Running: StageState
         _cont.GameTime += Time.fixedDeltaTime;
         GameTimeIndicatorUI.singlton.UpdateTime(_cont.GameTime);
         _cont.CheckEnemySpawnWave();
+        if(_cont.GameTime >= 900)
+        {
+            _cont.StartEndgame();
+        }
     }   
 }
 public class StageState_Pause: StageState
@@ -352,5 +369,22 @@ public class StageState_Setup: StageState
     public override void OnUpdateState(StageController _cont)
     {
 
+    }   
+}
+public class StageState_Endgame: StageState
+{
+    public override string name {get {return "end";}}
+    public override void OnEnterState(StageController _cont)
+    {
+
+    }   
+    public override void OnExitState(StageController _cont)
+    {
+        
+    }   
+    public override void OnUpdateState(StageController _cont)
+    {
+        _cont.GameTime += Time.fixedDeltaTime;
+        GameTimeIndicatorUI.singlton.UpdateTime(_cont.GameTime);
     }   
 }

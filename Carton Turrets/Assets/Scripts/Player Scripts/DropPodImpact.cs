@@ -2,10 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+interface IDroppodControllable
+{
+    virtual void Impact()
+    {
+
+    }
+    virtual void CompleteLanding()
+    {
+
+    }
+}
+
 public class DropPodImpact : MonoBehaviour
 {
 
-[SerializeField]DropPodController _dpController;
+    [SerializeField]IDroppodControllable _dpController; 
+    [SerializeField]GameObject _dpControllerObject; 
     [SerializeField]ParticleSystem _nukePS;
     [SerializeField]float _playerSpawnTime;
     [SerializeField]float _nukeCompleteTime;
@@ -14,6 +28,7 @@ public class DropPodImpact : MonoBehaviour
     private void Start()
     {
         _rubble.SetActive(false);
+        _dpController = (IDroppodControllable)_dpControllerObject.GetComponent<IDroppodControllable>();
     }
 
     public void Nuke(Vector3 impactLocation)
@@ -43,6 +58,7 @@ public class DropPodImpact : MonoBehaviour
     }
     public void CompleteNuke()
     {
-        _dpController.gameObject.SetActive(false);
+        _dpController.CompleteLanding();
+        _dpControllerObject.SetActive(false);
     }
 }

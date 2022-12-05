@@ -15,7 +15,7 @@ C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-59447
+55100
 Successfully changed project path to: C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets
 C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 78.30 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 68.65 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.11f1 (0a5ca18544bf)
 [Subsystems] Discovering subsystems at path F:/UnityInstalls/2021.3.11f1/Editor/Data/Resources/UnitySubsystems
@@ -71,7 +71,7 @@ Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/Playb
 Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003631 seconds.
+Registered in 0.003594 seconds.
 Native extension for WindowsStandalone target not found
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
@@ -79,85 +79,85 @@ Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 73.62 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 63.78 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.618 seconds
+- Completed reload, in  0.575 seconds
 Domain Reload Profiling:
-	ReloadAssembly (619ms)
-		BeginReloadAssembly (75ms)
+	ReloadAssembly (575ms)
+		BeginReloadAssembly (74ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (454ms)
+		EndReloadAssembly (415ms)
 			LoadAssemblies (75ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (105ms)
+			SetupTypeCache (95ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (26ms)
-			SetupLoadedEditorAssemblies (269ms)
+			RebuildScriptCaches (24ms)
+			SetupLoadedEditorAssemblies (251ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (63ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (74ms)
+				InitializePlatformSupportModulesInManaged (55ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (64ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (88ms)
-				ProcessInitializeOnLoadMethodAttributes (42ms)
+				ProcessInitializeOnLoadAttributes (87ms)
+				ProcessInitializeOnLoadMethodAttributes (44ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.007799 seconds.
+Registered in 0.007959 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 77.44 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 69.88 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.326 seconds
+- Completed reload, in  1.263 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1326ms)
-		BeginReloadAssembly (240ms)
+	ReloadAssembly (1264ms)
+		BeginReloadAssembly (213ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (141ms)
-		EndReloadAssembly (1002ms)
-			LoadAssemblies (98ms)
+			CreateAndSetChildDomain (117ms)
+		EndReloadAssembly (968ms)
+			LoadAssemblies (94ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (243ms)
+			SetupTypeCache (239ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (56ms)
-			SetupLoadedEditorAssemblies (582ms)
+			RebuildScriptCaches (57ms)
+			SetupLoadedEditorAssemblies (545ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (25ms)
+				InitializePlatformSupportModulesInManaged (26ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (77ms)
-				BeforeProcessingInitializeOnLoad (92ms)
-				ProcessInitializeOnLoadAttributes (305ms)
-				ProcessInitializeOnLoadMethodAttributes (79ms)
+				RefreshPlugins (70ms)
+				BeforeProcessingInitializeOnLoad (90ms)
+				ProcessInitializeOnLoadAttributes (280ms)
+				ProcessInitializeOnLoadMethodAttributes (77ms)
 				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 1.42 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 0.88 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4441 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 45 unused Assets / (0.7 MB). Loaded Objects now: 4907.
-Memory consumption went from 199.9 MB to 199.2 MB.
-Total: 3.553600 ms (FindLiveObjects: 0.370000 ms CreateObjectMapping: 0.304400 ms MarkObjects: 2.589200 ms  DeleteObjects: 0.289000 ms)
+Memory consumption went from 198.9 MB to 198.2 MB.
+Total: 3.694200 ms (FindLiveObjects: 0.345000 ms CreateObjectMapping: 0.258500 ms MarkObjects: 2.712500 ms  DeleteObjects: 0.377300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -172,17 +172,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 4435.388018 seconds.
-  path: Assets/Materials/Misc/Explosions/nova_6x3_spritesheet_ADD.mat
-  artifactKey: Guid(ea696a4cf4fe1924796b308e4791aaf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Misc/Explosions/nova_6x3_spritesheet_ADD.mat using Guid(ea696a4cf4fe1924796b308e4791aaf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d5524dd57e608b580eae113268af88f') in 0.248384 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Materials/Misc/Unsorted/evil_spirit3_ADD.mat
-  artifactKey: Guid(6e1acc8ef6e21cc48a05085a72379ff1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Misc/Unsorted/evil_spirit3_ADD.mat using Guid(6e1acc8ef6e21cc48a05085a72379ff1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6a15fa560bada1c3826db576ab8525f') in 0.014373 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+  Time since last request: 4751.249546 seconds.
+  path: Assets/Prefabs/Combat
+  artifactKey: Guid(98fa2716f76b56e4485a0aee235e327e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Combat using Guid(98fa2716f76b56e4485a0aee235e327e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd8541f497ed4106d88448500d7407f1') in 0.009655 seconds 
