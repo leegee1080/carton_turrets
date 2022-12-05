@@ -11,6 +11,7 @@ TagManager:
   - TurretExplo
   - Pickup
   - UI
+  - AllKiller
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - PlayerDamage
   - Floor
   - PickUps
-  - 
+  - AllKill
   - 
   - 
   - 

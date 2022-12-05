@@ -2,20 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DropPodController : MonoBehaviour, IDroppodControllable
+public class EndgameController : MonoBehaviour, IDroppodControllable
 {
     [SerializeField]float _speed;
+    [SerializeField]float _deathGrowthSpeed;
     [SerializeField]GameObject _artObject;
-    [SerializeField]DropPodImpact _dpImpactObject;
+    [SerializeField]DropPodImpact _bombImpactObject;
+    [SerializeField]GameObject _bombKillerCollider;
     [SerializeField]bool _launched;
     [SerializeField]bool _impacted;
 
-    public void Launch(Vector3 impactLocation)
-    {
-        this.transform.position = impactLocation;
-        _artObject.SetActive(true);
-        _launched = true;
-    }
 
     private void FixedUpdate()
     {
@@ -28,14 +24,22 @@ public class DropPodController : MonoBehaviour, IDroppodControllable
             return;
         }
 
-        _dpImpactObject.Nuke(this.transform.position);
+        _bombImpactObject.Nuke(this.transform.position);
         _impacted = true;
     }
 
+    public void LaunchBomb(Vector3 impactLocation)
+    {
+        this.transform.position = impactLocation;
+        _artObject.SetActive(true);
+        _launched = true;
+    }
     public void Impact()
     {
-        StageController.singlton.Player.Activate();
-        StageController.singlton.ChangeState(new StageState_Running());
-        _artObject.SetActive(false);
+
+    }
+    public void CompleteLanding()
+    {
+        _bombKillerCollider.SetActive(true);
     }
 }

@@ -102,6 +102,7 @@ public class PlayerActor : StageActor, IPassableObject
         if(PlayerCurrentStatDict[PlayerStatEnum.CurrentHealth] <=0 )
         {
             ChangeState(new PlayerState_Dead());
+            StageController.singlton.PlayerDeath();
         }
     }
 
@@ -234,7 +235,11 @@ public class PlayerActor : StageActor, IPassableObject
         CurrentPlayerLevel = 1;
 
         PlayerCurrentStatDict[PlayerStatEnum.money] = 0;
+
+        if(StageMoneyEarnedIndicatorUI.singlton != null)
+        {
         StageMoneyEarnedIndicatorUI.singlton.UpdateMoneyAmountUI((int)PlayerCurrentStatDict[PlayerStatEnum.money]);
+        }
 
         PlayerCurrentStatDict[PlayerStatEnum.CurrentHealth] = PlayerData.MaxHealth;
         CurrentHealth = PlayerCurrentStatDict[PlayerStatEnum.CurrentHealth];
