@@ -129,6 +129,7 @@ public class StageController : MonoBehaviour
 
     public void PlayerDeath()
     {
+        ChangeState(new StageState_EndgameLose());
         PauseMenu.singleton.ButtonExposedPauseToggle();
     }
 
@@ -386,5 +387,37 @@ public class StageState_Endgame: StageState
     {
         _cont.GameTime += Time.fixedDeltaTime;
         GameTimeIndicatorUI.singlton.UpdateTime(_cont.GameTime);
+    }   
+}
+public class StageState_EndgameLose: StageState
+{
+    public override string name {get {return "lose";}}
+    public override void OnEnterState(StageController _cont)
+    {
+
+    }   
+    public override void OnExitState(StageController _cont)
+    {
+        
+    }   
+    public override void OnUpdateState(StageController _cont)
+    {
+
+    }   
+}
+public class StageState_EndgameWin: StageState
+{
+    public override string name {get {return "win";}}
+    public override void OnEnterState(StageController _cont)
+    {
+
+    }   
+    public override void OnExitState(StageController _cont)
+    {
+        
+    }   
+    public override void OnUpdateState(StageController _cont)
+    {
+
     }   
 }
