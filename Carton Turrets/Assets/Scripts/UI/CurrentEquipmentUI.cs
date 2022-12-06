@@ -33,6 +33,7 @@ public class CurrentEquipmentUI : MonoBehaviour
             item.text = "";
         }
         Debug.Log("finish implementing the game juice at func flash equip cooldown");
+        Debug.Log("finish implementing the game juice at place turret on player actor");
     }
 
     public void Hide()
