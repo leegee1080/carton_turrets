@@ -49,7 +49,6 @@ public class PoolableExplosionObject : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-
         if(other.gameObject.tag == "Enemy")
         {
             other.gameObject.GetComponentInParent<EnemyActor>().TakeDamage(_damage);

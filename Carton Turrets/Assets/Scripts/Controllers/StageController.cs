@@ -42,6 +42,9 @@ public class StageController : MonoBehaviour
     [SerializeField]DropPodController _dropPod;
     [SerializeField]EndgameController _endgameNuke;
 
+    [Header("UI vars")]
+    public GameObject PauseButtonGO;
+
     
     
     public List<string> TileProbabilityList = new List<string>();
@@ -130,7 +133,10 @@ public class StageController : MonoBehaviour
     public void PlayerDeath()
     {
         ChangeState(new StageState_EndgameLose());
-        PauseMenu.singleton.ButtonExposedPauseToggle();
+    }
+    public void PlayerWin()
+    {
+        ChangeState(new StageState_EndgameWin());
     }
 
     public void LaunchPlayerDropPod()
@@ -394,7 +400,19 @@ public class StageState_EndgameLose: StageState
     public override string name {get {return "lose";}}
     public override void OnEnterState(StageController _cont)
     {
-
+        _cont.pause.Disable();
+        _cont.PauseButtonGO.SetActive(false);
+        IEnumerator SlowDownTime()
+        {
+            for (float i = 1; i > 0; i -= 0.1f)
+            {
+                Time.timeScale = i;
+                yield return new WaitForSeconds(0.1f);
+            }
+            PauseMenu.singleton.PauseGame(PauseMenuType.lose);
+            yield return null;
+        }
+        _cont.StartCoroutine(SlowDownTime());
     }   
     public override void OnExitState(StageController _cont)
     {
@@ -410,7 +428,19 @@ public class StageState_EndgameWin: StageState
     public override string name {get {return "win";}}
     public override void OnEnterState(StageController _cont)
     {
-
+        _cont.pause.Disable();
+        _cont.PauseButtonGO.SetActive(false);
+        IEnumerator SlowDownTime()
+        {
+            for (float i = 1; i > 0; i -= 0.1f)
+            {
+                Time.timeScale = i;
+                yield return new WaitForSeconds(0.1f);
+            }
+            PauseMenu.singleton.PauseGame(PauseMenuType.win);
+            yield return null;
+        }
+        _cont.StartCoroutine(SlowDownTime());
     }   
     public override void OnExitState(StageController _cont)
     {

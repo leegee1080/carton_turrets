@@ -15,8 +15,8 @@ MonoBehaviour:
   name: The Park
   Desc: The First Level
   Waves:
-  - EnemySpawnStartThreshold: 5
-    SpawnInterval: 0.5
+  - EnemySpawnStartThreshold: 1
+    SpawnInterval: 0.1
     Amount: 100
     Spawned: 0
     Enemy: {fileID: 11400000, guid: 711ec42f94b39f04287949318eba63f6, type: 2}

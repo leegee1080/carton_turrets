@@ -114,7 +114,7 @@ public class EnemyActor : StageActor, IColliderMessageable
     }
     
 
-    public void TakeDamage(float amt)
+    public virtual void TakeDamage(float amt)
     {
         if(CurrentStateClass.name != "normal"){return;}
         CurrentHealth -= amt;
@@ -125,7 +125,7 @@ public class EnemyActor : StageActor, IColliderMessageable
         }
     }
 
-    public void Freeze(float time)
+    public virtual void Freeze(float time)
     {
         if(CurrentStateClass.name != "normal"){return;}
         ChangeState(new EnemyState_Frozen());
