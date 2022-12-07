@@ -9,31 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 539cd8774b46fdb4ab75167839c74e7a, type: 3}
-  m_Name: TestCharacter
+  m_Script: {fileID: 11500000, guid: fd9b80f38c6d15e4f98dd17bbc500314, type: 3}
+  m_Name: MushVeins
   m_EditorClassIdentifier: 
-  name: Tester
-  Desc: Testy Test Testerson
-  MaxHealth: 100
-  MaxSpeed: 10
-  MaxAbilityCooldownTime: 1
-  StartingPlayerExpBonus: 1
-  StartingPlayerExpGatherRange: 0.5
-  LevelUpThresholdMultiplier: 2
-  StartingTurret: {fileID: 11400000, guid: 60a671292fc0f98488533a657416f678, type: 2}
-  StartingTurretBonusShootSpeed: 1
-  StartingTurretBonusLifeTime: 1
-  StartingTurretBonusAmmo: 1
-  StartingBulletDamageBonus: 10
-  StartingBulletLifetimeBonus: 1
-  StartingBulletRangeBonus: 1
-  StartingBulletSpeedBonus: 1
-  StartingExploDamageBonus: 1
-  StartingExploSpeedBonus: 1
-  StartingExploSizeBonus: 1
-  StartingExploDamageRangeBonus: 1
-  InGameSprite: {fileID: 21300000, guid: fc5be1873b8550c4b89642603301dc70, type: 3}
+  name: Mush Veins
+  Desc: Mush Veins
+  MaxHealth: 30
+  MaxSpeed: 0.1
+  Sprite: {fileID: 21300000, guid: 8b6543cd00789274a84959e6c9a24abe, type: 3}
   SpriteSize: 1
+  MaxDamage: 1
+  ColliderSize: 0.08
+  RespawnType: 1
+  MovementType: 0
   WalkingCurve:
     serializedVersion: 2
     m_Curve:

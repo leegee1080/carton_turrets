@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9be32562731524faee5213050304bd, type: 3}
+  m_Name: RockyStage
+  m_EditorClassIdentifier: 
+  name: The Rocky Plane
+  Desc: The First Level
+  Waves:
+  - EnemySpawnStartThreshold: 1
+    SpawnInterval: 0.1
+    Amount: 250
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: 711ec42f94b39f04287949318eba63f6, type: 2}
+  - EnemySpawnStartThreshold: 60
+    SpawnInterval: 0.1
+    Amount: 150
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: 711ec42f94b39f04287949318eba63f6, type: 2}
+  - EnemySpawnStartThreshold: 60
+    SpawnInterval: 0.2
+    Amount: 50
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: d2c308bfdca9aee47b645940f0de9111, type: 2}
+  - EnemySpawnStartThreshold: 120
+    SpawnInterval: 0.05
+    Amount: 1000
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: 711ec42f94b39f04287949318eba63f6, type: 2}
+  MapMaxX: 100
+  MapMaxY: 100
+  StartingLocation:
+    Object: {fileID: 6074885723609033330, guid: cb60e67dad8bf5444807244b6f58d94d, type: 3}
+    LocationX: 50
+    LocationY: 50
+  ImportantLocations: []
+  GridSpacing: 5
+  GridObjects:
+  - SpawnableGO: {fileID: 6074885723609033330, guid: ed4db2a9cd21da1498eb8159e9081754, type: 3}
+    AmountToPool: 20
+  - SpawnableGO: {fileID: 6074885723609033330, guid: 5bdddc95e2f513043854bf567080c04d, type: 3}
+    AmountToPool: 3
+  - SpawnableGO: {fileID: 6074885723609033330, guid: 39d30dbc726511140bb6048709fab95f, type: 3}
+    AmountToPool: 3
+  - SpawnableGO: {fileID: 6074885723609033330, guid: 58b18405ea712794bb07da841b33709c, type: 3}
+    AmountToPool: 3
+  ScoreMulti: 1
+  AvailableEquipment:
+  - {fileID: 11400000, guid: 353fa482735732e48ae6ad5fd1269c07, type: 2}
+  - {fileID: 11400000, guid: 7cad782fab39c004f94302b9d874f116, type: 2}
+  - {fileID: 11400000, guid: fc42811bc276f12418d24232ebfb35d2, type: 2}
+  - {fileID: 11400000, guid: 60a671292fc0f98488533a657416f678, type: 2}
+  - {fileID: 11400000, guid: 58b15c4aec8ac4e45965535b35eb1850, type: 2}
+  - {fileID: 11400000, guid: ba37dff01d5b36f408ce30002b22ddc7, type: 2}
+  AvailableUpgrades:
+  - {fileID: 11400000, guid: 7e0a3ab83ba6b3b4397d6d5b521289fb, type: 2}
+  - {fileID: 11400000, guid: 1eb71aa06053e4d43a4e4b973befaa67, type: 2}
+  - {fileID: 11400000, guid: 990e3bab40ca7584189ad478a8c4f243, type: 2}
+  - {fileID: 11400000, guid: fdd2c2af5f8e51041821f2a2ccf6a874, type: 2}
+  - {fileID: 11400000, guid: 7dd724062dde52c4f883d72e3807fd76, type: 2}
+  - {fileID: 11400000, guid: 0f6138b1610cf924f9ca722223425f9d, type: 2}
+  - {fileID: 11400000, guid: 83366c71f3c38f748816973a2d25d8fe, type: 2}
+  - {fileID: 11400000, guid: 1f525070ee3977242b7355573cfa7d75, type: 2}
+  FillInUpgradesForMaxLevel:
+  - {fileID: 11400000, guid: 2f56855a24b830746a40323f6789bd4a, type: 2}
