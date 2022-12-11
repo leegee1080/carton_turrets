@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameTime: 0
-  CurrentStage: {fileID: 11400000, guid: 4dfbd9951bb31904eaed563f202c1e38, type: 2}
+  CurrentStage: {fileID: 11400000, guid: 189577f8d4b4a314b8ec357b991a41f0, type: 2}
   Player: {fileID: 1555916284}
   move:
     m_Name: Move

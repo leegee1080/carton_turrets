@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Green Leaner
   Desc: Green Leaner
-  MaxHealth: 10
+  MaxHealth: 100
   MaxSpeed: 0.1
   Sprite: {fileID: 21300000, guid: 2ecfafa3fc0f9d94f88bf8c34f2cf687, type: 3}
-  SpriteSize: 1
-  MaxDamage: 1
-  ColliderSize: 0.1
-  RespawnType: 1
+  SpriteSize: 3
+  MaxDamage: 20
+  ColliderSize: 0.3
+  RespawnType: 0
   MovementType: 0
   WalkingCurve:
     serializedVersion: 2
