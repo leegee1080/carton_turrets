@@ -26,25 +26,36 @@ public static class EnemyAIClass
     #region Respawn
     public static readonly Dictionary<EnemyRespawnType, Action<GameObject, GameObject, float>> RespawnDict = new Dictionary<EnemyRespawnType, Action<GameObject, GameObject, float>>
     {
-        {EnemyRespawnType.OffsetOnPlayerDir, OffsetOnPlayer},
+        {EnemyRespawnType.OffsetOnPlayerDir, OffsetOnPlayerFacing},
         {EnemyRespawnType.RandomAroundPlayer, RandomAroundPlayer}
     };
 
-    public static void OffsetOnPlayer(GameObject target, GameObject enemy, float offset)
+    public static void OffsetOnPlayerFacing(GameObject target, GameObject enemy, float offset)
     {
-        Vector3 nearPos = target.transform.position + (StageController.singlton.Player.LastViewInput * offset);
+        
+        Vector3 nearPos = target.transform.position + (StageController.singlton.Player.LastViewInput * (offset-2));
 
-        float ranOffset = UnityEngine.Random.Range(-2, 2);
+        float ranOffset = UnityEngine.Random.Range(-100, 100);
 
+        ranOffset = ranOffset / 100;
+    
         enemy.transform.position = new Vector3(nearPos.x + ranOffset, enemy.transform.position.y,nearPos.z + ranOffset);
     }
     public static void RandomAroundPlayer(GameObject target, GameObject enemy, float offset)
     {
-        Vector3 nearPos = target.transform.position + (StageController.singlton.Player.LastViewInput * offset);
 
-        float ranOffset = UnityEngine.Random.Range(-1, 1);
+        float ranOffsetx = UnityEngine.Random.Range(-100, 100);
+        float ranOffsetz = UnityEngine.Random.Range(-100, 100);
 
-        enemy.transform.position = new Vector3(nearPos.x + ranOffset, enemy.transform.position.y,nearPos.z + ranOffset);
+        ranOffsetx = (ranOffsetx / 100);
+        ranOffsetz = (ranOffsetz / 100);
+
+        Vector3 nearPos = target.transform.position + (new Vector3(ranOffsetx, 0, ranOffsetz));
+        nearPos = Vector3.MoveTowards(nearPos, target.transform.position, -1 * (offset-2));
+
+
+        enemy.transform.position = new Vector3(nearPos.x, enemy.transform.position.y, nearPos.z);
+
     }
     #endregion
 

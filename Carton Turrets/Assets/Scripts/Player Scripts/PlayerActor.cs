@@ -92,6 +92,9 @@ public class PlayerActor : StageActor, IPassableObject
     [Header("Phys Vars")]
     public Rigidbody rb;
 
+    [Header("Juice Vars")]
+    [SerializeField]ParticleSystem _deathParticlePS;
+
 
     public void TakeDamage(float amt)
     {
@@ -282,7 +285,8 @@ public class PlayerActor : StageActor, IPassableObject
     public override void Die()
     {
         base.Die();
-
+        _deathParticlePS.gameObject.transform.position = this.transform.position;
+        _deathParticlePS.Play();
         GameObject part = StageController.singlton.DeathParticlePooler.ActivateNextObject(null);
         part.transform.position = new Vector3(ActorArtContainer.transform.position.x, 0.1f, ActorArtContainer.transform.position.z);
         ActorArtContainer.SetActive(false);
