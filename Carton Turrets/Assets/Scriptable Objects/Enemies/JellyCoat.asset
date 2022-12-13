@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Jelly Coat
   Desc: Jelly Coat
-  MaxHealth: 50
+  MaxHealth: 5000
   MaxSpeed: 0.1
   Sprite: {fileID: 21300000, guid: 3c4ce47c1f6308640b69330bece00afe, type: 3}
-  SpriteSize: 1
-  MaxDamage: 1
-  ColliderSize: 0.1
+  SpriteSize: 3
+  MaxDamage: 100
+  ColliderSize: 0.3
   RespawnType: 1
   MovementType: 0
   WalkingCurve:

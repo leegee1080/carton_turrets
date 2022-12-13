@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Mush Veins
   Desc: Mush Veins
-  MaxHealth: 30
-  MaxSpeed: 0.1
+  MaxHealth: 100
+  MaxSpeed: 0.2
   Sprite: {fileID: 21300000, guid: 8b6543cd00789274a84959e6c9a24abe, type: 3}
   SpriteSize: 1
-  MaxDamage: 1
+  MaxDamage: 1000
   ColliderSize: 0.08
   RespawnType: 1
   MovementType: 0
