@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Stumpy Three Eyes
   Desc: Stumpy Three Eyes
-  MaxHealth: 200
-  MaxSpeed: 0.1
+  MaxHealth: 250
+  MaxSpeed: 0.2
   Sprite: {fileID: 21300000, guid: 6f22a94d6ea87014793b402db1d4df0d, type: 3}
-  SpriteSize: 2
-  MaxDamage: 5
+  SpriteSize: 1
+  MaxDamage: 20
   ColliderSize: 0.1
   RespawnType: 1
   MovementType: 0

@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: One Arm
   Desc: One Arm
-  MaxHealth: 50
+  MaxHealth: 500
   MaxSpeed: 0.1
   Sprite: {fileID: 21300000, guid: df671c45592782343bff6fbe4fd215f6, type: 3}
   SpriteSize: 1
-  MaxDamage: 1
+  MaxDamage: 10
   ColliderSize: 0.1
   RespawnType: 1
   MovementType: 0

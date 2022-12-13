@@ -5512,7 +5512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfa6505acebd7b49b5d6ca96b1bf469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 8
+  _speed: 10
   _artObject: {fileID: 1760394526}
   _dpImpactObject: {fileID: 1918531624}
   _launched: 0

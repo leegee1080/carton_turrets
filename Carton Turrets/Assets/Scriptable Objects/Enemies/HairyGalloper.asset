@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Hairy Galloper
   Desc: Hairy Galloper
-  MaxHealth: 40
-  MaxSpeed: 0.1
+  MaxHealth: 200
+  MaxSpeed: 0.3
   Sprite: {fileID: 21300000, guid: 70003cf41b8e8a642951da35d32e0f11, type: 3}
   SpriteSize: 1
-  MaxDamage: 1
+  MaxDamage: 5
   ColliderSize: 0.1
   RespawnType: 1
   MovementType: 0

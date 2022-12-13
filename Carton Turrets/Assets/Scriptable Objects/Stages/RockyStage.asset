@@ -18,27 +18,27 @@ MonoBehaviour:
   - EnemySpawnStartThreshold: 1
     SpawnInterval: 0.1
     Amount: 250
-    Spawned: 1
+    Spawned: 0
     Enemy: {fileID: 11400000, guid: 711ec42f94b39f04287949318eba63f6, type: 2}
   - EnemySpawnStartThreshold: 60
     SpawnInterval: 0.1
     Amount: 150
-    Spawned: 1
+    Spawned: 0
     Enemy: {fileID: 11400000, guid: 711ec42f94b39f04287949318eba63f6, type: 2}
   - EnemySpawnStartThreshold: 60
     SpawnInterval: 0.2
     Amount: 50
-    Spawned: 1
+    Spawned: 0
     Enemy: {fileID: 11400000, guid: d2c308bfdca9aee47b645940f0de9111, type: 2}
   - EnemySpawnStartThreshold: 120
     SpawnInterval: 0.05
     Amount: 1000
-    Spawned: 1
+    Spawned: 0
     Enemy: {fileID: 11400000, guid: 711ec42f94b39f04287949318eba63f6, type: 2}
   - EnemySpawnStartThreshold: 180
     SpawnInterval: 1
     Amount: 200
-    Spawned: 1
+    Spawned: 0
     Enemy: {fileID: 11400000, guid: 8820f1406a9ea1140a970084e456e56f, type: 2}
   - EnemySpawnStartThreshold: 240
     SpawnInterval: 0.1
@@ -50,6 +50,81 @@ MonoBehaviour:
     Amount: 1
     Spawned: 0
     Enemy: {fileID: 11400000, guid: 716da6cc25b76e840a3e2f9ad6e64b93, type: 2}
+  - EnemySpawnStartThreshold: 300
+    SpawnInterval: 0.1
+    Amount: 250
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: 98e5d079d4bba2a438a1f527921477b5, type: 2}
+  - EnemySpawnStartThreshold: 300
+    SpawnInterval: 0.05
+    Amount: 500
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: 711ec42f94b39f04287949318eba63f6, type: 2}
+  - EnemySpawnStartThreshold: 360
+    SpawnInterval: 0.5
+    Amount: 150
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: a942063437f5ba143996d80bf0971037, type: 2}
+  - EnemySpawnStartThreshold: 420
+    SpawnInterval: 0.1
+    Amount: 250
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: 98e5d079d4bba2a438a1f527921477b5, type: 2}
+  - EnemySpawnStartThreshold: 420
+    SpawnInterval: 0.1
+    Amount: 150
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: a942063437f5ba143996d80bf0971037, type: 2}
+  - EnemySpawnStartThreshold: 480
+    SpawnInterval: 0.1
+    Amount: 150
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: 716da6cc25b76e840a3e2f9ad6e64b93, type: 2}
+  - EnemySpawnStartThreshold: 540
+    SpawnInterval: 0.1
+    Amount: 150
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: 716da6cc25b76e840a3e2f9ad6e64b93, type: 2}
+  - EnemySpawnStartThreshold: 540
+    SpawnInterval: 0.05
+    Amount: 500
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: d2c308bfdca9aee47b645940f0de9111, type: 2}
+  - EnemySpawnStartThreshold: 600
+    SpawnInterval: 0.1
+    Amount: 1
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: 773c45bcf15ad8246ba4cdbb0a1c75cc, type: 2}
+  - EnemySpawnStartThreshold: 600
+    SpawnInterval: 0.05
+    Amount: 500
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: 8820f1406a9ea1140a970084e456e56f, type: 2}
+  - EnemySpawnStartThreshold: 660
+    SpawnInterval: 0.1
+    Amount: 250
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: dab94a8a387ec34489b598d8bb5976f8, type: 2}
+  - EnemySpawnStartThreshold: 720
+    SpawnInterval: 0.1
+    Amount: 250
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: dab94a8a387ec34489b598d8bb5976f8, type: 2}
+  - EnemySpawnStartThreshold: 720
+    SpawnInterval: 0.1
+    Amount: 100
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: 8820f1406a9ea1140a970084e456e56f, type: 2}
+  - EnemySpawnStartThreshold: 780
+    SpawnInterval: 1
+    Amount: 20
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: 8edeb15b61e7ce24c8acfef33f350afc, type: 2}
+  - EnemySpawnStartThreshold: 840
+    SpawnInterval: 0.05
+    Amount: 1
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: af60334ab56d3984491abc9848ac00b2, type: 2}
   MapMaxX: 100
   MapMaxY: 100
   StartingLocation:

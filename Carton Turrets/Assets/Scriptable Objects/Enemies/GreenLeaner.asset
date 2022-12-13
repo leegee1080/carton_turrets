@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Green Leaner
   Desc: Green Leaner
-  MaxHealth: 100
+  MaxHealth: 200
   MaxSpeed: 0.1
   Sprite: {fileID: 21300000, guid: 2ecfafa3fc0f9d94f88bf8c34f2cf687, type: 3}
   SpriteSize: 3
