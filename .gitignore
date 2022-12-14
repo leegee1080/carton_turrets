@@ -11,6 +11,8 @@ library/
 /[Bb]uild/
 /[Bb]uilds/
 /[Ll]ogs/
+logs/
+Logs/
 /[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
