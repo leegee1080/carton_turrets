@@ -15,7 +15,7 @@ C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-57583
+62167
 Successfully changed project path to: C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets
 C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Users/mitch/UnityProjects/carton_turrets/Carton Turrets
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 69.16 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 72.71 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.11f1 (0a5ca18544bf)
 [Subsystems] Discovering subsystems at path F:/UnityInstalls/2021.3.11f1/Editor/Data/Resources/UnitySubsystems
@@ -63,7 +63,7 @@ Initialize mono
 Mono path[0] = 'F:/UnityInstalls/2021.3.11f1/Editor/Data/Managed'
 Mono path[1] = 'F:/UnityInstalls/2021.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'F:/UnityInstalls/2021.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56912
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56332
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
@@ -71,7 +71,7 @@ Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/Playb
 Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: F:/UnityInstalls/2021.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003389 seconds.
+Registered in 0.004564 seconds.
 Native extension for WindowsStandalone target not found
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
@@ -79,85 +79,85 @@ Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 64.73 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 79.22 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.570 seconds
+- Completed reload, in  0.650 seconds
 Domain Reload Profiling:
-	ReloadAssembly (570ms)
-		BeginReloadAssembly (71ms)
+	ReloadAssembly (651ms)
+		BeginReloadAssembly (82ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (414ms)
-			LoadAssemblies (71ms)
+		EndReloadAssembly (473ms)
+			LoadAssemblies (83ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (94ms)
+			SetupTypeCache (123ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (24ms)
-			SetupLoadedEditorAssemblies (253ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (275ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (56ms)
+				InitializePlatformSupportModulesInManaged (66ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (65ms)
+				RefreshPlugins (79ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (88ms)
-				ProcessInitializeOnLoadMethodAttributes (42ms)
+				ProcessInitializeOnLoadAttributes (89ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.007593 seconds.
+Registered in 0.007582 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 66.60 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 70.27 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.279 seconds
+- Completed reload, in  1.398 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1280ms)
-		BeginReloadAssembly (229ms)
+	ReloadAssembly (1399ms)
+		BeginReloadAssembly (231ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (125ms)
-		EndReloadAssembly (963ms)
-			LoadAssemblies (104ms)
+			CreateAndSetChildDomain (132ms)
+		EndReloadAssembly (1080ms)
+			LoadAssemblies (109ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (224ms)
+			SetupTypeCache (259ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (55ms)
-			SetupLoadedEditorAssemblies (558ms)
+			RebuildScriptCaches (75ms)
+			SetupLoadedEditorAssemblies (598ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (25ms)
+				InitializePlatformSupportModulesInManaged (31ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (67ms)
-				BeforeProcessingInitializeOnLoad (92ms)
-				ProcessInitializeOnLoadAttributes (284ms)
-				ProcessInitializeOnLoadMethodAttributes (88ms)
+				RefreshPlugins (70ms)
+				BeforeProcessingInitializeOnLoad (100ms)
+				ProcessInitializeOnLoadAttributes (313ms)
+				ProcessInitializeOnLoadMethodAttributes (80ms)
 				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.81 ms, found 5 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 2.45 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4443 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 45 unused Assets / (0.7 MB). Loaded Objects now: 4909.
-Memory consumption went from 198.9 MB to 198.2 MB.
-Total: 3.396600 ms (FindLiveObjects: 0.326200 ms CreateObjectMapping: 0.237600 ms MarkObjects: 2.566500 ms  DeleteObjects: 0.265600 ms)
+Memory consumption went from 198.7 MB to 198.0 MB.
+Total: 3.486000 ms (FindLiveObjects: 0.362200 ms CreateObjectMapping: 0.289500 ms MarkObjects: 2.504100 ms  DeleteObjects: 0.329600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -172,31 +172,13 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1071.640754 seconds.
-  path: Assets/Textures/star_outlined_colored.png
-  artifactKey: Guid(a4e52c23f174acd4fbf8b0b3b6042219) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Textures/star_outlined_colored.png using Guid(a4e52c23f174acd4fbf8b0b3b6042219) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb5eafc60c105df8a1064e73f04a044e') in 0.107235 seconds 
+  Time since last request: 4816.145749 seconds.
+  path: Assets/Prefabs/UI/MenuButton.prefab
+  artifactKey: Guid(0a685c605399652418fa091425cb8d05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/MenuButton.prefab using Guid(0a685c605399652418fa091425cb8d05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec85f778ce2d7be9f0466fbdf82e5f6d') in 0.116053 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Textures/star.png
-  artifactKey: Guid(93f8abb6df8f9f348910ec6328660560) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Textures/star.png using Guid(93f8abb6df8f9f348910ec6328660560) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1675c9b1e0c0e4b23164ee2d7e4fb339') in 0.015966 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 300.327754 seconds.
-  path: Assets/Scriptable Objects/Enemies/JellyCoat.asset
-  artifactKey: Guid(af60334ab56d3984491abc9848ac00b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scriptable Objects/Enemies/JellyCoat.asset using Guid(af60334ab56d3984491abc9848ac00b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a55ba978457b9d68c07ee76d754062d5') in 0.007781 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 597.758304 seconds.
-  path: Assets/Scriptable Objects/Enemies/MushVeins.asset
-  artifactKey: Guid(8edeb15b61e7ce24c8acfef33f350afc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scriptable Objects/Enemies/MushVeins.asset using Guid(8edeb15b61e7ce24c8acfef33f350afc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f32d90ff04255813d60673a589411d3') in 0.015145 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000048 seconds.
-  path: Assets/Scriptable Objects/Enemies/Stumpy3eyes.asset
-  artifactKey: Guid(dab94a8a387ec34489b598d8bb5976f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scriptable Objects/Enemies/Stumpy3eyes.asset using Guid(dab94a8a387ec34489b598d8bb5976f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '902b8671d99c9ad40d4faa6fe067cdac') in 0.006303 seconds 
+  Time since last request: 0.000018 seconds.
+  path: Assets/Prefabs/UI/PlayerEquipmentSlot.prefab
+  artifactKey: Guid(0aed749ff4e7e97419c307b0e9c3f1f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/PlayerEquipmentSlot.prefab using Guid(0aed749ff4e7e97419c307b0e9c3f1f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b2120f6b56057f0d10d7993f8270e2c') in 0.295756 seconds 
