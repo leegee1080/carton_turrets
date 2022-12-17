@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -32,9 +30,6 @@ public class CurrentEquipmentUI : MonoBehaviour
         {
             item.text = "";
         }
-        Debug.Log("finish implementing the game juice at func flash equip cooldown");
-        Debug.Log("finish implementing the game juice at place turret on player actor");
-        Debug.Log("fix shadows under actors so that it fits with the actor sprite size.");
     }
 
     public void Hide()
