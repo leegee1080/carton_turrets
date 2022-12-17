@@ -215,8 +215,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a1654db6b030dc04b8c3b3d2972c2b01, type: 2}
-  m_sharedMaterial: {fileID: 7968958732364860451, guid: a1654db6b030dc04b8c3b3d2972c2b01, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f6a35df6efd4d143b0deffe8c78645f, type: 2}
+  m_sharedMaterial: {fileID: 6707020119381094803, guid: 8f6a35df6efd4d143b0deffe8c78645f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: -7
+  m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
