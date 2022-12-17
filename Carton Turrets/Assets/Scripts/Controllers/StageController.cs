@@ -128,6 +128,7 @@ public class StageController : MonoBehaviour
     private void Start()
     {
         CurrentState.OnEnterState(this);
+        GlobalVolumeController.singleton.ShowScene();
     }
 
     public void PlayerDeath()

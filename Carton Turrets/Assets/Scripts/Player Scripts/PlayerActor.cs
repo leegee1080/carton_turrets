@@ -102,6 +102,7 @@ public class PlayerActor : StageActor, IPassableObject
         PlayerCurrentStatDict[PlayerStatEnum.CurrentHealth] -= amt;
         CurrentHealth = PlayerCurrentStatDict[PlayerStatEnum.CurrentHealth];
         BlinkSprite();
+        GlobalVolumeController.singleton.CharacterHurt();
         if(PlayerCurrentStatDict[PlayerStatEnum.CurrentHealth] <=0 )
         {
             ChangeState(new PlayerState_Dead());

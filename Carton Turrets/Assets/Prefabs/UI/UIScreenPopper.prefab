@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 744162190778661956}
   - component: {fileID: 744162190778661960}
   - component: {fileID: 2799903153530272471}
-  - component: {fileID: 744162190778661962}
   - component: {fileID: 744162190778661967}
   - component: {fileID: 744162190778661966}
   m_Layer: 5
@@ -62,21 +61,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attachedAnimation: {fileID: 744162190778661967}
---- !u!114 &744162190778661962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 744162190778661957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 40306178, guid: aa0b1eebb5db27a419fa4564bbe5c9c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  preset: 0
-  onEnableBehaviour: 0
-  onDisableBehaviour: 0
 --- !u!114 &744162190778661967
 MonoBehaviour:
   m_ObjectHideFlags: 0
