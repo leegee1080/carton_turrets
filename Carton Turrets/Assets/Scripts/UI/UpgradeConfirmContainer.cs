@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.Events;
 
 public class UpgradeConfirmContainer : MonoBehaviour
 {
 
+    [System.Serializable]
+    public class ShowConfirm : UnityEvent{}
+
+    [System.Serializable]
+    public class HideConfirm : UnityEvent{}
+
     public static UpgradeConfirmContainer singlton;
+    [SerializeField]public ShowConfirm ShowEvent;
+    [SerializeField]public HideConfirm HideEvent;
     private void Awake() => singlton = this;
     bool _isShown;
 
@@ -31,6 +40,8 @@ public class UpgradeConfirmContainer : MonoBehaviour
 
     public void Show(IUpgradeable passedChosenUpgrade, int tier)
     {
+        ShowEvent.Invoke();
+
         _levelUpPopupUIGameObject.SetActive(false);
         foreach (GameObject item in _visualGameObjects)
         {
@@ -102,6 +113,8 @@ public class UpgradeConfirmContainer : MonoBehaviour
     }
     public void Hide()
     {
+        HideEvent.Invoke();
+
         _levelUpPopupUIGameObject.SetActive(true);
         foreach (GameObject item in _visualGameObjects)
         {

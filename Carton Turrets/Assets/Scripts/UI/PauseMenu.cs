@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.Events;
 
 public enum PauseMenuType
 {
@@ -10,14 +11,23 @@ public enum PauseMenuType
     normal
 }
 
+[System.Serializable]
+public class PauseGame : UnityEvent{}
+
+[System.Serializable]
+public class UnPauseGame : UnityEvent{}
+
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField]public PauseGame PauseGameEvent;
+    [SerializeField]public UnPauseGame UnPauseGameEvent;
 
     [SerializeField]GameObject[] _pauseMenuObjects;
     [SerializeField]TMP_Text _pauseMenuTitleText;
     [SerializeField]GameObject[] _UIToHideOnPause;
     [SerializeField]PlayerStatPauseMenu[] _StatBlocks;
     bool _gamePaused;
+
 
 
     public static PauseMenu singleton;
@@ -47,6 +57,9 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame(PauseMenuType type)
     {
+
+        PauseGameEvent.Invoke();
+
         foreach (GameObject item in _UIToHideOnPause)
         {
             Time.timeScale = 0;
@@ -70,6 +83,9 @@ public class PauseMenu : MonoBehaviour
 
     public void UnPauseGame()
     {
+
+        UnPauseGameEvent.Invoke();
+
         foreach (GameObject item in _UIToHideOnPause)
         {
             Time.timeScale = 1;
