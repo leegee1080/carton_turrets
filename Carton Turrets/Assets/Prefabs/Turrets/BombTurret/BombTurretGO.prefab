@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8903252950350368668}
   m_RootOrder: 0
@@ -59,6 +60,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.034, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 2}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9140685105884498302}
   m_Father: {fileID: 8903252950405436270}
@@ -83,6 +85,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -154,6 +157,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8903252950350368668}
   m_Father: {fileID: 0}
@@ -177,6 +181,14 @@ MonoBehaviour:
   CurrentSpeed: 0
   CurrentHealth: 0
   DamageColor: {r: 0, g: 0, b: 0, a: 0}
+  FreezeColor: {r: 0, g: 0, b: 0, a: 0}
+  WalkingCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  RendererHandle: {fileID: 0}
   TurretData: {fileID: 11400000, guid: 353fa482735732e48ae6ad5fd1269c07, type: 2}
   _barrel: {fileID: 3074358141296015960}
   ControllingActor: {fileID: 0}
@@ -192,6 +204,7 @@ MonoBehaviour:
   EDamage: 0
   ESpeed: 0
   ESize: 0
+  currentTier: 0
   _turretArtObject: {fileID: 8903252950350368669}
   _turretMesh: {fileID: 8903252950350368657}
 --- !u!114 &8903252950405436257
