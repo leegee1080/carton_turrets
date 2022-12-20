@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public enum PlayerCharacters
 {
@@ -27,10 +28,21 @@ public class GlobalDataStorage : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    public int PlayerMoney = 100;
+
+    [Header("Character Unlocks")]
+    [SerializeField]PlayerScriptableObject[] _possiblePlayerSOArray;
     [SerializeField]UnlockChooseButton[] _characterButtons;
     [SerializeField]PlayerCharacters[] _currentlyUnlockedCharacters;
     public PlayerCharacters ChosenCharacter;
-    public int PlayerMoney = 100;
+    [SerializeField]SpriteRenderer _chosenCharacterSR;
+    [SerializeField]TMP_Text _chosenCharacterText;
+
+    [Header("Map Unlocks")]
+    [SerializeField]UnlockChooseButton[] _mapButtons;
+    [SerializeField]PlayerCharacters[] _currentlyUnlockedMaps;
+    public PlayerCharacters ChosenMap;
+
 
     private void Start()
     {
@@ -52,6 +64,10 @@ public class GlobalDataStorage : MonoBehaviour
         {
             item.CheckForSelected();
         }
+
+        _chosenCharacterSR.sprite = _possiblePlayerSOArray[(int)ChosenCharacter].InGameSprite;
+        _chosenCharacterText.text = _possiblePlayerSOArray[(int)ChosenCharacter].name;
+
     }
 
     public void UnlockCharacter(PlayerCharacters unlock)
