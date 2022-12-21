@@ -2,11 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
+
+
+[System.Serializable]
+public class ShowLevelUp : UnityEvent{}
+
+[System.Serializable]
+public class HideLevelUp : UnityEvent{}
 
 public class LevelUpPopup : MonoBehaviour
 {
 
     public static LevelUpPopup singlton;
+    [SerializeField]public ShowLevelUp ShowEvent;
+    [SerializeField]public HideLevelUp HideEvent;
     private void Awake() => singlton = this;
 
     [Header("Control Lockout")]
@@ -54,6 +64,8 @@ public class LevelUpPopup : MonoBehaviour
 
     public void Show()
     {
+        ShowEvent.Invoke();
+
         if(_elementsToShowArray.Length == 0){return;}
         foreach (GameObject item in _elementsToShowArray)
         {
@@ -79,6 +91,8 @@ public class LevelUpPopup : MonoBehaviour
 
     public void Hide()
     {
+        HideEvent.Invoke();
+
         if(_elementsToShowArray.Length == 0){return;}
         foreach (GameObject item in _elementsToShowArray)
         {

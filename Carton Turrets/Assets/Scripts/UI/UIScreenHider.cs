@@ -13,10 +13,12 @@ public class UIScreenHider : MonoBehaviour
         gameObject.transform.localScale = Vector3.zero;
     }
 
+    [ContextMenu("In")]
     public void AnimateIn()
     {
         _attachedAnimation.DOPlayForwardById("in");
     }
+    [ContextMenu("Out")]
     public void AnimateOut()
     {
         _attachedAnimation.DOPlayForwardById("out");
