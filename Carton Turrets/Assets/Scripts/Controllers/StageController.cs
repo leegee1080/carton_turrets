@@ -32,6 +32,7 @@ public class StageController : MonoBehaviour
     public float GameTime = 0;
 
     public static StageController singlton;
+    public PlayerScriptableObject CurrentPlayer;
     public StagePackageScriptableObject CurrentStage;
 
     public GridData[,] GridArray;
@@ -79,6 +80,9 @@ public class StageController : MonoBehaviour
     {
         singlton = this;
         PlayerInputActions = new PiaMainControls();
+
+        CurrentPlayer = GlobalDataStorage.singleton.ReturnChosenPlayerSO();
+        CurrentStage = GlobalDataStorage.singleton.ReturnChosenMapSO();
     }
     public void OnEnable()
     {

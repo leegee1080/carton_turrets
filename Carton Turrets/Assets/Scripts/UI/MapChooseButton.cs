@@ -4,15 +4,15 @@ using UnityEngine;
 using TMPro;
 
 
-public class UnlockChooseButton : MonoBehaviour
+public class MapChooseButton : MonoBehaviour
 {
-    [SerializeField]private PlayerCharacters _thisCharacter;
+    [SerializeField]private PlayableMaps _thisMap;
     [SerializeField]private int _cost;
     [SerializeField]private bool _unlocked;
 
     [Header("Visual Vars")]
     [SerializeField]SpriteRenderer _sR;
-    [SerializeField]string _characterName;
+    [SerializeField]string _mapName;
     [SerializeField]TMP_Text _txtBox;
     [SerializeField]GameObject _slctImageGO;
 
@@ -25,11 +25,11 @@ public class UnlockChooseButton : MonoBehaviour
 
     public void UpdateUnlockStatus()
     {
-        PlayerCharacters[] unlockedCharacters = GlobalDataStorage.singleton.ReturnCurrentlyUnlockedCharacters();
+        PlayableMaps[] unlockedMaps = GlobalDataStorage.singleton.ReturnCurrentlyUnlockedMaps();
 
-        foreach (PlayerCharacters item in unlockedCharacters)
+        foreach (PlayableMaps item in unlockedMaps)
         {
-            if(item == _thisCharacter)
+            if(item == _thisMap)
             {
                 Unlock(false);
                 return;
@@ -43,7 +43,7 @@ public class UnlockChooseButton : MonoBehaviour
         if(GlobalDataStorage.singleton.PlayerMoney >= _cost)
         {
             GlobalDataStorage.singleton.PlayerMoney -= _cost;
-            GlobalDataStorage.singleton.UnlockCharacter(_thisCharacter);
+            GlobalDataStorage.singleton.UnlockMap(_thisMap);
             Unlock(true);
             return;
         }
@@ -53,7 +53,7 @@ public class UnlockChooseButton : MonoBehaviour
     {
         _unlocked= true;
         _sR.color = new Color(255,255,255,1);
-        _txtBox.text = _characterName;
+        _txtBox.text = _mapName;
 
         if(soundsAndEffects)
         {
@@ -64,7 +64,7 @@ public class UnlockChooseButton : MonoBehaviour
 
     public void CheckForSelected()
     {
-        if(GlobalDataStorage.singleton.ChosenCharacter == _thisCharacter)
+        if(GlobalDataStorage.singleton.ChosenMap == _thisMap)
         {
             _slctImageGO.SetActive(true);
             return;
@@ -75,9 +75,9 @@ public class UnlockChooseButton : MonoBehaviour
     private void SelectOption()
     {
         if(!_unlocked){return;}
-        if(GlobalDataStorage.singleton.ChosenCharacter == _thisCharacter){return;}
+        if(GlobalDataStorage.singleton.ChosenMap == _thisMap){return;}
 
-        GlobalDataStorage.singleton.ChosenCharacter = _thisCharacter;
+        GlobalDataStorage.singleton.ChosenMap = _thisMap;
 
         MainMenuController.singleton.UpdateCharacterSelectButtons();
 

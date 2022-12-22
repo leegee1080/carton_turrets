@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9140685105884498302}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Barrel
   m_TagString: Turret
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8903252950350368657}
   - component: {fileID: 8903252950350368670}
   - component: {fileID: 8700603430958536111}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: TurretArt
   m_TagString: Turret
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 8903252950405436270}
   - component: {fileID: 8903252950405436256}
   - component: {fileID: 8903252950405436257}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: SlowTurretGO
   m_TagString: Turret
   m_Icon: {fileID: 0}

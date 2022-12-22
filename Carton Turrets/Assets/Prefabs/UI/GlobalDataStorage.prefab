@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8154686376442324358}
+  - component: {fileID: 6824624292601990960}
   m_Layer: 0
   m_Name: GlobalDataStorage
   m_TagString: Untagged
@@ -31,3 +32,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6824624292601990960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8154686376442324353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 843bdbd1e0685d843b80189d9f894fba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerMoney: 100000000
+  _possiblePlayerSOArray:
+  - {fileID: 11400000, guid: da14a85da7a8aa64495f2db76e2148ed, type: 2}
+  - {fileID: 11400000, guid: cc4c7f9d390800c4791b89c56fd358ea, type: 2}
+  - {fileID: 11400000, guid: 96a4dbb092cce774494ff19e6dcfd78d, type: 2}
+  - {fileID: 11400000, guid: 0c6bbe9f82f225a47b787a0d30d688ef, type: 2}
+  - {fileID: 11400000, guid: 5131019eb893bd543b9d1bd0c5b99a7d, type: 2}
+  - {fileID: 11400000, guid: 4ba1611cc5f33784eafca35abe23c43e, type: 2}
+  _currentlyUnlockedCharacters: 00000000
+  ChosenCharacter: 0
+  _possiblePlayableMapSOArray:
+  - {fileID: 11400000, guid: 189577f8d4b4a314b8ec357b991a41f0, type: 2}
+  _currentlyUnlockedMaps: 00000000
+  ChosenMap: 0

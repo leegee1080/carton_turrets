@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.Events;
+
+
 
 public enum PlayerCharacters
 {
@@ -13,6 +15,11 @@ public enum PlayerCharacters
     redwiz
 
 }
+public enum PlayableMaps
+{
+    rocky,
+}
+
 public class GlobalDataStorage : MonoBehaviour
 {
     public static GlobalDataStorage singleton;
@@ -22,6 +29,7 @@ public class GlobalDataStorage : MonoBehaviour
         if(singleton == null)
         {
             singleton = this;
+
             return;
         }
         
@@ -30,45 +38,24 @@ public class GlobalDataStorage : MonoBehaviour
 
     public int PlayerMoney = 100;
 
+
     [Header("Character Unlocks")]
     [SerializeField]PlayerScriptableObject[] _possiblePlayerSOArray;
-    [SerializeField]UnlockChooseButton[] _characterButtons;
     [SerializeField]PlayerCharacters[] _currentlyUnlockedCharacters;
     public PlayerCharacters ChosenCharacter;
-    [SerializeField]SpriteRenderer _chosenCharacterSR;
-    [SerializeField]TMP_Text _chosenCharacterText;
 
     [Header("Map Unlocks")]
-    [SerializeField]UnlockChooseButton[] _mapButtons;
-    [SerializeField]PlayerCharacters[] _currentlyUnlockedMaps;
-    public PlayerCharacters ChosenMap;
+    [SerializeField]StagePackageScriptableObject[] _possiblePlayableMapSOArray;
+    [SerializeField]PlayableMaps[] _currentlyUnlockedMaps;
+    public PlayableMaps ChosenMap;
 
 
-    private void Start()
-    {
-        UpdateCharacterUnlockButtons();
-        UpdateCharacterSelectButtons();
-
-    }
-
-    public void UpdateCharacterUnlockButtons()
-    {
-        foreach (UnlockChooseButton item in _characterButtons)
-        {
-            item.UpdateUnlockStatus(_currentlyUnlockedCharacters);
-        }
-    }
-    public void UpdateCharacterSelectButtons()
-    {
-        foreach (UnlockChooseButton item in _characterButtons)
-        {
-            item.CheckForSelected();
-        }
-
-        _chosenCharacterSR.sprite = _possiblePlayerSOArray[(int)ChosenCharacter].InGameSprite;
-        _chosenCharacterText.text = _possiblePlayerSOArray[(int)ChosenCharacter].name;
-
-    }
+    public PlayerScriptableObject[] ReturnPossiblePlayerSOArray(){return _possiblePlayerSOArray;}
+    public PlayerCharacters[] ReturnCurrentlyUnlockedCharacters(){return _currentlyUnlockedCharacters;}
+    public PlayerScriptableObject ReturnChosenPlayerSO(){return _possiblePlayerSOArray[(int)ChosenCharacter];}
+    public StagePackageScriptableObject[] ReturnPossibleMapSOArray(){return _possiblePlayableMapSOArray;}
+    public PlayableMaps[] ReturnCurrentlyUnlockedMaps(){return _currentlyUnlockedMaps;}
+    public StagePackageScriptableObject ReturnChosenMapSO(){return _possiblePlayableMapSOArray[(int)ChosenMap];}
 
     public void UnlockCharacter(PlayerCharacters unlock)
     {
@@ -84,6 +71,21 @@ public class GlobalDataStorage : MonoBehaviour
 
 
         _currentlyUnlockedCharacters = tempArray;
+    }
+    public void UnlockMap(PlayableMaps unlock)
+    {
+        print("Map Unlocked: "+ unlock);
+        PlayableMaps[] tempArray = new PlayableMaps[_currentlyUnlockedCharacters.Length + 1];
+
+        for (int i = 0; i < _currentlyUnlockedCharacters.Length; i++)
+        {
+            tempArray[i] = _currentlyUnlockedMaps[i];
+        }
+
+        tempArray[tempArray.Length -1] = unlock;
+
+
+        _currentlyUnlockedMaps = tempArray;
     }
 
 }
