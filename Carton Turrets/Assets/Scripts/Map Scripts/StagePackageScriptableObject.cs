@@ -38,6 +38,7 @@ public class StagePackageScriptableObject : ScriptableObject
     [Header("Stage Text")]
     public new string name;
     public string Desc;
+    public Sprite Icon;
 
     [Header("Enemy Vars")]
     public EnemySpawnWave[] Waves;

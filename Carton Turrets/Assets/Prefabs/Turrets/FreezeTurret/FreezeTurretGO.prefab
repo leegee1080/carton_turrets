@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9140685105884498302}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Barrel
   m_TagString: Turret
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8903252950350368657}
   - component: {fileID: 8903252950350368670}
   - component: {fileID: 8700603430958536111}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: TurretArt
   m_TagString: Turret
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 8903252950405436270}
   - component: {fileID: 8903252950405436256}
   - component: {fileID: 8903252950405436257}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: FreezeTurretGO
   m_TagString: Turret
   m_Icon: {fileID: 0}
@@ -183,6 +183,13 @@ MonoBehaviour:
   CurrentHealth: 0
   DamageColor: {r: 0, g: 0, b: 0, a: 0}
   FreezeColor: {r: 0, g: 0, b: 0, a: 0}
+  WalkingCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  RendererHandle: {fileID: 0}
   TurretData: {fileID: 11400000, guid: fc42811bc276f12418d24232ebfb35d2, type: 2}
   _barrel: {fileID: 3074358141296015960}
   ControllingActor: {fileID: 0}
@@ -198,6 +205,7 @@ MonoBehaviour:
   EDamage: 0
   ESpeed: 0
   ESize: 0
+  currentTier: 0
   _turretArtObject: {fileID: 8903252950350368669}
   _turretMesh: {fileID: 8903252950350368657}
 --- !u!114 &8903252950405436257
@@ -235,32 +243,80 @@ PrefabInstance:
     m_TransformParent: {fileID: 8903252950350368668}
     m_Modifications:
     - target: {fileID: 8469503760745393009, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469503760745393009, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469503760881437886, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8469503760881437886, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8469503761083994566, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469503761083994566, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469503761170115327, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469503761662810286, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469503762085601592, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8469503762085601592, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8469503762229255925, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469503762229255925, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469503762239105642, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469503762297117736, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469503762390576525, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8469503762390576525, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8469503762426625205, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 8469503762507085608, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
       propertyPath: m_Name
       value: Ice_Spawn_Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469503762507085608, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8469503762507085608, guid: 27ec9f1187db0493e985e0eb6817af31, type: 3}
       propertyPath: m_IsActive

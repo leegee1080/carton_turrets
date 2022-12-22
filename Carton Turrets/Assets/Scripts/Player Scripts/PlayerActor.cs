@@ -236,6 +236,9 @@ public class PlayerActor : StageActor, IPassableObject
     public override void Setup()
     {
         base.Setup();
+
+        PlayerData = StageController.singlton.CurrentPlayer;
+
         CurrentPlayerLevel = 1;
 
         PlayerCurrentStatDict[PlayerStatEnum.money] = 0;
