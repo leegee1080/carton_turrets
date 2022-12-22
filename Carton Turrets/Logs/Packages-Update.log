@@ -63,3 +63,16 @@ The following packages were updated:
   com.unity.render-pipelines.universal from version 10.7.0 to 12.1.7
   com.unity.test-framework from version 1.1.29 to 1.1.31
   com.unity.timeline from version 1.4.8 to 1.6.4
+
+=== Wed Dec 21 13:46:19 2022
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.2d.animation from version 7.0.7 to 7.0.9
+  com.unity.2d.pixel-perfect from version 5.0.1 to 5.0.3
+  com.unity.collab-proxy from version 1.17.2 to 1.17.7
+  com.unity.ide.rider from version 3.0.15 to 3.0.16
+  com.unity.inputsystem from version 1.4.2 to 1.4.4
+  com.unity.render-pipelines.universal from version 12.1.7 to 12.1.8
