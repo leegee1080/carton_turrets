@@ -11,6 +11,7 @@ public class CurrentEquipmentUI : MonoBehaviour
     [SerializeField]TMP_Text[] _buttonLevelArray;
     [SerializeField]GameObject[] _availableSlotIndicatorArray;
     [SerializeField]GameObject[] _buttonCoverArray;
+    [SerializeField]CooldownSplash[] _coolDownSplashArray;
     [SerializeField]float _startingCoverY;
 
     private void Awake()
@@ -62,10 +63,11 @@ public class CurrentEquipmentUI : MonoBehaviour
 
     public void UpdateUpgradeTimers(float maxTimer, int slot, float time)
     { 
-        _buttonCoverArray[slot].transform.localPosition = new Vector3(0, Mathf.Lerp( 0, _startingCoverY, time/maxTimer), 0);
+        _buttonCoverArray[slot].transform.localPosition = new Vector3(0, Mathf.Lerp(0, _startingCoverY, time/maxTimer), 0);
         if(time <= 0)
         {
              _buttonCoverArray[slot].SetActive(false);
+             FlashEquCooldown(slot);
         }
         else
         {
@@ -75,6 +77,6 @@ public class CurrentEquipmentUI : MonoBehaviour
 
     private void FlashEquCooldown(int slot)
     {
-
+        _coolDownSplashArray[slot].BlastOffEffect();
     }
 }
