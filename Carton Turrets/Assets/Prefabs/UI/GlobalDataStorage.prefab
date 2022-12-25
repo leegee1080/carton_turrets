@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8154686376442324358
 Transform:
@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerMoney: 100000000
+  BloodOn: 1
+  DamageNumbersOn: 0
+  OnScreenControlsOn: 0
   _possiblePlayerSOArray:
   - {fileID: 11400000, guid: da14a85da7a8aa64495f2db76e2148ed, type: 2}
   - {fileID: 11400000, guid: cc4c7f9d390800c4791b89c56fd358ea, type: 2}
@@ -58,3 +61,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 189577f8d4b4a314b8ec357b991a41f0, type: 2}
   _currentlyUnlockedMaps: 00000000
   ChosenMap: 0
+  _possibleAimSOArray:
+  - {fileID: 11400000, guid: fb56ee9577b4691438b14c13c587dadf, type: 2}
+  _currentlyUnlockedAim: 00000000
+  ChosenAim: 0
