@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-
-public class MapChooseButton : MonoBehaviour
+public class AimChooseButton : MonoBehaviour
 {
-    [SerializeField]private PlayableMaps _thisMap;
+    [SerializeField]private PlayableAim _thisAim;
     [SerializeField]private int _cost;
     [SerializeField]private bool _unlocked;
 
     [Header("Visual Vars")]
     [SerializeField]SpriteRenderer _sR;
-    [SerializeField]string _mapName;
+    [SerializeField]string _aimName;
     [SerializeField]TMP_Text _txtBox;
     [SerializeField]GameObject _slctImageGO;
 
@@ -25,11 +24,11 @@ public class MapChooseButton : MonoBehaviour
 
     public void UpdateUnlockStatus()
     {
-        PlayableMaps[] unlockedMaps = GlobalDataStorage.singleton.ReturnCurrentlyUnlockedMaps();
+        PlayableAim[] unlockedAim = GlobalDataStorage.singleton.ReturnCurrentlyUnlockedAim();
 
-        foreach (PlayableMaps item in unlockedMaps)
+        foreach (PlayableAim item in unlockedAim)
         {
-            if(item == _thisMap)
+            if(item == _thisAim)
             {
                 Unlock(false);
                 return;
@@ -43,7 +42,7 @@ public class MapChooseButton : MonoBehaviour
         if(GlobalDataStorage.singleton.PlayerMoney >= _cost)
         {
             GlobalDataStorage.singleton.PlayerMoney -= _cost;
-            GlobalDataStorage.singleton.UnlockMap(_thisMap);
+            GlobalDataStorage.singleton.UnlockAim(_thisAim);
             Unlock(true);
             return;
         }
@@ -53,7 +52,7 @@ public class MapChooseButton : MonoBehaviour
     {
         _unlocked= true;
         _sR.color = new Color(255,255,255,1);
-        _txtBox.text = _mapName;
+        _txtBox.text = _aimName;
 
         if(soundsAndEffects)
         {
@@ -64,7 +63,7 @@ public class MapChooseButton : MonoBehaviour
 
     public void CheckForSelected()
     {
-        if(GlobalDataStorage.singleton.ChosenMap == _thisMap)
+        if(GlobalDataStorage.singleton.ChosenAim == _thisAim)
         {
             _slctImageGO.SetActive(true);
             return;
@@ -75,11 +74,11 @@ public class MapChooseButton : MonoBehaviour
     private void SelectOption()
     {
         if(!_unlocked){return;}
-        if(GlobalDataStorage.singleton.ChosenMap == _thisMap){return;}
+        if(GlobalDataStorage.singleton.ChosenAim == _thisAim){return;}
 
-        GlobalDataStorage.singleton.ChosenMap = _thisMap;
+        GlobalDataStorage.singleton.ChosenAim = _thisAim;
 
-        MainMenuController.singleton.UpdateMapSelectButtons();
+        MainMenuController.singleton.UpdateAimSelectButtons();
 
     }
 }

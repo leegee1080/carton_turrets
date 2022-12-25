@@ -28,6 +28,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]PlayerStatPauseMenu[] _StatBlocks;
     bool _gamePaused;
 
+    [SerializeField]TMP_Text _quitButtonText;
+
 
 
     public static PauseMenu singleton;
@@ -106,15 +108,23 @@ public class PauseMenu : MonoBehaviour
         {
             case PauseMenuType.normal:
                 _pauseMenuTitleText.text = "Game Paused";
+                _quitButtonText.text = "Leave Stage";
                 break;
             case PauseMenuType.lose:
                 _pauseMenuTitleText.text = "Game Over";
+                _quitButtonText.text = "Leave Stage";
                 break;
             case PauseMenuType.win:
                 _pauseMenuTitleText.text = "Level Complete";
+                _quitButtonText.text = "Leave Stage";
                 break;
             default:
                 break;
         }
+    }
+
+    public void LeaveStage()
+    {
+        GlobalVolumeController.singleton.NewScene(0);
     }
 }

@@ -94,6 +94,7 @@ public class GlobalVolumeController : MonoBehaviour
         _sTween = DOTween.To (() => _sTweenValue,
             x => _sTweenValue = x, 1, _sceneTime);
         _sTween.OnUpdate (UpdateSceneEffects);
+        _sTween.SetUpdate(true);
         _sTween.SetEase(_easeInType);
         _sTween.OnComplete (CompleteSceneIn);
     }
@@ -112,6 +113,7 @@ public class GlobalVolumeController : MonoBehaviour
         _sTween = DOTween.To (() => _sTweenValue,
             y => _sTweenValue = y, 0, _sceneTime);
         _sTween.OnUpdate (UpdateSceneEffects);
+        _sTween.SetUpdate(true);
         _sTween.SetEase(_easeOutType);
         _sTween.OnComplete (CompleteSceneOut);
     }
