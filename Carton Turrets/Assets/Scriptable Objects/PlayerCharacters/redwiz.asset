@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Red-Wiz
   Desc: 
+  SignatureSound: ui_pick_wiz3
   MaxHealth: 100
   MaxSpeed: 0.5
   MaxAbilityCooldownTime: 1

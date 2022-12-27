@@ -106,6 +106,23 @@ public class GlobalVolumeController : MonoBehaviour
     }
     #endregion NewScene
 
+    #region QuitGame
+    public void QuitGame()
+    {
+        _sTween = DOTween.To (() => _sTweenValue,
+            x => _sTweenValue = x, 1, _sceneTime);
+        _sTween.OnUpdate (UpdateSceneEffects);
+        _sTween.SetUpdate(true);
+        _sTween.SetEase(_easeInType);
+        _sTween.OnComplete (CompleteQuitGame);
+    }
+    public void CompleteQuitGame()
+    {
+        _sTween = null;
+        Application.Quit();
+    }
+    #endregion QuitGame
+
     #region ShowScene
     [ContextMenu("ShowScene")]
     public void ShowScene()

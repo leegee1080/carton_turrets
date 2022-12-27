@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -24,22 +22,20 @@ public class OptionsUIController : MonoBehaviour
 
     public void UpdateVolumeSliders()
     {
-        // _effectsSlider.value = Whatever the sound singlton is;
-        // _musicSlider.value = Whatever the sound singlton is;
-        // _effectsValue.text = ""+Whatever the sound singlton is;
-        // _musicValue.text = ""+Whatever the sound singlton is;
+        _effectsSlider.value = AudioController.singleton.currentGameVolumeLevel * 10;
+        _musicSlider.value = AudioController.singleton.currentMusicVolumeLevel * 10;
+        _effectsValue.text = "" + (AudioController.singleton.currentGameVolumeLevel * 10);
+        _musicValue.text = "" + (AudioController.singleton.currentMusicVolumeLevel * 10);
     }
     public void ChangeEffectVolume(float change)
     {
-        print("New Effect Volume: " + change);
         _effectsValue.text = ""+change;
-        // whatever the sound singlton is = change;
+        AudioController.singleton.ChangeVolume(change/10, Sound_Type_Tags.fx);
     }
     public void ChangeMusicVolume(float change)
     {
-        print("New Music Volume: " + change);
         _musicValue.text = ""+change;
-        // whatever the sound singlton is = change;
+        AudioController.singleton.ChangeVolume(change/10, Sound_Type_Tags.music);
     }
 
 #endregion

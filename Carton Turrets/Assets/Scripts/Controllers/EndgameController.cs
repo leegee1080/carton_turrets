@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EndgameController : EnemyActor, IDroppodControllable
@@ -24,13 +23,14 @@ public class EndgameController : EnemyActor, IDroppodControllable
             _artObject.transform.localPosition =  Vector3.MoveTowards(_artObject.transform.localPosition, Vector3.zero, step);
             return;
         }
-
+        AudioController.singleton.PlaySound("endgame_nuke_land");
         _bombImpactObject.Nuke(this.transform.position);
         _impacted = true;
     }
 
     public void LaunchBomb(Vector3 impactLocation)
     {
+        AudioController.singleton.PlaySound("endgame_nuke_alarm");
         this.transform.position = impactLocation;
         _artObject.SetActive(true);
         _launched = true;
@@ -38,6 +38,7 @@ public class EndgameController : EnemyActor, IDroppodControllable
     public void Impact(){}//unused as part of Idroppod
     public void CompleteLanding()
     {
+        AudioController.singleton.PlaySound("endgame_nuke_explode");
         _bombKillerCollider.SetActive(true);
     }
 

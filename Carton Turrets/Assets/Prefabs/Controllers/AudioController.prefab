@@ -1,0 +1,384 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3594417405159568053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8717913897496713483}
+  - component: {fileID: 3213416832999032681}
+  m_Layer: 0
+  m_Name: AudioController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8717913897496713483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3594417405159568053}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3213416832999032681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3594417405159568053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ea5fda1be0b0a4ea9266deb8c794bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentGameVolumeLevel: 1
+  currentMusicVolumeLevel: 1
+  currentMenuVolumeLevel: 1
+  Sounds:
+  - name: music_mainmenu
+    clip: {fileID: 8300000, guid: 5392c2c387f96624cb8366be86b7bcff, type: 3}
+    Tag: 0
+    loop: 1
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: music_stage_rocky
+    clip: {fileID: 8300000, guid: 790e843cde7424e4bae780a640dcb185, type: 3}
+    Tag: 0
+    loop: 1
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_click
+    clip: {fileID: 8300000, guid: 1ba925fe0ece7c1448507444b0d7068c, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_menu_in
+    clip: {fileID: 8300000, guid: 65f42d3cb737e2b4e924837f7e628d5d, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_menu_out
+    clip: {fileID: 8300000, guid: c963ed2eabbd6064b8fd411200c1df42, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_menu_unlock
+    clip: {fileID: 8300000, guid: da8c69722e1cf2e4a862ba1a0586f328, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_levelup
+    clip: {fileID: 8300000, guid: 52d3210ee98e8824f89984cf6590703d, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_gamestart
+    clip: {fileID: 8300000, guid: c56f3fe3c3de1b84985d45a1433d8de7, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_pick_aim
+    clip: {fileID: 8300000, guid: fbd108c179482d54d8d57f16abc441f2, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_pick_map
+    clip: {fileID: 8300000, guid: 6fcb6384e7c15194f91807568f0653ed, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_pick_droid1
+    clip: {fileID: 8300000, guid: a0a52f13120157545b78ae5f1415fac2, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_pick_droid2
+    clip: {fileID: 8300000, guid: cd61231a62ebb424ba519c3d36a2b879, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_pick_droid3
+    clip: {fileID: 8300000, guid: f8d60742597dd3d498a086782464ce5e, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_pick_wiz1
+    clip: {fileID: 8300000, guid: b811ff71e9a716046b514b46e5b16f66, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_pick_wiz2
+    clip: {fileID: 8300000, guid: e7026c8ef239d3945af348cf9df6b4ba, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_pick_wiz3
+    clip: {fileID: 8300000, guid: ddf21e0e4b3962b4287be6c861ffb3a3, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: player_exp
+    clip: {fileID: 8300000, guid: b4099a53d8b59f84f93e2d9ec74ff6aa, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 1
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: player_hurt
+    clip: {fileID: 8300000, guid: 5c48e996512feac4990be142652b7a1e, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: player_turret_equip
+    clip: {fileID: 8300000, guid: 33052b13ca40ab748905476bb4e45283, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: player_upgrade_equip
+    clip: {fileID: 8300000, guid: e1bb1e596168ac3408160e3f4f73810c, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: player_turret_recharge
+    clip: {fileID: 8300000, guid: d686d2aa604115547822ac0b5261ef97, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: player_turret_build
+    clip: {fileID: 8300000, guid: 37583816932f05a4692dcfa33abc7d29, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: player_droppod_launch
+    clip: {fileID: 8300000, guid: bd274dbe033be4f4c9ba4e24232500be, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: player_droppod_land
+    clip: {fileID: 8300000, guid: c90c771d8d33e0d448e8d283acadf69e, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: endgame_lose
+    clip: {fileID: 8300000, guid: a897dcc2a428cf84fa442d4770145e38, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: endgame_win
+    clip: {fileID: 8300000, guid: c6c6389eee8e63e498995bf2e983c5c5, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: endgame_nuke_land
+    clip: {fileID: 8300000, guid: d664f16ecce56b742bd6d3488b3b100c, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: endgame_nuke_alarm
+    clip: {fileID: 8300000, guid: e535c49a13d98fc47a4f6193d5d683f3, type: 3}
+    Tag: 1
+    loop: 1
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: endgame_nuke_explode
+    clip: {fileID: 8300000, guid: 07f84d69b7d728a4ebdfbd9b886d1e28, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: turret_sig_explo
+    clip: {fileID: 8300000, guid: 8c7bf45b5005ddb478d72157311feb31, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 1
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: turret_sig_flame
+    clip: {fileID: 8300000, guid: 6e4cfa0e419080f44bf2f3c3b5bf06da, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 1
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: turret_sig_gun
+    clip: {fileID: 8300000, guid: 800139e8b12c4474dbb39acb5f4b506a, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 1
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: turret_sig_ice
+    clip: {fileID: 8300000, guid: 3abd32630e360a147b6df18f13a319f9, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 1
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: turret_sig_mort
+    clip: {fileID: 8300000, guid: 7de226c5345239a448b6b5ae6285d221, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 1
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: turret_sig_mort_explo
+    clip: {fileID: 8300000, guid: 40aafa5efe843564eb1f368879d2ab12, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 1
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: turret_sig_nova
+    clip: {fileID: 8300000, guid: 29ef7e2a3b968814a9fd92d88390ebbc, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 1
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: turret_die
+    clip: {fileID: 8300000, guid: 0fdaa4f9cb18e474aa5558b8a6901a54, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 1
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  selectedSound: {fileID: 0}

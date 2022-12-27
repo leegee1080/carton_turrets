@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: SlowTurret
   Desc: Fires a large slow projectile.
+  SignatureSound: turret_sig_nova
   MaxHealth: 1
   MaxSpeed: 1
   <UpgradeName>k__BackingField: Nova Turret

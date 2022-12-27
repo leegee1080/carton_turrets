@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: FlameTurret
   Desc: Channels a beam out front.
+  SignatureSound: turret_sig_flame
   MaxHealth: 1
   MaxSpeed: 1
   <UpgradeName>k__BackingField: Flame Turret

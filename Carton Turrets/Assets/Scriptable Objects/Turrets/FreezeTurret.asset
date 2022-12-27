@@ -15,6 +15,7 @@ MonoBehaviour:
   name: FreezeTurret
   Desc: Fires a beam. (Bullet speed controls the laser length) (bullet damage is
     freeze time)
+  SignatureSound: turret_sig_ice
   MaxHealth: 1
   MaxSpeed: 1
   <UpgradeName>k__BackingField: Freeze Turret

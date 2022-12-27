@@ -21,6 +21,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField]public PauseGame PauseGameEvent;
     [SerializeField]public UnPauseGame UnPauseGameEvent;
+    [SerializeField] GameObject _pauseMenuDimmerGO;
 
     [SerializeField]GameObject[] _pauseMenuObjects;
     [SerializeField]TMP_Text _pauseMenuTitleText;
@@ -62,6 +63,8 @@ public class PauseMenu : MonoBehaviour
 
         PauseGameEvent.Invoke();
 
+        _pauseMenuDimmerGO.SetActive(true);
+
         foreach (GameObject item in _UIToHideOnPause)
         {
             Time.timeScale = 0;
@@ -87,6 +90,8 @@ public class PauseMenu : MonoBehaviour
     {
 
         UnPauseGameEvent.Invoke();
+
+        _pauseMenuDimmerGO.SetActive(false);
 
         foreach (GameObject item in _UIToHideOnPause)
         {
@@ -125,6 +130,10 @@ public class PauseMenu : MonoBehaviour
 
     public void LeaveStage()
     {
+        AudioController.singleton.StopSound("endgame_nuke_alarm");
+        AudioController.singleton.PlaySound("ui_gamestart");
+        AudioController.singleton.FadeSoundOut(0.05f, StageController.singlton.CurrentStage.SignatureMusic);
         GlobalVolumeController.singleton.NewScene(0);
+
     }
 }

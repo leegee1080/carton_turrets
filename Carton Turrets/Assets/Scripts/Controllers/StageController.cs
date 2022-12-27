@@ -133,14 +133,19 @@ public class StageController : MonoBehaviour
     {
         CurrentState.OnEnterState(this);
         GlobalVolumeController.singleton.ShowScene();
+        AudioController.singleton.FadeSoundIn(0.05f, StageController.singlton.CurrentStage.SignatureMusic);
     }
 
     public void PlayerDeath()
     {
+        AudioController.singleton.StopSound("endgame_nuke_alarm");
+        AudioController.singleton.PlaySound("endgame_lose");
         ChangeState(new StageState_EndgameLose());
     }
     public void PlayerWin()
     {
+        AudioController.singleton.StopSound("endgame_nuke_alarm");
+        AudioController.singleton.PlaySound("endgame_win");
         ChangeState(new StageState_EndgameWin());
     }
 

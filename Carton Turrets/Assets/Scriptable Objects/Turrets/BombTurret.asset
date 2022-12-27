@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: BombTurret
   Desc: No projectile just explodes
+  SignatureSound: turret_sig_explo
   MaxHealth: 1
   MaxSpeed: 1
   <UpgradeName>k__BackingField: Bomb Turret

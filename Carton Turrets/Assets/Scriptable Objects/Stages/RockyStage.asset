@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Rocky
   Desc: The First Level
   Icon: {fileID: 21300000, guid: bd63b800de812cb4b8dbcb6196cb6af3, type: 3}
+  SignatureMusic: music_stage_rocky
   Waves:
   - EnemySpawnStartThreshold: 1
     SpawnInterval: 0.1

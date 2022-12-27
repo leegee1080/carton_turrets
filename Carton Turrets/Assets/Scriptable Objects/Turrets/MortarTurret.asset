@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: MortarTurret
   Desc: Fires an projectile in a high arc.
+  SignatureSound: turret_sig_mort
   MaxHealth: 1
   MaxSpeed: 1
   <UpgradeName>k__BackingField: Mortar Turret
