@@ -68,6 +68,7 @@ public class CurrentEquipmentUI : MonoBehaviour
         {
              _buttonCoverArray[slot].SetActive(false);
              FlashEquCooldown(slot);
+             AudioController.singleton.PlaySound("player_turret_recharge");
         }
         else
         {

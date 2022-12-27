@@ -189,6 +189,7 @@ public class PlayerActor : StageActor, IPassableObject
     {
         CurrentExpAmount += (int)(xp * PlayerCurrentStatDict[PlayerStatEnum.ExpMultiplier]);
         CurrentExpIndicatorUI.singlton.UpdateExpAmountUI(CurrentExpAmount, (int)LevelUpThreshold);
+        AudioController.singleton.PlaySound("player_exp");
         if(CurrentExpAmount >= LevelUpThreshold)
         {
             CurrentExpIndicatorUI.singlton.SetPrevLevelThreshold((int)LevelUpThreshold);
@@ -196,6 +197,8 @@ public class PlayerActor : StageActor, IPassableObject
             LevelUpThreshold *= PlayerCurrentStatDict[PlayerStatEnum.LevelUpThresholdMultiplier];
             LevelUpPopup.singlton.Show();
             CurrentPlayerLevel += 1;
+
+            AudioController.singleton.PlaySound("ui_levelup");
 
             CurrentExpIndicatorUI.singlton.UpdateLevelCountUI(CurrentPlayerLevel, (int)LevelUpThreshold);
         }
@@ -209,6 +212,8 @@ public class PlayerActor : StageActor, IPassableObject
         GameObject tTurret =  TurretObjectPools[CurrentEquipmentArray[slot].SO.UpgradeName].ActivateNextObject(this);
         tTurret.transform.position = gameObject.transform.position + (LastViewInput * turretPlaceOffset);
         tTurret.transform.rotation = Quaternion.LookRotation(LastViewInput*90);
+
+        AudioController.singleton.PlaySound("player_turret_build");
     }
 
     public void DecUpgradeSlotTimers(float time)

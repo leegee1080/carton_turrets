@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: TEST STAGE
   Desc: TEST STAGE
+  Icon: {fileID: 0}
+  SignatureMusic: music_stage_rocky
   Waves:
   - EnemySpawnStartThreshold: 0
     SpawnInterval: 0.05

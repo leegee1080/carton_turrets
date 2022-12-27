@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -57,7 +55,7 @@ public class AimChooseButton : MonoBehaviour
         if(soundsAndEffects)
         {
             //sounds and effects
-            print("unlock loud");
+            AudioController.singleton.PlaySound("ui_menu_unlock");
         }
     }
 
@@ -80,5 +78,6 @@ public class AimChooseButton : MonoBehaviour
 
         MainMenuController.singleton.UpdateAimSelectButtons();
 
+        AudioController.singleton.PlaySound("ui_pick_aim");
     }
 }

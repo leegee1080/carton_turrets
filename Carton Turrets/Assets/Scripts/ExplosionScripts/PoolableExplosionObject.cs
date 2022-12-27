@@ -7,6 +7,8 @@ public class PoolableExplosionObject : MonoBehaviour
     [SerializeField]ParticleSystem _ps;
     [SerializeField]SphereCollider _pc;
 
+    [SerializeField]string _explosionSound;
+
     private float _lifeTime;
     private float _damage;
     private float _size;
@@ -38,6 +40,7 @@ public class PoolableExplosionObject : MonoBehaviour
         gameObject.transform.localScale = new Vector3(_size, _size, _size);
         _fired = true;
         _ps.Play();
+        if(_explosionSound != ""){AudioController.singleton.PlaySound(_explosionSound);}
     }
 
     private void FixedUpdate()

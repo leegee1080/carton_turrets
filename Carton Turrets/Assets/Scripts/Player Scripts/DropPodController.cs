@@ -15,6 +15,7 @@ public class DropPodController : MonoBehaviour, IDroppodControllable
         this.transform.position = impactLocation;
         _artObject.SetActive(true);
         _launched = true;
+        AudioController.singleton.PlaySound("player_droppod_launch");
     }
 
     private void FixedUpdate()
@@ -34,6 +35,7 @@ public class DropPodController : MonoBehaviour, IDroppodControllable
 
     public void Impact()
     {
+        AudioController.singleton.PlaySound("player_droppod_land");
         StageController.singlton.Player.Activate();
         StageController.singlton.ChangeState(new StageState_Running());
         _artObject.SetActive(false);

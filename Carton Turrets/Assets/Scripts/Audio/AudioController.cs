@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
-using UnityEngine.UI;
+
+//!!!!!!!!!!HEY DUMMY Next time you use this: put each sound type in its own list (instead of Sounds being the only list)
 
 public static class Sound_Events
 {
@@ -94,7 +94,6 @@ public class AudioController : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
-        DontDestroyOnLoad(this);
 
         foreach (Sound s in Sounds)
         {
@@ -209,10 +208,11 @@ public class AudioController : MonoBehaviour
         s.source.Stop();
     }
 
-    public void SelectSound(string soundName)
+    public AudioSource SelectSound(string soundName)
     {
         Sound s = System.Array.Find(Sounds, sound => sound.name == soundName);
         selectedSound = s.source;
+        return s.source;
     }
 
     public void ChangeSelectedSoundVolume(float newVolume)
@@ -220,42 +220,62 @@ public class AudioController : MonoBehaviour
         selectedSound.volume = newVolume;
     }
 
-    public void FadeSoundIn(float fadeMax, float speed)
+    public void FadeSoundIn(float speed, string soundName)
     {
-        if(_IfadeIn != null){StopCoroutine(_IfadeIn);}
-        if(_IfadeOut != null){StopCoroutine(_IfadeOut);}
-        
-        Sound s = System.Array.Find(Sounds, sound => sound.source == selectedSound);
+        Sound s = System.Array.Find(Sounds, sound => sound.source == SelectSound(soundName));
+        Sound_Type_Tags t = System.Array.Find(Sounds, sound => sound.source == SelectSound(soundName)).Tag;
+        float maxVolume = 0;
+        switch (t)
+        {
+            case Sound_Type_Tags.music:
+                maxVolume = currentMusicVolumeLevel;
+                break;
+            case Sound_Type_Tags.fx:
+                maxVolume = currentGameVolumeLevel;
+                break;
+            case Sound_Type_Tags.menu:
+                maxVolume = currentMenuVolumeLevel;
+                break;
+            default:
+                maxVolume = 1;
+                break;
+        }
         s.source.volume = 0f;
 
-        IEnumerator IFadeIn()
-        {
-            while(s.source.volume < fadeMax)
-            {
-                s.source.volume += speed;
-                yield return new WaitForSeconds(0.05f);
-            }
-        }
-        _IfadeIn = IFadeIn();
-        StartCoroutine(IFadeIn());
+        PlaySound(soundName);
+
+
+        StartCoroutine(IFadeIn(s, speed, maxVolume));
     }
-    public void FadeSoundOut(float speed)
+    IEnumerator IFadeIn(Sound s, float speed, float maxVolume)
     {
-        if(_IfadeIn != null){StopCoroutine(_IfadeIn);}
-        if(_IfadeOut != null){StopCoroutine(_IfadeOut);}
-
-        Sound s = System.Array.Find(Sounds, sound => sound.source == selectedSound);
-
-        IEnumerator IFadeOut()
+        
+        int timer = 100; //failsafe timer
+        while(s.source.volume < maxVolume && timer > 0)
         {
-            while(s.source.volume > 0)
-            {
-                s.source.volume -= speed;
-                yield return new WaitForSeconds(0.05f);
-            }
+            timer -= 1;
+            s.source.volume += speed;
+            yield return new WaitForSecondsRealtime(0.05f);
         }
-        _IfadeOut = IFadeOut();
-        StartCoroutine(IFadeOut());
+    }
+    public void FadeSoundOut(float speed, string soundName)
+    {
+        Sound s = System.Array.Find(Sounds, sound => sound.source == SelectSound(soundName));
+
+        StartCoroutine(IFadeOut(s, speed));
+    }
+
+    IEnumerator IFadeOut(Sound s, float speed)
+    {
+        int timer = 100; //failsafe timer
+        while(s.source.volume > 0 && timer > 0)
+        {
+            timer -= 1;
+            s.source.volume -= speed;
+            yield return new WaitForSecondsRealtime(0.05f);
+        }
+
+        s.source.Stop();
     }
 
     private void OnDestroy()

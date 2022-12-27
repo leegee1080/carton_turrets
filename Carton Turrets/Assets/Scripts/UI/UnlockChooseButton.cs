@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -15,6 +13,9 @@ public class UnlockChooseButton : MonoBehaviour
     [SerializeField]string _characterName;
     [SerializeField]TMP_Text _txtBox;
     [SerializeField]GameObject _slctImageGO;
+
+    [Header("Sound Vars")]
+    [SerializeField]string _pickSound;
 
     private void Start()
     {
@@ -58,7 +59,7 @@ public class UnlockChooseButton : MonoBehaviour
         if(soundsAndEffects)
         {
             //sounds and effects
-            print("unlock loud");
+            AudioController.singleton.PlaySound("ui_menu_unlock");
         }
     }
 
@@ -80,6 +81,8 @@ public class UnlockChooseButton : MonoBehaviour
         GlobalDataStorage.singleton.ChosenCharacter = _thisCharacter;
 
         MainMenuController.singleton.UpdateCharacterSelectButtons();
+
+        AudioController.singleton.PlaySound(_pickSound);
 
     }
 }

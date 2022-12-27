@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -58,7 +56,7 @@ public class MapChooseButton : MonoBehaviour
         if(soundsAndEffects)
         {
             //sounds and effects
-            print("unlock loud");
+            AudioController.singleton.PlaySound("ui_menu_unlock");
         }
     }
 
@@ -80,6 +78,8 @@ public class MapChooseButton : MonoBehaviour
         GlobalDataStorage.singleton.ChosenMap = _thisMap;
 
         MainMenuController.singleton.UpdateMapSelectButtons();
+
+        AudioController.singleton.PlaySound("ui_pick_map");
 
     }
 }

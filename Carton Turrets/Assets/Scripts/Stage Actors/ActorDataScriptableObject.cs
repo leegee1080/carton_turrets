@@ -6,6 +6,7 @@ public class ActorDataScriptableObject : ScriptableObject
     public new string name;
     [TextArea]
     public string Desc;
+    public string SignatureSound;
 
     [Header("Character Vars")]
     public int MaxHealth;

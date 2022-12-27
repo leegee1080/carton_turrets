@@ -60,6 +60,7 @@ public class Turret : StageActor, IPassableObject
         Action<Turret> chosenFireFunc = PublicUpgradeClasses.TurretFireFuncDict[chosenFireType];
         chosenFireFunc(this);
         
+        if(CurrentStateClass.name == "normal"){AudioController.singleton.PlaySound(TurretData.SignatureSound);}
     }
 
     public void AdjustCollider(float newSize)
@@ -99,6 +100,8 @@ public class Turret : StageActor, IPassableObject
     {
         base.Setup();
 
+        
+
         _turretArtObject.SetActive(true);
 
         ChangeState(new TurretState_Normal());
@@ -127,7 +130,8 @@ public class Turret : StageActor, IPassableObject
             }
             chosenDeathFunc(this, h);
         }
-        
+        AudioController.singleton.StopSound(TurretData.SignatureSound);
+        AudioController.singleton.PlaySound("turret_die");
 
         //hide the art. this should be done no matter what the custom death is
         _turretArtObject.SetActive(false);

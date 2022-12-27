@@ -126,6 +126,21 @@ public class UpgradeConfirmContainer : MonoBehaviour
     }
     public void ConfirmUpgrade()
     {
+        switch (_chosenUpgrade.UpgradeType)
+        {
+            case UpgradeType.Equipment:
+                AudioController.singleton.PlaySound("player_turret_equip");
+                break;
+            case UpgradeType.PlayerUpgrade:
+                AudioController.singleton.PlaySound("player_upgrade_equip");
+                break;
+            case UpgradeType.TurretMod:
+                AudioController.singleton.PlaySound("player_turret_equip");
+                break;
+            default:
+                AudioController.singleton.PlaySound("player_turret_equip");
+                break;
+        }
         Hide();
         LevelUpPopup.singlton.FindAndApplyUpgrade(_chosenUpgrade, StageController.singlton.Player.ReturnArrayToSearchBasedOnUpgradeType(_chosenUpgrade.UpgradeType));
         LevelUpPopup.singlton.Hide();
