@@ -137,11 +137,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PickUpId: Exp
   Sprites:
-  - {fileID: 21300000, guid: e12308f8c9a4a9b4294b103a74df813e, type: 3}
   - {fileID: 21300000, guid: f13d1d6474bd48a43bbdf4e98a837a32, type: 3}
+  - {fileID: 21300000, guid: e12308f8c9a4a9b4294b103a74df813e, type: 3}
   - {fileID: 21300000, guid: 4a11ef632d5db664e8c8c5db89264726, type: 3}
-  BaseExpAmount: 1
-  ExpMulti: 5
+  _expArtSR: {fileID: 5519878323658863705}
+  _baseExpAmount: 1
+  _expMulti: 5
+  _expMultiTimeBetweenUpgrades: 10
   ExpAmount: 1
 --- !u!212 &5519878323658863705
 SpriteRenderer:

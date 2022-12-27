@@ -65,8 +65,11 @@ public class StageController : MonoBehaviour
 
     [Header("Death Particle Pool")]
     [SerializeField]private GameObject _genericDeathParticleContainer;
-    [SerializeField]private GameObject _genericDeathParticleObject;
+    [SerializeField]private GameObject _genericDeathParticleObjectBlood;
+    [SerializeField]private GameObject _genericDeathParticleObjectAlt;
     public ObjectPooler DeathParticlePooler;
+    public ObjectPooler DeathParticlePoolerBlood;
+    public ObjectPooler DeathParticlePoolerAlt;
 
     [Header("Pickups Pool")]
     [SerializeField]private GameObject _pickupContainer;
@@ -83,6 +86,8 @@ public class StageController : MonoBehaviour
 
         CurrentPlayer = GlobalDataStorage.singleton.ReturnChosenPlayerSO();
         CurrentStage = GlobalDataStorage.singleton.ReturnChosenMapSO();
+
+        GlobalDataStorage.singleton.BloodOptionChanged.AddListener(ChangeBloodParticle);
     }
     public void OnEnable()
     {
@@ -98,6 +103,11 @@ public class StageController : MonoBehaviour
         move.Disable();
         activate.Disable();
         pause.Disable();
+    }
+
+    private void OnDestroy()
+    {
+        GlobalDataStorage.singleton.BloodOptionChanged.RemoveListener(ChangeBloodParticle);
     }
 
     public int FindActivateControlsIndex()//looks at the controls on the right side for the button pressed
@@ -185,6 +195,19 @@ public class StageController : MonoBehaviour
         p.transform.position = location;
     }
 
+    public void ChangeBloodParticle()
+    {
+        if(GlobalDataStorage.singleton.BloodOn)
+        {
+            DeathParticlePooler = DeathParticlePoolerBlood;
+        }
+        else
+        {
+            DeathParticlePooler = DeathParticlePoolerAlt;
+        }
+
+    }
+
     // void OnDrawGizmosSelected()
     // {
     //     for (int x = 0; x < GridArray.GetLength(0); x++)
@@ -257,7 +280,10 @@ public class StageController : MonoBehaviour
         EnemyObjectPooler = new ObjectPooler(_genericEnemyGameObject, _enemiesToPool, _poolEnemyContainer, false);
 
         //death particles
-        DeathParticlePooler = new ObjectPooler(_genericDeathParticleObject, _enemiesToPool, _genericDeathParticleContainer, false);
+        DeathParticlePoolerBlood = new ObjectPooler(_genericDeathParticleObjectBlood, _enemiesToPool, _genericDeathParticleContainer, false);
+        DeathParticlePoolerAlt = new ObjectPooler(_genericDeathParticleObjectAlt, _enemiesToPool, _genericDeathParticleContainer, false);
+
+        if(GlobalDataStorage.singleton.BloodOn){DeathParticlePooler = DeathParticlePoolerBlood;}else{DeathParticlePooler = DeathParticlePoolerAlt;}
 
         //pickup objects
         ExpPickupPooler = new ObjectPooler(_expPickupObject, _enemiesToPool, _pickupContainer, false);

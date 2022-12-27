@@ -45,9 +45,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerMoney: 100000000
-  BloodOn: 1
-  DamageNumbersOn: 0
-  OnScreenControlsOn: 0
+  _showInInspectorDamageNumbersOn: 0
+  DamageNumbersOptionChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  _showInInspectorOnScreenControlsOn: 0
+  OnScreenControlsOptionChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  _showInInspectorBloodOn: 1
+  BloodOptionChanged:
+    m_PersistentCalls:
+      m_Calls: []
   _possiblePlayerSOArray:
   - {fileID: 11400000, guid: da14a85da7a8aa64495f2db76e2148ed, type: 2}
   - {fileID: 11400000, guid: cc4c7f9d390800c4791b89c56fd358ea, type: 2}
