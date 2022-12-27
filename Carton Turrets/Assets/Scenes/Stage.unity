@@ -443,7 +443,8 @@ MonoBehaviour:
   _poolEnemyContainer: {fileID: 1741954581}
   _enemiesToPool: 1000
   _genericDeathParticleContainer: {fileID: 95278915}
-  _genericDeathParticleObject: {fileID: 8933188411812420761, guid: 2b4d88d0c0794434da673d2a5b6c8e62, type: 3}
+  _genericDeathParticleObjectBlood: {fileID: 8933188411812420761, guid: 2b4d88d0c0794434da673d2a5b6c8e62, type: 3}
+  _genericDeathParticleObjectAlt: {fileID: 8933188411812420761, guid: 7619f60373f75b548aba5be6fc18f6d3, type: 3}
   _pickupContainer: {fileID: 1243884443}
   _expPickupObject: {fileID: 5519878323244716845, guid: a21927742b06a9d438f90444983d2a26, type: 3}
   _moneyPickupObject: {fileID: 5519878323244716845, guid: 40ac46d2dfb9a394eba34e1c03ca4f95, type: 3}
@@ -9790,7 +9791,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 6adbaa4f4e0a6d84c94b7b3c01928a30, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13725,7 +13726,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.62352943}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -14002,7 +14003,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.53333336}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -14365,7 +14366,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.62352943}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

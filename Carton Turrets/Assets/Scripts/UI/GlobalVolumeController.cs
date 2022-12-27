@@ -68,6 +68,7 @@ public class GlobalVolumeController : MonoBehaviour
         _caTween = DOTween.To (() => _caColorFilter,
             x => _caColorFilter = x, 0, _hurtTime);
         _caTween.OnUpdate (UpdateHurtColor);
+        _caTween.SetUpdate(true);
         _caTween.OnComplete (CompleteHurtColor);
     }
     public void UpdateHurtColor()
@@ -80,9 +81,9 @@ public class GlobalVolumeController : MonoBehaviour
         {
             _caTween = null;
         }
-
         _caTween = DOTween.To (() => _caColorFilter,
             x => _caColorFilter = x, 1, _hurtTime).OnUpdate (UpdateHurtColor);
+        _caTween.SetUpdate(true);
         _caTween.OnComplete (KillTween);
     }     
     #endregion PulseHurt

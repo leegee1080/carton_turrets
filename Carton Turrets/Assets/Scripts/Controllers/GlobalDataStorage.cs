@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-
 public enum PlayerCharacters
 {
     eye,
@@ -48,9 +47,34 @@ public class GlobalDataStorage : MonoBehaviour
     public int PlayerMoney = 100;
 
     [Header("Game Options")]
-    public bool BloodOn;
-    public bool DamageNumbersOn;
-    public bool OnScreenControlsOn;
+
+    [SerializeField]bool _showInInspectorDamageNumbersOn;
+    public bool DamageNumbersOn
+        {
+            get{return _showInInspectorDamageNumbersOn;}
+            set{_showInInspectorDamageNumbersOn = value; DamageNumbersOptionChanged.Invoke();}
+        }
+    [HideInInspector]
+    public UnityEvent DamageNumbersOptionChanged;
+
+    [SerializeField]bool _showInInspectorOnScreenControlsOn;
+    public bool OnScreenControlsOn
+        {
+            get{return _showInInspectorOnScreenControlsOn;}
+            set{_showInInspectorOnScreenControlsOn = value; OnScreenControlsOptionChanged.Invoke();}
+        }
+    [HideInInspector]
+    public UnityEvent OnScreenControlsOptionChanged;
+
+    [SerializeField]bool _showInInspectorBloodOn;
+    public bool BloodOn
+        {
+            get{return _showInInspectorBloodOn;}
+            set{_showInInspectorBloodOn = value; BloodOptionChanged.Invoke();}
+        }
+    [HideInInspector]
+    public UnityEvent BloodOptionChanged;
+
 
     [Header("Character Unlocks")]
     [SerializeField]PlayerScriptableObject[] _possiblePlayerSOArray;
