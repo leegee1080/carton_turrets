@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ea5fda1be0b0a4ea9266deb8c794bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGameVolumeLevel: 1
-  currentMusicVolumeLevel: 1
-  currentMenuVolumeLevel: 1
+  currentGameVolumeLevel: 0.2
+  currentMusicVolumeLevel: 0.2
+  currentMenuVolumeLevel: 0.1
   Sounds:
   - name: music_mainmenu
     clip: {fileID: 8300000, guid: 5392c2c387f96624cb8366be86b7bcff, type: 3}

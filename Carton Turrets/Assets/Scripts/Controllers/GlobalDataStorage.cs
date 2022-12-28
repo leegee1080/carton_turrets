@@ -22,10 +22,9 @@ public enum PlayableMaps
 public enum PlayableAim
 {
     playerDir,
-    rightDir,
-    leftDir,
     atPDir,
-    atEDir
+    atEDir,
+    spin,
 }
 
 public class GlobalDataStorage : MonoBehaviour
@@ -87,6 +86,7 @@ public class GlobalDataStorage : MonoBehaviour
     public PlayableMaps ChosenMap;
 
     [Header("Aim Unlocks")]
+    public float AimAtEnemyCheckRange;
     [SerializeField]AimScriptableObject[] _possibleAimSOArray;
     [SerializeField]PlayableAim[] _currentlyUnlockedAim;
     public PlayableAim ChosenAim;

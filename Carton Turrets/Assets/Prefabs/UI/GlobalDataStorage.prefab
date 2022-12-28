@@ -70,7 +70,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 189577f8d4b4a314b8ec357b991a41f0, type: 2}
   _currentlyUnlockedMaps: 00000000
   ChosenMap: 0
+  AimAtEnemyCheckRange: 3
   _possibleAimSOArray:
   - {fileID: 11400000, guid: fb56ee9577b4691438b14c13c587dadf, type: 2}
+  - {fileID: 11400000, guid: 18e9876cbd00d4e4b831fb7bc8cbd922, type: 2}
+  - {fileID: 11400000, guid: 3cc7a548dc748224ca11431e813046b5, type: 2}
   _currentlyUnlockedAim: 00000000
   ChosenAim: 0

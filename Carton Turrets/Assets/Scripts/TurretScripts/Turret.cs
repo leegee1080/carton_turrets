@@ -9,6 +9,8 @@ public class Turret : StageActor, IPassableObject
     public GameObject _barrel;
     public PlayerActor ControllingActor;
 
+    public PlayableAim AimType;
+
     [Header("Turret Stats")]
     // public float LifeTime;
     public float ReloadTime;
@@ -84,6 +86,8 @@ public class Turret : StageActor, IPassableObject
 
         TurretBuildTypes chosenBuildType = TurretData.Tiers[RequestedTier].TurretBuildFunc;
         if(chosenBuildType == TurretBuildTypes.none){return;}
+
+        AimType = GlobalDataStorage.singleton.ChosenAim;
 
         currentTier = RequestedTier;
         Action<Turret, PlayerActor, Hashtable> chosenBuildFunc = PublicUpgradeClasses.TurretBuildFuncDict[chosenBuildType];
@@ -168,6 +172,37 @@ public class TurretState_Normal: ActorStatesAbstractClass
     public override void OnUpdateState(StageActor _cont)
     {
         Turret tu = (Turret)_cont;
+
+        switch (tu.AimType)
+        {
+            case PlayableAim.atPDir:
+                tu.gameObject.transform.LookAt(StageController.singlton.Player.transform);
+                break;
+            case PlayableAim.atEDir:
+                int maxColliders = 20;
+                float minDistance = Mathf.Infinity;
+                GameObject closestTarget = null;
+                LayerMask mask = LayerMask.GetMask("Enemy");
+                Collider[] hitColliders = new Collider[maxColliders];
+                int numColliders = Physics.OverlapSphereNonAlloc(tu.gameObject.transform.position, GlobalDataStorage.singleton.AimAtEnemyCheckRange, hitColliders,layerMask: mask);
+                for (int i = 0; i < numColliders; i++)
+                {
+                    float distance = Vector3.Distance(tu.gameObject.transform.position, hitColliders[i].transform.position);
+                    if (distance < minDistance)
+                    {
+                        minDistance = distance;
+                        closestTarget = hitColliders[i].gameObject;
+                    }
+                }
+                if(closestTarget == null){break;}
+                tu.gameObject.transform.LookAt(closestTarget.transform);
+                break;
+            case PlayableAim.spin:
+                tu.gameObject.transform.Rotate(0,1,0);
+                break;
+            default:
+                break;
+        }
 
         if(tu.ReloadCountdown >0){tu.ReloadCountdown -= Time.fixedDeltaTime;}else{tu.ReloadCountdown = tu.ReloadTime; tu.Fire();}
 

@@ -192,6 +192,7 @@ MonoBehaviour:
   TurretData: {fileID: 11400000, guid: 353fa482735732e48ae6ad5fd1269c07, type: 2}
   _barrel: {fileID: 3074358141296015960}
   ControllingActor: {fileID: 0}
+  AimType: 0
   ReloadTime: 1
   ReloadCountdown: 0
   Ammo: 5

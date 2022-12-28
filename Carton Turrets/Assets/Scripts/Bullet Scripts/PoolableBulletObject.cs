@@ -21,7 +21,7 @@ public class PoolableBulletObject : MonoBehaviour
         _parentTurret = t;
     }
 
-    public void Fire(IPassableObject Turret)
+    virtual public void Fire(IPassableObject Turret)
     {
         GrabInfoFromTurret((Turret)Turret);
         gameObject.transform.localPosition = Vector3.zero;
