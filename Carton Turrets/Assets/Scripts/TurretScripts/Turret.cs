@@ -33,6 +33,9 @@ public class Turret : StageActor, IPassableObject
     [Header("Tier Vars")]
     public int currentTier;
 
+    [Header("PlacementParticles")]
+    [SerializeField]ParticleSystem[] _placePSArray;
+
 
 
     [Header("Turret Art")]
@@ -107,6 +110,11 @@ public class Turret : StageActor, IPassableObject
         
 
         _turretArtObject.SetActive(true);
+
+        foreach (ParticleSystem item in _placePSArray)
+        {
+            item.Play();
+        }
 
         ChangeState(new TurretState_Normal());
     }

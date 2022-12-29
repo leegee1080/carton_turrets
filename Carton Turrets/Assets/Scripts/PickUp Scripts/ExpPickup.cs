@@ -6,6 +6,7 @@ public class ExpPickup : PickUps
 {
     public Sprite[] Sprites;
     [SerializeField]private SpriteRenderer _expArtSR;
+    [SerializeField]private ParticleSystem _expUpgradePS;
     [SerializeField]private int _baseExpAmount;
     [SerializeField]private int _expMulti;
     [SerializeField]private int _expMultiTimeBetweenUpgrades;
@@ -29,6 +30,7 @@ public class ExpPickup : PickUps
             _expArtSR.sprite = Sprites[i];
             yield return new WaitForSeconds(_expMultiTimeBetweenUpgrades);
             ExpAmount *= _expMulti;
+            _expUpgradePS.Play();
         }
     }
 }
