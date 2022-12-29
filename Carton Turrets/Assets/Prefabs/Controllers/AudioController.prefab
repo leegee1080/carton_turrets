@@ -381,4 +381,13 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
+  - name: promo_moist_drop
+    clip: {fileID: 8300000, guid: c9c5a5ff46c304b41b69e3b31ec23a85, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
   selectedSound: {fileID: 0}

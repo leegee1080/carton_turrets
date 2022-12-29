@@ -40,11 +40,15 @@ public class MainMenuController : MonoBehaviour
         GlobalVolumeController.singleton.QuitGame();
     }
 
-
+    public void Credits()
+    {
+        AudioController.singleton.FadeSoundOut(0.05f, "music_mainmenu");
+        GlobalVolumeController.singleton.NewScene(4);
+    }
     public void NewGame()
     {
         AudioController.singleton.FadeSoundOut(0.05f, "music_mainmenu");
-        GlobalVolumeController.singleton.NewScene(1);
+        GlobalVolumeController.singleton.NewScene(2);
     }
 
 #region UnlockUpdates
