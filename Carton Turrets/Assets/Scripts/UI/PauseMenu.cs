@@ -133,7 +133,7 @@ public class PauseMenu : MonoBehaviour
         AudioController.singleton.StopSound("endgame_nuke_alarm");
         AudioController.singleton.PlaySound("ui_gamestart");
         AudioController.singleton.FadeSoundOut(0.05f, StageController.singlton.CurrentStage.SignatureMusic);
-        GlobalVolumeController.singleton.NewScene(0);
+        GlobalVolumeController.singleton.NewScene(3);
 
     }
 }
