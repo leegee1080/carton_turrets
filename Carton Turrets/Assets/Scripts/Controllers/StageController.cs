@@ -147,6 +147,7 @@ public class StageController : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         CurrentState.OnEnterState(this);
         GlobalVolumeController.singleton.ShowScene();
         AudioController.singleton.FadeSoundIn(0.05f, StageController.singlton.CurrentStage.SignatureMusic);

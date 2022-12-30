@@ -410,12 +410,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _img: {fileID: 1555859955}
-  _startDelay: 1
-  _inTime: 0.3
-  _totalTime: 3
+  _startDelay: 0.1
+  _inTime: 0.1
+  _totalTime: 0.1
   _waveFilterAmount: 0.1
   _waveFilterMin: 0.02
   _alphaAmount: 0
+  _playSound: 0
 --- !u!114 &1555859958
 MonoBehaviour:
   m_ObjectHideFlags: 0

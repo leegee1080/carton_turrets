@@ -17,6 +17,7 @@ public class LogoAnimation : MonoBehaviour
     Tween _inAlphaTween;
     Tween _outAlphaTween;
     [SerializeField]float _alphaAmount = 0f;
+    [SerializeField]bool _playSound = true;
 
     private void Start()
     {
@@ -60,7 +61,7 @@ public class LogoAnimation : MonoBehaviour
     IEnumerator StartDelay()
     {
         yield return new WaitForSecondsRealtime(_startDelay);
-        AudioController.singleton.PlaySound("promo_moist_drop");
+        if(_playSound){AudioController.singleton.PlaySound("promo_moist_drop");}
         PlayEffects();
     }
     IEnumerator NextSceneCountDown()

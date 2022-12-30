@@ -1550,7 +1550,7 @@ MonoBehaviour:
   autoPlay: 1
   useTargetAsV3: 0
   endValueFloat: 0
-  endValueV3: {x: -518, y: -385, z: 0}
+  endValueV3: {x: -283, y: -385, z: 0}
   endValueV2: {x: 0, y: 0}
   endValueColor: {r: 1, g: 1, b: 1, a: 1}
   endValueString: 
@@ -1589,8 +1589,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Special thanks to Amy for ideas and support! And, to my friends for even
-    more ideas.
+  m_text: Special thanks to my Wife Amy for UX help and ideas! And, to my friends
+    for even more ideas.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2cae4205cb8d1f5478fd2b0fb5c08f25, type: 2}
   m_sharedMaterial: {fileID: 6707020119381094803, guid: 2cae4205cb8d1f5478fd2b0fb5c08f25, type: 2}
@@ -1653,7 +1653,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -285.26984, y: -296.65887, z: -1062.1688, w: 216.89052}
+  m_margin: {x: -557.4379, y: -296.65887, z: -1062.1688, w: 216.89052}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3023,7 +3023,7 @@ MonoBehaviour:
   autoPlay: 1
   useTargetAsV3: 0
   endValueFloat: 0
-  endValueV3: {x: 671, y: -150, z: 0}
+  endValueV3: {x: 909, y: -150, z: 0}
   endValueV2: {x: 0, y: 0}
   endValueColor: {r: 1, g: 1, b: 1, a: 1}
   endValueString: 
