@@ -128,6 +128,12 @@ public class EnemyActor : StageActor, IColliderMessageable
     public virtual void TakeDamage(float amt)
     {
         if(CurrentStateClass.name != "normal"){return;}
+        if(amt < 1){return;}
+        if(GlobalDataStorage.singleton.DamageNumbersOn)//shoot out damage numbers
+        {   
+            GameObject daGO = StageController.singlton.DamageNumberPooler.ActivateNextObject(new DamageAmountStorage(amt));
+            daGO.transform.position =  ActorArtContainer.transform.position;
+        }
         CurrentHealth -= amt;
         BlinkSprite();
         if(CurrentHealth <=0 )

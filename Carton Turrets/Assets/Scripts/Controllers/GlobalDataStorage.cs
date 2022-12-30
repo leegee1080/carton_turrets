@@ -26,6 +26,12 @@ public enum PlayableAim
     atEDir,
     spin,
 }
+public enum ControllerUsed
+{
+    kb,
+    gp,
+    ph
+}
 
 public class GlobalDataStorage : MonoBehaviour
 {
@@ -46,6 +52,14 @@ public class GlobalDataStorage : MonoBehaviour
     public int PlayerMoney = 100;
 
     [Header("Game Options")]
+    [SerializeField]ControllerUsed _showInInspectorControllerUsed;
+    public ControllerUsed ControllerUsed
+        {
+            get{return _showInInspectorControllerUsed;}
+            set{_showInInspectorControllerUsed = value; ControllerUsedChanged.Invoke();}
+        }
+    [HideInInspector]
+    public UnityEvent ControllerUsedChanged;
 
     [SerializeField]bool _showInInspectorDamageNumbersOn;
     public bool DamageNumbersOn

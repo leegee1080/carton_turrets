@@ -57,6 +57,15 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
+  - name: music_credits
+    clip: {fileID: 8300000, guid: 5f8cc83d493a723418d7ba164077660e, type: 3}
+    Tag: 2
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
   - name: music_stage_rocky
     clip: {fileID: 8300000, guid: 790e843cde7424e4bae780a640dcb185, type: 3}
     Tag: 0

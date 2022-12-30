@@ -20,6 +20,7 @@ public class LogoAnimation : MonoBehaviour
 
     private void Start()
     {
+        SplashScreenIn();
         StartCoroutine(StartDelay());
         StartCoroutine(NextSceneCountDown());
         
@@ -52,7 +53,8 @@ public class LogoAnimation : MonoBehaviour
     }
     public void UpdateAlpha()
     {
-        _img.color = new Color(1,1,1,_alphaAmount);
+        _img.material.SetFloat("_Alpha", _alphaAmount);
+        // _img.color = new Color(1,1,1,_alphaAmount);
     }
 
     IEnumerator StartDelay()
@@ -70,6 +72,11 @@ public class LogoAnimation : MonoBehaviour
     private void NewScene()
     {
         GlobalVolumeController.singleton.NewScene(1);
+    }
+
+    private void SplashScreenIn()
+    {
+        GlobalVolumeController.singleton.ShowScene();
     }
 
 }

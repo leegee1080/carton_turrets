@@ -73,7 +73,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 1
+    - _Alpha: 0
     - _AlphaCutoffValue: 0.25
     - _AlphaOutlineBlend: 1
     - _AlphaOutlineGlow: 5
@@ -109,8 +109,8 @@ Material:
     - _EditorDrawers: 6
     - _FadeAmount: -0.1
     - _FadeBurnGlow: 2
-    - _FadeBurnTransition: 0.075
-    - _FadeBurnWidth: 0.025
+    - _FadeBurnTransition: 0.01
+    - _FadeBurnWidth: 0
     - _FishEyeUvAmount: 0
     - _FlickerAlpha: 0
     - _FlickerFreq: 0.2
