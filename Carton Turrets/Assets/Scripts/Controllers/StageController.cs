@@ -78,6 +78,12 @@ public class StageController : MonoBehaviour
     public ObjectPooler ExpPickupPooler;
     public ObjectPooler MoneyPickupPooler;
 
+    [Header("Damage Number Pool")]
+    [SerializeField]int _numberDamageNumberToPool;
+    [SerializeField]private GameObject _damageNumberContainer;
+    [SerializeField]private GameObject _damageNumberObject;
+    public ObjectPooler DamageNumberPooler;
+
 
     private void Awake()
     {
@@ -141,6 +147,7 @@ public class StageController : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         CurrentState.OnEnterState(this);
         GlobalVolumeController.singleton.ShowScene();
         AudioController.singleton.FadeSoundIn(0.05f, StageController.singlton.CurrentStage.SignatureMusic);
@@ -288,6 +295,9 @@ public class StageController : MonoBehaviour
         //pickup objects
         ExpPickupPooler = new ObjectPooler(_expPickupObject, _enemiesToPool, _pickupContainer, false);
         MoneyPickupPooler = new ObjectPooler(_moneyPickupObject, _enemiesToPool, _pickupContainer, false);
+
+        //damage number objects
+        DamageNumberPooler = new ObjectPooler(_damageNumberObject, _numberDamageNumberToPool, _damageNumberContainer, false);
     }
 
     public void PlaceStartingTile()

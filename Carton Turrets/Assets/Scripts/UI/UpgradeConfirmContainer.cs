@@ -35,7 +35,7 @@ public class UpgradeConfirmContainer : MonoBehaviour
 
     private void Start()
     {
-        Hide();
+        // Hide();
     }
 
     public void Show(IUpgradeable passedChosenUpgrade, int tier)

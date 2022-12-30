@@ -30,6 +30,7 @@ public class PauseMenu : MonoBehaviour
     bool _gamePaused;
 
     [SerializeField]TMP_Text _quitButtonText;
+    [SerializeField]TMP_Text _pauseButtonText;
 
 
 
@@ -65,6 +66,8 @@ public class PauseMenu : MonoBehaviour
 
         _pauseMenuDimmerGO.SetActive(true);
 
+        _pauseButtonText.text = ">";
+
         foreach (GameObject item in _UIToHideOnPause)
         {
             Time.timeScale = 0;
@@ -92,6 +95,8 @@ public class PauseMenu : MonoBehaviour
         UnPauseGameEvent.Invoke();
 
         _pauseMenuDimmerGO.SetActive(false);
+
+        _pauseButtonText.text = "||";
 
         foreach (GameObject item in _UIToHideOnPause)
         {

@@ -42,7 +42,7 @@ public class LevelUpPopup : MonoBehaviour
 
 
     private void Start() {
-        Hide();
+        // Hide();
         UnfilteredEquipmentArray = StageController.singlton.CurrentStage.AvailableEquipment != null ? StageController.singlton.CurrentStage.AvailableEquipment: UnfilteredEquipmentArray;
         UnfilteredUpgradeArray = StageController.singlton.CurrentStage.AvailableUpgrades != null ? StageController.singlton.CurrentStage.AvailableUpgrades: UnfilteredUpgradeArray;
         FillInUpgradeList = StageController.singlton.CurrentStage.FillInUpgradesForMaxLevel != null ? StageController.singlton.CurrentStage.FillInUpgradesForMaxLevel: FillInUpgradeList;
