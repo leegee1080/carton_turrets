@@ -14,12 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Tiny Frog
   Desc: Frog
+  SignatureSound: 
   MaxHealth: 10
   MaxSpeed: 0.2
   Sprite: {fileID: 21300000, guid: 90d8a33075b88a448a686d4c85f8366a, type: 3}
   SpriteSize: 1
   MaxDamage: 1
   ColliderSize: 0.06
+  DeathDrop: 0
+  DeathDropAmount: 1
   RespawnType: 1
   MovementType: 0
   WalkingCurve:

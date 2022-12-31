@@ -44,12 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843bdbd1e0685d843b80189d9f894fba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerMoney: 100000000
+  PlayerMoney: 100
+  PlayerTempWallet: 0
+  _showInInspectorControllerUsed: 0
+  ControllerUsedChanged:
+    m_PersistentCalls:
+      m_Calls: []
   _showInInspectorDamageNumbersOn: 0
   DamageNumbersOptionChanged:
     m_PersistentCalls:
       m_Calls: []
-  _showInInspectorOnScreenControlsOn: 0
+  _showInInspectorOnScreenControlsOn: 1
   OnScreenControlsOptionChanged:
     m_PersistentCalls:
       m_Calls: []
