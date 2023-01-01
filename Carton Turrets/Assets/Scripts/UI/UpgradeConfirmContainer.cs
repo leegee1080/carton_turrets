@@ -18,7 +18,7 @@ public class UpgradeConfirmContainer : MonoBehaviour
     [SerializeField]public ShowConfirm ShowEvent;
     [SerializeField]public HideConfirm HideEvent;
     private void Awake() => singlton = this;
-    bool _isShown;
+    // bool _isShown;
 
 
     [SerializeField]GameObject _levelUpPopupUIGameObject;
@@ -56,7 +56,7 @@ public class UpgradeConfirmContainer : MonoBehaviour
 
         ShowNextAvailSlot(passedChosenUpgrade, tier);
 
-        _isShown = true;
+        // _isShown = true;
     }
 
     void ShowNextAvailSlot(IUpgradeable upgrade,int tier)
@@ -122,7 +122,7 @@ public class UpgradeConfirmContainer : MonoBehaviour
         }
         CurrentEquipmentUI.singlton.HideNextAvailableSlots();
         CurrentUpgradesUI.singlton.HideNextAvailableSlots();
-        _isShown = false;  
+        // _isShown = false;  
     }
     public void ConfirmUpgrade()
     {
@@ -148,26 +148,6 @@ public class UpgradeConfirmContainer : MonoBehaviour
     public void DenyUpgrade()
     {
         Hide();
-    }
-
-    private void Update()
-    {
-        if(_isShown)
-        {
-            int slot = StageController.singlton.FindActivateControlsIndex();
-            if(slot == -1){return;}
-            switch (slot)
-            {
-                case 1:
-                    DenyUpgrade();
-                    return;
-                case 2:
-                    ConfirmUpgrade();
-                    return;
-                default:
-                    return;
-            }
-        }
     }
 }
 

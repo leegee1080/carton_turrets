@@ -42,8 +42,38 @@ public class StageController : MonoBehaviour
     private PiaMainControls PlayerInputActions;
     public InputAction move, activate;
     public InputAction pause;
+
+    [SerializeField]HighlighterPackage _main;
+    [SerializeField]HighlighterPackage _pause;
+    [SerializeField]HighlighterPackage _quit;
+    [SerializeField]HighlighterPackage _levelUpPop;
+    [SerializeField]HighlighterPackage _levelUpConfirm;
+
+    public void ShowMainControls()
+    {
+        ControlsController.singleton.CurrentHighligherPackage = _main;
+    }
+    public void ShowQuit()
+    {
+        ControlsController.singleton.CurrentHighligherPackage = _quit;
+    }
+    public void ShowPause()
+    {
+        ControlsController.singleton.CurrentHighligherPackage = _pause;
+    }
+    public void ShowLevelUp()
+    {
+        ControlsController.singleton.CurrentHighligherPackage = _levelUpPop;
+    }
+    public void ShowLevelConfirm()
+    {
+        ControlsController.singleton.CurrentHighligherPackage = _levelUpConfirm;
+    }
+
     [SerializeField]DropPodController _dropPod;
     [SerializeField]EndgameController _endgameNuke;
+
+
 
     [Header("UI vars")]
     public GameObject PauseButtonGO;

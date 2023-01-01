@@ -68,6 +68,8 @@ public class PauseMenu : MonoBehaviour
 
         _pauseButtonText.text = ">";
 
+        StageController.singlton.ShowPause();
+
         foreach (GameObject item in _UIToHideOnPause)
         {
             Time.timeScale = 0;
@@ -97,6 +99,8 @@ public class PauseMenu : MonoBehaviour
         _pauseMenuDimmerGO.SetActive(false);
 
         _pauseButtonText.text = "||";
+
+        StageController.singlton.ShowMainControls();
 
         foreach (GameObject item in _UIToHideOnPause)
         {

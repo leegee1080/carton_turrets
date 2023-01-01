@@ -22,7 +22,7 @@ MonoBehaviour:
   MaxDamage: 100
   ColliderSize: 0.3
   DeathDrop: 1
-  DeathDropAmount: 10
+  DeathDropAmount: 20
   RespawnType: 1
   MovementType: 0
   WalkingCurve:

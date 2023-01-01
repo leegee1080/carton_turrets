@@ -21,7 +21,7 @@ MonoBehaviour:
   SpriteSize: 3
   MaxDamage: 20
   ColliderSize: 0.3
-  DeathDrop: 0
+  DeathDrop: 1
   DeathDropAmount: 1
   RespawnType: 0
   MovementType: 0

@@ -12,6 +12,9 @@ public class PlinkoController : MonoBehaviour
     public InputAction move, activate;
     [SerializeField] GameObject _onKbuttonsContainer;
 
+    [SerializeField]HighlighterPackage _mainPackage;
+    [SerializeField]HighlighterPackage _quitPackage;
+
     [Header("Bumpers")]
     [SerializeField]int _bumperNum;
     [SerializeField]GameObject _bumperGO;
@@ -65,6 +68,8 @@ public class PlinkoController : MonoBehaviour
         GenerateBumperField();
 
         BallPooler = new ObjectPooler(_ballGO, _ballToPoolNum, _ballContainer,false);
+
+        ShowPlinko();
     }
     private void Update()
     {
@@ -85,6 +90,15 @@ public class PlinkoController : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void ShowPlinko()
+    {
+        ControlsController.singleton.CurrentHighligherPackage = _mainPackage;
+    }
+    public void ShowQuit()
+    {
+        ControlsController.singleton.CurrentHighligherPackage = _quitPackage;
     }
 
     [ContextMenu("Gen Bumper Field")]

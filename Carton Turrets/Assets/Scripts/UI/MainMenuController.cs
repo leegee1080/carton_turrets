@@ -8,6 +8,10 @@ public class MainMenuController : MonoBehaviour
     private void Awake() => singleton = this;
 
     [SerializeField]float _timeBufferForSceneLoad;
+    [SerializeField]HighlighterPackage _mainHighligher;
+    [SerializeField]HighlighterPackage _quitHighligher;
+    [SerializeField]HighlighterPackage _newgameHighligher;
+    [SerializeField]HighlighterPackage _unlockHighligher;
 
 
     private void Start()
@@ -26,12 +30,34 @@ public class MainMenuController : MonoBehaviour
         UpdateAimUnlockButtons();
         UpdateAimSelectButtons();
 
+        StageMoneyEarnedIndicatorUI.singlton.GiveGlobalMoneyToTrack();
+
         AudioController.singleton.FadeSoundIn(0.05f, "music_mainmenu");
 
         // UpdateGameOptionsToggles();
 
         // UpdateVolumeSliders();
 
+        ControlsController.singleton.CurrentHighligherPackage = _mainHighligher;
+
+    }
+    
+    public void ReturnToMenu()
+    {
+        ControlsController.singleton.CurrentHighligherPackage = _mainHighligher;
+    }
+
+    public void ShowQuitChoice()
+    {
+        ControlsController.singleton.CurrentHighligherPackage = _quitHighligher;
+    }
+    public void ShowNewGameChoice()
+    {
+        ControlsController.singleton.CurrentHighligherPackage = _newgameHighligher;
+    }
+    public void ShowUnlock()
+    {
+        ControlsController.singleton.CurrentHighligherPackage = _unlockHighligher;
     }
 
     public void QuitGame()

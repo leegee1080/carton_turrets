@@ -19,12 +19,6 @@ public class LevelUpPopup : MonoBehaviour
     [SerializeField]public HideLevelUp HideEvent;
     private void Awake() => singlton = this;
 
-    [Header("Control Lockout")]
-    bool _isShown;
-    bool _controlsLocked;
-    [SerializeField]float _controlLockoutTime;
-    IEnumerator _lockoutTimer;
-
     [Header("UI")]
     [SerializeField]GameObject[] _elementsToShowArray;
     [SerializeField]GameObject[] _buttonArray;
@@ -62,9 +56,12 @@ public class LevelUpPopup : MonoBehaviour
         }
     }
 
+    [ContextMenu("ShowPopup")]
     public void Show()
     {
         ShowEvent.Invoke();
+
+        StageController.singlton.ShowLevelUp();
 
         if(_elementsToShowArray.Length == 0){return;}
         foreach (GameObject item in _elementsToShowArray)
@@ -74,19 +71,6 @@ public class LevelUpPopup : MonoBehaviour
         CreateAvailableUpgradeArray();
         Time.timeScale = 0;
 
-
-        _isShown =true;
-
-        //this is designed to allow the player time to react to the UI popups
-        _controlsLocked = true;
-        IEnumerator ControlLockTimer()
-        {
-            yield return new WaitForSecondsRealtime(_controlLockoutTime);
-            _controlsLocked = false;
-        }
-        if(_lockoutTimer != null){StopCoroutine(_lockoutTimer);}
-        _lockoutTimer = ControlLockTimer();
-        StartCoroutine(_lockoutTimer);
     }
 
     public void Hide()
@@ -99,16 +83,6 @@ public class LevelUpPopup : MonoBehaviour
             item.SetActive(false);
         }
         Time.timeScale = 1;
-        _isShown = false;
-    }
-    private void Update()
-    {
-        if(_isShown && !_controlsLocked)
-        {
-            int slot = StageController.singlton.FindMoveControlsIndex();
-            if(slot == -1){return;}
-            UpgradeChosen(slot);
-        }
     }
 
     public void UpgradeChosen(int index)
@@ -139,6 +113,15 @@ public class LevelUpPopup : MonoBehaviour
             }
         }
         return 0;
+    }
+
+    //debug
+    [ContextMenu("Apply Exp Upgrade")]
+    public void ApplyExpMultiUpgrade()
+    {
+        IUpgradeable chosenUpgrade = (IUpgradeable)UnfilteredUpgradeArray[1];
+
+        FindAndApplyUpgrade(chosenUpgrade,StageController.singlton.Player.ReturnArrayToSearchBasedOnUpgradeType(chosenUpgrade.UpgradeType));
     }
 
     public void FindAndApplyUpgrade(IUpgradeable chosenUpgrade, UpgradeSlot[] upgradeArray)

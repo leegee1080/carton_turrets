@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5344adc8d289d4390d7a343d1e1305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpId: Exp
+  PickUpId: 0
   Sprites:
   - {fileID: 21300000, guid: f13d1d6474bd48a43bbdf4e98a837a32, type: 3}
   - {fileID: 21300000, guid: e12308f8c9a4a9b4294b103a74df813e, type: 3}
@@ -145,7 +145,7 @@ MonoBehaviour:
   _expUpgradePS: {fileID: 394355634865773193}
   _baseExpAmount: 1
   _expMulti: 5
-  _expMultiTimeBetweenUpgrades: 10
+  _expMultiTimeBetweenUpgrades: 600
   ExpAmount: 1
 --- !u!212 &5519878323658863705
 SpriteRenderer:
