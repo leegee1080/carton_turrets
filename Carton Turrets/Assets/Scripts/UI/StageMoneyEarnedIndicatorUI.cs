@@ -17,6 +17,8 @@ public class StageMoneyEarnedIndicatorUI : MonoBehaviour
     [SerializeField]int _moneyToAdd = 0;
     int _textValue = 0;
 
+    public int PublicMoneyAmountEarnedInLevel;
+
 
     public void UpdateMoneyAmountUI(int amt)
     {
@@ -30,10 +32,28 @@ public class StageMoneyEarnedIndicatorUI : MonoBehaviour
     {
         while(_moneyToAdd > 0)
         {
+            AudioController.singleton.PlaySound("ui_coin_collect");
             _moneyToAdd -= 1;
             _textValue += 1;
             _moneyAmountText.text = _textValue.ToString();
+            PublicMoneyAmountEarnedInLevel = _textValue;
             yield return new WaitForSecondsRealtime(_UIPulseUpdateTime);
         }
+    }
+
+    public void GiveGlobalMoneyToTrack()
+    {
+        _textValue = GlobalDataStorage.singleton.PlayerMoney;
+    }
+
+    public void UpdateInterface()
+    {
+        _moneyAmountText.text = _textValue.ToString();
+    }
+
+    [ContextMenu("Give Ten Money")]
+    public void GiveTenMoney()
+    {
+        UpdateMoneyAmountUI(10);
     }
 }

@@ -50,6 +50,7 @@ public class GlobalDataStorage : MonoBehaviour
     }
 
     public int PlayerMoney = 100;
+    public int PlayerTempWallet = 0;
 
     [Header("Game Options")]
     [SerializeField]ControllerUsed _showInInspectorControllerUsed;

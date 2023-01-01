@@ -205,7 +205,27 @@ public class EnemyActor : StageActor, IColliderMessageable
         GameObject part = StageController.singlton.DeathParticlePooler.ActivateNextObject(null);
         part.transform.position = new Vector3(ActorArtContainer.transform.position.x, 0.1f, ActorArtContainer.transform.position.z);
 
-        StageController.singlton.DropExp(ActorArtContainer.transform.position);
+        for (int i = 0; i < EnemyData.DeathDropAmount; i++)
+        {
+            Vector3 randAdd = Vector3.zero;
+            if(EnemyData.DeathDropAmount > 1)
+            {
+                randAdd = new Vector3(UnityEngine.Random.Range(-0.25f, 0.25f), 0, UnityEngine.Random.Range(-0.25f, 0.25f));
+            }
+            switch (EnemyData.DeathDrop)
+            {
+                case PickupTypes.money:
+                    StageController.singlton.DropMoney(ActorArtContainer.transform.position + randAdd);
+                    break;
+                case PickupTypes.exp:
+                    StageController.singlton.DropExp(ActorArtContainer.transform.position + randAdd);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
         ActorArtContainer.transform.position = new Vector3(0, ActorArtContainer.transform.position.y, 0);
 
         ActorArtContainer.SetActive(false);

@@ -171,11 +171,11 @@ public class PlayerActor : StageActor, IPassableObject
     {
         switch (item.PickUpId)
         {
-            case "Exp":
+            case PickupTypes.exp:
                 ExpPickup t = (ExpPickup)item;
                 ApplyExp(t.ExpAmount);
                 return;
-            case "Money":
+            case PickupTypes.money:
                 MoneyPickup m = (MoneyPickup)item;
                 StageMoneyEarnedIndicatorUI.singlton.UpdateMoneyAmountUI(m.MoneyAmount);
                 return;

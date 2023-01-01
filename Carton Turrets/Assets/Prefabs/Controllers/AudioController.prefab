@@ -66,6 +66,15 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
+  - name: music_plinko
+    clip: {fileID: 8300000, guid: 89b87c9849eecd44c9a21c9a581b48a7, type: 3}
+    Tag: 0
+    loop: 1
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
   - name: music_stage_rocky
     clip: {fileID: 8300000, guid: 790e843cde7424e4bae780a640dcb185, type: 3}
     Tag: 0
@@ -197,6 +206,33 @@ MonoBehaviour:
     Tag: 1
     loop: 0
     randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_coin_collect
+    clip: {fileID: 8300000, guid: 2647a7f1c70c0844e863b04e48a23a80, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 1
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_coin_lose
+    clip: {fileID: 8300000, guid: bffe524d44fff1b47960ff4361e46aaf, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 1
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_bounce
+    clip: {fileID: 8300000, guid: f5de36c6218f16246bd291a1201965e7, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 1
     Maxvolume: 1
     volume: 1
     pitch: 1

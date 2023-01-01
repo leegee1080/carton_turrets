@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PickupTypes
+{
+    exp,
+    money,
+    health
+}
 public class PickUps : MonoBehaviour
 {
-    public string PickUpId;
+    public PickupTypes PickUpId;
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")

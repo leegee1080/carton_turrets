@@ -18,8 +18,8 @@ MonoBehaviour:
   SignatureMusic: music_stage_rocky
   Waves:
   - EnemySpawnStartThreshold: 1
-    SpawnInterval: 0.1
-    Amount: 250
+    SpawnInterval: 0.2
+    Amount: 125
     Spawned: 0
     Enemy: {fileID: 11400000, guid: 711ec42f94b39f04287949318eba63f6, type: 2}
   - EnemySpawnStartThreshold: 60
@@ -81,12 +81,12 @@ MonoBehaviour:
     SpawnInterval: 0.1
     Amount: 150
     Spawned: 0
-    Enemy: {fileID: 11400000, guid: 716da6cc25b76e840a3e2f9ad6e64b93, type: 2}
+    Enemy: {fileID: 11400000, guid: c5bfe61a66d13e946b034427e5103e30, type: 2}
   - EnemySpawnStartThreshold: 540
     SpawnInterval: 0.1
     Amount: 150
     Spawned: 0
-    Enemy: {fileID: 11400000, guid: 716da6cc25b76e840a3e2f9ad6e64b93, type: 2}
+    Enemy: {fileID: 11400000, guid: c5bfe61a66d13e946b034427e5103e30, type: 2}
   - EnemySpawnStartThreshold: 540
     SpawnInterval: 0.05
     Amount: 500

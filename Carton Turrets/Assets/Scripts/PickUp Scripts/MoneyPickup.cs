@@ -8,6 +8,7 @@ public class MoneyPickup : PickUps
     [SerializeField]private int BaseMoneyAmount;
     [SerializeField]private int MoneyMulti;
     public int MoneyAmount;
+    [SerializeField]private ParticleSystem _moneyPS;
 
     public override void Activate(IPassableObject obj)
     {

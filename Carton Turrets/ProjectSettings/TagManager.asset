@@ -12,6 +12,7 @@ TagManager:
   - Pickup
   - UI
   - AllKiller
+  - SpawnedObject
   layers:
   - Default
   - TransparentFX

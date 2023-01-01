@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
+
 [System.Serializable]
 public class GridData
 {
@@ -198,6 +200,7 @@ public class StageController : MonoBehaviour
     }
     public void DropMoney(Vector3 location)
     {
+        if(CurrentState.name != "run"){return;}
         GameObject p = MoneyPickupPooler.ActivateNextObject(null);
         p.transform.position = location;
     }
@@ -382,6 +385,10 @@ public class StageState_Running: StageState
         _cont.GameTime += Time.fixedDeltaTime;
         GameTimeIndicatorUI.singlton.UpdateTime(_cont.GameTime);
         _cont.CheckEnemySpawnWave();
+        if(_cont.GameTime >= 899)
+        {
+            AudioController.singleton.FadeSoundOut(0.05f, StageController.singlton.CurrentStage.SignatureMusic);
+        }
         if(_cont.GameTime >= 900)
         {
             _cont.StartEndgame();
@@ -476,6 +483,8 @@ public class StageState_EndgameWin: StageState
     {
         _cont.pause.Disable();
         _cont.PauseButtonGO.SetActive(false);
+        AudioController.singleton.PlaySound("endgame_win");
+        StageMoneyEarnedIndicatorUI.singlton.UpdateMoneyAmountUI(20);
         IEnumerator SlowDownTime()
         {
             for (float i = 1; i > 0; i -= 0.1f)

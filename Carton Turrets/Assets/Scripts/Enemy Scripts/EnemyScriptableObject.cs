@@ -9,6 +9,8 @@ public class EnemyScriptableObject : ActorDataScriptableObject
     public float SpriteSize;
     public float MaxDamage;
     public float ColliderSize;
+    public PickupTypes DeathDrop;
+    public int DeathDropAmount = 1;
     public EnemyRespawnType RespawnType;
     public EnemyMovementType MovementType;
     public AnimationCurve WalkingCurve;
