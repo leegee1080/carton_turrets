@@ -44,6 +44,7 @@ public class StageMoneyEarnedIndicatorUI : MonoBehaviour
     public void GiveGlobalMoneyToTrack()
     {
         _textValue = GlobalDataStorage.singleton.PlayerMoney;
+        UpdateInterface();
     }
 
     public void UpdateInterface()

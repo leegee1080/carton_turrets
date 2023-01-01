@@ -53,6 +53,60 @@ public partial class @PiaMainControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Accept"",
+                    ""type"": ""Button"",
+                    ""id"": ""ccb8a203-413e-4e65-94b7-1a0edf665883"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""92d47901-6fcd-4965-906a-020aedaea9a4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""9777e3c5-9ef5-4b39-b21a-b7ec6080e11d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""e91db998-8c80-455b-a409-af5f46727e08"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""266bd2e6-7ed4-4a44-b5c7-a73bb99657f7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Deny"",
+                    ""type"": ""Button"",
+                    ""id"": ""02328218-5495-4164-89a9-5223857b50d5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -167,9 +221,64 @@ public partial class @PiaMainControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""b1064493-9ea1-4d6f-ae52-c7cf79e8d331"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerMovement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""6b5a0b3a-f500-477b-8c63-02e22f8ec551"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardDefault"",
+                    ""action"": ""PlayerMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""fe675f4a-317d-43cb-a208-bc7f2b4b7511"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardDefault"",
+                    ""action"": ""PlayerMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""edd448b3-bd50-462d-baac-f17a295d83d5"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardDefault"",
+                    ""action"": ""PlayerMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""66e6c214-351a-4ccc-934f-4d1e4c2fa012"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardDefault"",
+                    ""action"": ""PlayerMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
-                    ""id"": ""a22c1f5b-3671-4d9d-9b54-2139dc57c985"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""id"": ""79f3193b-a56b-474b-ae16-58adb5dfdcc6"",
+                    ""path"": ""<Gamepad>/select"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyboardDefault"",
@@ -179,11 +288,11 @@ public partial class @PiaMainControls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""79f3193b-a56b-474b-ae16-58adb5dfdcc6"",
-                    ""path"": ""<Gamepad>/select"",
+                    ""id"": ""0430a8ef-ef89-420d-a49e-4aeec30629ff"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardDefault"",
+                    ""groups"": """",
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -297,6 +406,182 @@ public partial class @PiaMainControls : IInputActionCollection2, IDisposable
                     ""action"": ""PlaceTurret"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f214a2da-ca31-4793-a90f-0668e2263929"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Accept"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""07532806-1297-4e80-abfd-3bc1105fbe66"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Accept"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""502016e5-a1a0-4a9b-a454-9cbf42a1bf2a"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""92d381ac-fa0e-4a32-a2ba-ad676d09d686"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d1576824-63e8-4e63-8671-d3979c3dbe9e"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b643e904-1301-4d55-98a9-c887a0525c86"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""76d61400-dbf7-4924-a62a-2f434fd48c7e"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6c263c1f-63fb-49f2-9298-6cb34f295367"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""38910beb-919b-45c8-980e-bdad62203a4d"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""18b29f5f-6ecd-485f-810a-a7db055352d0"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""22be25d8-252f-4218-a398-cc7643710a55"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""10109a2d-a024-4d1f-a345-8b27c126045a"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""15657073-e188-48d8-9fa2-095d674e3603"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c48f7316-4b79-4a50-9893-4ff17b3e7a0e"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e7739a8d-bb59-4b3a-8353-253e8ce65bad"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Deny"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0dea5938-8e93-4fb9-8565-85c8a2d34a0b"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Deny"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -314,6 +599,12 @@ public partial class @PiaMainControls : IInputActionCollection2, IDisposable
         m_MainMap_PlayerMovement = m_MainMap.FindAction("PlayerMovement", throwIfNotFound: true);
         m_MainMap_PlaceTurret = m_MainMap.FindAction("PlaceTurret", throwIfNotFound: true);
         m_MainMap_Pause = m_MainMap.FindAction("Pause", throwIfNotFound: true);
+        m_MainMap_Accept = m_MainMap.FindAction("Accept", throwIfNotFound: true);
+        m_MainMap_SelectUp = m_MainMap.FindAction("SelectUp", throwIfNotFound: true);
+        m_MainMap_SelectDown = m_MainMap.FindAction("SelectDown", throwIfNotFound: true);
+        m_MainMap_SelectLeft = m_MainMap.FindAction("SelectLeft", throwIfNotFound: true);
+        m_MainMap_SelectRight = m_MainMap.FindAction("SelectRight", throwIfNotFound: true);
+        m_MainMap_Deny = m_MainMap.FindAction("Deny", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -376,6 +667,12 @@ public partial class @PiaMainControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_MainMap_PlayerMovement;
     private readonly InputAction m_MainMap_PlaceTurret;
     private readonly InputAction m_MainMap_Pause;
+    private readonly InputAction m_MainMap_Accept;
+    private readonly InputAction m_MainMap_SelectUp;
+    private readonly InputAction m_MainMap_SelectDown;
+    private readonly InputAction m_MainMap_SelectLeft;
+    private readonly InputAction m_MainMap_SelectRight;
+    private readonly InputAction m_MainMap_Deny;
     public struct MainMapActions
     {
         private @PiaMainControls m_Wrapper;
@@ -383,6 +680,12 @@ public partial class @PiaMainControls : IInputActionCollection2, IDisposable
         public InputAction @PlayerMovement => m_Wrapper.m_MainMap_PlayerMovement;
         public InputAction @PlaceTurret => m_Wrapper.m_MainMap_PlaceTurret;
         public InputAction @Pause => m_Wrapper.m_MainMap_Pause;
+        public InputAction @Accept => m_Wrapper.m_MainMap_Accept;
+        public InputAction @SelectUp => m_Wrapper.m_MainMap_SelectUp;
+        public InputAction @SelectDown => m_Wrapper.m_MainMap_SelectDown;
+        public InputAction @SelectLeft => m_Wrapper.m_MainMap_SelectLeft;
+        public InputAction @SelectRight => m_Wrapper.m_MainMap_SelectRight;
+        public InputAction @Deny => m_Wrapper.m_MainMap_Deny;
         public InputActionMap Get() { return m_Wrapper.m_MainMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -401,6 +704,24 @@ public partial class @PiaMainControls : IInputActionCollection2, IDisposable
                 @Pause.started -= m_Wrapper.m_MainMapActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_MainMapActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_MainMapActionsCallbackInterface.OnPause;
+                @Accept.started -= m_Wrapper.m_MainMapActionsCallbackInterface.OnAccept;
+                @Accept.performed -= m_Wrapper.m_MainMapActionsCallbackInterface.OnAccept;
+                @Accept.canceled -= m_Wrapper.m_MainMapActionsCallbackInterface.OnAccept;
+                @SelectUp.started -= m_Wrapper.m_MainMapActionsCallbackInterface.OnSelectUp;
+                @SelectUp.performed -= m_Wrapper.m_MainMapActionsCallbackInterface.OnSelectUp;
+                @SelectUp.canceled -= m_Wrapper.m_MainMapActionsCallbackInterface.OnSelectUp;
+                @SelectDown.started -= m_Wrapper.m_MainMapActionsCallbackInterface.OnSelectDown;
+                @SelectDown.performed -= m_Wrapper.m_MainMapActionsCallbackInterface.OnSelectDown;
+                @SelectDown.canceled -= m_Wrapper.m_MainMapActionsCallbackInterface.OnSelectDown;
+                @SelectLeft.started -= m_Wrapper.m_MainMapActionsCallbackInterface.OnSelectLeft;
+                @SelectLeft.performed -= m_Wrapper.m_MainMapActionsCallbackInterface.OnSelectLeft;
+                @SelectLeft.canceled -= m_Wrapper.m_MainMapActionsCallbackInterface.OnSelectLeft;
+                @SelectRight.started -= m_Wrapper.m_MainMapActionsCallbackInterface.OnSelectRight;
+                @SelectRight.performed -= m_Wrapper.m_MainMapActionsCallbackInterface.OnSelectRight;
+                @SelectRight.canceled -= m_Wrapper.m_MainMapActionsCallbackInterface.OnSelectRight;
+                @Deny.started -= m_Wrapper.m_MainMapActionsCallbackInterface.OnDeny;
+                @Deny.performed -= m_Wrapper.m_MainMapActionsCallbackInterface.OnDeny;
+                @Deny.canceled -= m_Wrapper.m_MainMapActionsCallbackInterface.OnDeny;
             }
             m_Wrapper.m_MainMapActionsCallbackInterface = instance;
             if (instance != null)
@@ -414,6 +735,24 @@ public partial class @PiaMainControls : IInputActionCollection2, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @Accept.started += instance.OnAccept;
+                @Accept.performed += instance.OnAccept;
+                @Accept.canceled += instance.OnAccept;
+                @SelectUp.started += instance.OnSelectUp;
+                @SelectUp.performed += instance.OnSelectUp;
+                @SelectUp.canceled += instance.OnSelectUp;
+                @SelectDown.started += instance.OnSelectDown;
+                @SelectDown.performed += instance.OnSelectDown;
+                @SelectDown.canceled += instance.OnSelectDown;
+                @SelectLeft.started += instance.OnSelectLeft;
+                @SelectLeft.performed += instance.OnSelectLeft;
+                @SelectLeft.canceled += instance.OnSelectLeft;
+                @SelectRight.started += instance.OnSelectRight;
+                @SelectRight.performed += instance.OnSelectRight;
+                @SelectRight.canceled += instance.OnSelectRight;
+                @Deny.started += instance.OnDeny;
+                @Deny.performed += instance.OnDeny;
+                @Deny.canceled += instance.OnDeny;
             }
         }
     }
@@ -432,5 +771,11 @@ public partial class @PiaMainControls : IInputActionCollection2, IDisposable
         void OnPlayerMovement(InputAction.CallbackContext context);
         void OnPlaceTurret(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnAccept(InputAction.CallbackContext context);
+        void OnSelectUp(InputAction.CallbackContext context);
+        void OnSelectDown(InputAction.CallbackContext context);
+        void OnSelectLeft(InputAction.CallbackContext context);
+        void OnSelectRight(InputAction.CallbackContext context);
+        void OnDeny(InputAction.CallbackContext context);
     }
 }

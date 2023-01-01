@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6186840627611643000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6186840627611643001}
+  - component: {fileID: 6186840627611643002}
+  m_Layer: 0
+  m_Name: MenuControlsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6186840627611643001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186840627611643000}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6186840627611643002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186840627611643000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45175aa7fbd397a48a83f9c96f24bbe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accept:
+    m_Name: Accept
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 0d2e92e3-530c-4ad0-a094-94a981ebd780
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  deny:
+    m_Name: Deny
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: dbdfb4fe-b380-48aa-bcc8-a89bb956e8cf
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  selectUp:
+    m_Name: Select Up
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: bfe4dc2c-7d98-4509-aba7-aa5337cb451f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  selectDown:
+    m_Name: Select Down
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f6df3cd2-af18-434e-82b6-479d20a57279
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  selectLeft:
+    m_Name: Select Left
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9b86bdaf-7985-461e-8063-9dd3596c3e05
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  selectRight:
+    m_Name: Select Right
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: bd6a64f6-f33d-4dc8-88ae-183c54a401db
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  pause:
+    m_Name: Pause
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d8677ac4-9da2-4a5d-afc8-a8d2d5ac40e7
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  _showInspectorCurrentHighligherPackage:
+    _availableControls: []
+    _selectedControl: {fileID: 0}
+    _forceAcceptControl: {fileID: 0}
+    _forceDenyControl: {fileID: 0}
+  _availableControls: []
+  _selectAvailable: 1
+  _selectedControl: {fileID: 0}
+  UpPressedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  RightPressedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  LeftPressedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DownPressedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  PausePressedEvent:
+    m_PersistentCalls:
+      m_Calls: []

@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class CreditsController : MonoBehaviour
 {
+    [SerializeField] HighlighterPackage _creditsHighligher;
     private void Start()
     {
         CreditsScreenIn();
+        ControlsController.singleton.CurrentHighligherPackage = _creditsHighligher;
     }
 
     public void BacktoMainMenu()

@@ -192,6 +192,8 @@ public class PlayerActor : StageActor, IPassableObject
         AudioController.singleton.PlaySound("player_exp");
         if(CurrentExpAmount >= LevelUpThreshold)
         {
+            CurrentExpAmount = 0;
+
             CurrentExpIndicatorUI.singlton.SetPrevLevelThreshold((int)LevelUpThreshold);
 
             LevelUpThreshold *= PlayerCurrentStatDict[PlayerStatEnum.LevelUpThresholdMultiplier];

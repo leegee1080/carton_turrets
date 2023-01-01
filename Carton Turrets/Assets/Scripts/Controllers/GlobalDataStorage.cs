@@ -125,6 +125,7 @@ public class GlobalDataStorage : MonoBehaviour
     public void UnlockCharacter(PlayerCharacters unlock)
     {
         print("Character Unlocked: "+ unlock);
+        StageMoneyEarnedIndicatorUI.singlton.GiveGlobalMoneyToTrack();
         PlayerCharacters[] tempArray = new PlayerCharacters[_currentlyUnlockedCharacters.Length + 1];
 
         for (int i = 0; i < _currentlyUnlockedCharacters.Length; i++)
@@ -140,6 +141,7 @@ public class GlobalDataStorage : MonoBehaviour
     public void UnlockMap(PlayableMaps unlock)
     {
         print("Map Unlocked: "+ unlock);
+        StageMoneyEarnedIndicatorUI.singlton.GiveGlobalMoneyToTrack();
         PlayableMaps[] tempArray = new PlayableMaps[_currentlyUnlockedMaps.Length + 1];
 
         for (int i = 0; i < _currentlyUnlockedMaps.Length; i++)
@@ -155,6 +157,7 @@ public class GlobalDataStorage : MonoBehaviour
     public void UnlockAim(PlayableAim unlock)
     {
         print("Aim Unlocked: "+ unlock);
+        StageMoneyEarnedIndicatorUI.singlton.GiveGlobalMoneyToTrack();
         PlayableAim[] tempArray = new PlayableAim[_currentlyUnlockedAim.Length + 1];
 
         for (int i = 0; i < _currentlyUnlockedAim.Length; i++)

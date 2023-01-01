@@ -9,7 +9,7 @@ public class ExpPickup : PickUps
     [SerializeField]private ParticleSystem _expUpgradePS;
     [SerializeField]private int _baseExpAmount;
     [SerializeField]private int _expMulti;
-    [SerializeField]private int _expMultiTimeBetweenUpgrades;
+    [SerializeField]private float _expMultiTimeBetweenUpgrades;
     public int ExpAmount;
 
     private IEnumerator _upgradeTimer;
@@ -17,6 +17,9 @@ public class ExpPickup : PickUps
     public override void Activate(IPassableObject obj)
     {
         base.Activate(obj);
+
+        _expMultiTimeBetweenUpgrades = Mathf.Abs(_expMultiTimeBetweenUpgrades - StageController.singlton.GameTime) <= 0 ? 10 : Mathf.Abs(_expMultiTimeBetweenUpgrades - StageController.singlton.GameTime);
+
         if(_upgradeTimer != null){StopCoroutine(_upgradeTimer);}
         _upgradeTimer = UpgradeTimer();
 

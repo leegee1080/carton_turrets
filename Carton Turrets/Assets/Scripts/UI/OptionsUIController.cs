@@ -4,12 +4,29 @@ using TMPro;
 
 public class OptionsUIController : MonoBehaviour
 {
+    [SerializeField]HighlighterPackage _optionsHighligher;
+    [SerializeField]HighlighterPackage _optionsGameHighligher;
+    [SerializeField]HighlighterPackage _optionsSoundHighligher;
+
     // Start is called before the first frame update
     void Start()
     {
         UpdateGameOptionsToggles();
 
         UpdateVolumeSliders();
+    }
+
+    public void OpenOptions()
+    {
+        ControlsController.singleton.CurrentHighligherPackage = _optionsHighligher;
+    }
+    public void OpenGameOptions()
+    {
+        ControlsController.singleton.CurrentHighligherPackage = _optionsGameHighligher;
+    }
+    public void OpenSoundOptions()
+    {
+        ControlsController.singleton.CurrentHighligherPackage = _optionsSoundHighligher;
     }
 
 #region SoundOptions
