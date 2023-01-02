@@ -22,6 +22,7 @@ MonoBehaviour:
     Amount: 10
     Spawned: 0
     Enemy: {fileID: 11400000, guid: 711ec42f94b39f04287949318eba63f6, type: 2}
+  TotalStageTime: 100
   MapMaxX: 100
   MapMaxY: 100
   StartingLocation:

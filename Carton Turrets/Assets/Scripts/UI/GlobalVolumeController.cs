@@ -91,6 +91,7 @@ public class GlobalVolumeController : MonoBehaviour
     #region NewScene
     public void NewScene(int nextScene)
     {
+        GlobalDataStorage.singleton.SaveGame();
         _nextScene = nextScene;
         _sTween = DOTween.To (() => _sTweenValue,
             x => _sTweenValue = x, 1, _sceneTime);
@@ -126,8 +127,25 @@ public class GlobalVolumeController : MonoBehaviour
 
     #region ShowScene
     [ContextMenu("ShowScene")]
-    public void ShowScene()
+    public void ShowScene(float delay = 0)
     {
+        IEnumerator delayTimer()
+        {
+            yield return new WaitForSecondsRealtime(delay);
+            _sTween = DOTween.To (() => _sTweenValue,
+                y => _sTweenValue = y, 0, _sceneTime);
+            _sTween.OnUpdate (UpdateSceneEffects);
+            _sTween.SetUpdate(true);
+            _sTween.SetEase(_easeOutType);
+            _sTween.OnComplete (CompleteSceneOut);
+        }
+
+        if(delay > 0)
+        {
+            StartCoroutine(delayTimer());
+            return;
+        }
+
         _sTween = DOTween.To (() => _sTweenValue,
             y => _sTweenValue = y, 0, _sceneTime);
         _sTween.OnUpdate (UpdateSceneEffects);

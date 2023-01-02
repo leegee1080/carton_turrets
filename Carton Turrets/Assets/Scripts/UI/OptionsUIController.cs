@@ -14,6 +14,11 @@ public class OptionsUIController : MonoBehaviour
         UpdateGameOptionsToggles();
 
         UpdateVolumeSliders();
+
+        if(GlobalDataStorage.singleton.ControllerUsed != ControllerUsed.kb)
+        {
+            _onscContToggleBtn.interactable = false;
+        }
     }
 
     public void OpenOptions()
@@ -27,6 +32,10 @@ public class OptionsUIController : MonoBehaviour
     public void OpenSoundOptions()
     {
         ControlsController.singleton.CurrentHighligherPackage = _optionsSoundHighligher;
+    }
+    public void CloseOptions()
+    {
+        GlobalDataStorage.singleton.SaveGame();
     }
 
 #region SoundOptions
@@ -61,6 +70,7 @@ public class OptionsUIController : MonoBehaviour
     [SerializeField] GameObject _bloodToggleIndicatorGO;
     [SerializeField] GameObject _damnumbToggleIndicatorGO;
     [SerializeField] GameObject _onscContToggleIndicatorGO;
+    [SerializeField] Button _onscContToggleBtn;
 
     public void UpdateGameOptionsToggles()
     {

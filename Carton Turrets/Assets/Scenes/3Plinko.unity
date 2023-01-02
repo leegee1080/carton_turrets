@@ -622,15 +622,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4845722464414469211, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 32.520046
+      value: 160.26767
       objectReference: {fileID: 0}
     - target: {fileID: 4845722464414469211, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 27.255543
+      value: 141.40126
       objectReference: {fileID: 0}
     - target: {fileID: 4845722464414469211, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_LocalScale.z
-      value: 13.561319
+      value: 64.62375
       objectReference: {fileID: 0}
     - target: {fileID: 4845722464795150803, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_Pivot.x
@@ -1272,6 +1272,7 @@ MonoBehaviour:
     _selectedControl: {fileID: 989742820}
     _forceAcceptControl: {fileID: 0}
     _forceDenyControl: {fileID: 0}
+    BlockCycliing: 0
   _quitPackage:
     _availableControls:
     - {fileID: 1968733488}
@@ -1279,6 +1280,7 @@ MonoBehaviour:
     _selectedControl: {fileID: 0}
     _forceAcceptControl: {fileID: 1968733488}
     _forceDenyControl: {fileID: 1968733487}
+    BlockCycliing: 0
   _bumperNum: 500
   _bumperGO: {fileID: 700905878027275640, guid: 975aa1f6e1d91ac4793e2e0fbd6eb1c1, type: 3}
   _bumperContainer: {fileID: 241811144}
@@ -2028,10 +2030,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1502575191}
     m_Modifications:
+    - target: {fileID: 4845722464414469210, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a1278c9bc31bbef47b331632c5fca558, type: 3}
+    - target: {fileID: 4845722464414469211, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 65.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4845722464414469211, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 162.5882
+      objectReference: {fileID: 0}
+    - target: {fileID: 4845722464414469211, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 65.47
+      objectReference: {fileID: 0}
     - target: {fileID: 4845722464795150800, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: _simulatedButton
       value: 
       objectReference: {fileID: 1502575192}
+    - target: {fileID: 4845722464795150800, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
+      propertyPath: _possibleSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: a1278c9bc31bbef47b331632c5fca558, type: 3}
     - target: {fileID: 4845722464795150803, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2133,18 +2155,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4845722464414469210, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1d3ee980b757d6c469f7dbfa8f43a865, type: 3}
     - target: {fileID: 4845722464414469211, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 32.520046
+      value: 160.26767
       objectReference: {fileID: 0}
     - target: {fileID: 4845722464414469211, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 27.255543
+      value: 141.40126
       objectReference: {fileID: 0}
     - target: {fileID: 4845722464414469211, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_LocalScale.z
-      value: 13.561319
+      value: 64.62375
       objectReference: {fileID: 0}
+    - target: {fileID: 4845722464795150800, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
+      propertyPath: _possibleSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1d3ee980b757d6c469f7dbfa8f43a865, type: 3}
     - target: {fileID: 4845722464795150803, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3594,18 +3624,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 70668744}
     m_Modifications:
+    - target: {fileID: 4845722464414469210, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 544203b4a981a384db868fa072adee1d, type: 3}
     - target: {fileID: 4845722464414469211, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 32.520046
+      value: 160.26767
       objectReference: {fileID: 0}
     - target: {fileID: 4845722464414469211, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 27.255543
+      value: 141.40126
       objectReference: {fileID: 0}
     - target: {fileID: 4845722464414469211, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_LocalScale.z
-      value: 13.561319
+      value: 64.62375
       objectReference: {fileID: 0}
+    - target: {fileID: 4845722464795150800, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
+      propertyPath: _possibleSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 544203b4a981a384db868fa072adee1d, type: 3}
     - target: {fileID: 4845722464795150803, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

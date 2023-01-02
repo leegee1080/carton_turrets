@@ -212,6 +212,15 @@ public class EnemyActor : StageActor, IColliderMessageable
             {
                 randAdd = new Vector3(UnityEngine.Random.Range(-0.25f, 0.25f), 0, UnityEngine.Random.Range(-0.25f, 0.25f));
             }
+
+            if(EnemyData.DeathDrop == PickupTypes.exp)//1% chance to drop money
+            {
+                if(UnityEngine.Random.Range(0, 100) == 0)
+                {
+                    StageController.singlton.DropMoney(ActorArtContainer.transform.position + randAdd);
+                }
+            }
+
             switch (EnemyData.DeathDrop)
             {
                 case PickupTypes.money:

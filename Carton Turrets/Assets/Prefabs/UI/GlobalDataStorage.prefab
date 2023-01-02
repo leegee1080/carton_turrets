@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMoney: 100
   PlayerTempWallet: 0
+  gameVolume: 0
+  musicVolume: 0
   _showInInspectorControllerUsed: 0
   ControllerUsedChanged:
     m_PersistentCalls:
@@ -58,7 +60,7 @@ MonoBehaviour:
   OnScreenControlsOptionChanged:
     m_PersistentCalls:
       m_Calls: []
-  _showInInspectorBloodOn: 1
+  _showInInspectorBloodOn: 0
   BloodOptionChanged:
     m_PersistentCalls:
       m_Calls: []

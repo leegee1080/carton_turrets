@@ -27,6 +27,7 @@ public class MenuControlsChild : MonoBehaviour
         _highlighter.SetActive(false);
         GlobalDataStorage.singleton.ControllerUsedChanged.AddListener(UpdateControlType);
         GlobalDataStorage.singleton.OnScreenControlsOptionChanged.AddListener(UpdateOnScreen);
+        UpdateControlType();
     }
 
     public void UpdateHighligher(bool toggle)
@@ -37,28 +38,27 @@ public class MenuControlsChild : MonoBehaviour
     public void AcceptPressed()
     {
         AcceptPressedEvent.Invoke();
-        if(_simulatedButton == null){return;}
+        if(_simulatedButton == null || !_simulatedButton.interactable){return;}
         _simulatedButton.onClick.Invoke();
     }
     public void DenyPressed()
     {
         DenyPressedEvent.Invoke();
-        if(_simulatedButton == null){return;}
+        if(_simulatedButton == null || !_simulatedButton.interactable){return;}
         _simulatedButton.onClick.Invoke();
     }
-
 
     public void LeftPressed()
     {
         LeftPressedEvent.Invoke();
-        if(_simulatedSlider == null){return;}
+        if(_simulatedSlider == null || !_simulatedSlider.interactable){return;}
         _simulatedSlider.value += -1;
         _simulatedSlider.onValueChanged.Invoke(_simulatedSlider.value);
     }
     public void RightPressed()
     {
         RightPressedEvent.Invoke();
-        if(_simulatedSlider == null){return;}
+        if(_simulatedSlider == null || !_simulatedSlider.interactable){return;}
         _simulatedSlider.value += 1;
         _simulatedSlider.onValueChanged.Invoke(_simulatedSlider.value);
     }

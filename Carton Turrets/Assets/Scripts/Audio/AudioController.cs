@@ -95,6 +95,9 @@ public class AudioController : MonoBehaviour
             return;
         }
 
+        currentGameVolumeLevel = PlayerPrefs.GetFloat("gameVolume", 0.5f);
+        currentMusicVolumeLevel = PlayerPrefs.GetFloat("musicVolume", 0.5f);
+
         foreach (Sound s in Sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -132,7 +135,14 @@ public class AudioController : MonoBehaviour
 
     public void ChangeVolume(float newVolume, Sound_Type_Tags tag)
     {
-        //float volumeDelta = newVolume - currentVolumeLevel;
+        if(tag == Sound_Type_Tags.music)
+        {
+            GlobalDataStorage.singleton.musicVolume = newVolume;
+        }
+        else
+        {
+            GlobalDataStorage.singleton.gameVolume = newVolume;
+        }
 
         foreach (Sound s in Sounds)
         {
