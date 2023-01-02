@@ -45,6 +45,7 @@ public class StagePackageScriptableObject : ScriptableObject
     public EnemySpawnWave[] Waves;
 
     [Header("Map Vars")]
+    public float TotalStageTime;
     public int MapMaxX;
     public int MapMaxY;
     public StagePOI StartingLocation;

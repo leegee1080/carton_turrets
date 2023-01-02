@@ -416,6 +416,7 @@ MonoBehaviour:
   _waveFilterAmount: 0.1
   _waveFilterMin: 0.02
   _alphaAmount: 0
+  _playSound: 1
 --- !u!114 &1555859958
 MonoBehaviour:
   m_ObjectHideFlags: 0

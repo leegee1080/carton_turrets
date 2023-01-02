@@ -892,22 +892,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4845722464414469210, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a1278c9bc31bbef47b331632c5fca558, type: 3}
     - target: {fileID: 4845722464414469211, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 29.766954
+      value: 145.73607
       objectReference: {fileID: 0}
     - target: {fileID: 4845722464414469211, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 25.709837
+      value: 139.69508
       objectReference: {fileID: 0}
     - target: {fileID: 4845722464414469211, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_LocalScale.z
-      value: 12.792235
+      value: 62.629528
       objectReference: {fileID: 0}
     - target: {fileID: 4845722464795150800, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: _simulatedButton
       value: 
       objectReference: {fileID: 2625314625401330894}
+    - target: {fileID: 4845722464795150800, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
+      propertyPath: _possibleSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: a1278c9bc31bbef47b331632c5fca558, type: 3}
     - target: {fileID: 4845722464795150803, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1015,15 +1023,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4845722464414469211, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 29.766954
+      value: 145.73607
       objectReference: {fileID: 0}
     - target: {fileID: 4845722464414469211, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 25.709837
+      value: 139.69508
       objectReference: {fileID: 0}
     - target: {fileID: 4845722464414469211, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: m_LocalScale.z
-      value: 12.792235
+      value: 62.629528
       objectReference: {fileID: 0}
     - target: {fileID: 4845722464795150800, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
       propertyPath: _simulatedButton

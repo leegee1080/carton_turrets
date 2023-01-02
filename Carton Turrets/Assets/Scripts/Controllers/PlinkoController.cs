@@ -56,7 +56,7 @@ public class PlinkoController : MonoBehaviour
     {
         Time.timeScale = 1;
 
-        _onKbuttonsContainer.SetActive(GlobalDataStorage.singleton.ControllerUsed == ControllerUsed.kb);
+        // _onKbuttonsContainer.SetActive(GlobalDataStorage.singleton.ControllerUsed == ControllerUsed.kb);
 
         AudioController.singleton.FadeSoundIn(0.05f,"music_plinko");
 

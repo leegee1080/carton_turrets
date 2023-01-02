@@ -77,6 +77,7 @@ public class StageController : MonoBehaviour
 
     [Header("UI vars")]
     public GameObject PauseButtonGO;
+    [SerializeField] GameObject _onScreenControlContainer;
 
     
     
@@ -126,6 +127,7 @@ public class StageController : MonoBehaviour
         CurrentStage = GlobalDataStorage.singleton.ReturnChosenMapSO();
 
         GlobalDataStorage.singleton.BloodOptionChanged.AddListener(ChangeBloodParticle);
+        GlobalDataStorage.singleton.OnScreenControlsOptionChanged.AddListener(ChangeOnScreenControl);
     }
     public void OnEnable()
     {
@@ -146,6 +148,12 @@ public class StageController : MonoBehaviour
     private void OnDestroy()
     {
         GlobalDataStorage.singleton.BloodOptionChanged.RemoveListener(ChangeBloodParticle);
+        GlobalDataStorage.singleton.OnScreenControlsOptionChanged.RemoveListener(ChangeOnScreenControl);
+    }
+    public void ChangeOnScreenControl()
+    {
+        if(GlobalDataStorage.singleton.ControllerUsed != ControllerUsed.ph){_onScreenControlContainer.SetActive(false); return;}
+        _onScreenControlContainer.SetActive(GlobalDataStorage.singleton.OnScreenControlsOn);
     }
 
     public int FindActivateControlsIndex()//looks at the controls on the right side for the button pressed
@@ -180,8 +188,10 @@ public class StageController : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1;
+
+        ChangeOnScreenControl();
         CurrentState.OnEnterState(this);
-        GlobalVolumeController.singleton.ShowScene();
+        GlobalVolumeController.singleton.ShowScene(0.5f);
         AudioController.singleton.FadeSoundIn(0.05f, StageController.singlton.CurrentStage.SignatureMusic);
     }
 
@@ -419,7 +429,7 @@ public class StageState_Running: StageState
         {
             AudioController.singleton.FadeSoundOut(0.05f, StageController.singlton.CurrentStage.SignatureMusic);
         }
-        if(_cont.GameTime >= 900)
+        if(_cont.GameTime >= _cont.CurrentStage.TotalStageTime)
         {
             _cont.StartEndgame();
         }

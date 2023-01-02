@@ -96,32 +96,38 @@ public class ControlsController : MonoBehaviour
 
     public void AcceptPressed(InputAction.CallbackContext ctx)
     {
+        if(GlobalDataStorage.singleton.OnScreenControlsOn){return;}
         AcceptPressedEvent.Invoke();
         if(CurrentHighligherPackage != null && CurrentHighligherPackage._forceAcceptControl != null){CurrentHighligherPackage._forceAcceptControl.AcceptPressed();return;}
         if(_selectedControl != null){_selectedControl.AcceptPressed();}
     }
     public void DenyPressed(InputAction.CallbackContext ctx)
     {
+        if(GlobalDataStorage.singleton.OnScreenControlsOn){return;}
         DenyPressedEvent.Invoke();
         if(CurrentHighligherPackage != null && CurrentHighligherPackage._forceDenyControl != null){CurrentHighligherPackage._forceDenyControl.AcceptPressed();return;}
     }
     public void UpPressed(InputAction.CallbackContext ctx)
     {
+        if(GlobalDataStorage.singleton.OnScreenControlsOn){return;}
         UpPressedEvent.Invoke();
         CycleSelected(-1);
     }
     public void RightPressed(InputAction.CallbackContext ctx)
     {
+        if(GlobalDataStorage.singleton.OnScreenControlsOn){return;}
         RightPressedEvent.Invoke();
         if(_selectedControl != null){_selectedControl.RightPressed();}
     }
     public void LeftPressed(InputAction.CallbackContext ctx)
     {
+        if(GlobalDataStorage.singleton.OnScreenControlsOn){return;}
         LeftPressedEvent.Invoke();
         if(_selectedControl != null){_selectedControl.LeftPressed();}
     }
     public void DownPressed(InputAction.CallbackContext ctx)
     {
+        if(GlobalDataStorage.singleton.OnScreenControlsOn){return;}
         DownPressedEvent.Invoke();
         CycleSelected(1);
     }
