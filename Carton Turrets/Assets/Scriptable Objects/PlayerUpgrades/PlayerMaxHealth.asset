@@ -19,7 +19,7 @@ MonoBehaviour:
   <UpgradeType>k__BackingField: 1
   <Tiers>k__BackingField:
   - TierDesc: Tier 1
-    InGameDesc: Increase your max health by 50.
+    InGameDesc: Increase your max health by 50 and heal to full.
     EquipFunc: 3
     amt: 50
     ActivateFunc: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
     TurretDeathFunc: 0
     TurretDeathFuncParams: []
   - TierDesc: Tier 2
-    InGameDesc: Increase your max health by 50.
+    InGameDesc: Increase your max health by 50 and heal to full.
     EquipFunc: 3
     amt: 50
     ActivateFunc: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
     TurretDeathFunc: 0
     TurretDeathFuncParams: []
   - TierDesc: Tier 3
-    InGameDesc: Increase your max health by 50.
+    InGameDesc: Increase your max health by 50 and heal to full.
     EquipFunc: 3
     amt: 50
     ActivateFunc: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
     TurretDeathFunc: 0
     TurretDeathFuncParams: []
   - TierDesc: Tier 4
-    InGameDesc: Increase your max health by 50.
+    InGameDesc: Increase your max health by 50 and heal to full.
     EquipFunc: 3
     amt: 50
     ActivateFunc: 0
@@ -59,7 +59,7 @@ MonoBehaviour:
     TurretDeathFunc: 0
     TurretDeathFuncParams: []
   - TierDesc: Tier 5
-    InGameDesc: Increase your max health by 50.
+    InGameDesc: Increase your max health by 50 and heal to full.
     EquipFunc: 3
     amt: 50
     ActivateFunc: 0

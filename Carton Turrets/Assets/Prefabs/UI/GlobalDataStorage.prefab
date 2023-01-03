@@ -48,7 +48,7 @@ MonoBehaviour:
   PlayerTempWallet: 0
   gameVolume: 0
   musicVolume: 0
-  _showInInspectorControllerUsed: 0
+  _showInInspectorControllerUsed: 1
   ControllerUsedChanged:
     m_PersistentCalls:
       m_Calls: []

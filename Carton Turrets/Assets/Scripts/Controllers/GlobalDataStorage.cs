@@ -224,6 +224,14 @@ public class GlobalDataStorage : MonoBehaviour
     public PlayableAim[] ReturnCurrentlyUnlockedAim(){return _currentlyUnlockedAim;}
     public AimScriptableObject ReturnChosenAimSO(){return _possibleAimSOArray[(int)ChosenAim];}
 
+    [ContextMenu("SuperReset")]
+    public void SuperReset()
+    {
+        Debug.Log("Super Game Reset");
+
+        PlayerPrefs.DeleteAll();
+    }
+
     [ContextMenu("ResetGame")]
     public void ResetGame()
     {
@@ -231,6 +239,8 @@ public class GlobalDataStorage : MonoBehaviour
 
         PlayerPrefs.DeleteAll();
         PlayerMoney = 100;
+        gameVolume = 0.5f;
+        musicVolume = 0.5f;
 
         _currentlyUnlockedCharacters = new PlayerCharacters[]{PlayerCharacters.eye};
         _currentlyUnlockedMaps = new PlayableMaps[]{PlayableMaps.rocky};

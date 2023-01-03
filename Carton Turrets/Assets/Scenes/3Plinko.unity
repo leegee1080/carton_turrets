@@ -289,6 +289,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 296103772}
     m_Modifications:
+    - target: {fileID: 3541145410953063604, guid: 0a685c605399652418fa091425cb8d05, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3541145410953063605, guid: 0a685c605399652418fa091425cb8d05, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -298,15 +302,31 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3541145410953063605, guid: 0a685c605399652418fa091425cb8d05, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3541145410953063605, guid: 0a685c605399652418fa091425cb8d05, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 528558471}
+    - target: {fileID: 3541145410953063605, guid: 0a685c605399652418fa091425cb8d05, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3541145410953063605, guid: 0a685c605399652418fa091425cb8d05, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LaunchBall
       objectReference: {fileID: 0}
     - target: {fileID: 3541145410953063605, guid: 0a685c605399652418fa091425cb8d05, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3541145410953063605, guid: 0a685c605399652418fa091425cb8d05, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlinkoController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3541145410953063605, guid: 0a685c605399652418fa091425cb8d05, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: PlinkoController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3541145410953063605, guid: 0a685c605399652418fa091425cb8d05, type: 3}
@@ -314,8 +334,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3541145410953063605, guid: 0a685c605399652418fa091425cb8d05, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3541145410953063605, guid: 0a685c605399652418fa091425cb8d05, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3541145410953063605, guid: 0a685c605399652418fa091425cb8d05, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3541145410953063606, guid: 0a685c605399652418fa091425cb8d05, type: 3}
       propertyPath: m_Pivot.x
@@ -408,6 +436,10 @@ PrefabInstance:
     - target: {fileID: 3541145410953063607, guid: 0a685c605399652418fa091425cb8d05, type: 3}
       propertyPath: m_Name
       value: LDrop
+      objectReference: {fileID: 0}
+    - target: {fileID: 3541145410953063607, guid: 0a685c605399652418fa091425cb8d05, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6181626858036867705, guid: 0a685c605399652418fa091425cb8d05, type: 3}
       propertyPath: m_text
@@ -1281,6 +1313,7 @@ MonoBehaviour:
     _forceAcceptControl: {fileID: 1968733488}
     _forceDenyControl: {fileID: 1968733487}
     BlockCycliing: 0
+  _buttons: []
   _bumperNum: 500
   _bumperGO: {fileID: 700905878027275640, guid: 975aa1f6e1d91ac4793e2e0fbd6eb1c1, type: 3}
   _bumperContainer: {fileID: 241811144}
@@ -1974,6 +2007,56 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
+--- !u!1 &760249100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3541145410953063607, guid: 0a685c605399652418fa091425cb8d05, type: 3}
+  m_PrefabInstance: {fileID: 70668743}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &760249106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760249100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 528558471}
+          m_TargetAssemblyTypeName: PlinkoController, Assembly-CSharp
+          m_MethodName: HeldDownButtonLaunchBall
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 528558471}
+          m_TargetAssemblyTypeName: PlinkoController, Assembly-CSharp
+          m_MethodName: LiftUpButtonLaunchBall
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &796155760
 GameObject:
   m_ObjectHideFlags: 0
@@ -2277,6 +2360,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a6c4a1841e03c84c958f593997dcebb, type: 3}
+--- !u!1 &907551637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3541145410953063607, guid: 0a685c605399652418fa091425cb8d05, type: 3}
+  m_PrefabInstance: {fileID: 1106833836}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &929535125
 GameObject:
   m_ObjectHideFlags: 0
@@ -2643,6 +2731,51 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3541145410953063606, guid: 0a685c605399652418fa091425cb8d05, type: 3}
   m_PrefabInstance: {fileID: 1106833836}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1106833843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907551637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 528558471}
+          m_TargetAssemblyTypeName: PlinkoController, Assembly-CSharp
+          m_MethodName: HeldDownButtonLaunchBall
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 528558471}
+          m_TargetAssemblyTypeName: PlinkoController, Assembly-CSharp
+          m_MethodName: LiftUpButtonLaunchBall
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1249407816
 GameObject:
   m_ObjectHideFlags: 0
@@ -4138,6 +4271,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1777539798}
   m_CullTransparentMesh: 0
+--- !u!1 &1808008696 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3541145410953063607, guid: 0a685c605399652418fa091425cb8d05, type: 3}
+  m_PrefabInstance: {fileID: 4252853}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1808008702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808008696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 528558471}
+          m_TargetAssemblyTypeName: PlinkoController, Assembly-CSharp
+          m_MethodName: HeldDownButtonLaunchBall
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 528558471}
+          m_TargetAssemblyTypeName: PlinkoController, Assembly-CSharp
+          m_MethodName: LiftUpButtonLaunchBall
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &1830364941 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3101168120255211685, guid: b42bfe9ea08748541b6f029e276fc744, type: 3}
@@ -5227,7 +5410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6824624292601990960, guid: 99ad7a5f85ef75b4c97f4a577c37ba60, type: 3}
       propertyPath: PlayerTempWallet
-      value: 10
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 8154686376442324353, guid: 99ad7a5f85ef75b4c97f4a577c37ba60, type: 3}
       propertyPath: m_Name

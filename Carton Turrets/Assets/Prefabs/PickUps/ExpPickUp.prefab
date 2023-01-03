@@ -144,7 +144,7 @@ MonoBehaviour:
   _expArtSR: {fileID: 5519878323658863705}
   _expUpgradePS: {fileID: 394355634865773193}
   _baseExpAmount: 1
-  _expMulti: 5
+  _expMulti: 10
   _expMultiTimeBetweenUpgrades: 600
   ExpAmount: 1
 --- !u!212 &5519878323658863705

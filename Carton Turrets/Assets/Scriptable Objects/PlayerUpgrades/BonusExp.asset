@@ -39,9 +39,9 @@ MonoBehaviour:
     TurretDeathFunc: 0
     TurretDeathFuncParams: []
   - TierDesc: Tier 3
-    InGameDesc: Get 8x level progress per pickup.
+    InGameDesc: Get 6x level progress per pickup.
     EquipFunc: 5
-    amt: 4
+    amt: 2
     ActivateFunc: 0
     TurretBuildFunc: 0
     TurretBuildMods: []
@@ -49,9 +49,9 @@ MonoBehaviour:
     TurretDeathFunc: 0
     TurretDeathFuncParams: []
   - TierDesc: Tier 4
-    InGameDesc: Get 16x level progress per pickup.
+    InGameDesc: Get 8x level progress per pickup.
     EquipFunc: 5
-    amt: 8
+    amt: 2
     ActivateFunc: 0
     TurretBuildFunc: 0
     TurretBuildMods: []
@@ -59,9 +59,9 @@ MonoBehaviour:
     TurretDeathFunc: 0
     TurretDeathFuncParams: []
   - TierDesc: Tier 5
-    InGameDesc: Get 32x level progress per pickup.
+    InGameDesc: Get 10x level progress per pickup.
     EquipFunc: 5
-    amt: 16
+    amt: 2
     ActivateFunc: 0
     TurretBuildFunc: 0
     TurretBuildMods: []

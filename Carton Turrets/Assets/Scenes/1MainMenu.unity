@@ -1647,7 +1647,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1321373547994530643, guid: 003b5b23b577e394ab814d776225fcda, type: 3}
       propertyPath: _cost
-      value: 10000
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 1321373547994530643, guid: 003b5b23b577e394ab814d776225fcda, type: 3}
       propertyPath: _pickSound
@@ -5091,7 +5091,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1321373547994530643, guid: 003b5b23b577e394ab814d776225fcda, type: 3}
       propertyPath: _cost
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1321373547994530643, guid: 003b5b23b577e394ab814d776225fcda, type: 3}
       propertyPath: _pickSound
@@ -5799,6 +5799,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 497251676}
     m_Modifications:
+    - target: {fileID: 1321373547994530643, guid: 003b5b23b577e394ab814d776225fcda, type: 3}
+      propertyPath: _cost
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1321373547994530643, guid: 003b5b23b577e394ab814d776225fcda, type: 3}
       propertyPath: _pickSound
       value: ui_pick_droid2
@@ -6535,7 +6539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3541145410953063607, guid: 0a685c605399652418fa091425cb8d05, type: 3}
       propertyPath: m_Name
-      value: UnlocksButton
+      value: CompendiumButton
       objectReference: {fileID: 0}
     - target: {fileID: 3541145410953063607, guid: 0a685c605399652418fa091425cb8d05, type: 3}
       propertyPath: m_Layer
@@ -11132,7 +11136,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1321373547994530643, guid: 003b5b23b577e394ab814d776225fcda, type: 3}
       propertyPath: _cost
-      value: 100000
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 1321373547994530643, guid: 003b5b23b577e394ab814d776225fcda, type: 3}
       propertyPath: _pickSound

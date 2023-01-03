@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using TMPro;
 
 public class PlinkoController : MonoBehaviour
@@ -14,6 +15,12 @@ public class PlinkoController : MonoBehaviour
 
     [SerializeField]HighlighterPackage _mainPackage;
     [SerializeField]HighlighterPackage _quitPackage;
+
+    [Header("DropButtons")]
+    [SerializeField]Button[] _buttons;
+    int _UIbuttonIndex = 0;
+    bool _UIbuttonHeld = false;
+    float _UIbuttonTimer = 0;
 
     [Header("Bumpers")]
     [SerializeField]int _bumperNum;
@@ -74,6 +81,15 @@ public class PlinkoController : MonoBehaviour
     private void Update()
     {
         if(_ballDropped){return;}
+
+
+        if(_UIbuttonTimer > 0.5f)
+        {
+            LaunchBall(_UIbuttonIndex);
+            return;
+        }
+        
+
         switch (FindActivateControlsIndex())
         {
             case 0://right
@@ -90,6 +106,22 @@ public class PlinkoController : MonoBehaviour
             default:
                 break;
         }
+
+        if(_UIbuttonHeld)
+        {
+            _UIbuttonTimer += Time.deltaTime;
+        }
+    }
+
+    public void HeldDownButtonLaunchBall(int i)
+    {
+        _UIbuttonHeld= true;
+        _UIbuttonIndex = i;
+    }
+    public void LiftUpButtonLaunchBall()
+    {
+        _UIbuttonHeld= false;
+        _UIbuttonTimer = 0;
     }
 
     public void ShowPlinko()
