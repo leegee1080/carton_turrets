@@ -107,6 +107,15 @@ public partial class @PiaMainControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AnyGampad"",
+                    ""type"": ""Button"",
+                    ""id"": ""896392cb-3ea6-4a47-838f-71f1dc8781be"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -582,6 +591,50 @@ public partial class @PiaMainControls : IInputActionCollection2, IDisposable
                     ""action"": ""Deny"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f33a6ccd-aa71-4053-bda0-4e4de824649a"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AnyGampad"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2f9eef4b-fde2-4813-bf35-409cc005d209"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AnyGampad"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9608edb7-2749-461a-9842-51e1d756ab6c"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AnyGampad"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""519529fa-a32e-4f01-9076-4ec62bb4e8a7"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AnyGampad"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -605,6 +658,7 @@ public partial class @PiaMainControls : IInputActionCollection2, IDisposable
         m_MainMap_SelectLeft = m_MainMap.FindAction("SelectLeft", throwIfNotFound: true);
         m_MainMap_SelectRight = m_MainMap.FindAction("SelectRight", throwIfNotFound: true);
         m_MainMap_Deny = m_MainMap.FindAction("Deny", throwIfNotFound: true);
+        m_MainMap_AnyGampad = m_MainMap.FindAction("AnyGampad", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -673,6 +727,7 @@ public partial class @PiaMainControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_MainMap_SelectLeft;
     private readonly InputAction m_MainMap_SelectRight;
     private readonly InputAction m_MainMap_Deny;
+    private readonly InputAction m_MainMap_AnyGampad;
     public struct MainMapActions
     {
         private @PiaMainControls m_Wrapper;
@@ -686,6 +741,7 @@ public partial class @PiaMainControls : IInputActionCollection2, IDisposable
         public InputAction @SelectLeft => m_Wrapper.m_MainMap_SelectLeft;
         public InputAction @SelectRight => m_Wrapper.m_MainMap_SelectRight;
         public InputAction @Deny => m_Wrapper.m_MainMap_Deny;
+        public InputAction @AnyGampad => m_Wrapper.m_MainMap_AnyGampad;
         public InputActionMap Get() { return m_Wrapper.m_MainMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -722,6 +778,9 @@ public partial class @PiaMainControls : IInputActionCollection2, IDisposable
                 @Deny.started -= m_Wrapper.m_MainMapActionsCallbackInterface.OnDeny;
                 @Deny.performed -= m_Wrapper.m_MainMapActionsCallbackInterface.OnDeny;
                 @Deny.canceled -= m_Wrapper.m_MainMapActionsCallbackInterface.OnDeny;
+                @AnyGampad.started -= m_Wrapper.m_MainMapActionsCallbackInterface.OnAnyGampad;
+                @AnyGampad.performed -= m_Wrapper.m_MainMapActionsCallbackInterface.OnAnyGampad;
+                @AnyGampad.canceled -= m_Wrapper.m_MainMapActionsCallbackInterface.OnAnyGampad;
             }
             m_Wrapper.m_MainMapActionsCallbackInterface = instance;
             if (instance != null)
@@ -753,6 +812,9 @@ public partial class @PiaMainControls : IInputActionCollection2, IDisposable
                 @Deny.started += instance.OnDeny;
                 @Deny.performed += instance.OnDeny;
                 @Deny.canceled += instance.OnDeny;
+                @AnyGampad.started += instance.OnAnyGampad;
+                @AnyGampad.performed += instance.OnAnyGampad;
+                @AnyGampad.canceled += instance.OnAnyGampad;
             }
         }
     }
@@ -777,5 +839,6 @@ public partial class @PiaMainControls : IInputActionCollection2, IDisposable
         void OnSelectLeft(InputAction.CallbackContext context);
         void OnSelectRight(InputAction.CallbackContext context);
         void OnDeny(InputAction.CallbackContext context);
+        void OnAnyGampad(InputAction.CallbackContext context);
     }
 }

@@ -14,6 +14,8 @@ public class CurrentEquipmentUI : MonoBehaviour
     [SerializeField]CooldownSplash[] _coolDownSplashArray;
     [SerializeField]float _startingCoverY;
 
+    bool[] _toggleBoolArray = new bool[3]{false, false, false};
+
     private void Awake()
     {
         singlton = this;
@@ -78,6 +80,13 @@ public class CurrentEquipmentUI : MonoBehaviour
 
     private void FlashEquCooldown(int slot)
     {
+        _toggleBoolArray[0] = StageController.singlton._yButtonAutoCast;
+        _toggleBoolArray[1] = StageController.singlton._bButtonAutoCast;
+        _toggleBoolArray[2] = StageController.singlton._xButtonAutoCast;
+
+        if(_toggleBoolArray[slot]){return;}
+
+
         _coolDownSplashArray[slot].BlastOffEffect();
     }
 }
