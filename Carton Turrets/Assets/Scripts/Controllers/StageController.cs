@@ -48,6 +48,18 @@ public class StageController : MonoBehaviour
     [SerializeField]HighlighterPackage _quit;
     [SerializeField]HighlighterPackage _levelUpPop;
     [SerializeField]HighlighterPackage _levelUpConfirm;
+    [SerializeField]MenuControlsChild[] _turretPlacementControlVisuals;
+
+    public void AnyGamePadVisualToggle(InputAction.CallbackContext ctx)//switches the equip button visuals to show xbox buttons
+    {
+        foreach (MenuControlsChild item in _turretPlacementControlVisuals)
+        {
+            item.ChangeSprite(1);
+        }
+    }
+
+    public InputAction AnyGamePad;
+
 
     public void ShowMainControls()
     {
@@ -78,6 +90,79 @@ public class StageController : MonoBehaviour
     [Header("UI vars")]
     public GameObject PauseButtonGO;
     [SerializeField] GameObject _onScreenControlContainer;
+
+    [SerializeField] float _timeToToggleAbility;
+    float _xButtonHoldTime;
+    public bool _xButtonAutoCast;
+    [SerializeField]GameObject _xButtonAutoCastOnIndicator;
+    [SerializeField]CooldownSplash _xButtonAutoCastOnSplash;
+
+    float _yButtonHoldTime;
+    public bool _yButtonAutoCast;
+    [SerializeField]GameObject _yButtonAutoCastOnIndicator;
+    [SerializeField]CooldownSplash _yButtonAutoCastOnSplash;
+
+    float _bButtonHoldTime;
+    public bool _bButtonAutoCast;
+    [SerializeField]GameObject _bButtonAutoCastOnIndicator;
+    [SerializeField]CooldownSplash _bButtonAutoCastOnSplash;
+
+    public void CheckButtonHoldTime()
+    {
+        if(!_xButtonAutoCast && _xButtonHoldTime >= _timeToToggleAbility)
+        {
+            AudioController.singleton.PlaySound("player_turret_equip");
+            _xButtonAutoCastOnSplash.BlastOffEffect();
+            _xButtonAutoCast =true;
+            _xButtonAutoCastOnIndicator.SetActive(true);
+            return;
+        }
+        if(_xButtonAutoCast && _xButtonHoldTime >= _timeToToggleAbility)
+        {
+            AudioController.singleton.PlaySound("player_turret_equip");
+            _xButtonAutoCastOnSplash.BlastOffEffect();
+            _xButtonAutoCast =false;
+            _xButtonAutoCastOnIndicator.SetActive(false);
+            return;
+        }
+
+
+        if(!_yButtonAutoCast && _yButtonHoldTime >= _timeToToggleAbility)
+        {
+            AudioController.singleton.PlaySound("player_turret_equip");
+            _yButtonAutoCastOnSplash.BlastOffEffect();
+            _yButtonAutoCast =true;
+            _yButtonAutoCastOnIndicator.SetActive(true);
+            return;
+        }
+        if(_yButtonAutoCast && _yButtonHoldTime >= _timeToToggleAbility)
+        {
+            AudioController.singleton.PlaySound("player_turret_equip");
+            _yButtonAutoCastOnSplash.BlastOffEffect();
+            _yButtonAutoCast =false;
+            _yButtonAutoCastOnIndicator.SetActive(false);
+            return;
+        }
+
+
+        if(!_bButtonAutoCast && _bButtonHoldTime >= _timeToToggleAbility)
+        {
+            AudioController.singleton.PlaySound("player_turret_equip");
+            _bButtonAutoCastOnSplash.BlastOffEffect();
+            _bButtonAutoCast =true;
+            _bButtonAutoCastOnIndicator.SetActive(true);   
+            return; 
+        }
+        if(_bButtonAutoCast && _bButtonHoldTime >= _timeToToggleAbility)
+        {
+            AudioController.singleton.PlaySound("player_turret_equip");
+            _bButtonAutoCastOnSplash.BlastOffEffect();
+            _bButtonAutoCast =false;
+            _bButtonAutoCastOnIndicator.SetActive(false);
+            return;
+        }
+
+    }
 
     
     
@@ -137,12 +222,18 @@ public class StageController : MonoBehaviour
         activate.Enable();
         pause = PlayerInputActions.MainMap.Pause;
         pause.Enable();
+
+        AnyGamePad = PlayerInputActions.MainMap.AnyGampad;
+        AnyGamePad.Enable();
+
+        AnyGamePad.performed += ctx => AnyGamePadVisualToggle(ctx);
     }
     private void OnDisable()
     {
         move.Disable();
         activate.Disable();
         pause.Disable();
+        AnyGamePad.Disable();
     }
 
     private void OnDestroy()
@@ -160,9 +251,30 @@ public class StageController : MonoBehaviour
     {
         int GetActivatedSlot(Vector2 v)
         {
-            if (v[0] > 0) return 1;
-            if (v[0] < 0) return 2;
-            if (v[1] > 0) return 0;
+            if (v[0] > 0) //B
+            {
+                if(_bButtonHoldTime < _timeToToggleAbility){_bButtonHoldTime += Time.deltaTime;}else{_bButtonHoldTime =0;}
+                _yButtonHoldTime = 0;
+                _xButtonHoldTime = 0;
+                return 1;
+            } 
+            if (v[0] < 0) //X
+            {
+                _bButtonHoldTime = 0;
+                _yButtonHoldTime = 0;
+                if(_xButtonHoldTime < _timeToToggleAbility){_xButtonHoldTime += Time.deltaTime;}else{_xButtonHoldTime =0;}
+                return 2;
+            }
+            if (v[1] > 0) //Y
+            {
+                _bButtonHoldTime = 0;
+                if(_yButtonHoldTime < _timeToToggleAbility){_yButtonHoldTime += Time.deltaTime;}else{_yButtonHoldTime =0;}
+                _xButtonHoldTime = 0;
+                return 0;
+            }
+            _bButtonHoldTime = 0;
+            _yButtonHoldTime = 0;
+            _xButtonHoldTime = 0;
             // if (v[1] < 0) return 2;
             return -1;
         }
@@ -423,9 +535,12 @@ public class StageState_Running: StageState
     public override void OnUpdateState(StageController _cont)
     {
         _cont.GameTime += Time.fixedDeltaTime;
+
+        _cont.CheckButtonHoldTime();
+
         GameTimeIndicatorUI.singlton.UpdateTime(_cont.GameTime);
         _cont.CheckEnemySpawnWave();
-        if(_cont.GameTime >= 899)
+        if(_cont.GameTime >= 570)
         {
             AudioController.singleton.FadeSoundOut(0.05f, StageController.singlton.CurrentStage.SignatureMusic);
         }

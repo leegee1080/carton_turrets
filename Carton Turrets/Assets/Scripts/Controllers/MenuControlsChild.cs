@@ -74,4 +74,9 @@ public class MenuControlsChild : MonoBehaviour
         if(_sr == null || !_sr.gameObject.activeSelf){return;}
         _sr.sprite = _possibleSprites[(int)GlobalDataStorage.singleton.ControllerUsed];
     }
+
+    public void ChangeSprite(int i)
+    {
+        _sr.sprite = _possibleSprites[i];
+    }
 }

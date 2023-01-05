@@ -373,6 +373,18 @@ public class PlayerState_Normal: ActorStatesAbstractClass
 
         PlayerHealthIndicatorUI.singlton.UpdateUI(pa.PlayerCurrentStatDict[PlayerStatEnum.CurrentHealth], pa.PlayerCurrentStatDict[PlayerStatEnum.MaxHealth]);
 
+        if(StageController.singlton._yButtonAutoCast)
+        {
+            if(pa.TimerSlotCooldowns[0] <= 0){pa.ActivateUpgradeSlot(0);}
+        }
+        if(StageController.singlton._bButtonAutoCast)
+        {
+            if(pa.TimerSlotCooldowns[1] <= 0){pa.ActivateUpgradeSlot(1);}
+        }
+        if(StageController.singlton._xButtonAutoCast)
+        {
+            if(pa.TimerSlotCooldowns[2] <= 0){pa.ActivateUpgradeSlot(2);}
+        }
 
         int slot = StageController.singlton.FindActivateControlsIndex();
         if(slot != -1)
