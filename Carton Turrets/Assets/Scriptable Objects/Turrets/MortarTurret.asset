@@ -111,7 +111,7 @@ MonoBehaviour:
   BDamage: 0
   BSpeed: 0.02
   ELifeTime: 0.2
-  EDamage: 10
+  EDamage: 20
   ESpeed: 1
   ESize: 0.5
   UseAltExploStats: 1

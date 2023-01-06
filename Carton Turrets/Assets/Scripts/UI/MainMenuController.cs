@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 public class MainMenuController : MonoBehaviour
@@ -11,8 +12,15 @@ public class MainMenuController : MonoBehaviour
     [SerializeField]HighlighterPackage _mainHighligher;
     [SerializeField]HighlighterPackage _quitHighligher;
     [SerializeField]HighlighterPackage _newgameHighligher;
-    [SerializeField]HighlighterPackage _unlockHighligher;
+    [SerializeField]HighlighterPackage _collectionHighligher;
+    public UnityEvent CharacterSelectedEvent;
+    [SerializeField]HighlighterPackage _characterUnlockHighligher;
+    public UnityEvent MapSelectedEvent;
+    [SerializeField]HighlighterPackage _mapUnlockHighligher;
 
+
+    [SerializeField]TMP_Text _playerUnlockMoneyUI;
+    [SerializeField]TMP_Text _mapUnlockMoneyUI;
 
     private void Start()
     {
@@ -27,10 +35,9 @@ public class MainMenuController : MonoBehaviour
         UpdateCharacterSelectButtons();
         UpdateMapUnlockButtons();
         UpdateMapSelectButtons();
-        UpdateAimUnlockButtons();
-        UpdateAimSelectButtons();
+        // UpdateAimUnlockButtons();
+        // UpdateAimSelectButtons();
 
-        StageMoneyEarnedIndicatorUI.singlton.GiveGlobalMoneyToTrack();
 
         AudioController.singleton.FadeSoundIn(0.05f, "music_mainmenu");
 
@@ -40,6 +47,11 @@ public class MainMenuController : MonoBehaviour
 
         ControlsController.singleton.CurrentHighligherPackage = _mainHighligher;
 
+    }
+    public void UpdateMoneyUI()
+    {
+        _playerUnlockMoneyUI.text = GlobalDataStorage.singleton.PlayerMoney.ToString();
+        _mapUnlockMoneyUI.text = GlobalDataStorage.singleton.PlayerMoney.ToString();
     }
     
     public void ReturnToMenu()
@@ -55,9 +67,18 @@ public class MainMenuController : MonoBehaviour
     {
         ControlsController.singleton.CurrentHighligherPackage = _newgameHighligher;
     }
-    public void ShowUnlock()
+    public void ShowCharacterUnlock()
     {
-        ControlsController.singleton.CurrentHighligherPackage = _unlockHighligher;
+        ControlsController.singleton.CurrentHighligherPackage = _characterUnlockHighligher;
+    }
+    public void ShowMapUnlock()
+    {
+        ControlsController.singleton.CurrentHighligherPackage = _mapUnlockHighligher;
+    }
+
+    public void ShowCollectionUnlock()
+    {
+        ControlsController.singleton.CurrentHighligherPackage = _collectionHighligher;
     }
 
     public void QuitGame()
@@ -88,10 +109,10 @@ public class MainMenuController : MonoBehaviour
     [SerializeField]SpriteRenderer _chosenMapSR;
     [SerializeField]TMP_Text _chosenMapText;
 
-    [Header("Map Unlocks")]
-    [SerializeField]AimChooseButton[] _aimButtons;
-    [SerializeField]SpriteRenderer _chosenAimSR;
-    [SerializeField]TMP_Text _chosenAimText;
+    // [Header("Map Unlocks")]
+    // [SerializeField]AimChooseButton[] _aimButtons;
+    // [SerializeField]SpriteRenderer _chosenAimSR;
+    // [SerializeField]TMP_Text _chosenAimText;
     public void UpdateCharacterUnlockButtons()
     {
         foreach (UnlockChooseButton item in _characterButtons)
@@ -132,25 +153,35 @@ public class MainMenuController : MonoBehaviour
         _chosenMapText.text = possibleMapSOArray[(int)GlobalDataStorage.singleton.ChosenMap].name;
 
     }
-    public void UpdateAimUnlockButtons()
+
+    public void CharacterSelected()
     {
-        foreach (AimChooseButton item in _aimButtons)
-        {
-            item.UpdateUnlockStatus();
-        }
+        CharacterSelectedEvent.Invoke();
     }
-    public void UpdateAimSelectButtons()
+    public void MapSelected()
     {
-        foreach (AimChooseButton item in _aimButtons)
-        {
-            item.CheckForSelected();
-        }
-
-        AimScriptableObject[] possibleAimSOArray = GlobalDataStorage.singleton.ReturnPossibleAimSOArray();
-
-        _chosenAimSR.sprite = possibleAimSOArray[(int)GlobalDataStorage.singleton.ChosenAim].Icon;
-        _chosenAimText.text = possibleAimSOArray[(int)GlobalDataStorage.singleton.ChosenAim].Name;
-
+        MapSelectedEvent.Invoke();
     }
+
+    // public void UpdateAimUnlockButtons()
+    // {
+    //     foreach (AimChooseButton item in _aimButtons)
+    //     {
+    //         item.UpdateUnlockStatus();
+    //     }
+    // }
+    // public void UpdateAimSelectButtons()
+    // {
+    //     foreach (AimChooseButton item in _aimButtons)
+    //     {
+    //         item.CheckForSelected();
+    //     }
+
+    //     AimScriptableObject[] possibleAimSOArray = GlobalDataStorage.singleton.ReturnPossibleAimSOArray();
+
+    //     _chosenAimSR.sprite = possibleAimSOArray[(int)GlobalDataStorage.singleton.ChosenAim].Icon;
+    //     _chosenAimText.text = possibleAimSOArray[(int)GlobalDataStorage.singleton.ChosenAim].Name;
+
+    // }
 #endregion
 }

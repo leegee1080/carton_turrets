@@ -76,7 +76,7 @@ public class AimChooseButton : MonoBehaviour
 
         GlobalDataStorage.singleton.ChosenAim = _thisAim;
 
-        MainMenuController.singleton.UpdateAimSelectButtons();
+        // MainMenuController.singleton.UpdateAimSelectButtons();
 
         AudioController.singleton.PlaySound("ui_pick_aim");
     }
