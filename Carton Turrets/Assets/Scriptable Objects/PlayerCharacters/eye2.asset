@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: eye2
   m_EditorClassIdentifier: 
   name: 2-Eye
-  Desc: 
+  Desc: 'Gun Turret
+
+    Spinning Turrets
+
+    Base Stats'
   SignatureSound: ui_pick_droid2
   MaxHealth: 100
   MaxSpeed: 0.5
@@ -21,7 +25,9 @@ MonoBehaviour:
   StartingPlayerExpBonus: 1
   StartingPlayerExpGatherRange: 0.5
   LevelUpThresholdMultiplier: 2
-  StartingTurret: {fileID: 11400000, guid: 58b15c4aec8ac4e45965535b35eb1850, type: 2}
+  UnlockCost: 10
+  StartingTurret: {fileID: 11400000, guid: 60a671292fc0f98488533a657416f678, type: 2}
+  AimType: 3
   StartingTurretBonusShootSpeed: 1
   StartingTurretBonusLifeTime: 1
   StartingTurretBonusAmmo: 1

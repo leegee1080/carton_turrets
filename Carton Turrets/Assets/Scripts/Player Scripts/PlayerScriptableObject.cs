@@ -10,10 +10,12 @@ public class PlayerScriptableObject : ActorDataScriptableObject
     public float StartingPlayerExpBonus;
     public float StartingPlayerExpGatherRange;
     public float LevelUpThresholdMultiplier;
+    public int UnlockCost;
 
 
     [Header("Character Turret Vars")]
     public TurretScriptableObject StartingTurret;
+    public PlayableAim AimType;
     public float StartingTurretBonusShootSpeed;
     public float StartingTurretBonusLifeTime;
     public float StartingTurretBonusAmmo;

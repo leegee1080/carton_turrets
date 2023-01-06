@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 539cd8774b46fdb4ab75167839c74e7a, type: 3}
-  m_Name: bluewiz
+  m_Name: eye4
   m_EditorClassIdentifier: 
-  name: Blue-Wiz
-  Desc: 'Mortar Turret
+  name: 4-Eye
+  Desc: 'Gun Turret
 
-    Protector Turrets
+    Attacking Turrets
 
-    Faster Running'
-  SignatureSound: ui_pick_wiz1
+    Base Stats'
+  SignatureSound: ui_pick_droid3
   MaxHealth: 100
-  MaxSpeed: 0.6
+  MaxSpeed: 0.5
   MaxAbilityCooldownTime: 1
   StartingPlayerExpBonus: 1
   StartingPlayerExpGatherRange: 0.5
   LevelUpThresholdMultiplier: 2
-  UnlockCost: 100
-  StartingTurret: {fileID: 11400000, guid: 58b15c4aec8ac4e45965535b35eb1850, type: 2}
-  AimType: 1
+  UnlockCost: 40
+  StartingTurret: {fileID: 11400000, guid: 60a671292fc0f98488533a657416f678, type: 2}
+  AimType: 2
   StartingTurretBonusShootSpeed: 1
   StartingTurretBonusLifeTime: 1
   StartingTurretBonusAmmo: 1
@@ -39,7 +39,7 @@ MonoBehaviour:
   StartingExploSpeedBonus: 1
   StartingExploSizeBonus: 1
   StartingExploDamageRangeBonus: 1
-  InGameSprite: {fileID: 21300000, guid: 5767677209f773145a33d5667390cddc, type: 3}
+  InGameSprite: {fileID: 21300000, guid: 41fc05eb23b4ddb4c8d4cf697c21f7d0, type: 3}
   SpriteSize: 1
   WalkingCurve:
     serializedVersion: 2

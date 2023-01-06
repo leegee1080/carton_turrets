@@ -13,15 +13,21 @@ MonoBehaviour:
   m_Name: redwiz
   m_EditorClassIdentifier: 
   name: Red-Wiz
-  Desc: 
+  Desc: 'Flame Turret
+
+    Spinning Turrets
+
+    Little Health'
   SignatureSound: ui_pick_wiz3
-  MaxHealth: 100
+  MaxHealth: 50
   MaxSpeed: 0.5
   MaxAbilityCooldownTime: 1
   StartingPlayerExpBonus: 1
   StartingPlayerExpGatherRange: 0.5
   LevelUpThresholdMultiplier: 2
+  UnlockCost: 300
   StartingTurret: {fileID: 11400000, guid: 7cad782fab39c004f94302b9d874f116, type: 2}
+  AimType: 3
   StartingTurretBonusShootSpeed: 1
   StartingTurretBonusLifeTime: 1
   StartingTurretBonusAmmo: 1

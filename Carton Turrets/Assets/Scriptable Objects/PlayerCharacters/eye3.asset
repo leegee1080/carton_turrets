@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: eye3
   m_EditorClassIdentifier: 
   name: 3-Eye
-  Desc: 
+  Desc: 'Gun Turret
+
+    Protector Turrets
+
+    Base Stats'
   SignatureSound: ui_pick_droid3
   MaxHealth: 100
   MaxSpeed: 0.5
@@ -21,7 +25,9 @@ MonoBehaviour:
   StartingPlayerExpBonus: 1
   StartingPlayerExpGatherRange: 0.5
   LevelUpThresholdMultiplier: 2
-  StartingTurret: {fileID: 11400000, guid: 353fa482735732e48ae6ad5fd1269c07, type: 2}
+  UnlockCost: 20
+  StartingTurret: {fileID: 11400000, guid: 60a671292fc0f98488533a657416f678, type: 2}
+  AimType: 1
   StartingTurretBonusShootSpeed: 1
   StartingTurretBonusLifeTime: 1
   StartingTurretBonusAmmo: 1
