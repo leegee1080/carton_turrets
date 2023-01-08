@@ -238,7 +238,7 @@ public class PublicUpgradeClasses
         }
         else
         {
-            t.Ammo = (int)(t.TurretData.TAmmo * t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentTurretBonusAmmo]);
+            t.Ammo = (int)(t.TurretData.TAmmo + t.ControllingActor.PlayerCurrentStatDict[PlayerStatEnum.CurrentTurretBonusAmmo]);
         }   
 
         // _turretMesh.mesh = tStats.Mesh;

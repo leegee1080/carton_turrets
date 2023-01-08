@@ -205,7 +205,7 @@ public class PlinkoController : MonoBehaviour
     public void LeavePlinko()
     {
         AudioController.singleton.FadeSoundOut(0.1f,"music_plinko");
-        GlobalDataStorage.singleton.PlayerMoney += StageMoneyEarnedIndicatorUI.singlton.PublicMoneyAmountEarnedInLevel + GlobalDataStorage.singleton.PlayerTempWallet;
+        GlobalDataStorage.singleton.PlayerMoney = StageMoneyEarnedIndicatorUI.singlton.PublicMoneyAmountEarnedInLevel + GlobalDataStorage.singleton.PlayerTempWallet;
         GlobalVolumeController.singleton.NewScene(1);
     }
 

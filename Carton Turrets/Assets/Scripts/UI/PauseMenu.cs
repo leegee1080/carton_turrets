@@ -55,6 +55,7 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseToggle(InputAction.CallbackContext ctx, PauseMenuType type)
     {
+        if(!StageController.singlton.PauseButtonGO.activeSelf){return;}
         if(_gamePaused){UnPauseGame(); return;}
         PauseGame(type);
     }

@@ -65,11 +65,16 @@ public class CurrentEquipmentUI : MonoBehaviour
 
     public void UpdateUpgradeTimers(float maxTimer, int slot, float time)
     { 
+        _toggleBoolArray[0] = StageController.singlton._yButtonAutoCast;
+        _toggleBoolArray[1] = StageController.singlton._bButtonAutoCast;
+        _toggleBoolArray[2] = StageController.singlton._xButtonAutoCast;
+        
         _buttonCoverArray[slot].transform.localPosition = new Vector3(0, Mathf.Lerp(0, _startingCoverY, time/maxTimer), 0);
         if(time <= 0)
         {
              _buttonCoverArray[slot].SetActive(false);
              FlashEquCooldown(slot);
+             if(_toggleBoolArray[slot]){return;}
              AudioController.singleton.PlaySound("player_turret_recharge");
         }
         else

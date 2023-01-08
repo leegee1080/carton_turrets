@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Mouth Hair
   Desc: Mouth Hair Boss
   SignatureSound: 
-  MaxHealth: 1000
+  MaxHealth: 2000
   MaxSpeed: 0.2
   Sprite: {fileID: 21300000, guid: 887d95c7cf1f18740b28f58b8ce199ad, type: 3}
   SpriteSize: 3

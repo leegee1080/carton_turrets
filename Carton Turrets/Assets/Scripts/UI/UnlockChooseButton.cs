@@ -14,9 +14,6 @@ public class UnlockChooseButton : MonoBehaviour
     [SerializeField]TMP_Text _descBox;
     [SerializeField]GameObject _slctImageGO;
 
-    [Header("Sound Vars")]
-    [SerializeField]string _pickSound;
-
     private void Start()
     {
         if(_unlocked){return;}
@@ -82,11 +79,12 @@ public class UnlockChooseButton : MonoBehaviour
         // if(GlobalDataStorage.singleton.ChosenCharacter == _thisCharacter){return;}
 
         GlobalDataStorage.singleton.ChosenCharacter = _thisCharacter;
+        MainMenuController.singleton.UpdateMoneyUI();
         GlobalDataStorage.singleton.ChosenAim = GlobalDataStorage.singleton.ReturnPossiblePlayerSOArray()[(int)_thisCharacter].AimType;
 
         MainMenuController.singleton.UpdateCharacterSelectButtons();
 
-        AudioController.singleton.PlaySound(_pickSound);
+        AudioController.singleton.PlaySound(GlobalDataStorage.singleton.ReturnPossiblePlayerSOArray()[(int)_thisCharacter].SignatureSound);
 
         MainMenuController.singleton.CharacterSelected();
 

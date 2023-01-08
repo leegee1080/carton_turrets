@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Green Leaner
   Desc: Green Leaner Boss
   SignatureSound: 
-  MaxHealth: 200
+  MaxHealth: 1000
   MaxSpeed: 0.1
   Sprite: {fileID: 21300000, guid: 2ecfafa3fc0f9d94f88bf8c34f2cf687, type: 3}
   SpriteSize: 3
