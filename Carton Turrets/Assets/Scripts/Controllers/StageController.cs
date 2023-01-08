@@ -540,7 +540,7 @@ public class StageState_Running: StageState
 
         GameTimeIndicatorUI.singlton.UpdateTime(_cont.GameTime);
         _cont.CheckEnemySpawnWave();
-        if(_cont.GameTime >= 570)
+        if(_cont.GameTime >= (StageController.singlton.CurrentStage.TotalStageTime - 30f))
         {
             AudioController.singleton.FadeSoundOut(0.05f, StageController.singlton.CurrentStage.SignatureMusic);
         }

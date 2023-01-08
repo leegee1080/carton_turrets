@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9be32562731524faee5213050304bd, type: 3}
+  m_Name: SwampyStage
+  m_EditorClassIdentifier: 
+  name: Swamp
+  Desc: Watch out for the mushrooms.
+  Icon: {fileID: 21300000, guid: 2907fc79a7da0b046a7745fd9840a351, type: 3}
+  SignatureMusic: music_stage_swamp
+  UnlockCost: 100
+  Waves:
+  - EnemySpawnStartThreshold: 1
+    SpawnInterval: 0.25
+    Amount: 2400
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: 711ec42f94b39f04287949318eba63f6, type: 2}
+  - EnemySpawnStartThreshold: 1
+    SpawnInterval: 10
+    Amount: 60
+    Spawned: 0
+    Enemy: {fileID: 11400000, guid: af60334ab56d3984491abc9848ac00b2, type: 2}
+  TotalStageTime: 600
+  MapMaxX: 30
+  MapMaxY: 30
+  StartingLocation:
+    Object: {fileID: 6074885723609033330, guid: 971f7f7d984c8c04f8f3560c48a92c60, type: 3}
+    LocationX: 15
+    LocationY: 15
+  ImportantLocations: []
+  GridSpacing: 5
+  GridObjects:
+  - SpawnableGO: {fileID: 6074885723609033330, guid: 0421b49ff1063cf47a0e65ef9ab5eb07, type: 3}
+    AmountToPool: 20
+  ScoreMulti: 1
+  AvailableEquipment:
+  - {fileID: 11400000, guid: 353fa482735732e48ae6ad5fd1269c07, type: 2}
+  - {fileID: 11400000, guid: 7cad782fab39c004f94302b9d874f116, type: 2}
+  - {fileID: 11400000, guid: 60a671292fc0f98488533a657416f678, type: 2}
+  - {fileID: 11400000, guid: 58b15c4aec8ac4e45965535b35eb1850, type: 2}
+  - {fileID: 11400000, guid: ba37dff01d5b36f408ce30002b22ddc7, type: 2}
+  AvailableUpgrades:
+  - {fileID: 11400000, guid: 7e0a3ab83ba6b3b4397d6d5b521289fb, type: 2}
+  - {fileID: 11400000, guid: 1eb71aa06053e4d43a4e4b973befaa67, type: 2}
+  - {fileID: 11400000, guid: 990e3bab40ca7584189ad478a8c4f243, type: 2}
+  - {fileID: 11400000, guid: fdd2c2af5f8e51041821f2a2ccf6a874, type: 2}
+  - {fileID: 11400000, guid: 0f6138b1610cf924f9ca722223425f9d, type: 2}
+  - {fileID: 11400000, guid: 83366c71f3c38f748816973a2d25d8fe, type: 2}
+  - {fileID: 11400000, guid: 1f525070ee3977242b7355573cfa7d75, type: 2}
+  FillInUpgradesForMaxLevel:
+  - {fileID: 11400000, guid: 2f56855a24b830746a40323f6789bd4a, type: 2}

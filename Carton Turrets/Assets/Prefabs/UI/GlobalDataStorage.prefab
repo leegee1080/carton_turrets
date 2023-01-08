@@ -69,13 +69,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cc4c7f9d390800c4791b89c56fd358ea, type: 2}
   - {fileID: 11400000, guid: 96a4dbb092cce774494ff19e6dcfd78d, type: 2}
   - {fileID: 11400000, guid: 5459a40a9a10863499972f3a4817272b, type: 2}
+  - {fileID: 11400000, guid: 1bd75888b70436548928248232ff4b7c, type: 2}
   - {fileID: 11400000, guid: 0c6bbe9f82f225a47b787a0d30d688ef, type: 2}
   - {fileID: 11400000, guid: 5131019eb893bd543b9d1bd0c5b99a7d, type: 2}
   - {fileID: 11400000, guid: 4ba1611cc5f33784eafca35abe23c43e, type: 2}
+  - {fileID: 11400000, guid: 6728f396b143acf41ad40c6860f3b879, type: 2}
+  - {fileID: 11400000, guid: cd3ba90d976297c488eac0bcc9340adb, type: 2}
   _currentlyUnlockedCharacters: 00000000
   ChosenCharacter: 0
   _possiblePlayableMapSOArray:
   - {fileID: 11400000, guid: 189577f8d4b4a314b8ec357b991a41f0, type: 2}
+  - {fileID: 11400000, guid: b03193479a57804418d148cc03f2b372, type: 2}
   _currentlyUnlockedMaps: 00000000
   ChosenMap: 0
   AimAtEnemyCheckRange: 3

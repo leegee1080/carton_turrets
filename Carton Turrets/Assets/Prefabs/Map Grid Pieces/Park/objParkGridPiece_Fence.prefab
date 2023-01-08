@@ -76,45 +76,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _array:
-  - {fileID: 1842875860591064242}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 4061972972008826324}
-  - {fileID: 0}
+  - {fileID: 3942049823902332633}
   _useInputArray: 1
   _hideOnAwake: 1
 --- !u!114 &918025584976457205
@@ -190,9 +153,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e5544339e44151499f1e0343d193584, type: 3}
---- !u!1 &1842875860591064242 stripped
+--- !u!1 &3942049823902332633 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6127227160908478735, guid: 5e5544339e44151499f1e0343d193584, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8804401046608280420, guid: 5e5544339e44151499f1e0343d193584, type: 3}
   m_PrefabInstance: {fileID: 5520143720403373501}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &6322714264876064727 stripped

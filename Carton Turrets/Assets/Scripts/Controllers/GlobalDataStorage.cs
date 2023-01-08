@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Linq;
 
 
 public enum PlayerCharacters
@@ -12,14 +11,19 @@ public enum PlayerCharacters
     eye2,
     eye3,
     eye4,
+    eye5,
     bluewiz,
     grnwiz,
-    redwiz
+    redwiz,
+    purpwiz,
+    slim
+
 
 }
 public enum PlayableMaps
 {
     rocky,
+    swamp
 }
 
 public enum PlayableAim
@@ -139,6 +143,12 @@ public class GlobalDataStorage : MonoBehaviour
                 ControllerUsed = ControllerUsed.gp;
             }
 
+            if(!PlayerPrefs.HasKey("playedbefore"))
+            {
+                PlayerPrefs.SetString("playedbefore", "true");
+                SuperReset();
+            }
+
             if(!PlayerPrefs.HasKey("unlocked_characters")){ResetGame();}
 
             LoadSave();
@@ -149,7 +159,7 @@ public class GlobalDataStorage : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    public int PlayerMoney = 100;
+    public int PlayerMoney = 0;
     public int PlayerTempWallet = 0;
 
     [Header("Game Options")]
@@ -239,7 +249,7 @@ public class GlobalDataStorage : MonoBehaviour
         Debug.Log("Game Reset");
 
         PlayerPrefs.DeleteAll();
-        PlayerMoney = 100;
+        PlayerMoney = 0;
         gameVolume = 0.5f;
         musicVolume = 0.5f;
 

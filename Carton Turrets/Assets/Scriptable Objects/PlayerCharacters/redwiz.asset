@@ -25,7 +25,7 @@ MonoBehaviour:
   StartingPlayerExpBonus: 1
   StartingPlayerExpGatherRange: 0.5
   LevelUpThresholdMultiplier: 2
-  UnlockCost: 300
+  UnlockCost: 400
   StartingTurret: {fileID: 11400000, guid: 7cad782fab39c004f94302b9d874f116, type: 2}
   AimType: 3
   StartingTurretBonusShootSpeed: 1

@@ -61,6 +61,8 @@ public class LevelUpPopup : MonoBehaviour
     {
         ShowEvent.Invoke();
 
+        StageController.singlton.PauseButtonGO.SetActive(false);
+
         StageController.singlton.ShowLevelUp();
 
         if(_elementsToShowArray.Length == 0){return;}

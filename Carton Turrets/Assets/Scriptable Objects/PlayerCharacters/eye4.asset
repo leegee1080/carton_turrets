@@ -18,7 +18,7 @@ MonoBehaviour:
     Attacking Turrets
 
     Base Stats'
-  SignatureSound: ui_pick_droid3
+  SignatureSound: ui_pick_droid4
   MaxHealth: 100
   MaxSpeed: 0.5
   MaxAbilityCooldownTime: 1
@@ -39,7 +39,7 @@ MonoBehaviour:
   StartingExploSpeedBonus: 1
   StartingExploSizeBonus: 1
   StartingExploDamageRangeBonus: 1
-  InGameSprite: {fileID: 21300000, guid: 41fc05eb23b4ddb4c8d4cf697c21f7d0, type: 3}
+  InGameSprite: {fileID: 21300000, guid: 5e3c4cdea1523d74b889857eb7cbbdba, type: 3}
   SpriteSize: 1
   WalkingCurve:
     serializedVersion: 2

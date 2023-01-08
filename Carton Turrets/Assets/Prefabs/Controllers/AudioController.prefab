@@ -84,6 +84,15 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
+  - name: music_stage_swamp
+    clip: {fileID: 8300000, guid: 22da255dc4f371848bfe2a05d181edc4, type: 3}
+    Tag: 0
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
   - name: ui_click
     clip: {fileID: 8300000, guid: 1ba925fe0ece7c1448507444b0d7068c, type: 3}
     Tag: 1
@@ -183,6 +192,24 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
+  - name: ui_pick_droid4
+    clip: {fileID: 8300000, guid: 054a32f56f7fcd94bb38b346be4e380d, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_pick_droid5
+    clip: {fileID: 8300000, guid: 97c1471bc8f9af64abd8bac9761d34a4, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
   - name: ui_pick_wiz1
     clip: {fileID: 8300000, guid: b811ff71e9a716046b514b46e5b16f66, type: 3}
     Tag: 1
@@ -203,6 +230,24 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: ui_pick_wiz3
     clip: {fileID: 8300000, guid: ddf21e0e4b3962b4287be6c861ffb3a3, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_pick_wiz4
+    clip: {fileID: 8300000, guid: 6a4b0c8da84d7154290a06830a5464c6, type: 3}
+    Tag: 1
+    loop: 0
+    randomPitch: 0
+    Maxvolume: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: ui_pick_slim
+    clip: {fileID: 8300000, guid: 16374788aae39434cab3fa786550355b, type: 3}
     Tag: 1
     loop: 0
     randomPitch: 0

@@ -116,6 +116,7 @@ public class UpgradeConfirmContainer : MonoBehaviour
         HideEvent.Invoke();
 
         _levelUpPopupUIGameObject.SetActive(true);
+        
         foreach (GameObject item in _visualGameObjects)
         {
             item.SetActive(false);   
@@ -144,6 +145,8 @@ public class UpgradeConfirmContainer : MonoBehaviour
         Hide();
         LevelUpPopup.singlton.FindAndApplyUpgrade(_chosenUpgrade, StageController.singlton.Player.ReturnArrayToSearchBasedOnUpgradeType(_chosenUpgrade.UpgradeType));
         LevelUpPopup.singlton.Hide();
+
+        StageController.singlton.PauseButtonGO.SetActive(true);
     }
     public void DenyUpgrade()
     {
