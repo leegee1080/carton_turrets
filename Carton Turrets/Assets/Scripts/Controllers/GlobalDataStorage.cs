@@ -143,11 +143,11 @@ public class GlobalDataStorage : MonoBehaviour
                 ControllerUsed = ControllerUsed.gp;
             }
 
-            if(!PlayerPrefs.HasKey("playedbefore"))
-            {
-                PlayerPrefs.SetString("playedbefore", "true");
-                SuperReset();
-            }
+            // if(!PlayerPrefs.HasKey("playedbefore"))
+            // {
+            //     PlayerPrefs.SetString("playedbefore", "true");
+            //     SuperReset();
+            // }
 
             if(!PlayerPrefs.HasKey("unlocked_characters")){ResetGame();}
 

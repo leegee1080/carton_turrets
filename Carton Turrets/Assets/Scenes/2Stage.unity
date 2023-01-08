@@ -14361,7 +14361,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6824624292601990960, guid: 99ad7a5f85ef75b4c97f4a577c37ba60, type: 3}
       propertyPath: ChosenAim
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824624292601990960, guid: 99ad7a5f85ef75b4c97f4a577c37ba60, type: 3}
+      propertyPath: ChosenCharacter
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6824624292601990960, guid: 99ad7a5f85ef75b4c97f4a577c37ba60, type: 3}
       propertyPath: _showInInspectorControllerUsed

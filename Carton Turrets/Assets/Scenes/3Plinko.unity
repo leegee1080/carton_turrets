@@ -5430,7 +5430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6824624292601990960, guid: 99ad7a5f85ef75b4c97f4a577c37ba60, type: 3}
       propertyPath: PlayerTempWallet
-      value: 2000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8154686376442324353, guid: 99ad7a5f85ef75b4c97f4a577c37ba60, type: 3}
       propertyPath: m_Name
